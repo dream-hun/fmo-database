@@ -16,7 +16,7 @@ return new class extends Migration
             $table->uuid();
             $table->foreignId('project_id')->constrained();
             $table->string('name');
-            $table->string('id_number')->nullable()->unique();
+            $table->string('id_number')->nullable();
             $table->string('business_name')->nullable();
             $table->string('telephone')->nullable();
             $table->string('guardian')->nullable();

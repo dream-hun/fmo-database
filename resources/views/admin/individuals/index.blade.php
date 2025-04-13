@@ -22,9 +22,7 @@
                         <th width="10">
 
                         </th>
-                        <th>
-                            {{ trans('cruds.individual.fields.id') }}
-                        </th>
+
                         <th>
                             {{ trans('cruds.individual.fields.name') }}
                         </th>
@@ -37,24 +35,9 @@
                         <th>
                             {{ trans('cruds.individual.fields.telephone') }}
                         </th>
-                        <th>
-                            {{ trans('cruds.individual.fields.guardian') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.individual.fields.guardian_phone') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.individual.fields.sector') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.individual.fields.cell') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.individual.fields.village') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.individual.fields.loan_amount') }}
-                        </th>
+
+
+                       
                         <th>
                             {{ trans('cruds.individual.fields.loan_date') }}
                         </th>
@@ -72,9 +55,7 @@
                             <td>
 
                             </td>
-                            <td>
-                                {{ $individual->id ?? '' }}
-                            </td>
+
                             <td>
                                 {{ $individual->name ?? '' }}
                             </td>
@@ -87,24 +68,7 @@
                             <td>
                                 {{ $individual->telephone ?? '' }}
                             </td>
-                            <td>
-                                {{ $individual->guardian ?? '' }}
-                            </td>
-                            <td>
-                                {{ $individual->guardian_phone ?? '' }}
-                            </td>
-                            <td>
-                                {{ $individual->sector ?? '' }}
-                            </td>
-                            <td>
-                                {{ $individual->cell ?? '' }}
-                            </td>
-                            <td>
-                                {{ $individual->village ?? '' }}
-                            </td>
-                            <td>
-                                {{ $individual->loan_amount ?? '' }}
-                            </td>
+
                             <td>
                                 {{ $individual->loan_date ?? '' }}
                             </td>

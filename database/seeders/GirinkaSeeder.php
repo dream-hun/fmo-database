@@ -124,7 +124,7 @@ class GirinkaSeeder extends Seeder
      * @param  array  $data  CSV row data
      * @param  int|null  $projectId  Default project ID
      */
-    private function createGirinkaFromCsvRow(array $data, ?int $projectId = null): Girinka
+    private function createGirinkaFromCsvRow(array $data, ?int $projectId = null): void
     {
         // Map CSV columns to model attributes
         $girinkaData = [
@@ -143,7 +143,7 @@ class GirinkaSeeder extends Seeder
             'project_id' => $projectId,
         ];
 
-        return Girinka::create($girinkaData);
+        Girinka::create($girinkaData);
     }
 
     /**

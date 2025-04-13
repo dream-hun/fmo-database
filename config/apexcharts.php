@@ -21,9 +21,17 @@ return [
             'height' => 500,
             'width' => null,
             'toolbar' => [
-                'show' => false,
+                'show' => true,
+                'tools' => [
+                    'download' => true,
+                    'selection' => true,
+                    'zoom' => true,
+                    'zoomin' => true,
+                    'zoomout' => true,
+                    'pan' => true,
+                    'reset' => true,
+                ],
             ],
-            'stacked' => false,
             'zoom' => [
                 'enabled' => true,
             ],
@@ -35,10 +43,13 @@ return [
             'bar' => [
                 'horizontal' => false,
             ],
+            'line' => [
+                'strokeWidth' => 3,
+            ],
         ],
 
         'colors' => [
-            '#008FFB', '#00E396', '#feb019', '#ff455f', '#775dd0', '#80effe',
+            '#b2071b', '#657278', '#feb019', '#ff455f', '#775dd0', '#80effe',
             '#0077B5', '#ff6384', '#c9cbcf', '#0057ff', '#00a9f4', '#2ccdc9', '#5e72e4',
         ],
 
@@ -51,42 +62,65 @@ return [
         'labels' => [],
 
         'title' => [
-            'text' => [],
+            'text' => null,
+            'align' => 'center',
+            'style' => [
+                'fontSize' => '16px',
+                'fontWeight' => 'bold',
+            ],
         ],
 
         'subtitle' => [
-            'text' => 'undefined',
-            'align' => 'left',
+            'text' => null,
+            'align' => 'center',
         ],
 
         'xaxis' => [
+            'type' => 'category',
             'categories' => [],
+            'tickPlacement' => 'on',
+            'labels' => [
+                'rotate' => -45,
+                'rotateAlways' => false,
+            ],
         ],
 
         'grid' => [
             'show' => true,
+            'borderColor' => '#e7e7e7',
+            'strokeDashArray' => 0,
+            'position' => 'back',
+            'row' => [
+                'colors' => ['#f3f3f3', 'transparent'],
+                'opacity' => 0.5,
+            ],
         ],
 
         'markers' => [
-            'size' => 4,
-            'colors' => [
-                '#008FFB', '#00E396', '#feb019', '#ff455f', '#775dd0', '#80effe',
-                '#0077B5', '#ff6384', '#c9cbcf', '#0057ff', '#00a9f4', '#2ccdc9', '#5e72e4',
-            ],
-            'strokeColors' => '#fff',
-            'strokeWidth' => 2,
+            'size' => 6,
+            'strokeWidth' => 3,
+            'fillOpacity' => 1,
             'hover' => [
-                'size' => 7,
+                'size' => 8,
             ],
         ],
 
         'stroke' => [
             'show' => true,
-            'width' => 0,
-            'colors' => [
-                '#008FFB', '#00E396', '#feb019', '#ff455f', '#775dd0', '#80effe',
-                '#0077B5', '#ff6384', '#c9cbcf', '#0057ff', '#00a9f4', '#2ccdc9', '#5e72e4',
-            ],
+            'curve' => 'smooth',
+            'lineCap' => 'butt',
+            'width' => 3,
+            'dashArray' => 0,
+        ],
+
+        'legend' => [
+            'show' => true,
+            'showForSingleSeries' => true,
+            'position' => 'bottom',
+            'horizontalAlign' => 'center',
+            'floating' => false,
+            'fontSize' => '13px',
+            'offsetY' => 0,
         ],
     ],
 

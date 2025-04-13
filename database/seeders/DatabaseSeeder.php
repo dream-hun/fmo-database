@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             GirinkaSeeder::class,
             VslaSeeder::class,
             TankSeeder::class,
+            IndividualSeeder::class,
 
         ]);
 

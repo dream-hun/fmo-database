@@ -71,6 +71,18 @@
             <section class="col-lg-12">
                 <!-- Gender Distribution Chart -->
                 <div class="row mt-5">
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Individual Loan Distribution</h3>
+                            </div>
+                            <div class="card-body">
+                                {!! $individualLoansChart->container() !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
 
 
                     <div class="col-md-3">
@@ -552,8 +564,8 @@
 @endsection
 
 @push('scripts')
-    @apexchartsScripts
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     {!! $beneficiariesChart->script() !!}
     {!! $girinkaChart->script() !!}
+    {!! $individualLoansChart->script() !!}
 @endpush
-

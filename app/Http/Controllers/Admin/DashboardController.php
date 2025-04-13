@@ -19,6 +19,7 @@ class DashboardController extends Controller
         $male = $totalBeneficiaries - $female;
         $chart = DashboardStats::genderDistribution();
         $girinkaChart = DashboardStats::girinkaStats();
+        $individualLoansChart = DashboardStats::individualLoanStats();
 
         return view('dashboard', [
             'total' => $totalBeneficiaries,
@@ -26,6 +27,7 @@ class DashboardController extends Controller
             'male' => $male,
             'beneficiariesChart' => $chart,
             'girinkaChart' => $girinkaChart,
+            'individualLoansChart' => $individualLoansChart,
         ]);
     }
 }
