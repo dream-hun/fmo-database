@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FruitController;
 use App\Http\Controllers\Admin\GirinkaController;
 use App\Http\Controllers\Admin\GoatController;
 use App\Http\Controllers\Admin\IndividualController;
@@ -8,6 +11,7 @@ use App\Http\Controllers\Admin\MalnutritionController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ScholarshipController;
+use App\Http\Controllers\Admin\SchoolFeedingController;
 use App\Http\Controllers\Admin\TankController;
 use App\Http\Controllers\Admin\VslaController;
 use Illuminate\Support\Facades\Route;
@@ -20,7 +24,7 @@ Route::get('/home', function () {
 
     return redirect()->route('admin.dashboard');
 });
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], function (): void {
     Route::get('/', DashboardController::class)->name('dashboard');
 
     Route::resource('permissions', PermissionController::class)->except(['show']);
@@ -32,6 +36,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('scholarships', ScholarshipController::class)->except(['show']);
     Route::resource('vslas', VslaController::class)->except(['show']);
     Route::resource('individuals', IndividualController::class)->except(['show']);
+    Route::resource('school-feedings', SchoolFeedingController::class)->except(['show']);
+    Route::resource('fruits', FruitController::class)->except(['show']);
 
 });
 

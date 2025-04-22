@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,23 +17,17 @@ return new class extends Migration
             $table->id();
             $table->uuid();
             $table->foreignId('project_id')->constrained('projects');
-            $table->string('surname');
-            $table->string('first_name');
-            $table->string('gender');
-            $table->integer('id_number')->unique();
+            $table->string('names');
+            $table->string('gender')->nullable();
+            $table->string('id_number')->nullable();
             $table->string('district')->nullable();
             $table->string('sector')->nullable();
             $table->string('cell')->nullable();
             $table->string('village')->nullable();
             $table->string('telephone')->nullable();
             $table->string('email')->nullable();
-            $table->string('school_to_attend')->nullable();
+            $table->string('school')->nullable();
             $table->string('study_option')->nullable();
-            $table->string('program_duration')->nullable();
-            $table->string('budget_up_to_completion')->nullable();
-            $table->integer('year_of_entrance')->nullable();
-            $table->string('intake')->nullable();
-            $table->string('school_contact')->nullable();
             $table->timestamps();
         });
     }

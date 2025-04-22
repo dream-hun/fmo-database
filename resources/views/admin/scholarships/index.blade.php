@@ -19,17 +19,14 @@
                 <table class=" table table-bordered table-striped table-hover datatable datatable-Scholarship">
                     <thead>
                     <tr>
-                        <th>
+                        <th width="10">
 
                         </th>
                         <th>
                             {{ trans('cruds.scholarship.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.scholarship.fields.surname') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.scholarship.fields.first_name') }}
+                            {{ trans('cruds.scholarship.fields.names') }}
                         </th>
                         <th>
                             {{ trans('cruds.scholarship.fields.gender') }}
@@ -44,10 +41,10 @@
                             {{ trans('cruds.scholarship.fields.email') }}
                         </th>
                         <th>
-                            {{ trans('cruds.scholarship.fields.school_to_attend') }}
+                            {{ trans('cruds.scholarship.fields.school') }}
                         </th>
                         <th>
-                            {{ trans('cruds.scholarship.fields.study_option') }}
+                            {{ trans('cruds.sch') }}
                         </th>
                         <th>
                             &nbsp;
@@ -64,10 +61,7 @@
                                 {{ $scholarship->id ?? '' }}
                             </td>
                             <td>
-                                {{ $scholarship->surname ?? '' }}
-                            </td>
-                            <td>
-                                {{ $scholarship->first_name ?? '' }}
+                                {{ $scholarship->names ?? '' }}
                             </td>
                             <td>
                                 {{ App\Models\Scholarship::GENDER_SELECT[$scholarship->gender] ?? '' }}
@@ -82,17 +76,12 @@
                                 {{ $scholarship->email ?? '' }}
                             </td>
                             <td>
-                                {{ $scholarship->school_to_attend ?? '' }}
+                                {{ $scholarship->school ?? '' }}
                             </td>
                             <td>
                                 {{ $scholarship->study_option ?? '' }}
                             </td>
                             <td>
-                                @can('scholarship_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.scholarships.show', $scholarship->id) }}">
-                                        {{ trans('global.view') }}
-                                    </a>
-                                @endcan
 
                                 @can('scholarship_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.scholarships.edit', $scholarship->id) }}">

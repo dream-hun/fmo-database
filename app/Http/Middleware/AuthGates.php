@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Middleware;
 
 use App\Models\Role;
 use Closure;
 use Illuminate\Support\Facades\Gate;
 
-class AuthGates
+final class AuthGates
 {
     public function handle($request, Closure $next)
     {

@@ -1,15 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Helpers;
 
 use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
+use App\Models\Malnutrition;
 use App\Models\Scholarship;
+use App\Models\SchoolFeeding;
 use App\Models\Tank;
 use App\Models\Vsla;
 
-class TotalNumbers
+final class TotalNumbers
 {
     /**
      * Get the total count of cows
@@ -59,12 +63,25 @@ class TotalNumbers
         return Vsla::count();
     }
 
+    public static function getSchoolFeeding(): int
+    {
+        return SchoolFeeding::count();
+    }
+
+    public static function getMalnutrition(): int
+    {
+        return Malnutrition::count();
+    }
+
     /**
      * Get all counts as an associative array
      */
     public static function getAllCounts(): int
     {
-        return self::getCows() + self::getGoats() + self::getWaterTanks() + self::getScholarships() + self::getIndividualMicrocredits() + self::getVslas();
+        return
+            self::getCows() + self::getGoats() + self::getWaterTanks() +
+            self::getScholarships() + self::getIndividualMicrocredits() +
+            self::getVslas() + self::getSchoolFeeding() + self::getMalnutrition();
     }
 
     public static function femaleBeneficiaries(): int

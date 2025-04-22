@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Permission;
 use Illuminate\Database\Seeder;
 
-class PermissionsTableSeeder extends Seeder
+final class PermissionsTableSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         $permissions = [
             [
@@ -241,6 +243,46 @@ class PermissionsTableSeeder extends Seeder
             [
                 'id' => 58,
                 'title' => 'profile_password_edit',
+            ],
+            [
+                'id' => 59,
+                'title' => 'school_feeding_create',
+            ],
+            [
+                'id' => 60,
+                'title' => 'school_feeding_edit',
+            ],
+            [
+                'id' => 61,
+                'title' => 'school_feeding_show',
+            ],
+            [
+                'id' => 62,
+                'title' => 'school_feeding_delete',
+            ],
+            [
+                'id' => 63,
+                'title' => 'school_feeding_access',
+            ],
+            [
+                'id' => 64,
+                'title' => 'school_feeding_access',
+            ],
+            [
+                'id' => 65,
+                'title' => 'fruit_create',
+            ],
+            [
+                'id' => 66,
+                'title' => 'fruit_edit',
+            ],
+            [
+                'id' => 67,
+                'title' => 'fruit_delete',
+            ],
+            [
+                'id' => 68,
+                'title' => 'fruit_access',
             ],
         ];
 

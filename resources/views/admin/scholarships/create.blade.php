@@ -10,24 +10,28 @@
             <form method="POST" action="{{ route("admin.scholarships.store") }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label class="required" for="surname">{{ trans('cruds.scholarship.fields.surname') }}</label>
-                    <input class="form-control {{ $errors->has('surname') ? 'is-invalid' : '' }}" type="text" name="surname" id="surname" value="{{ old('surname', '') }}" required>
-                    @if($errors->has('surname'))
-                        <span class="text-danger">{{ $errors->first('surname') }}</span>
+                    <label for="project_id">{{ trans('cruds.scholarship.fields.project') }}</label>
+                    <select class="form-control select2 {{ $errors->has('project') ? 'is-invalid' : '' }}" name="project_id" id="project_id">
+                        @foreach($projects as $id => $entry)
+                            <option value="{{ $id }}" {{ old('project_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('project'))
+                        <span class="text-danger">{{ $errors->first('project') }}</span>
                     @endif
-                    <span class="help-block">{{ trans('cruds.scholarship.fields.surname_helper') }}</span>
+                    <span class="help-block">{{ trans('cruds.scholarship.fields.project_helper') }}</span>
                 </div>
                 <div class="form-group">
-                    <label class="required" for="first_name">{{ trans('cruds.scholarship.fields.first_name') }}</label>
-                    <input class="form-control {{ $errors->has('first_name') ? 'is-invalid' : '' }}" type="text" name="first_name" id="first_name" value="{{ old('first_name', '') }}" required>
-                    @if($errors->has('first_name'))
-                        <span class="text-danger">{{ $errors->first('first_name') }}</span>
+                    <label class="required" for="names">{{ trans('cruds.scholarship.fields.names') }}</label>
+                    <input class="form-control {{ $errors->has('names') ? 'is-invalid' : '' }}" type="text" name="names" id="names" value="{{ old('names', '') }}" required>
+                    @if($errors->has('names'))
+                        <span class="text-danger">{{ $errors->first('names') }}</span>
                     @endif
-                    <span class="help-block">{{ trans('cruds.scholarship.fields.first_name_helper') }}</span>
+                    <span class="help-block">{{ trans('cruds.scholarship.fields.names_helper') }}</span>
                 </div>
                 <div class="form-group">
-                    <label class="required">{{ trans('cruds.scholarship.fields.gender') }}</label>
-                    <select class="form-control {{ $errors->has('gender') ? 'is-invalid' : '' }}" name="gender" id="gender" required>
+                    <label>{{ trans('cruds.scholarship.fields.gender') }}</label>
+                    <select class="form-control {{ $errors->has('gender') ? 'is-invalid' : '' }}" name="gender" id="gender">
                         <option value disabled {{ old('gender', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                         @foreach(App\Models\Scholarship::GENDER_SELECT as $key => $label)
                             <option value="{{ $key }}" {{ old('gender', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
@@ -39,8 +43,8 @@
                     <span class="help-block">{{ trans('cruds.scholarship.fields.gender_helper') }}</span>
                 </div>
                 <div class="form-group">
-                    <label class="required" for="id_number">{{ trans('cruds.scholarship.fields.id_number') }}</label>
-                    <input class="form-control {{ $errors->has('id_number') ? 'is-invalid' : '' }}" type="number" name="id_number" id="id_number" value="{{ old('id_number', '') }}" step="1" required>
+                    <label for="id_number">{{ trans('cruds.scholarship.fields.id_number') }}</label>
+                    <input class="form-control {{ $errors->has('id_number') ? 'is-invalid' : '' }}" type="text" name="id_number" id="id_number" value="{{ old('id_number', '') }}">
                     @if($errors->has('id_number'))
                         <span class="text-danger">{{ $errors->first('id_number') }}</span>
                     @endif
@@ -88,19 +92,19 @@
                 </div>
                 <div class="form-group">
                     <label for="email">{{ trans('cruds.scholarship.fields.email') }}</label>
-                    <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text" name="email" id="email" value="{{ old('email', '') }}">
+                    <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email" id="email" value="{{ old('email') }}">
                     @if($errors->has('email'))
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                     @endif
                     <span class="help-block">{{ trans('cruds.scholarship.fields.email_helper') }}</span>
                 </div>
                 <div class="form-group">
-                    <label for="school_to_attend">{{ trans('cruds.scholarship.fields.school_to_attend') }}</label>
-                    <input class="form-control {{ $errors->has('school_to_attend') ? 'is-invalid' : '' }}" type="text" name="school_to_attend" id="school_to_attend" value="{{ old('school_to_attend', '') }}">
-                    @if($errors->has('school_to_attend'))
-                        <span class="text-danger">{{ $errors->first('school_to_attend') }}</span>
+                    <label for="school">{{ trans('cruds.scholarship.fields.school') }}</label>
+                    <input class="form-control {{ $errors->has('school') ? 'is-invalid' : '' }}" type="text" name="school" id="school" value="{{ old('school', '') }}">
+                    @if($errors->has('school'))
+                        <span class="text-danger">{{ $errors->first('school') }}</span>
                     @endif
-                    <span class="help-block">{{ trans('cruds.scholarship.fields.school_to_attend_helper') }}</span>
+                    <span class="help-block">{{ trans('cruds.scholarship.fields.school_helper') }}</span>
                 </div>
                 <div class="form-group">
                     <label for="study_option">{{ trans('cruds.scholarship.fields.study_option') }}</label>
@@ -109,46 +113,6 @@
                         <span class="text-danger">{{ $errors->first('study_option') }}</span>
                     @endif
                     <span class="help-block">{{ trans('cruds.scholarship.fields.study_option_helper') }}</span>
-                </div>
-                <div class="form-group">
-                    <label for="program_duration">{{ trans('cruds.scholarship.fields.program_duration') }}</label>
-                    <input class="form-control {{ $errors->has('program_duration') ? 'is-invalid' : '' }}" type="text" name="program_duration" id="program_duration" value="{{ old('program_duration', '') }}">
-                    @if($errors->has('program_duration'))
-                        <span class="text-danger">{{ $errors->first('program_duration') }}</span>
-                    @endif
-                    <span class="help-block">{{ trans('cruds.scholarship.fields.program_duration_helper') }}</span>
-                </div>
-                <div class="form-group">
-                    <label for="budget_up_to_completion">{{ trans('cruds.scholarship.fields.budget_up_to_completion') }}</label>
-                    <input class="form-control {{ $errors->has('budget_up_to_completion') ? 'is-invalid' : '' }}" type="text" name="budget_up_to_completion" id="budget_up_to_completion" value="{{ old('budget_up_to_completion', '') }}">
-                    @if($errors->has('budget_up_to_completion'))
-                        <span class="text-danger">{{ $errors->first('budget_up_to_completion') }}</span>
-                    @endif
-                    <span class="help-block">{{ trans('cruds.scholarship.fields.budget_up_to_completion_helper') }}</span>
-                </div>
-                <div class="form-group">
-                    <label for="year_of_entrance">{{ trans('cruds.scholarship.fields.year_of_entrance') }}</label>
-                    <input class="form-control {{ $errors->has('year_of_entrance') ? 'is-invalid' : '' }}" type="number" name="year_of_entrance" id="year_of_entrance" value="{{ old('year_of_entrance', '') }}" step="1">
-                    @if($errors->has('year_of_entrance'))
-                        <span class="text-danger">{{ $errors->first('year_of_entrance') }}</span>
-                    @endif
-                    <span class="help-block">{{ trans('cruds.scholarship.fields.year_of_entrance_helper') }}</span>
-                </div>
-                <div class="form-group">
-                    <label for="intake">{{ trans('cruds.scholarship.fields.intake') }}</label>
-                    <input class="form-control {{ $errors->has('intake') ? 'is-invalid' : '' }}" type="text" name="intake" id="intake" value="{{ old('intake', '') }}">
-                    @if($errors->has('intake'))
-                        <span class="text-danger">{{ $errors->first('intake') }}</span>
-                    @endif
-                    <span class="help-block">{{ trans('cruds.scholarship.fields.intake_helper') }}</span>
-                </div>
-                <div class="form-group">
-                    <label for="school_contact">{{ trans('cruds.scholarship.fields.school_contact') }}</label>
-                    <input class="form-control {{ $errors->has('school_contact') ? 'is-invalid' : '' }}" type="text" name="school_contact" id="school_contact" value="{{ old('school_contact', '') }}">
-                    @if($errors->has('school_contact'))
-                        <span class="text-danger">{{ $errors->first('school_contact') }}</span>
-                    @endif
-                    <span class="help-block">{{ trans('cruds.scholarship.fields.school_contact_helper') }}</span>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-danger" type="submit">

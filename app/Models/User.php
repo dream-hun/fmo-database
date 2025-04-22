@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Carbon\Carbon;
@@ -9,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 
-class User extends Authenticatable
+final class User extends Authenticatable
 {
     use Notifiable;
 
@@ -37,11 +39,6 @@ class User extends Authenticatable
         'updated_at',
         'deleted_at',
     ];
-
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
 
     public function getIsAdminAttribute()
     {
@@ -77,6 +74,11 @@ class User extends Authenticatable
 
     public function avatar()
     {
-        return 'https://www.gravatar.com/avatar/'.md5(strtolower(trim($this->email))).'?s=200&d=mm';
+        return 'https://www.gravatar.com/avatar/'.md5(mb_strtolower(mb_trim($this->email))).'?s=200&d=mm';
+    }
+
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Vsla extends Model
+final class Vsla extends Model
 {
-    public $table = 'vslas';
-
     public const GENDER_SELECT = [
         'M' => 'Male',
         'F' => 'Female',
     ];
+
+    public $table = 'vslas';
 
     protected $dates = [
         'created_at',
@@ -35,13 +37,13 @@ class Vsla extends Model
 
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
-
     public function project()
     {
         return $this->belongsTo(Project::class, 'project_id');
+    }
+
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

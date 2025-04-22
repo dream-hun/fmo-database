@@ -1,22 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+final class Project extends Model
 {
+    public const STATUS_SELECT = [
+        '0' => 'Closed',
+        '1' => 'In Progress',
+    ];
+
     public $table = 'projects';
 
     protected $dates = [
         'created_at',
         'updated_at',
-    ];
-
-    public const STATUS_SELECT = [
-        '0' => 'Closed',
-        '1' => 'In Progress',
     ];
 
     protected $fillable = [

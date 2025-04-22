@@ -1,0 +1,176 @@
+No,Surname ,First name ,Gender,Age(months),HC,Sector ,Cell,Village ,father name ,Mother name ,Home tel,package reception date ,Entry MUAC,Current MUAC,current  nutrition color code 
+1,Mutuyimana,Josiane,M,,HC Nyarugenge,Nyarugenge,Gihinga,,Mutuyeyezu Joseph,Mukakarangwa Christine,,28/01/2023,12,13,Green
+2,Mpano,Jackson,F,,HC Nyarugenge,Nyarugenge,Gihinga,,Ndayisenga Athanase,Uwimana Fortune,,28/01/2023,13,13,Green
+3,Niyonsaba ,Diane,M,,HC Nyarugenge,Nyarugenge,Gihinga,,Havugimana Innocent,Nirere Marie,,28/01/2023,11,13,Green
+4,Niyigena ,Gerardine,F,,HC Nyarugenge,Nyarugenge,Murambi,,Hakizimana Charles,Musabyimana Jacqueline,,28/01/2023,12.5,13.5,Green
+5,Mutuyimana,Josiane,F,,HC Nyarugenge,Nyarugenge,Gihinga,,Mutuyeyezu Joseph,Mukakarangwa Christine,,28/01/2023,12,13,Green
+6,Uwineza,Fiona,F,,Hc Rilima,Rilima,Kabeza,,Nyiranshimiyimana Varelia,Habineza Jean Bosco,,28/01/2023,12,12,Yellow
+7,Uwihanganye,Jean Bosco,M,,Hc Rilima,Rilima,Nyabagendwa,,Ntawiheba Jean Bosco,Mukandayisenga Donatha,,28/01/2023,12,12,Yellow
+8,Uwikunda,Alice,F,,Hc Rilima,Rilima,Kabeza,,Habimana  Zakayo,Kampire,,28/01/2023,13,12,Yellow
+9,Urinzwenimana ,Frugence,M,,Hc Rilima,Rilima,Nyabagendwa,,Nsengiyumva Bertin,Nzayituriki Dorosera,,28/01/2023,14,13.5,Green
+10,Uwimpuhwe,Cassy,M,,Hc Rilima,Rilima,Kabeza,,Nsengiyumva  Portase,Nyiranzeyimana Jeanette,,28/01/2023,12,13,Green
+11,Uwingeneye ,Kellia,F,,Hc Rilima,Rilima,Kabeza,,Nzabamfa John,Nyirabagenzi Jacqueline,,02/04/2023,12.5,12.5,Yellow
+12,Kamikazi ,Noela,F,,Hc Rilima,Rilima,Kimaranzara,,Ndikubwimana Frolent,Nikuze Valantine,,02/04/2023,12,14.5,Green
+13,Uwingeneye ,Kellia,F,,Hc Rilima,Rilima,Kabeza,,Nzabanita John,Nyirabagenzi Jacqueline,,02/04/2023,12,13.5,Green
+14,Uwase ,Kevine,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,0728273814,02/04/2023,12,13,Green
+15,Uwineza,Solange,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,0728273814,02/04/2023,12,13,Green
+16,Uwiduhaye,Ishimwe Diane,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,0728273814,02/04/2023,12,14,Green
+17,Uwimpuhwe,Cassy,M,,Hc Rilima,Rilima,Kabeza,,Nsengiyumva Protos,Nyiranzeyimana Jeanette,,02/04/2023,13,13,Green
+18,Niyonzima,Emile,M,,Hc Rilima,Rilima,Kimaranzara,,Niyonzima,Maniriho Jeanine,,02/04/2023,12,12.5,Yellow
+19,Uwineza,Fiona,F,,Hc Rilima,Rilima,Kabeza,,Hacineza Jean Bosco,Nyiranshimiyimana,,02/04/2023,12,12,Yellow
+20,Uwihanganye,Jean Bosco,M,,Hc Rilima,Rilima,nyabagendwa,,Ntawiheba Jean Bosco,Mukandayisenga Donatha,,02/04/2023,12,12,Yellow
+21,Uwase ,Kevine,F,,Hc Rilima,Rilima,Special,,Ntirivamunda Fabien,Mukanyangezi Jacqueline,,16/03/2023,12,13,Green
+22,Uwineza,Solange,F,,Hc Rilima,Rilima,Special,,Ntirivamunda Fabien,Mukanyangezi Jacqueline,,16/03/2023,12,13,Green
+23,Uwiduhaye,Ishimwe Diane,F,,Hc Rilima,Rilima,Special,,Ntirivamunda Fabien,Mukanyangezi Jacqueline,,16/03/2023,12,13.5,Green
+24,Uwineza,Fiona,F,,Hc Rilima,Rilima,Special,,Hacineza Jean Bosco,Nyiranshimiyimana,,16/03/2023,12,14,Green
+25,Uwimpuhwe,Cassy,F,,Hc Rilima,Rilima,Special,,Nsengiyumva Protos,,,16/03/2023,12,13,Green
+26,Uwihanganye,Jean Bosco,M,,Hc Rilima,Rilima,Nyabagendwa,,,Mukandayisenga Donatha,,27/09/2023,12.5,13,Green
+27,Niyomurengezi,Aimee,M,,Hc Rilima,Rilima,,,Bamporineza,,,27/09/2023,12,13,Green
+28,Nkunzingabo,Erineste,M,,Hc Rilima,Rilima,Kabeza,BIRARO,HABUMUGISHA FABIEN,Mukakimenyi Flodonatha,,27/09/2023,11.5,12.5,Yellow
+29,Cyomoro,Aimee Androw,M,,Hc Rilima,Rilima,Nyabagendwa,,,Niyonsaba Aline,,27/09/2023,10,10.5,Red
+30,Irakoze,Kevine,F,,Hc Rilima,Rilima,Nyabagendwa,,,Uwimana Jeanine,,27/09/2023,11,11.5,Red
+31,Manirafasha,Davide,M,,Hc Rilima,Rilima,Nyabagendwa,,,Yamfashije Donatha,,27/09/2023,12,13,Green
+32,Igihozo ,Adia Jolly,F,,Hc Rilima,Rilima,,,,Nyirahoranimana Dative,,27/09/2023,12,13,Green
+33,Kamikazi ,Pria,F,,Hc Rilima,Rilima,Kabeza,,,Uwase Florence,,27/09/2023,12.5,13,Green
+34,Kwizera ,Brayan,M,,Hc Rilima,Rilima,Kabeza,,,Nzayisenga Gaudance,,27/09/2023,13,14,Green
+35,Irakoze,Nathacha,F,,Hc Shyara,Shyara,Kabagugu,,Emmanuel,Dusabimana Solange,,29/11/2023,11,0,Red
+36,Twizerimana,Bonheur,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,29/11/2023,12,12,Yellow
+37,Tuyisingize,Jean ,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,29/11/2023,12.5,12,Yellow
+38,Masengesho ,Aimee Chalome,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,29/11/2023,12,12,Yellow
+39,Tuza ,Fred,M,,HC Nyarugenge,Nyarugenge,Gihinga,,Harerimana Gaspard,Mukaremera M.Gorette,,29/11/2023,12,12,Yellow
+40,Kamikazi ,Chanella,F,,HC Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuvuga Delphine,,29/11/2023,12,12,Yellow
+41,Dushime ,Jean de Dieu,F,,HC Nyarugenge,Nyarugenge,Kabuye,,Havugimana Emmanuel,Vuguziga Dorcella,,29/11/2023,13,13,Green
+42,Niyomugabo, Tangishaka Augstave,F,,HC Nyarugenge,Nyarugenge,Murambi,,Kayonga Thariscisse,Musabyimana Jamilla,,29/11/2023,12.5,12.5,Yellow
+43,Katete,Hasiane,F,,HC Nyarugenge,Nyarugenge,Gihinga,,,Uwimpaye Peragie,,29/11/2023,10,10.5,Red
+44,Igitangaza ,Hirwa Kenedy,F,,Hc Rilima,Rilima,Kabeza,,,Iradukunda Diane,,04/12/2023,12,12,Yellow
+45,Ishimwe  ,Aimee Jesca,F,,Hc Rilima,Rilima,Kimaranzara,,Namahame Donacien,Nyabenda Evangeline,,04/12/2023,13,13,Green
+46,Ishimwe  ,Honoline,F,,Hc Rilima,Rilima,Nyabagendwa,,Niringiyimana Viatory,Nikobahoze Daphorose,,04/12/2023,7,7,Red
+47,Manirafasha,David,M,,Hc Rilima,Rilima,Nyabagendwa,KAMABUYE,Siborurema Celestin,Yamfashije Donatha,,04/12/2023,6,10,Red
+48,Uwihanganye,Jean Bosco,M,,Hc Rilima,Rilima,Nyabagendwa,,Ntawiheba Jean Bosco,Mukandayisenga Donatha,,04/12/2023,11,13,Green
+49,Irakoze,Kevine,F,,Hc Rilima,Rilima,Nyabagendwa,,Bapfakurera Vianney,Uwimana Jeanine,,04/12/2023,10.5,11.6,Yellow
+50,Nyinzingabo,Manzi Elineste,M,,Hc Rilima,Rilima,Kabeza,,Habumugisha Fabien,Mukakimenyi Flodonatha,,04/12/2023,11,12,Yellow
+51,Cyomoro,Aimee Androw,M,,Hc Rilima,Rilima,Nyabagendwa,,Semana Thadee,Niyonsaba Aliane,,04/12/2023,10,10,Red
+52,Igihozo ,Adia Jolly,M,,Hc Rilima,Rilima,Nyabagendwa,,,Nyirahoranimana Dative,,04/12/2023,12,13,Green
+53,Gikundiro,Grancien,M,,Hc Musenyi,Musenyi,Musenyi,,Niringiyimana Damier,Nikuze Sifolla,,11/12/2023,11,12,Yellow
+54,Iganze,Jovan,M,,Hc Musenyi,Musenyi,Rulindo,,Rugerero Emmanuel,Mukamana Claudine,,11/12/2023,12,12.6,Green
+55,Mukiza ,Yonas,M,,Hc Musenyi,Musenyi,Musenyi,,Gahakwa John,Uwamurera Jeanette,,11/12/2023,9,12,Yellow
+56,Maniratuje,Divine,F,,Hc Musenyi,Musenyi,Nyagasagara,,Hakizimana Zakalie,Mukeshimana Eliana,,11/12/2023,11,12,Yellow
+57,Irasubiza ,Rebecca,F,,Hc Musenyi,Musenyi,Rulindo,,Ntibihezwa Damascen,Nyirabariyanga Derina,,11/12/2023,12,17,Green
+58,Iradukunda,Jean Baptiste,M,,Hc Musenyi,Musenyi,Gicaca,,Hitimana Celestin,Uwimana Gabdiose,,11/12/2023,9,9,Red
+59,Munezero,Larissa,F,,Hc Musenyi,Musenyi,Musenyi,,Bizimana Charles,Mukabaranga Jackeline,,11/12/2023,11,11,Red
+60,Dushime ,Jean de Dieu,M,,Hc Nyarugenge,Nyarugenge,Kabuye,,Havugimana Emmanuel,Vuguziga Dorcella,,25/01/2024,13,13,Green
+61,Irakoze,Pacifique,M,,Hc Nyarugenge,Nyarugenge,Murambi,,Rwanduha Telesphore,Bagwire Peragie,,25/01/2024,11.8,12,Yellow
+62,Kamikazi ,Chanella,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuvuga Delphine,,25/01/2024,13,13.5,Green
+63,Tuyishimire,Firmine,F,,Hc Nyarugenge,Nyarugenge,Murambi,,Uwihanganye Nafuta,Muhawenimana Frodette,,25/01/2024,12.5,13,Green
+64,Niyogisubizo,Brino,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Musafiri Eric,Ahishakiye Elevanie,,,12,12.5,Yellow
+65,Uwase ,Pascaline,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Nsabimana Pascal,Mukarushema Francine,,25/01/2024,12,12,Yellow
+66,Kundwa,Emma Queen,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Nsanzimana Emmanuel,Yibwirebyose Beatrice,,25/01/2024,12,12,Yellow
+67,Ishimwe  ,Kerve,F,,Hc Nyarugenge,Nyarugenge,Muyange,,Karera Stanislus,Nyiratebuka Christine,,25/01/2024,12,14,Green
+68,Dufitimana,Prence,M,,Hc Nyarugenge,Nyarugenge,Murambi,,Niyomugabo Hassan,Muhawenimana Clementine,,25/01/2024,12,14,Green
+69,Murekatete,Hoziane,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Habimana Thadee,Mukasano Anastasie,,25/01/2024,11,12,Yellow
+70,Twizerimana,Drocie Bielve,F,,Hc Nyarugenge,Nyarugenge,Murambi,,Twizerimana Leonard,Wambabariye Gorette,,25/01/2024,12.8,13,Green
+71,Uwamahoro,Queen,F,,Hc Nyarugenge,Nyarugenge,Kabuye,,Bizimana Vianney,Mukasibo Valeria,,25/01/2024,11.5,12,Yellow
+72,Izibyose,Nell Brez,M,,Hc Nyarugenge,Nyarugenge,Kabuye,,Nsengimana Innocent,Mukeshimana Monique,,25/01/2024,12,12,Yellow
+73,Nshimyimukiza,Kerve,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Nahayo Andre,Hagenimana Josephine,,25/01/2024,12,12.5,Yellow
+74,Tuza ,Fred,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Harerimana Gaspard,Mukaremera M.Gorette,,25/01/2024,13.5,13,Green
+75,Niyibikora,Benife,F,,Hc Nyarugenge,Nyarugenge,Rugando,,Birori Pascal,Nyiramasuka Damarce,,25/01/2024,13.5,15,Green
+76,Niyokwizerwa,Angel,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Ntawiyanga Bizimana,Muhawenimana Vestine,,25/01/2024,12.4,12.4,Yellow
+77,Iradukunda,David,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Mubirigi John,Niyonsaba Vestine,,25/01/2024,14.2,13,Green
+78,Niyomungeri,Kerve,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Ndayisenga Athanase,Uwimana Fortune,,25/01/2024,12.5,12,Yellow
+79,Mpano,Jackson,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Ndayisenga Athanase,Uwimana Fortune,,25/01/2024,14,14,Green
+80,Muhawenimana,Diane,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Byimana Celestin,Mukantwari Clementine,,25/01/2024,11.3,13,Green
+81,Mugisha,Gift peace,F,,Hc Nyarugenge,Nyarugenge,Kabuye,,Hakizimana Emille,Tuyishime Enatha,,25/01/2024,13,13,Green
+82,Sindikubwabo,Emmanuel,M,,Hc Nyarugenge,Nyarugenge,Rugando,,Musabyimana Charles,Nyiransengimana Gaudance,,25/01/2024,12.5,12.5,Yellow
+83,Uwineza ,Sofia,F,,Hc Nyarugenge,Nyarugenge,Kabuye,,Bigirimana Daniel,Nzayisenga Jeanne,,25/01/2024,12,12,Yellow
+84,Iravuga,Losine,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Habineza Etienne,Kampire Emmacule,,25/01/2024,13,13,Green
+85,Muhawenimana,Losine,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Bigenimana Cypinane,Mukanzasaba Alexie,,25/01/2024,12.8,12,Yellow
+86,Tumukunde ,Liliane,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Niyomugabo Hodale,Mukamiza Claudine,,25/01/2024,12,12,Yellow
+87,Ntwari,Irakoze,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Harindintwari Joseph,Ayinkamiye Efulasie,,25/01/2024,12,12,Yellow
+88,Igiraneza,Kevine,F,,Hc Musenyi,Musenyi,Cyanika,,Uzatsinda Emmanuel,Nirere Antoinette,,25/01/2024,12,13,Green
+89,Mukiza ,Janas,M,,Hc Musenyi,Musenyi,Rugeyo,,Gahakwa Jean,Uwamurera Jeanette,,25/01/2024,12,12.1,Yellow
+90,Irakiza,Mugisha Vincent,M,,Hc Musenyi,Musenyi,Rugando,,Manirakiza Vincent,Kwitanze Christine,,25/01/2024,12,12,Yellow
+91,Umukundwa,Jolie,F,,Hc Musenyi,Musenyi,Rushubi,,Mugisha Frank,Nyirabakenineza,,25/01/2024,10,12,Yellow
+92,Uwase ,Kamikazi,F,,Hc Musenyi,Musenyi,Rulindo,,Nsengiyumva Justin,Uwimana Penina,,25/01/2024,11.5,12.1,Yellow
+93,Maniratuje,Zakalie,F,,Hc Musenyi,Musenyi,Nyagasagara,,Hakizimana Zakalie,Mukeshimana Eliane,,25/01/2024,11,12,Yellow
+94,Isingizwe ,Denyse,F,,Hc Musenyi,Musenyi,Bishinge,,Gakwaya Faustin,Nyiraminani Sandrine,,25/01/2024,12,14,Green
+95,Gikundiro,Grancien,M,,Hc Musenyi,Musenyi,Rugando,,Niringiyimana,Ntamahungiro Debora,,25/01/2024,12,12.5,Yellow
+96,Ntirushwa,Mabako Valens,M,,Hc Musenyi,Musenyi,Musenyi,,Nshimyimana Jean Paul,Uwamariya Varelia,,25/01/2024,12,12,Yellow
+97,Uwase ,Umuhoza Kevine,F,,Hc Musenyi,Musenyi,Musenyi,,Nsaguye Samusoni,Niyonsenga Esperance,,25/01/2024,12,12.4,Yellow
+98,Munezero,Raissa,F,,Hc Musenyi,Musenyi,Musenyi,,Bizimana charles,Mukabaranga Jackeline,,25/01/2024,11.8,12,Yellow
+99,Mutimutije, Eliminate,F,,Hc Musenyi,Musenyi,Rurindo,,Tuyisenge Francois,Ikizanye,,25/01/2024,12,14,Green
+100,Ishimwe  ,Laurent,M,,Hc Musenyi,Musenyi,Bisenga,,Ntabwo Amusi,Ishimwe Sandra,,25/01/2024,11,12,Yellow
+101,Iradukunda ,Jean Baptiste,M,,Hc Musenyi,Musenyi,Gicaca,,Bizimana Celestin,Uwimana Gabdiose,,25/01/2024,12,13,Green
+102,Ineza,Teta Ellor,F,,Hc Musenyi,Musenyi,Cyeru,,Nyirantezimana Donatha,,,25/01/2024,9,10,Red
+103,Niyigena ,Pascaline,F,,Hc Musenyi,Musenyi,Rugando,,Dushimirimana Emmanuel,Ndayisenga Immaculee,,25/01/2024,12,12.5,Yellow
+104,Ineza,Cheilla,F,,Hc Musenyi,Musenyi,Rwankeri,,Ukurikiyeyezu  Noeli,Karara Marie Jeanne,,25/01/2024,12,13,Green
+105,Hakizimana,Valentine,F,,Hc Musenyi,Musenyi,Nyamuri,,Harerimana ,Mukakarangwa,,25/01/2024,9,10,Red
+106,Iganze ,Jehovanis,F,,Hc Musenyi,Musenyi,Runyoza,,Rugerero Emmanuel,Mukamana ,,25/01/2024,12,12,Yellow
+107,Irakoze,Manzi Ivan,M,,Hc Musenyi,Musenyi,Nyagihunika,,Ndagijimana Desire,Uwajeneza Sandrine,,25/01/2024,9,12,Yellow
+108,Uwayisenga,Grace,F,,Hc Musenyi,Musenyi,Nyagasagara,,Maniragaba Donacien,Uwimana Claudine,,25/01/2024,12,12,Yellow
+109,Iraguha,Pierre,M,,Hc Musenyi,Musenyi,Cyanika,,Kabera Pierre,Mukandanga Angelique,,25/01/2024,12,13,Green
+110,Ishimwe  ,Kellia,F,,Hc Musenyi,Musenyi,Rugando,,Renzaho,Nyirandikubwimana,,25/01/2024,12,12,Yellow
+111,Ninziza,Feza Chanceline,F,,Hc Musenyi,Musenyi,Nyagasagara,,Niyodushima,Mukanshuti Julienne,,25/01/2024,12,12,Yellow
+112,Akimana,Jeanne,F,,Hc Musenyi,Musenyi,Rulindo,,Ngaruyingoma Jonas,Iradukunda ,,25/01/2024,11,12,Yellow
+113,Urikumwenatwe,Edisson,M,,Hc Musenyi,Musenyi,Rurindo,,,,,,,,
+114,Irakoze,Nathacha,F,,Hc Shyara,Shyara,Rutare,,,Dusabimana Solange,,25/01/2024,11,11,Yellow
+115,Uwineza,Aimee Alice,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye,,25/01/2024,12,12.5,Yellow
+116,TWizerimana,Bonheur,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,25/01/2024,12,13,Green
+117,Masengesho , Aimee Shalome,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye,,25/01/2024,12,12.5,Yellow
+118,Tuyisingize,Jean,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,25/01/2024,12,13,Green
+119,Uwase ,Pascaline,F,,H c Nyarugenge,Nyarugenge,Muyange,,Nsabimana Pascal,Mukarushema Francine,,11/03/2024,,13,Green
+120,Muhawenimana,Diane,F,,H c Nyarugenge,Nyarugenge,Muyange,,Byimana Celestin,Mukantwari Clementine,,11/03/2024,,14,Green
+121,Kamikazi ,Chanella,F,,H c Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuguga Deliphine,,11/03/2024,13,14,Green
+122,Irakoze,Pacific,M,,H c Nyarugenge,Nyarugenge,Murambi,,Rwandoha Telesphore,Tuyishimire Charlotte,,11/03/2024,11,13,Green
+123,Muhawenimana,Losine,F,,H c Nyarugenge,Nyarugenge,Gihinga,,Bigenimana Cyprien,Mukanzasaba Alexia,,11/03/2024,11,12.5,Yellow
+124,Mpano,Jackson,M,,H c Nyarugenge,Nyarugenge,Gihinga,,Ndayisenga Athanase,Uwimana Fortune,,11/03/2024,12,12,Yellow
+125,Nshimyimukiza,Kerve,M,,H c Nyarugenge,Nyarugenge,Gihinga,,Nahayo Andree,Hagenimana Josephine,,11/03/2024,12,13,Green
+126,Mureketete,Hoziane,F,,H c Nyarugenge,Nyarugenge,Gihinga,,,Mukansanga Anonciatta,,11/03/2024,10,11,Red
+127,Sindikubwabo,Emmanuel,M,,H c Nyarugenge,Nyarugenge,Kamahirwe Rugando,,Musabyimana Charles,Nyiransengimana Gaudance,,11/03/2024,,13,Green
+128,Ntwarinduwe,Kayonga Roger,M,,H c Nyarugenge,Nyarugenge,Rubona Ngenda,,Harindintwari Joseph,Ayinkamiye Francine,,11/03/2024,,12.5,Yellow
+129,Kundwa,Aimee Queen,F,,H c Nyarugenge,Nyarugenge,MuyangeNgenda,,Nsanzimana Emmanuel,Yibwirebyose Breatrice,,11/03/2024,,12.5,Yellow
+130,Ishimwe  ,Kevine,F,,H c Nyarugenge,Nyarugenge,MuyangeNgenda,,Karera Stanslas,Nyiratebuka Christine,,11/03/2024,,14,Green
+131,Izibyose,Nelly,F,,H c Nyarugenge,Nyarugenge,NyakabingoKabuye,,Nsengimana Innocent,Mukeshimana Monique,,11/03/2024,,12.5,Yellow
+132,Mugisha,Peace,F,,H c Nyarugenge,Nyarugenge,Kabuye,,Hakizimana Emille,Tuyishime Lenatha,,11/03/2024,12,13,Green
+133,Gikundiro,Gratien,M,18 Months,Hc Musenyi,Musenyi,Rulindo,,Niringiyimana Daniel,Ntamahungiro Deborah,,11/03/2024,12.5,12.5,Yellow
+134,Uwase ,Kamikazi,F,13,Hc Musenyi,Musenyi,Rulindo,,Nsengiyumva Justin,Uwimana Penina,,11/03/2024,11.5,11.5,Red
+135,Irakoze,Manzi Ivan,M,,Hc Musenyi,Musenyi,Nyakajuri,,Ndagijimana Desire,Uwajeneza Sandrine,,11/03/2024,12,12,Yellow
+136,Umukundwa,Jolie,F,,Hc Musenyi,Musenyi,Rushubi,,Mugisha Frank,Nyirabakinineza Priscilla,,11/03/2024,12,12,Yellow
+137,Ishimwe  ,Kelia,F,3yrs,Hc Musenyi,Musenyi,Musenyi,,Renzaho Michel,Nyirandikubwimana Yvonne,,11/03/2024,12,12,Yellow
+138,Isingizwe ,Denyse,F,3yrs,Hc Musenyi,Musenyi,Musenyi,,Gakwaya,Nyiraminani ,,11/03/2024,11.5,11.5,Red
+139,Ishimwe  ,Laurent,M,1yrs,Hc Musenyi,Musenyi,Musenyi,,,Ishimwe Sandra,,11/03/2024,12.5,12.5,Yellow
+140,Mutimutije,Eliminatha,F,2 yrs,Hc Musenyi,Musenyi,Kogunga,,Ikizanye,Tuyisenge Froncoise,,11/03/2024,13,13,Green
+141,Uzayisenga,Grace,F,12 Months,Hc Musenyi,Musenyi,Musenyi,,Maniragaba,Uwimana Cloudine,,11/03/2024,12,12,Yellow
+142,Uwineza,Nizire Kellia,F,12 Months,Hc Musenyi,Musenyi,Cyarika,,Uzatsinda Emmanuel,Nirere Antoinette,,11/03/2024,13,13,Green
+143,Berinayo,Patrick,M,12 Months,Hc Musenyi,Musenyi,Gitori,,Shumbusha Emmanuel,Mukasine Judith,,11/03/2024,12,12,Yellow
+144,Niyodusenga ,Olivier,M,1 yrs,Hc Musenyi,Musenyi,Musenyi,,,Ikizanye Florida,,11/03/2024,13,13,Green
+145,Niyogisubizo,Regis,M,3 yrs,Hc Musenyi,Musenyi,Rulindo,,Habinshuti nsengiyumva,Akimaniduhaye Vestine,,11/03/2024,12,12,Yellow
+146,Ineza,Keziya,F,1 yrs,Hc Musenyi,Musenyi,Gicaca,,Gatera,Mukashyaka,,11/03/2024,12,12,Yellow
+147,Uwimanikunda ,Hornoline,F,1yrs,Hc Musenyi,Musenyi,Rulindo,,Bariyanga,Dusabumuremyi,,11/03/2024,12,12,Yellow
+148,Nziranziza,Chonceline,F,1yrs,Hc Musenyi,Musenyi,Musenyi,,Niyodushima,Mukanshuti Julienne,,11/03/2024,11.5,11.5,Red
+149,Imaniratuje,Divine,F,15 Months,Hc Musenyi,Musenyi,Nyagasagara,,Hakizimana Zakalie,Mukeshimana Eliana,,11/03/2024,14,14,Green
+150,Niyigena ,Pascaline,F,1 yrs,Hc Musenyi,Musenyi,Gicaca,,Dushimimana,Ndayisenga Emmaculee,,11/03/2024,11.5,11.5,Red
+151,Tuyizere ,Joselyne,F,1yrs 5Months,Hc Musenyi,Musenyi,Rulindo,,Hakizimana Emmanuel,Kampire Triphine,,11/03/2024,13.3,13.3,Green
+152,Tuyishimire,Fabien,M,1yrs 2Months,Hc Musenyi,Musenyi,Gicaca,,Nyandwi,Minani Odetta,,11/03/2024,11.5,11.5,Red
+153,Byosenibikora,Breya,F,10Months,Hc Musenyi,Musenyi,Gicaca,,Sibomana,Nyirabikari Denyse,,11/03/2024,12,12,Yellow
+154,Ntirushwamaboko,Valens,M,9 Months,Hc Musenyi,Musenyi,Nunga,,Nshimiyimana Jean Paul,Uwamariya Valerie,,11/03/2024,12,12,Yellow
+155,Hakizimana,Valentin,M,13 Months,Hc Musenyi,Musenyi,Rulindo,,Harerimana Galasie,Mukakarangwa Chantal,,11/03/2024,12.5,12.5,Yellow
+156,Giraneza Nirere,Kevine,F,12Months,Hc Musenyi,Musenyi,Gicca,,Uzatsinda Emmanuel,Nirere Antoinette,,11/03/2024,12,12,Yellow
+157,Ineza Teta ,Ella,F,1yrs,Hc Musenyi,Musenyi,Musenyi,,Tuyishimire Eric,Nyiranteziryayo Donatha,,11/03/2024,12.5,12.5,Yellow
+158,Irikumwenatwe,Komezusenge Edimo,M,15 Months,Hc Musenyi,Musenyi,Rulindo,,Barura Floriyane,Mukamusoni Console,,11/03/2024,12,12,Yellow
+159,Irasubiza ,Rebecca,F,72 Months,Hc Musenyi,Musenyi,Rulindo,,Ntibihezwa Damascen,Nyirabariyanga Penina,,11/03/2024,17,17,Green
+160,Munezero ,Raissa,F,15Months,Hc Musenyi,Musenyi,Nyagasagara,,Ntezimana Charles,Mukabaranga Jacqueline,,11/03/2024,12,12,Yellow
+161,Mukiza ,Jonas,M,1yrs,Hc Musenyi,Musenyi,Musenyi,,Gahakwa John,Uwamurera Jeanette,,11/03/2024,11.5,11.5,Yellow
+162,Ishimwe  ,Belyse,F,7Months,Hc Musenyi,Musenyi,Musenyi,,Gakwaya,Nyiraminani Sandrine,,11/03/2024,11,11,Red
+163,Isano king Mucyo,Parfait,M,14 Months,Hc Rilima,Rilima,Kimaranzara,,Nzabonimana Theoneste,Mukashyaka Patricia,,11/03/2024,12,12,Yellow
+164,Mutoniwase,Thierry Stella,F,28 Months,Hc Rilima,Rilima,Nyabagendwa,MUBUGA,Irakiza Thierry,Muhawenayo Chanseline,0791734682,11/03/2024,12,12,Yellow
+165,Ituze Queen,Parfait,F,14 Months,Hc Rilima,Rilima,Kimaranzara,KIMARANZARA,Nzabanimana Theoneste,Mukashyaka Patricia,0789423104,11/03/2024,12,12,Yellow
+166,Turikumwenayo ,Emmanuel,M,23 Months,Hc Rilima,Rilima,Nyabagendwa,MUKOMA,Tugirimana Alphonse,Mukamazimpaka Alice,0780152447,11/03/2024,12.5,12.5,Yellow
+167,Abijuru,Korimeri,F,10Months,Hc Rilima,Rilima,Nyabagendwa,,Hagenimana Thacien,Nyiranzabahimana ,,11/03/2024,12,12.5,Yellow
+168,Uwihanaganye,Jean Bosco,M,33Months,Hc Rilima,Rilima,Nyabagendwa,NYAMIZI,Ntawiheba Jean Bosco,Mukandayisenga,0783580047,11/03/2024,12.5,12.5,Yellow
+169,Mucyo,Frank,M,18Months,Hc Rilima,Rilima,Nyabagendwa,Mukoma,Uwamahirwe Partas,Mukeshimana Diane,0783632520,11/03/2024,12.5,12.5,Yellow
+170,Inema Nshuti ,Shema,M,17Months,Hc Rilima,Rilima,Kimaranzara,,Rukundo Pasifique,Ntakirutimana Solange,,11/03/2024,12,12,Yellow
+171,Masengesho ,Aimee Shalom,F,15 Months,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,11/03/2024,12.5,12.5,Yellow
+172,Irakoze ,Nathacha,F,19 Months,Hc Shyara,Shyara,Kabagugu,,Dusabimana Claude,,,11/03/2024,12.2,12.5,Yellow
+173,Tuyisingize,Jean,M,19 Months,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,11/03/2024,13,13,Green
+174,Twizerimana,Bonheur,M,19 Months,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,11/03/2024,13,13,Green
+175,Uwineza,Aimee Alice,F,15 Months,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,11/03/2024,12.5,12.5,Yellow

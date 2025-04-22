@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyScholarshipRequest;
-use App\Http\Requests\StoreScholarshipRequest;
-use App\Http\Requests\UpdateScholarshipRequest;
+use App\Http\Requests\Admin\StoreScholarshipRequest;
+use App\Http\Requests\Admin\UpdateScholarshipRequest;
+use App\Models\Project;
 use App\Models\Scholarship;
-use Gate;
+use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
-class ScholarshipController extends Controller
+final class ScholarshipController extends Controller
 {
     public function index()
     {
@@ -25,7 +27,9 @@ class ScholarshipController extends Controller
     {
         abort_if(Gate::denies('scholarship_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.scholarships.create');
+        $projects = Project::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        return view('admin.scholarships.create', compact('projects'));
     }
 
     public function store(StoreScholarshipRequest $request)
@@ -39,9 +43,11 @@ class ScholarshipController extends Controller
     {
         abort_if(Gate::denies('scholarship_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        $projects = Project::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
         $scholarship->load('project');
 
-        return view('admin.scholarships.edit', compact('scholarship'));
+        return view('admin.scholarships.edit', compact('projects', 'scholarship'));
     }
 
     public function update(UpdateScholarshipRequest $request, Scholarship $scholarship)
@@ -51,15 +57,6 @@ class ScholarshipController extends Controller
         return redirect()->route('admin.scholarships.index');
     }
 
-    public function show(Scholarship $scholarship)
-    {
-        abort_if(Gate::denies('scholarship_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        $scholarship->load('project');
-
-        return view('admin.scholarships.show', compact('scholarship'));
-    }
-
     public function destroy(Scholarship $scholarship)
     {
         abort_if(Gate::denies('scholarship_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -67,16 +64,5 @@ class ScholarshipController extends Controller
         $scholarship->delete();
 
         return back();
-    }
-
-    public function massDestroy(MassDestroyScholarshipRequest $request)
-    {
-        $scholarships = Scholarship::find(request('ids'));
-
-        foreach ($scholarships as $scholarship) {
-            $scholarship->delete();
-        }
-
-        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

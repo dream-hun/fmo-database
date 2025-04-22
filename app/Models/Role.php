@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+final class Role extends Model
 {
     public $table = 'roles';
 
@@ -22,13 +24,13 @@ class Role extends Model
 
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
-
     public function permissions()
     {
         return $this->belongsToMany(Permission::class);
+    }
+
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

@@ -1,19 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Girinka extends Model
+final class Girinka extends Model
 {
-    public $table = 'girinkas';
-
     public const GENDER_SELECT = [
         'M' => 'Male',
         'F' => 'Female',
     ];
+
+    public $table = 'girinkas';
 
     protected $dates = [
         'distribution_date',
@@ -39,11 +41,6 @@ class Girinka extends Model
         'deleted_at',
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
-
     public function getDistributionDateAttribute($value)
     {
         return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
@@ -57,5 +54,10 @@ class Girinka extends Model
     public function project()
     {
         return $this->belongsTo(Project::class, 'project_id');
+    }
+
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

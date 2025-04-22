@@ -1,14 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Project;
 use App\Models\Vsla;
+use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
-class VslaSeeder extends Seeder
+final class VslaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -98,7 +101,7 @@ class VslaSeeder extends Seeder
                     echo "Progress: {$currentPercent}% ({$count} records imported)\n";
                     $lastProgressPercent = $currentPercent;
                 }
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 $errorCount++;
                 // Log error but don't show in console to keep output clean
                 $rowNum = $count + $errorCount;
@@ -153,7 +156,7 @@ class VslaSeeder extends Seeder
         }
 
         // Remove quotes, asterisks and leading/trailing whitespace
-        return trim(str_replace(["'", '*'], '', $idNumber));
+        return mb_trim(str_replace(["'", '*'], '', $idNumber));
     }
 
     /**
@@ -180,12 +183,13 @@ class VslaSeeder extends Seeder
             return null;
         }
 
-        $gender = strtoupper(trim($gender));
+        $gender = mb_strtoupper(mb_trim($gender));
 
         // Handle variations of gender values
         if (in_array($gender, ['MALE', 'M'])) {
             return 'M';
-        } elseif (in_array($gender, ['FEMALE', 'F'])) {
+        }
+        if (in_array($gender, ['FEMALE', 'F'])) {
             return 'F';
         }
 

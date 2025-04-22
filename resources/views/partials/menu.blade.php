@@ -37,7 +37,7 @@
                 </li>
                 @can('childprotection_access')
                     <li
-                        class="nav-item {{ request()->is("admin/malnutritions*") ? "menu-open" : "" }}">
+                        class="nav-item {{ request()->is("admin/malnutritions*") ? "menu-open" : "" }} {{ request()->is("admin/school-feedings*") ? "menu-open" : "" }}">
                         <a href="#"
                             class="nav-link {{ request()->is('admin/malnutritions*') ? 'active' : '' }}">
                             <i class="bi bi-people-fill"></i>
@@ -48,7 +48,7 @@
                         </a>
 
                         <ul class="nav nav-treeview" style="{{ request()->is('admin/malnutritions*') ? 'display: block;' : 'display: none;' }}">
-                            @can('permission_access')
+                            @can('malnutrition_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.malnutritions.index') }}"
                                         class="nav-link {{ request()->is('admin/malnutritions*') ? 'active' : '' }}">
@@ -57,14 +57,23 @@
                                     </a>
                                 </li>
                             @endcan
+                            @can('school_feeding_access')
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.school-feedings.index') }}"
+                                           class="nav-link {{ request()->is('admin/school-feedings*') ? 'active' : '' }}">
+                                            <i class="bi bi-person-plus-fill"></i>
+                                            <p>{{ trans('cruds.schoolFeeding.title') }}</p>
+                                        </a>
+                                    </li>
+                            @endcan
 
 
                         </ul>
                     </li>
                 @endcan
                 @can('house_hold_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/tanks*") ? "menu-open" : "" }} {{ request()->is("admin/girinkas*") ? "menu-open" : "" }} {{ request()->is("admin/goats*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/tanks*") ? "active" : "" }} {{ request()->is("admin/girinkas*") ? "active" : "" }} {{ request()->is("admin/goats*") ? "active" : "" }}" href="#">
+                    <li class="nav-item has-treeview {{ request()->is("admin/tanks*") ? "menu-open" : "" }} {{ request()->is("admin/girinkas*") ? "menu-open" : "" }} {{ request()->is("admin/goats*") ? "menu-open" : "" }} {{ request()->is("admin/fruits*") ? "menu-open" : "" }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/tanks*") ? "active" : "" }} {{ request()->is("admin/fruits*") ? "active" : "" }} {{ request()->is("admin/girinkas*") ? "active" : "" }} {{ request()->is("admin/goats*") ? "active" : "" }}" href="#">
                             <i class="bi bi-house-fill">
 
                             </i>
@@ -110,6 +119,18 @@
                                     </a>
                                 </li>
                             @endcan
+                            @can('fruits_access')
+                                    <li class="nav-item">
+                                        <a href="{{ route("admin.fruits.index") }}" class="nav-link {{ request()->is("admin/fruits") || request()->is("admin/fruits/*") ? "active" : "" }}">
+                                            <i class="bi bi-tree"></i>
+
+
+                                            <p>
+                                                {{ trans('cruds.fruit.title') }}
+                                            </p>
+                                        </a>
+                                    </li>
+                            @endcan
                         </ul>
                     </li>
                 @endcan
@@ -126,9 +147,9 @@
                             @can('scholarship_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.scholarships.index") }}" class="nav-link {{ request()->is("admin/scholarships") || request()->is("admin/scholarships/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-school">
+                                        <i class="bi bi-building"></i>
 
-                                        </i>
+
                                         <p>
                                             {{ trans('cruds.scholarship.title') }}
                                         </p>

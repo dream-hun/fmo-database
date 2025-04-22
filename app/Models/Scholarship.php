@@ -1,28 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Scholarship extends Model
+final class Scholarship extends Model
 {
-    public $table = 'scholarships';
-
     public const GENDER_SELECT = [
-        'M' => 'Male',
         'F' => 'Female',
+        'M' => 'Male',
     ];
 
-    protected $dates = [
+    public $table = 'scholarships';
+
+    protected array $dates = [
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
     protected $fillable = [
-        'surname',
-        'first_name',
+        'project_id',
+        'names',
         'gender',
         'id_number',
         'district',
@@ -31,26 +34,20 @@ class Scholarship extends Model
         'village',
         'telephone',
         'email',
-        'school_to_attend',
+        'school',
         'study_option',
-        'program_duration',
-        'budget_up_to_completion',
-        'year_of_entrance',
-        'intake',
-        'school_contact',
-        'project_id',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
-
-    public function project()
+    public function project(): BelongsTo
     {
         return $this->belongsTo(Project::class, 'project_id');
+    }
+
+    protected function serializeDate(DateTimeInterface $date): string
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

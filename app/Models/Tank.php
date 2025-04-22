@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Tank extends Model
+final class Tank extends Model
 {
     public $table = 'tanks';
 
@@ -32,11 +34,6 @@ class Tank extends Model
         'deleted_at',
     ];
 
-    protected function serializeDate(DateTimeInterface $date): string
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
-
     public function getDistributionDateAttribute($value): ?string
     {
         return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
@@ -45,5 +42,10 @@ class Tank extends Model
     public function setDistributionDateAttribute($value): void
     {
         $this->attributes['distribution_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+    }
+
+    protected function serializeDate(DateTimeInterface $date): string
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

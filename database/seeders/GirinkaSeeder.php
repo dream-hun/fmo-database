@@ -1,15 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Girinka;
 use App\Models\Project;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
-class GirinkaSeeder extends Seeder
+final class GirinkaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -99,7 +102,7 @@ class GirinkaSeeder extends Seeder
                     echo "Progress: {$currentPercent}% ({$count} records imported)\n";
                     $lastProgressPercent = $currentPercent;
                 }
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 $errorCount++;
                 // Log error but don't show in console to keep output clean
                 $rowNum = $count + $errorCount;
@@ -155,7 +158,7 @@ class GirinkaSeeder extends Seeder
             return null;
         }
 
-        return ltrim($idNumber, '*');
+        return mb_ltrim($idNumber, '*');
     }
 
     /**
@@ -175,7 +178,7 @@ class GirinkaSeeder extends Seeder
 
             // Parse various date formats
             return Carbon::parse($dateString)->format('Y-m-d');
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             Log::warning('Could not parse date: '.$dateString);
 
             return null;

@@ -1,14 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Individual;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
-class IndividualSeeder extends Seeder
+final class IndividualSeeder extends Seeder
 {
     protected $csvFile = 'database/seeders/Data/Individual.csv';
 
@@ -19,74 +22,6 @@ class IndividualSeeder extends Seeder
     protected $errorCount = 0;
 
     protected $totalRows = 0;
-
-    /**
-     * Clean and format the phone number
-     */
-    protected function cleanPhoneNumber(?string $phone): ?string
-    {
-        if (empty($phone)) {
-            return null;
-        }
-
-        // Remove any non-digit characters
-        $phone = preg_replace('/[^0-9]/', '', $phone);
-
-        // If it starts with 25, remove it
-        if (str_starts_with($phone, '25')) {
-            $phone = substr($phone, 2);
-        }
-
-        // If it's not 9 or 10 digits, return null
-        if (! in_array(strlen($phone), [9, 10])) {
-            return null;
-        }
-
-        return $phone;
-    }
-
-    /**
-     * Parse the date from various formats
-     */
-    protected function parseDate(?string $date): ?string
-    {
-        if (empty($date)) {
-            return null;
-        }
-
-        try {
-            return Carbon::parse($date)->format('Y-m-d');
-        } catch (\Exception $e) {
-            return null;
-        }
-    }
-
-    /**
-     * Clean the amount string and convert to integer
-     */
-    protected function cleanAmount(?string $amount): ?int
-    {
-        if (empty($amount)) {
-            return null;
-        }
-
-        // Remove any non-digit characters except decimal point
-        $amount = preg_replace('/[^0-9.]/', '', $amount);
-
-        return (int) $amount;
-    }
-
-    /**
-     * Normalize gender value
-     */
-    protected function normalizeGender(?string $gender): ?string
-    {
-        if (empty($gender)) {
-            return null;
-        }
-
-        return strtoupper($gender) === 'F' ? 'Female' : 'Male';
-    }
 
     /**
      * Run the database seeds.
@@ -129,7 +64,7 @@ class IndividualSeeder extends Seeder
                     'uuid' => Str::uuid(),
                     'project_id' => 1,
                     'name' => $data['Name'] ?? null,
-                    'id_number' => ltrim($data['ID'] ?? '', '*'),
+                    'id_number' => mb_ltrim($data['ID'] ?? '', '*'),
                     'business_name' => $data['Business name'] ?? null,
                     'telephone' => $this->cleanPhoneNumber($data['Telephone']),
                     'guardian' => $data['Guarantor '] ?? null,
@@ -143,7 +78,7 @@ class IndividualSeeder extends Seeder
                 ]);
 
                 $this->successCount++;
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 $this->errorCount++;
                 Log::error('Error importing individual: '.$e->getMessage());
                 Log::error('Row data: '.json_encode($data ?? []));
@@ -163,5 +98,73 @@ class IndividualSeeder extends Seeder
             $this->command->warn('  - Check the Laravel log file for error details.');
         }
         $this->command->newLine();
+    }
+
+    /**
+     * Clean and format the phone number
+     */
+    protected function cleanPhoneNumber(?string $phone): ?string
+    {
+        if (empty($phone)) {
+            return null;
+        }
+
+        // Remove any non-digit characters
+        $phone = preg_replace('/[^0-9]/', '', $phone);
+
+        // If it starts with 25, remove it
+        if (str_starts_with($phone, '25')) {
+            $phone = mb_substr($phone, 2);
+        }
+
+        // If it's not 9 or 10 digits, return null
+        if (! in_array(mb_strlen($phone), [9, 10])) {
+            return null;
+        }
+
+        return $phone;
+    }
+
+    /**
+     * Parse the date from various formats
+     */
+    protected function parseDate(?string $date): ?string
+    {
+        if (empty($date)) {
+            return null;
+        }
+
+        try {
+            return Carbon::parse($date)->format('Y-m-d');
+        } catch (Exception $e) {
+            return null;
+        }
+    }
+
+    /**
+     * Clean the amount string and convert to integer
+     */
+    protected function cleanAmount(?string $amount): ?int
+    {
+        if (empty($amount)) {
+            return null;
+        }
+
+        // Remove any non-digit characters except decimal point
+        $amount = preg_replace('/[^0-9.]/', '', $amount);
+
+        return (int) $amount;
+    }
+
+    /**
+     * Normalize gender value
+     */
+    protected function normalizeGender(?string $gender): ?string
+    {
+        if (empty($gender)) {
+            return null;
+        }
+
+        return mb_strtoupper($gender) === 'F' ? 'Female' : 'Male';
     }
 }
