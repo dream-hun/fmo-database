@@ -38,7 +38,6 @@ final class Scholarship extends Model
         'study_option',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     public function project(): BelongsTo

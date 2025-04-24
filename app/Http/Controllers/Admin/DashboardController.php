@@ -19,9 +19,9 @@ final class DashboardController extends Controller
     public function __invoke(Request $request)
     {
         $totalBeneficiaries = TotalNumbers::getAllCounts();
-        $cholarships=TotalNumbers::getScholarships();
-        $schoolFeeding=TotalNumbers::getSchoolFeeding();
-        $malnutrition=TotalNumbers::getMalnutrition();
+        $cholarships = TotalNumbers::getScholarships();
+        $schoolFeeding = TotalNumbers::getSchoolFeeding();
+        $malnutrition = TotalNumbers::getMalnutrition();
         $female = TotalNumbers::femaleBeneficiaries();
         $male = $totalBeneficiaries - $female;
         $chart = DashboardStats::genderDistribution();

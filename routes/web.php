@@ -34,6 +34,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('malnutritions', MalnutritionController::class)->except(['show']);
     Route::resource('tanks', TankController::class)->except(['show']);
     Route::resource('scholarships', ScholarshipController::class)->except(['show']);
+    Route::post('scholarships/import', [ScholarshipController::class, 'import'])->name('scholarships.import');
     Route::resource('vslas', VslaController::class)->except(['show']);
     Route::resource('individuals', IndividualController::class)->except(['show']);
     Route::resource('school-feedings', SchoolFeedingController::class)->except(['show']);

@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ImportRequest;
 use App\Http\Requests\Admin\StoreScholarshipRequest;
 use App\Http\Requests\Admin\UpdateScholarshipRequest;
+use App\Imports\ScholarshipImport;
 use App\Models\Project;
 use App\Models\Scholarship;
 use Illuminate\Support\Facades\Gate;
+use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\Response;
 
 final class ScholarshipController extends Controller
@@ -55,6 +58,12 @@ final class ScholarshipController extends Controller
         $scholarship->update($request->all());
 
         return redirect()->route('admin.scholarships.index');
+    }
+    public function import(ImportRequest $resquest)
+    {
+        $scholarship=$resquest->validated();
+        Excel::import(new ScholarshipImport,$scholarship);
+        return redirect()->route('admin.scholarships.index')->with('success','Scholarship data imported successfully');
     }
 
     public function destroy(Scholarship $scholarship)
