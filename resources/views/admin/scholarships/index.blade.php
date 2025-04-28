@@ -10,24 +10,19 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <form action="{{ route('admin.scholarships.import') }}" method="post" enctype="multipart/form-data" x-data="{ fileName: '', loading: false }">
+                    <form action="{{ route('admin.scholarships.import') }}" method="post" enctype="multipart/form-data"
+                        x-data="{ fileName: '', loading: false }">
                         @csrf
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file"
-                                    class="custom-file-input {{ $errors->has('file') ? 'is-invalid' : '' }}"
-                                    name="file"
-                                    accept=".csv,.xlsx"
-                                    x-ref="file"
-                                    @change="fileName = $refs.file.files[0].name"
-                                    id="importFile"
-                                    required>
-                                <label class="custom-file-label" for="importFile" x-text="fileName || 'Choose file'">Choose file</label>
+                                <input type="file" class="custom-file-input {{ $errors->has('file') ? 'is-invalid' : '' }}"
+                                    name="file" accept=".csv,.xlsx" x-ref="file"
+                                    @change="fileName = $refs.file.files[0].name" id="importFile" required>
+                                <label class="custom-file-label" for="importFile" x-text="fileName || 'Choose file'">Choose
+                                    file</label>
                             </div>
                             <div class="input-group-append">
-                                <button type="submit"
-                                    class="btn btn-primary"
-                                    x-bind:disabled="loading"
+                                <button type="submit" class="btn btn-primary" x-bind:disabled="loading"
                                     @click="loading = true">
                                     <span x-show="!loading">Import Data</span>
                                     <span x-show="loading">
@@ -81,6 +76,9 @@
                                 {{ trans('cruds.scholarship.fields.study_option') }}
                             </th>
                             <th>
+                                {{ trans('cruds.scholarship.fields.entrance_year') }}
+                            </th>
+                            <th>
                                 &nbsp;
                             </th>
                         </tr>
@@ -106,12 +104,15 @@
                                 <td>
                                     {{ $scholarship->telephone ?? '' }}
                                 </td>
-                               
+
                                 <td>
                                     {{ $scholarship->school ?? '' }}
                                 </td>
                                 <td>
                                     {{ $scholarship->study_option ?? '' }}
+                                </td>
+                                <td>
+                                    {{ $scholarship->entrance_year ?? '' }}
                                 </td>
                                 <td>
 
@@ -142,9 +143,6 @@
             </div>
         </div>
     </div>
-
-
-
 @endsection
 @section('scripts')
     @parent

@@ -58,7 +58,6 @@ final class ScholarshipSeeder extends Seeder
             // Skip header row
             if ($row === 0) {
                 $row++;
-
                 continue;
             }
 
@@ -67,7 +66,6 @@ final class ScholarshipSeeder extends Seeder
                 if (empty(mb_trim($data[1] ?? ''))) {
                     $row++;
                     $progressBar->advance();
-
                     continue;
                 }
 
@@ -86,12 +84,12 @@ final class ScholarshipSeeder extends Seeder
                     'email' => mb_trim($data[9] ?? ''),
                     'school' => mb_trim($data[10] ?? ''),
                     'study_option' => mb_trim($data[11] ?? ''),
+                    'entrance_year' => mb_trim($data[14] ?? ''),
                 ]);
 
                 $successCount++;
             } catch (Exception $e) {
                 $errorCount++;
-                // Only show the first few errors to avoid flooding the console
                 if ($errorCount <= 5) {
                     $this->command->error("Error processing row {$row}: ".$e->getMessage());
                 } elseif ($errorCount === 6) {
@@ -99,9 +97,7 @@ final class ScholarshipSeeder extends Seeder
                 }
             }
 
-            // Advance the progress bar
             $progressBar->advance();
-
             $row++;
         }
 

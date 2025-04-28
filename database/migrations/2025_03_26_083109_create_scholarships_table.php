@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('school')->nullable();
             $table->string('study_option')->nullable();
+            $table->string('entrance_year');
             $table->timestamps();
         });
     }

@@ -36,6 +36,7 @@ final class Scholarship extends Model
         'email',
         'school',
         'study_option',
+        'entrance_year',
         'created_at',
         'updated_at',
     ];

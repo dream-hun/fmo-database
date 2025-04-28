@@ -59,11 +59,13 @@ final class ScholarshipController extends Controller
 
         return redirect()->route('admin.scholarships.index');
     }
+
     public function import(ImportRequest $resquest)
     {
-        $scholarship=$resquest->validated();
-        Excel::import(new ScholarshipImport,$scholarship);
-        return redirect()->route('admin.scholarships.index')->with('success','Scholarship data imported successfully');
+        $scholarship = $resquest->validated();
+        Excel::import(new ScholarshipImport, $scholarship);
+
+        return redirect()->route('admin.scholarships.index')->with('success', 'Scholarship data imported successfully');
     }
 
     public function destroy(Scholarship $scholarship)

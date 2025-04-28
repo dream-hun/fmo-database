@@ -139,7 +139,7 @@ final class GoatSeeder extends Seeder
             'village' => $data[4] ?? null,
             'cell' => $data[5] ?? null,
             'distribution_date' => $this->parseDistributionDate($data[6] ?? null),
-            'number_of_goats' => (int) ($data[7] ?? 0),
+            'number_of_goats' => (int) ($data[7] ?? 3),
             'gender' => $data[8] ?? null,
             'pass_over' => ! empty($data[9]) ? $data[9] : null,
             'comment' => $data[10] ?? null,
