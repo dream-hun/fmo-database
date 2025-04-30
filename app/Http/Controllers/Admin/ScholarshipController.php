@@ -13,9 +13,9 @@ use App\Models\Project;
 use App\Models\Scholarship;
 use Exception;
 use Illuminate\Support\Facades\Gate;
+use Log;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\Response;
-use Throwable;
 
 final class ScholarshipController extends Controller
 {
@@ -39,7 +39,7 @@ final class ScholarshipController extends Controller
 
     public function store(StoreScholarshipRequest $request)
     {
-        $scholarship = Scholarship::create($request->all());
+        $scholarship = Scholarship::create($request->validated());
 
         return redirect()->route('admin.scholarships.index');
     }
@@ -57,68 +57,37 @@ final class ScholarshipController extends Controller
 
     public function update(UpdateScholarshipRequest $request, Scholarship $scholarship)
     {
-        $scholarship->update($request->all());
+        $scholarship->update($request->validated());
 
         return redirect()->route('admin.scholarships.index');
     }
 
-    public function import(ImportRequest $request)
+    public function Import(ImportRequest $request)
     {
+        $file = $request->file('file');
+
         try {
-            // Validate that we have a file
-            if (! $request->hasFile('file')) {
-                return redirect()->route('admin.scholarships.index')
-                    ->with('error', 'No file was uploaded');
-            }
-
-            $file = $request->file('file');
-
-            // Debug information
-            logger()->info('Import file details', [
-                'name' => $file->getClientOriginalName(),
-                'size' => $file->getSize(),
-                'mime' => $file->getMimeType(),
-            ]);
-
+            // Create import object to track statistics
             $import = new ScholarshipImport();
 
-            // Use queue for large files
-            if ($file->getSize() > 5 * 1024 * 1024) { // 5MB
-                Excel::queueImport($import, $file);
-                $message = 'Scholarship data import has been queued and will be processed in the background.';
-            } else {
-                // Import the file directly
-                try {
-                    Excel::import($import, $file);
+            // Import the data
+            Excel::import($import, $file);
 
-                    // Get information about failures
-                    $failures = $import->failures();
-                    $errors = $import->errors();
+            // Get import statistics
+            $rowsImported = $import->getRowsImported();
 
-                    if ($failures->isNotEmpty() || $errors->isNotEmpty()) {
-                        $errorCount = $failures->count() + $errors->count();
-                        $message = "Import completed with {$errorCount} errors. Some records may not have been imported.";
-
-                        return redirect()->route('admin.scholarships.index')
-                            ->with('warning', $message);
-                    }
-
-                    $message = 'Scholarship data imported successfully.';
-                } catch (Throwable $importError) {
-                    logger()->error('Import error', ['error' => $importError->getMessage()]);
-
-                    return redirect()->route('admin.scholarships.index')
-                        ->with('error', 'Error during import: '.$importError->getMessage());
-                }
+            if ($rowsImported > 0) {
+                return back()->with('success', "Successfully imported {$rowsImported} scholarship records.");
             }
 
-            return redirect()->route('admin.scholarships.index')
-                ->with('success', $message);
-        } catch (Exception $e) {
-            logger()->error('Exception during import', ['error' => $e->getMessage()]);
+            return back()->with('error', 'No records were imported. Please check your file format and data.');
 
-            return redirect()->route('admin.scholarships.index')
-                ->with('error', 'Error importing data: '.$e->getMessage());
+        } catch (Exception $e) {
+            Log::error('Import failed: '.$e->getMessage(), [
+                'exception' => $e,
+            ]);
+
+            return back()->with('error', 'Import failed: '.$e->getMessage());
         }
     }
 
