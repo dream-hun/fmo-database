@@ -10,31 +10,49 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <form action="{{ route('admin.scholarships.import') }}" method="post" enctype="multipart/form-data"
-                        x-data="{ fileName: '', loading: false }">
+                    <form action="{{ route('admin.scholarships.import') }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input {{ $errors->has('file') ? 'is-invalid' : '' }}"
-                                    name="file" accept=".csv,.xlsx" x-ref="file"
-                                    @change="fileName = $refs.file.files[0].name" id="importFile" required>
-                                <label class="custom-file-label" for="importFile" x-text="fileName || 'Choose file'">Choose
-                                    file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-primary" x-bind:disabled="loading"
-                                    @click="loading = true">
-                                    <span x-show="!loading">Import Data</span>
-                                    <span x-show="loading">
-                                        <i class="fas fa-spinner fa-spin"></i>
-                                        Processing...
-                                    </span>
-                                </button>
+                        <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+                        <div class="form-group mb-2">
+                            <input type="file" class="form-control-file {{ $errors->has('file') ? 'is-invalid' : '' }}"
+                                name="file" accept=".csv,.xlsx" x-ref="file"
+                                @change="fileName = $refs.file.files[0] ? $refs.file.files[0].name : ''" id="importFile" required>
+                            <small class="form-text text-muted" x-show="fileName" x-text="fileName"></small>
+                            @error('file')
+                                <div class="text-danger mt-2">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group mb-2">
+                            <button type="submit" class="btn btn-primary" x-bind:disabled="loading">
+                                <span x-text="loading ? 'Processing...' : 'Import Data'"></span>
+                                <span class="spinner-border spinner-border-sm ml-2" role="status" x-show="loading" style="display: none;"></span>
+                            </button>
+                            <a href="#" class="ml-3" @click.prevent="showHelp = !showHelp">Help?</a>
+                        </div>
+                        <div class="form-group mb-0" x-show="showHelp">
+                            <div class="alert alert-info mb-0">
+                                <strong>Import Instructions:</strong>
+                                <ul class="mb-0 pl-3">
+                                    <li>File must be CSV or Excel (.xlsx) format</li>
+                                    <li>First row must contain column headers</li>
+                                    <li>Required columns: names, gender, id_number, telephone, school, study_option, entrance_year</li>
+                                    <li>Gender values must be: male, female, or other</li>
+                                    <li>Maximum file size: 10MB</li>
+                                </ul>
+                                <a href="#" class="d-block mt-2" @click.prevent="showHelp = false">Close</a>
                             </div>
                         </div>
-                        @error('file')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
                     </form>
                 </div>
 
@@ -47,7 +65,33 @@
         </div>
 
         <div class="card-body">
-            <div class="table-responsive">
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show">
+                    {{ session('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
+            @if(session('warning'))
+                <div class="alert alert-warning alert-dismissible fade show">
+                    {{ session('warning') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show">
+                    {{ session('error') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+        ,<div class="table-responsive">
                 <table class="table table-bordered table-striped table-hover datatable datatable-Scholarship">
                     <thead>
                         <tr>

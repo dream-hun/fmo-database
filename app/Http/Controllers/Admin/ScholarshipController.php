@@ -11,9 +11,11 @@ use App\Http\Requests\Admin\UpdateScholarshipRequest;
 use App\Imports\ScholarshipImport;
 use App\Models\Project;
 use App\Models\Scholarship;
+use Exception;
 use Illuminate\Support\Facades\Gate;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\Response;
+use Throwable;
 
 final class ScholarshipController extends Controller
 {
@@ -60,12 +62,64 @@ final class ScholarshipController extends Controller
         return redirect()->route('admin.scholarships.index');
     }
 
-    public function import(ImportRequest $resquest)
+    public function import(ImportRequest $request)
     {
-        $scholarship = $resquest->validated();
-        Excel::import(new ScholarshipImport, $scholarship);
+        try {
+            // Validate that we have a file
+            if (! $request->hasFile('file')) {
+                return redirect()->route('admin.scholarships.index')
+                    ->with('error', 'No file was uploaded');
+            }
 
-        return redirect()->route('admin.scholarships.index')->with('success', 'Scholarship data imported successfully');
+            $file = $request->file('file');
+
+            // Debug information
+            logger()->info('Import file details', [
+                'name' => $file->getClientOriginalName(),
+                'size' => $file->getSize(),
+                'mime' => $file->getMimeType(),
+            ]);
+
+            $import = new ScholarshipImport();
+
+            // Use queue for large files
+            if ($file->getSize() > 5 * 1024 * 1024) { // 5MB
+                Excel::queueImport($import, $file);
+                $message = 'Scholarship data import has been queued and will be processed in the background.';
+            } else {
+                // Import the file directly
+                try {
+                    Excel::import($import, $file);
+
+                    // Get information about failures
+                    $failures = $import->failures();
+                    $errors = $import->errors();
+
+                    if ($failures->isNotEmpty() || $errors->isNotEmpty()) {
+                        $errorCount = $failures->count() + $errors->count();
+                        $message = "Import completed with {$errorCount} errors. Some records may not have been imported.";
+
+                        return redirect()->route('admin.scholarships.index')
+                            ->with('warning', $message);
+                    }
+
+                    $message = 'Scholarship data imported successfully.';
+                } catch (Throwable $importError) {
+                    logger()->error('Import error', ['error' => $importError->getMessage()]);
+
+                    return redirect()->route('admin.scholarships.index')
+                        ->with('error', 'Error during import: '.$importError->getMessage());
+                }
+            }
+
+            return redirect()->route('admin.scholarships.index')
+                ->with('success', $message);
+        } catch (Exception $e) {
+            logger()->error('Exception during import', ['error' => $e->getMessage()]);
+
+            return redirect()->route('admin.scholarships.index')
+                ->with('error', 'Error importing data: '.$e->getMessage());
+        }
     }
 
     public function destroy(Scholarship $scholarship)

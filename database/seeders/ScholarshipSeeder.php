@@ -58,6 +58,7 @@ final class ScholarshipSeeder extends Seeder
             // Skip header row
             if ($row === 0) {
                 $row++;
+
                 continue;
             }
 
@@ -66,6 +67,7 @@ final class ScholarshipSeeder extends Seeder
                 if (empty(mb_trim($data[1] ?? ''))) {
                     $row++;
                     $progressBar->advance();
+
                     continue;
                 }
 
