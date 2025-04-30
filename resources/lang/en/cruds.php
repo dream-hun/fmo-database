@@ -123,6 +123,9 @@ return [
             'school_helper' => ' ',
             'study_option' => 'Study Option',
             'study_option_helper' => ' ',
+            'entrance_year' => 'Entrance Year',
+            'entrance_year_helper' => ' ',
+
             'created_at' => 'Created at',
             'created_at_helper' => ' ',
             'updated_at' => 'Updated at',

@@ -5,11 +5,16 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ImportRequest;
 use App\Http\Requests\Admin\StoreScholarshipRequest;
 use App\Http\Requests\Admin\UpdateScholarshipRequest;
+use App\Imports\ScholarshipImport;
 use App\Models\Project;
 use App\Models\Scholarship;
+use Exception;
 use Illuminate\Support\Facades\Gate;
+use Log;
+use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\Response;
 
 final class ScholarshipController extends Controller
@@ -34,7 +39,7 @@ final class ScholarshipController extends Controller
 
     public function store(StoreScholarshipRequest $request)
     {
-        $scholarship = Scholarship::create($request->all());
+        $scholarship = Scholarship::create($request->validated());
 
         return redirect()->route('admin.scholarships.index');
     }
@@ -52,9 +57,38 @@ final class ScholarshipController extends Controller
 
     public function update(UpdateScholarshipRequest $request, Scholarship $scholarship)
     {
-        $scholarship->update($request->all());
+        $scholarship->update($request->validated());
 
         return redirect()->route('admin.scholarships.index');
+    }
+
+    public function Import(ImportRequest $request)
+    {
+        $file = $request->file('file');
+
+        try {
+            // Create import object to track statistics
+            $import = new ScholarshipImport();
+
+            // Import the data
+            Excel::import($import, $file);
+
+            // Get import statistics
+            $rowsImported = $import->getRowsImported();
+
+            if ($rowsImported > 0) {
+                return back()->with('success', "Successfully imported {$rowsImported} scholarship records.");
+            }
+
+            return back()->with('error', 'No records were imported. Please check your file format and data.');
+
+        } catch (Exception $e) {
+            Log::error('Import failed: '.$e->getMessage(), [
+                'exception' => $e,
+            ]);
+
+            return back()->with('error', 'Import failed: '.$e->getMessage());
+        }
     }
 
     public function destroy(Scholarship $scholarship)

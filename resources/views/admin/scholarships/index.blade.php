@@ -2,10 +2,53 @@
 @section('content')
     @can('scholarship_create')
         <div style="margin-bottom: 10px;" class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-success" href="{{ route('admin.scholarships.create') }}">
-                    {{ trans('global.add') }} {{ trans('cruds.scholarship.title_singular') }}
-                </a>
+            <div class="row col-lg-12">
+                <div class="col-md-4">
+                    <a class="btn btn-success" href="{{ route('admin.scholarships.create') }}">
+                        {{ trans('global.add') }} {{ trans('cruds.scholarship.title_singular') }}
+                    </a>
+                </div>
+                <div class="col-md-8">
+                    <form action="{{ route('admin.scholarships.import') }}" method="post" enctype="multipart/form-data" class="row">
+                        @csrf
+                        <div class="form-group col-md-6">
+                            <label for="importFile">Choose File <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file"
+                                        class="custom-file-input {{ $errors->has('file') ? 'is-invalid' : '' }}"
+                                        name="file" id="importFile"
+                                        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                                    <label class="custom-file-label" for="importFile">Select file</label>
+                                </div>
+                            </div>
+                            @if ($errors->has('file'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('file') }}
+                                </div>
+                            @endif
+                        </div>
+                        <div class="form-group col-md-6 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-file-earmark-arrow-up"></i> {{ trans('global.import_data') }}
+                            </button>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <div class="alert alert-info mb-0">
+                                <strong>Import Instructions:</strong>
+                                <ul class="mb-0 pl-3">
+                                    <li>File must be CSV or Excel (.xlsx) format</li>
+                                    <li>First row must contain column headers</li>
+                                    <li>Required columns: <strong>Names</strong> and <strong>Year of Entrance</strong></li>
+                                    <li>Optional columns: Gender, ID, District, Sector, Cell, Village, Telephone, Email, School, Study Option</li>
+                                    <li>Gender values should be: <em>F</em> for female or <em>M</em> for male</li>
+                                    <li>Maximum file size: <strong>10MB</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
     @endcan
@@ -15,119 +58,153 @@
         </div>
 
         <div class="card-body">
-            <div class="table-responsive">
-                <table class=" table table-bordered table-striped table-hover datatable datatable-Scholarship">
-                    <thead>
-                    <tr>
-                        <th width="10">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show">
+                    {{ session('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
 
-                        </th>
-                        <th>
-                            {{ trans('cruds.scholarship.fields.id') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.scholarship.fields.names') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.scholarship.fields.gender') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.scholarship.fields.id_number') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.scholarship.fields.telephone') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.scholarship.fields.email') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.scholarship.fields.school') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.sch') }}
-                        </th>
-                        <th>
-                            &nbsp;
-                        </th>
-                    </tr>
+            @if (session('warning'))
+                <div class="alert alert-warning alert-dismissible fade show">
+                    {{ session('warning') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show">
+                    {{ session('error') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover datatable datatable-Scholarship">
+                    <thead>
+                        <tr>
+                            <th width="10">
+
+                            </th>
+                            <th>
+                                {{ trans('cruds.scholarship.fields.id') }}
+                            </th>
+                            <th>
+                                {{ trans('cruds.scholarship.fields.names') }}
+                            </th>
+                            <th>
+                                {{ trans('cruds.scholarship.fields.gender') }}
+                            </th>
+                            <th>
+                                {{ trans('cruds.scholarship.fields.id_number') }}
+                            </th>
+                            <th>
+                                {{ trans('cruds.scholarship.fields.telephone') }}
+                            </th>
+                            <th>
+                                {{ trans('cruds.scholarship.fields.school') }}
+                            </th>
+                            <th>
+                                {{ trans('cruds.scholarship.fields.study_option') }}
+                            </th>
+                            <th>
+                                {{ trans('cruds.scholarship.fields.entrance_year') }}
+                            </th>
+                            <th>
+                                &nbsp;
+                            </th>
+                        </tr>
                     </thead>
                     <tbody>
-                    @foreach($scholarships as $key => $scholarship)
-                        <tr data-entry-id="{{ $scholarship->id }}">
-                            <td>
+                        @foreach ($scholarships as $key => $scholarship)
+                            <tr data-entry-id="{{ $scholarship->id }}">
+                                <td>
 
-                            </td>
-                            <td>
-                                {{ $scholarship->id ?? '' }}
-                            </td>
-                            <td>
-                                {{ $scholarship->names ?? '' }}
-                            </td>
-                            <td>
-                                {{ App\Models\Scholarship::GENDER_SELECT[$scholarship->gender] ?? '' }}
-                            </td>
-                            <td>
-                                {{ $scholarship->id_number ?? '' }}
-                            </td>
-                            <td>
-                                {{ $scholarship->telephone ?? '' }}
-                            </td>
-                            <td>
-                                {{ $scholarship->email ?? '' }}
-                            </td>
-                            <td>
-                                {{ $scholarship->school ?? '' }}
-                            </td>
-                            <td>
-                                {{ $scholarship->study_option ?? '' }}
-                            </td>
-                            <td>
+                                </td>
+                                <td>
+                                    {{ $scholarship->id ?? '' }}
+                                </td>
+                                <td>
+                                    {{ $scholarship->names ?? '' }}
+                                </td>
+                                <td>
+                                    {{ App\Models\Scholarship::GENDER_SELECT[$scholarship->gender] ?? '' }}
+                                </td>
+                                <td>
+                                    {{ $scholarship->id_number ?? '' }}
+                                </td>
+                                <td>
+                                    {{ $scholarship->telephone ?? '' }}
+                                </td>
 
-                                @can('scholarship_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.scholarships.edit', $scholarship->id) }}">
-                                        {{ trans('global.edit') }}
-                                    </a>
-                                @endcan
+                                <td>
+                                    {{ $scholarship->school ?? '' }}
+                                </td>
+                                <td>
+                                    {{ $scholarship->study_option ?? '' }}
+                                </td>
+                                <td>
+                                    {{ $scholarship->entrance_year ?? '' }}
+                                </td>
+                                <td>
 
-                                @can('scholarship_delete')
-                                    <form action="{{ route('admin.scholarships.destroy', $scholarship->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-                                    </form>
-                                @endcan
+                                    @can('scholarship_edit')
+                                        <a class="btn btn-xs btn-info"
+                                            href="{{ route('admin.scholarships.edit', $scholarship->id) }}">
+                                            {{ trans('global.edit') }}
+                                        </a>
+                                    @endcan
 
-                            </td>
+                                    @can('scholarship_delete')
+                                        <form action="{{ route('admin.scholarships.destroy', $scholarship->id) }}"
+                                            method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
+                                            style="display: inline-block;">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="submit" class="btn btn-xs btn-danger"
+                                                value="{{ trans('global.delete') }}">
+                                        </form>
+                                    @endcan
 
-                        </tr>
-                    @endforeach
+                                </td>
+
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
-
-
 @endsection
 @section('scripts')
     @parent
     <script>
-        $(function () {
+        $(function() {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
 
             $.extend(true, $.fn.dataTable.defaults, {
                 orderCellsTop: true,
-                order: [[ 1, 'desc' ]],
+                order: [
+                    [1, 'desc']
+                ],
                 pageLength: 100,
             });
-            let table = $('.datatable-Scholarship:not(.ajaxTable)').DataTable({ buttons: dtButtons })
-            $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e){
+            let table = $('.datatable-Scholarship:not(.ajaxTable)').DataTable({
+                buttons: dtButtons
+            })
+            $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e) {
                 $($.fn.dataTable.tables(true)).DataTable()
                     .columns.adjust();
             });
 
         })
-
+        $(function() {
+            bsCustomFileInput.init();
+        });
     </script>
 @endsection

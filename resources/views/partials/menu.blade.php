@@ -159,7 +159,7 @@
                             @can('vsla_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.vslas.index") }}" class="nav-link {{ request()->is("admin/vslas") || request()->is("admin/vslas/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-user-friends">
+                                        <i class="bi bi-people-fill"></i>
 
                                         </i>
                                         <p>
@@ -171,7 +171,7 @@
                             @can('individual_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.individuals.index") }}" class="nav-link {{ request()->is("admin/individuals") || request()->is("admin/individuals/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-male">
+                                        <i class="bi bi-person">
 
                                         </i>
                                         <p>

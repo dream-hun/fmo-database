@@ -6,8 +6,6 @@ namespace App\Models\Helpers;
 
 use Akaunting\Apexcharts\Chart;
 use App\Models\Girinka;
-use App\Models\Individual;
-use Illuminate\Support\Facades\DB;
 
 final class DashboardStats
 {
@@ -58,7 +56,7 @@ final class DashboardStats
                     'align' => 'center',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Beneficiaries: ' . $totalBeneficiaries,
+                    'text' => 'Total Beneficiaries: '.$totalBeneficiaries,
                     'align' => 'center',
                 ],
             ]);
@@ -123,7 +121,7 @@ final class DashboardStats
                     'align' => 'center',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Beneficiaries: ' . $totalGirinkaBeneficiaries,
+                    'text' => 'Total Beneficiaries: '.$totalGirinkaBeneficiaries,
 
                 ],
                 'tooltip' => [
@@ -133,6 +131,4 @@ final class DashboardStats
                 ],
             ]);
     }
-
-    
 }

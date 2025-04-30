@@ -115,6 +115,14 @@
                     <span class="help-block">{{ trans('cruds.scholarship.fields.study_option_helper') }}</span>
                 </div>
                 <div class="form-group">
+                    <label for="study_option">{{ trans('cruds.scholarship.fields.entrance_year') }}</label>
+                    <input class="form-control {{ $errors->has('entrance_year') ? 'is-invalid' : '' }}" type="number" name="entrance_year" id="entrance_year" value="{{ old('entrance_year', '') }}">
+                    @if($errors->has('entrance_year'))
+                        <span class="text-danger">{{ $errors->first('entrance_year') }}</span>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.scholarship.fields.entrance_year_helper') }}</span>
+                </div>
+                <div class="form-group">
                     <button class="btn btn-danger" type="submit">
                         {{ trans('global.save') }}
                     </button>
