@@ -24,6 +24,7 @@ final class Scholarship extends Model
     ];
 
     protected $fillable = [
+        'uuid',
         'project_id',
         'names',
         'gender',
