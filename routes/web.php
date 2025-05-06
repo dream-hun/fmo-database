@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('permissions', PermissionController::class)->except(['show']);
     Route::resource('roles', RoleController::class)->except(['show']);
     Route::resource('girinkas', GirinkaController::class)->except(['show']);
+    Route::post('girinkas/import', [GirinkaController::class, 'import'])->name('girinkas.import');
     Route::resource('goats', GoatController::class)->except(['show']);
     Route::resource('malnutritions', MalnutritionController::class)->except(['show']);
     Route::resource('tanks', TankController::class)->except(['show']);

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Gate;
 
 final class ImportRequest extends FormRequest
 {
@@ -14,7 +13,7 @@ final class ImportRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return Gate::allows('scholarship_create');
+        return true;
     }
 
     /**

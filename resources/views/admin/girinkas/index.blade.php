@@ -2,10 +2,54 @@
 @section('content')
     @can('girinka_create')
         <div style="margin-bottom: 10px;" class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-success" href="{{ route('admin.girinkas.create') }}">
-                    {{ trans('global.add') }} {{ trans('cruds.girinka.title_singular') }}
-                </a>
+            <div class="row col-lg-12">
+                <div class="col-md-4">
+                    <a class="btn btn-success" href="{{ route('admin.girinkas.create') }}">
+                        {{ trans('global.add') }} {{ trans('cruds.girinka.title_singular') }}
+                    </a>
+                </div>
+                <div class="col-md-8">
+                    <form action="{{ route('admin.girinkas.import') }}" method="POST" enctype="multipart/form-data"
+                        class="row">
+                        @csrf
+                        <div class="form-group col-md-6">
+                            <label for="importFile">Choose File <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file"
+                                        class="custom-file-input {{ $errors->has('file') ? 'is-invalid' : '' }}" name="file"
+                                        id="importFile"
+                                        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                                    <label class="custom-file-label" for="importFile">Select file</label>
+                                </div>
+                            </div>
+                            @if ($errors->has('file'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('file') }}
+                                </div>
+                            @endif
+                        </div>
+                        <div class="form-group col-md-6 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-file-earmark-arrow-up"></i> {{ trans('global.import_data') }}
+                            </button>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <div class="alert alert-info mb-0">
+                                <strong>Import Instructions:</strong>
+                                <ul class="mb-0 pl-3">
+                                    <li>File must be CSV or Excel (.xlsx) format</li>
+                                    <li>First row must contain column headers</li>
+                                    <li>Required columns: <strong>Names</strong> and <strong>Year of Entrance</strong></li>
+                                    <li>Gender values should be: <em>F</em> for female or <em>M</em> for male</li>
+                                    <li>Maximum file size: <strong>10MB</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
             </div>
         </div>
     @endcan
@@ -91,7 +135,7 @@
                                     {{ $girinka->telephone ?? '' }}
                                 </td>
                                 <td>
-                                    
+
 
                                     @can('girinka_edit')
                                         <a class="btn btn-xs btn-info" href="{{ route('admin.girinkas.edit', $girinka->id) }}">
@@ -142,5 +186,8 @@
             });
 
         })
+        $(function() {
+            bsCustomFileInput.init();
+        });
     </script>
 @endsection

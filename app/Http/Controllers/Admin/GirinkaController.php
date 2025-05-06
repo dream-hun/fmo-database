@@ -5,12 +5,17 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ImportRequest;
 use App\Http\Requests\MassDestroyGirinkaRequest;
 use App\Http\Requests\StoreGirinkaRequest;
 use App\Http\Requests\UpdateGirinkaRequest;
+use App\Imports\GirinkaImport;
 use App\Models\Girinka;
 use App\Models\Project;
+use Exception;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\Response;
 
 final class GirinkaController extends Controller
@@ -58,13 +63,33 @@ final class GirinkaController extends Controller
         return redirect()->route('admin.girinkas.index');
     }
 
-    public function show(Girinka $girinka)
+    public function Import(ImportRequest $request)
     {
-        abort_if(Gate::denies('girinka_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $file = $request->file('file');
 
-        $girinka->load('project');
+        try {
+            // Create import object to track statistics
+            $import = new GirinkaImport();
 
-        return view('admin.girinkas.show', compact('girinka'));
+            // Import the data
+            Excel::import($import, $file);
+
+            // Get import statistics
+            $rowsImported = $import->getRowsImported();
+
+            if ($rowsImported > 0) {
+                return back()->with('success', "Successfully imported {$rowsImported} girinka records.");
+            }
+
+            return back()->with('error', 'No records were imported. Please check your file format and data.');
+
+        } catch (Exception $e) {
+            Log::error('Import failed: '.$e->getMessage(), [
+                'exception' => $e,
+            ]);
+
+            return back()->with('error', 'Import failed: '.$e->getMessage());
+        }
     }
 
     public function destroy(Girinka $girinka)
