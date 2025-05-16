@@ -96,10 +96,11 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-            'sslmode' => 'prefer',
-            'options' => extension_loaded('pdo_pgsql') ? [
-                PDO::PGSQL_ATTR_SSL_MODE => 'disable', // ← add this line
-            ] : [],
+            'sslmode' => env('DB_SSLMODE', 'prefer'), // this line is optional; Laravel does not use it directly
+            'options' => [
+                // Force no SSL via DSN
+                'options' => "--client_encoding=UTF8 --sslmode=" . env('DB_SSLMODE', 'disable'),
+            ],
         ],
 
         'sqlsrv' => [
