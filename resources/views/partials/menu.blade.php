@@ -135,7 +135,7 @@
                     </li>
                 @endcan
                 @can('work_force_development_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/scholarships*") ? "menu-open" : "" }} {{ request()->is("admin/vslas*") ? "menu-open" : "" }} {{ request()->is("admin/individuals*") ? "menu-open" : "" }}">
+                    <li class="nav-item has-treeview {{ request()->is("admin/scholarships*") ? "menu-open" : "" }} {{ request()->is("admin/vslas*") ? "menu-open" : "" }} {{ request()->is("admin/individuals*") ? "menu-open" : "" }}{{ request()->is("admin/toolkits*")?"menu-open": "" }}">
                         <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/scholarships*") ? "active" : "" }} {{ request()->is("admin/vslas*") ? "active" : "" }} {{ request()->is("admin/individuals*") ? "active" : "" }}" href="#">
                             <i class="bi bi-chevron-down right"></i>
                             <p>
@@ -179,6 +179,18 @@
                                         </p>
                                     </a>
                                 </li>
+                            @endcan
+                            @can('toolkit_access')
+                                    <li class="nav-item">
+                                        <a href="{{ route("admin.toolkits.index") }}" class="nav-link {{ request()->is("admin/toolkits") || request()->is("admin/toolkits/*") ? "active" : "" }}">
+                                            <i class="bi bi-gear">
+
+                                            </i>
+                                            <p>
+                                                {{trans('cruds.toolkit.title')}}
+                                            </p>
+                                        </a>
+                                    </li>
                             @endcan
 
 

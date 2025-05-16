@@ -284,6 +284,26 @@ final class PermissionsTableSeeder extends Seeder
                 'id' => 68,
                 'title' => 'fruit_access',
             ],
+            [
+                'id' => 69,
+                'title' => 'toolkit_access',
+            ],
+            [
+                'id' => 70,
+                'title' => 'toolkit_create',
+            ],
+            [
+                'id' => 71,
+                'title' => 'toolkit_edit',
+            ],
+            [
+                'id' => 72,
+                'title' => 'toolkit_show',
+            ],
+            [
+                'id' => 73,
+                'title' => 'toolkit_delete',
+            ],
         ];
 
         Permission::insert($permissions);

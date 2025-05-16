@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ScholarshipController;
 use App\Http\Controllers\Admin\SchoolFeedingController;
 use App\Http\Controllers\Admin\TankController;
+use App\Http\Controllers\Admin\ToolKitController;
 use App\Http\Controllers\Admin\VslaController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('individuals', IndividualController::class)->except(['show']);
     Route::resource('school-feedings', SchoolFeedingController::class)->except(['show']);
     Route::resource('fruits', FruitController::class)->except(['show']);
+    Route::resource('toolkits', ToolKitController::class)->except(['show']);
+    Route::post('toolkits/import', [ToolKitController::class, 'importData'])->name('toolkits.import');
 
 });
 

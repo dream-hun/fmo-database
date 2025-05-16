@@ -6,6 +6,7 @@ namespace App\Models;
 
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class Vsla extends Model
 {
@@ -16,7 +17,7 @@ final class Vsla extends Model
 
     public $table = 'vslas';
 
-    protected $dates = [
+    protected array $dates = [
         'created_at',
         'updated_at',
     ];
@@ -37,12 +38,12 @@ final class Vsla extends Model
 
     ];
 
-    public function project()
+    public function project(): BelongsTo
     {
         return $this->belongsTo(Project::class, 'project_id');
     }
 
-    protected function serializeDate(DateTimeInterface $date)
+    protected function serializeDate(DateTimeInterface $date): string
     {
         return $date->format('Y-m-d H:i:s');
     }

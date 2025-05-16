@@ -13,7 +13,7 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
 use Maatwebsite\Excel\Validators\Failure;
-use \Throwable;
+use Throwable;
 
 final class GirinkaImport implements SkipsOnError, SkipsOnFailure, ToModel, WithHeadingRow, WithValidation
 {
@@ -66,7 +66,7 @@ final class GirinkaImport implements SkipsOnError, SkipsOnFailure, ToModel, With
         ];
     }
 
-    public function onError(\Throwable $e): void
+    public function onError(Throwable $e): void
     {
         Log::error('Girinka import error: '.$e->getMessage(), [
             'file' => $e->getFile(),
@@ -75,9 +75,9 @@ final class GirinkaImport implements SkipsOnError, SkipsOnFailure, ToModel, With
     }
 
     /**
-     * @param  \Maatwebsite\Excel\Validators\Failure[]  $failures
+     * @param  Failure[]  $failures
      */
-    public function onFailure(\Maatwebsite\Excel\Validators\Failure ...$failures): void
+    public function onFailure(Failure ...$failures): void
     {
         $this->failures = array_merge($this->failures, $failures);
         foreach ($failures as $failure) {
