@@ -11,6 +11,7 @@ use App\Models\Malnutrition;
 use App\Models\Scholarship;
 use App\Models\SchoolFeeding;
 use App\Models\Tank;
+use App\Models\Toolkit;
 use App\Models\Vsla;
 
 final class TotalNumbers
@@ -73,6 +74,11 @@ final class TotalNumbers
         return Malnutrition::count();
     }
 
+    public static function totalToolkits(): int
+    {
+        return Toolkit::count();
+    }
+
     /**
      * Get all counts as an associative array
      */
@@ -81,7 +87,7 @@ final class TotalNumbers
         return
             self::getCows() + self::getGoats() + self::getWaterTanks() +
             self::getScholarships() + self::getIndividualMicrocredits() +
-            self::getVslas() + self::getSchoolFeeding() + self::getMalnutrition();
+            self::getVslas() + self::getSchoolFeeding() + self::getMalnutrition()+self::totalToolkits();
     }
 
     public static function femaleBeneficiaries(): int

@@ -392,6 +392,7 @@ final class DashboardStats
 
     public static function toolKit(): Chart
     {
-        $data = ToolKit::query();
+        $toolkits = ToolKit::query()
+        ->select('');
     }
 }
