@@ -8,15 +8,16 @@ use App\Models\Toolkit;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\SkipsOnError;
+use Maatwebsite\Excel\Concerns\SkipsOnFailure;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
 use Maatwebsite\Excel\Validators\Failure;
-use PHPUnit\Event\Code\Throwable;
+use Throwable;
 
-final class ToolkitImport implements SkipsOnError, ToModel, WithBatchInserts, WithChunkReading, WithHeadingRow, WithValidation
+final class ToolkitImport implements SkipsOnError, SkipsOnFailure, ToModel, WithBatchInserts, WithChunkReading, WithHeadingRow, WithValidation
 {
     private array $failures = [];
 
@@ -24,32 +25,56 @@ final class ToolkitImport implements SkipsOnError, ToModel, WithBatchInserts, Wi
 
     public function model(array $row): ?Toolkit
     {
+        try {
+            // Format dates if they exist
+            $receptionDate = null;
+            if (! empty($row['reception_date'])) {
+                try {
+                    $receptionDate = $row['reception_date'];
+                    // You could add date formatting here if needed
+                } catch (Throwable $e) {
+                    Log::warning('Invalid reception date format', [
+                        'value' => $row['reception_date'] ?? 'null',
+                        'error' => $e->getMessage(),
+                    ]);
+                }
+            }
 
-        $toolkits = new Toolkit([
+            $toolkitCost = ! empty($row['toolkit_cost']) ? (float) $row['toolkit_cost'] : null;
+            $subsidizedPercent = ! empty($row['subsidized_percent']) ? (float) $row['subsidized_percent'] : null;
+            $total = ! empty($row['total']) ? (float) $row['total'] : null;
 
-            'uuid' => (string) Str::uuid(),
-            'project_id' => 1,
-            'name' => $row['name'] ?? null,
-            'gender' => $row['gender'] ?? null,
-            'identification_number' => $row['identification_number'] ?? null,
-            'phone_number' => $row['phone_number'] ?? null,
-            'tvet_attended' => $row['tvet_attended'] ?? null,
-            'option' => $row['option'] ?? null,
-            'level' => $row['level'] ?? null,
-            'training_intake' => $row['training_intake'] ?? null,
-            'reception_date' => $row['reception_date'] ?? null,
-            'toolkit_received' => $row['toolkit_received'] ?? null,
-            'toolkit_cost' => $row['toolkit_cost'] ?? null,
-            'subsidized_percent' => $row['subsidized_percent'] ?? null,
-            'sector' => $row['sector'] ?? null,
-            'total' => $row['total'] ?? null,
+            $toolkit = new Toolkit([
+                'uuid' => (string) Str::uuid(),
+                'project_id' => 1,
+                'name' => $row['name'],
+                'gender' => $row['gender'] ?? null,
+                'identification_number' => $row['identification_number'] ?? null,
+                'phone_number' => $row['phone_number'] ?? null,
+                'tvet_attended' => $row['tvet_attended'] ?? null,
+                'option' => $row['option'] ?? null,
+                'level' => $row['level'] ?? null,
+                'training_intake' => $row['training_intake'] ?? null,
+                'reception_date' => $receptionDate,
+                'toolkit_received' => $row['toolkit_received'] ?? null,
+                'toolkit_cost' => $toolkitCost,
+                'subsidized_percent' => $subsidizedPercent,
+                'sector' => $row['sector'] ?? null,
+                'total' => $total,
+            ]);
 
-        ]);
-        $toolkits->save();
-        $this->rowsImported++;
+            $toolkit->save();
+            $this->rowsImported++;
 
-        return $toolkits;
+            return $toolkit;
+        } catch (Throwable $e) {
+            Log::error('Error creating toolkit model', [
+                'error' => $e->getMessage(),
+                'row' => $row,
+            ]);
 
+            return null;
+        }
     }
 
     public function rules(): array
@@ -57,14 +82,27 @@ final class ToolkitImport implements SkipsOnError, ToModel, WithBatchInserts, Wi
         return [
             'name' => 'required|string',
             'gender' => 'nullable|string|in:M,F',
-
+            'identification_number' => 'nullable|string',
+            'phone_number' => 'nullable|string',
+            'tvet_attended' => 'nullable|string',
+            'option' => 'nullable|string',
+            'level' => 'nullable|string',
+            'training_intake' => 'nullable|string',
+            'reception_date' => 'nullable|string',
+            'toolkit_received' => 'nullable|string',
+            'toolkit_cost' => 'nullable|numeric',
+            'subsidized_percent' => 'nullable|numeric',
+            'sector' => 'nullable|string',
+            'total' => 'nullable|numeric',
         ];
     }
 
-    public function onError(Throwable|\Throwable $e): void
+    public function onError(Throwable $e): void
     {
-
-        Log::error('Toolkit import error: '.$e->getMessage(), [
+        $row = 0;
+        Log::error('Toolkit import error on row processing', [
+            'message' => $e->getMessage(),
+            'row' => $row,
             'file' => $e->getFile(),
             'line' => $e->getLine(),
         ]);
@@ -96,11 +134,11 @@ final class ToolkitImport implements SkipsOnError, ToModel, WithBatchInserts, Wi
 
     public function chunkSize(): int
     {
-        return 100; // Process 500 rows at a time to reduce memory usage
+        return 100;
     }
 
     public function batchSize(): int
     {
-        return 50; // Insert 100 records at a time to optimize database performance
+        return 50;
     }
 }

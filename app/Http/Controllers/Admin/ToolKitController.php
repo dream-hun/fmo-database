@@ -14,6 +14,7 @@ use Exception;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Validators\ValidationException;
 use Symfony\Component\HttpFoundation\Response;
 
 final class ToolKitController extends Controller
@@ -79,6 +80,13 @@ final class ToolKitController extends Controller
 
             // Get import statistics
             $rowsImported = $import->getRowsImported();
+            $failures = $import->getFailures();
+
+            if (count($failures) > 0) {
+                $failureCount = count($failures);
+
+                return back()->with('warning', "Imported {$rowsImported} records, but {$failureCount} records had validation errors. Check logs for details.");
+            }
 
             if ($rowsImported > 0) {
                 return back()->with('success', "Successfully imported {$rowsImported} toolkits records.");
@@ -86,9 +94,19 @@ final class ToolKitController extends Controller
 
             return back()->with('error', 'No records were imported. Please check your file format and data.');
 
+        } catch (ValidationException $e) {
+            $failures = $e->failures();
+            Log::error('Import validation failed: '.count($failures).' rows had errors', [
+                'first_few_errors' => array_slice($failures, 0, 5),
+            ]);
+
+            return back()->with('error', 'Import validation failed: '.count($failures).' rows had errors. Check the server logs for details.');
         } catch (Exception $e) {
             Log::error('Import failed: '.$e->getMessage(), [
-                'exception' => $e,
+                'exception' => get_class($e),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString(),
             ]);
 
             return back()->with('error', 'Import failed: '.$e->getMessage());
