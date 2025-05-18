@@ -26,11 +26,9 @@
                             {{ trans('cruds.fruit.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.fruit.fields.surname') }}
+                            Name
                         </th>
-                        <th>
-                            {{ trans('cruds.fruit.fields.first_name') }}
-                        </th>
+
                         <th>
                             {{ trans('cruds.fruit.fields.gender') }}
                         </th>
@@ -58,16 +56,14 @@
                                 {{ $fruit->id ?? '' }}
                             </td>
                             <td>
-                                {{ $fruit->surname ?? '' }}
+                                {{ $fruit->name ?? '' }}
                             </td>
-                            <td>
-                                {{ $fruit->first_name ?? '' }}
-                            </td>
+
                             <td>
                                 {{ $fruit->gender ?? '' }}
                             </td>
                             <td>
-                                {{ $fruit->national ?? '' }}
+                                {{ $fruit->id_number ?? '' }}
                             </td>
                             <td>
                                 {{ $fruit->telephone ?? '' }}

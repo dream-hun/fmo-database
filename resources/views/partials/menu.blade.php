@@ -119,7 +119,7 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('fruits_access')
+                            @can('fruit_access')
                                     <li class="nav-item">
                                         <a href="{{ route("admin.fruits.index") }}" class="nav-link {{ request()->is("admin/fruits") || request()->is("admin/fruits/*") ? "active" : "" }}">
                                             <i class="bi bi-tree"></i>
@@ -192,8 +192,6 @@
                                         </a>
                                     </li>
                             @endcan
-
-
                         </ul>
                     </li>
                 @endcan

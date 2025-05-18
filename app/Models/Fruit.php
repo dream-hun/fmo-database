@@ -18,25 +18,7 @@ final class Fruit extends Model
         'deleted_at',
     ];
 
-    protected $fillable = [
-        'surname',
-        'first_name',
-        'gender',
-        'national',
-        'sector',
-        'cell',
-        'village',
-        'mangoes',
-        'avocado',
-        'papaya',
-        'oranges',
-        'telephone',
-        'distribution_date',
-        'project_id',
-        'created_at',
-        'updated_at',
-        'deleted_at',
-    ];
+    protected $guarded = [];
 
     public function project(): BelongsTo
     {

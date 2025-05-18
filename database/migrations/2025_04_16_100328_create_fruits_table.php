@@ -17,19 +17,18 @@ return new class extends Migration
             $table->id();
             $table->uuid();
             $table->foreignId('project_id')->constrained('projects');
-            $table->string('surname');
-            $table->string('first_name');
+            $table->string('name');
             $table->string('gender')->nullable();
-            $table->string('national')->nullable();
+            $table->string('id_number')->nullable();
             $table->string('sector')->nullable();
             $table->string('cell')->nullable();
             $table->string('village')->nullable();
-            $table->integer('mangoes')->nullable();
-            $table->integer('avocado')->nullable();
-            $table->integer('papaya')->nullable();
-            $table->integer('oranges')->nullable();
+            $table->string('mangoes')->nullable();
+            $table->string('avocado')->nullable();
+            $table->string('papaya')->nullable();
+            $table->string('oranges')->nullable();
             $table->string('telephone')->nullable();
-            $table->string('distribution_date')->nullable();
+            $table->date('distribution_date')->nullable();
             $table->timestamps();
         });
     }
