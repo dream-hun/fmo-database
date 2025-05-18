@@ -134,7 +134,7 @@
                                     {{ $toolkit->gender ?? '' }}
                                 </td>
                                 <td>
-                                    {{ $toolkit->identification_number ?? '' }}
+                                    {{ $toolkit->id_number ?? '' }}
                                 </td>
                                 <td>
                                     {{ $toolkit->phone_number ?? '' }}

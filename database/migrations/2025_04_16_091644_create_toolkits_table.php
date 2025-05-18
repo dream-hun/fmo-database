@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('project_id')->constrained('projects');
             $table->string('name');
             $table->string('gender')->nullable();
-            $table->string('identification_number')->nullable();
+            $table->string('id_number')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('tvet_attended')->nullable();
             $table->string('option')->nullable();
@@ -27,10 +27,7 @@ return new class extends Migration
             $table->string('training_intake')->nullable();
             $table->string('reception_date')->nullable();
             $table->string('toolkit_received')->nullable();
-            $table->decimal('toolkit_cost')->nullable();
-            $table->decimal('subsidized_percent')->nullable();
             $table->string('sector')->nullable();
-            $table->decimal('total')->nullable();
             $table->timestamps();
         });
     }

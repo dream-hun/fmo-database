@@ -30,6 +30,7 @@ final class DatabaseSeeder extends Seeder
             ScholarshipSeeder::class,
             SchoolFeedingSeeder::class,
             FruitSeeder::class,
+            ToolkitSeeder::class,
         ]);
 
     }

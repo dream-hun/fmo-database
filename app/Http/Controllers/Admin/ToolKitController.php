@@ -11,6 +11,7 @@ use App\Http\Requests\Admin\StoreToolKitRequest;
 use App\Imports\ToolkitImport;
 use App\Models\Toolkit;
 use Exception;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Facades\Excel;
@@ -69,21 +70,44 @@ final class ToolKitController extends Controller
     {
         abort_if(Gate::denies('toolkit_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $file = $request->file('file');
+        // Enable maximum error reporting during import
+        ini_set('display_errors', '1');
+        ini_set('display_startup_errors', '1');
+        error_reporting(E_ALL);
+
+        // Log the import attempt
+        Log::info('Starting toolkit import', [
+            'user_id' => auth()->id(),
+            'file_name' => $request->file('file')->getClientOriginalName(),
+            'file_size' => $request->file('file')->getSize(),
+        ]);
 
         try {
+            // Store file temporarily for debugging if needed
+            $path = $request->file('file')->store('temp');
+            Log::info('Stored import file at: '.$path);
+
+            DB::beginTransaction();
+
             // Create import object to track statistics
             $import = new ToolkitImport();
 
-            // Import the data
-            Excel::import($import, $file);
+            // Import the data - let's catch specific exceptions
+            Excel::import($import, $request->file('file'));
+
+            DB::commit();
 
             // Get import statistics
             $rowsImported = $import->getRowsImported();
-            $failures = $import->getFailures();
 
-            if (count($failures) > 0) {
-                $failureCount = count($failures);
+            // Log success
+            Log::info('Toolkit import completed', [
+                'rows_imported' => $rowsImported,
+                'errors' => count($import->failures()),
+            ]);
+
+            if (count($import->failures()) > 0) {
+                $failureCount = count($import->failures());
 
                 return back()->with('warning', "Imported {$rowsImported} records, but {$failureCount} records had validation errors. Check logs for details.");
             }
@@ -95,20 +119,42 @@ final class ToolKitController extends Controller
             return back()->with('error', 'No records were imported. Please check your file format and data.');
 
         } catch (ValidationException $e) {
+            DB::rollBack();
+
             $failures = $e->failures();
-            Log::error('Import validation failed: '.count($failures).' rows had errors', [
-                'first_few_errors' => array_slice($failures, 0, 5),
+            $errorDetails = [];
+
+            // Get detailed validation errors for logging
+            foreach (array_slice($failures, 0, 3) as $failure) {
+                $errorDetails[] = [
+                    'row' => $failure->row(),
+                    'attribute' => $failure->attribute(),
+                    'errors' => $failure->errors(),
+                ];
+            }
+
+            Log::error('Import validation failed', [
+                'error_count' => count($failures),
+                'examples' => $errorDetails,
             ]);
 
-            return back()->with('error', 'Import validation failed: '.count($failures).' rows had errors. Check the server logs for details.');
+            return back()->with('error', 'Import validation failed: '.count($failures).' rows had errors. Please check data format.');
+
         } catch (Exception $e) {
-            Log::error('Import failed: '.$e->getMessage(), [
-                'exception' => get_class($e),
+            DB::rollBack();
+
+            // Get detailed error information
+            $errorInfo = [
+                'message' => $e->getMessage(),
+                'class' => get_class($e),
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
-                'trace' => $e->getTraceAsString(),
-            ]);
+                'trace' => array_slice($e->getTrace(), 0, 5), // First 5 elements of trace
+            ];
 
+            Log::error('Import exception', $errorInfo);
+
+            // Show simpler error message to user
             return back()->with('error', 'Import failed: '.$e->getMessage());
         }
     }

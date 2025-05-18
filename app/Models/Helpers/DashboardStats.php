@@ -9,6 +9,7 @@ use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
 use App\Models\Scholarship;
+use App\Models\Toolkit;
 
 final class DashboardStats
 {
@@ -387,5 +388,10 @@ final class DashboardStats
                 ],
             ]);
 
+    }
+
+    public static function toolKit(): Chart
+    {
+        $data = ToolKit::query();
     }
 }
