@@ -99,7 +99,7 @@ return [
             'sslmode' => env('DB_SSLMODE', 'prefer'), // this line is optional; Laravel does not use it directly
             'options' => [
                 // Force no SSL via DSN
-                'options' => "--client_encoding=UTF8 --sslmode=" . env('DB_SSLMODE', 'disable'),
+                'options' => '--client_encoding=UTF8 --sslmode='.env('DB_SSLMODE', 'disable'),
             ],
         ],
 

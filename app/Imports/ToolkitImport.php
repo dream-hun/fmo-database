@@ -9,84 +9,55 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\SkipsOnError;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithBatchInserts;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
-use Maatwebsite\Excel\Concerns\WithChunkReading;
-use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Validators\Failure;
 use PHPUnit\Event\Code\Throwable;
 
-final class ToolkitImport implements SkipsOnError, ToModel, WithHeadingRow, WithValidation, WithChunkReading, WithBatchInserts
+final class ToolkitImport implements SkipsOnError, ToModel, WithBatchInserts, WithChunkReading, WithHeadingRow, WithValidation
 {
     private array $failures = [];
-    private int $rowsImported = 0;
 
-    public function prepareForValidation($data, $index)
-    {
-        return array_map(static function ($value) {
-            return is_string($value) ? trim($value) : $value;
-        }, $data);
-    }
+    private int $rowsImported = 0;
 
     public function model(array $row): ?Toolkit
     {
-        $data = [
+
+        $toolkits = new Toolkit([
+
             'uuid' => (string) Str::uuid(),
             'project_id' => 1,
-        ];
+            'name' => $row['name'] ?? null,
+            'gender' => $row['gender'] ?? null,
+            'identification_number' => $row['identification_number'] ?? null,
+            'phone_number' => $row['phone_number'] ?? null,
+            'tvet_attended' => $row['tvet_attended'] ?? null,
+            'option' => $row['option'] ?? null,
+            'level' => $row['level'] ?? null,
+            'training_intake' => $row['training_intake'] ?? null,
+            'reception_date' => $row['reception_date'] ?? null,
+            'toolkit_received' => $row['toolkit_received'] ?? null,
+            'toolkit_cost' => $row['toolkit_cost'] ?? null,
+            'subsidized_percent' => $row['subsidized_percent'] ?? null,
+            'sector' => $row['sector'] ?? null,
+            'total' => $row['total'] ?? null,
 
-        // Map fields with type casting and null handling
-        $fields = [
-            'name' => 'string',
-            'gender' => 'string',
-            'identification_number' => 'string',
-            'phone_number' => 'string',
-            'tvet_attended' => 'string',
-            'option' => 'string',
-            'level' => 'string',
-            'training_intake' => 'string',
-            'reception_date' => 'string',
-            'toolkit_received' => 'string',
-            'toolkit_cost' => 'float',
-            'subsidized_percent' => 'float',
-            'sector' => 'string',
-            'total' => 'float'
-        ];
-
-        foreach ($fields as $field => $type) {
-            if (!isset($row[$field]) || $row[$field] === '') {
-                $data[$field] = null;
-                continue;
-            }
-
-            $data[$field] = $type === 'float' ? (float) $row[$field] : (string) $row[$field];
-        }
-
-        $toolkit = new Toolkit($data);
-        $toolkit->save();
+        ]);
+        $toolkits->save();
         $this->rowsImported++;
 
-        // Return null to free memory
-        return null;
+        return $toolkits;
+
     }
 
     public function rules(): array
     {
         return [
             'name' => 'required|string',
-            'gender' => 'nullable|string',
-            'identification_number' => 'nullable',
-            'phone_number' => 'nullable',
-            'tvet_attended' => 'nullable|string',
-            'option' => 'nullable|string',
-            'level' => 'nullable|string',
-            'training_intake' => 'nullable|string',
-            'reception_date' => 'nullable|string',
-            'toolkit_received' => 'nullable|string',
-            'toolkit_cost' => 'nullable|numeric',
-            'subsidized_percent' => 'nullable|numeric',
-            'sector' => 'nullable|string',
-            'total' => 'nullable|numeric',
+            'gender' => 'nullable|string|in:M,F',
+
         ];
     }
 
@@ -98,7 +69,6 @@ final class ToolkitImport implements SkipsOnError, ToModel, WithHeadingRow, With
             'line' => $e->getLine(),
         ]);
     }
-
 
     public function onFailure(Failure ...$failures): void
     {
@@ -124,17 +94,11 @@ final class ToolkitImport implements SkipsOnError, ToModel, WithHeadingRow, With
         return $this->rowsImported;
     }
 
-    /**
-     * @return int
-     */
     public function chunkSize(): int
     {
-        return 500; // Process 500 rows at a time to reduce memory usage
+        return 100; // Process 500 rows at a time to reduce memory usage
     }
 
-    /**
-     * @return int
-     */
     public function batchSize(): int
     {
         return 50; // Insert 100 records at a time to optimize database performance

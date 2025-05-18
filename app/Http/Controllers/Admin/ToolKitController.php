@@ -68,23 +68,20 @@ final class ToolKitController extends Controller
     {
         abort_if(Gate::denies('toolkit_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        $file = $request->file('file');
+
         try {
-            $file = $request->file('file');
+            // Create import object to track statistics
             $import = new ToolkitImport();
 
-            // If file is larger than 5MB, queue it
-            if ($file->getSize() > 5 * 1024 * 1024) {
-                Excel::queueImport($import, $file);
-                return back()->with('success', 'Import has been queued and will be processed in the background.');
-            }
-
-            // For smaller files, process immediately
+            // Import the data
             Excel::import($import, $file);
 
+            // Get import statistics
             $rowsImported = $import->getRowsImported();
 
             if ($rowsImported > 0) {
-                return back()->with('success', "Successfully imported {$rowsImported} Toolkits records.");
+                return back()->with('success', "Successfully imported {$rowsImported} toolkits records.");
             }
 
             return back()->with('error', 'No records were imported. Please check your file format and data.');
@@ -92,8 +89,6 @@ final class ToolKitController extends Controller
         } catch (Exception $e) {
             Log::error('Import failed: '.$e->getMessage(), [
                 'exception' => $e,
-                'file' => $e->getFile(),
-                'line' => $e->getLine(),
             ]);
 
             return back()->with('error', 'Import failed: '.$e->getMessage());
