@@ -24,13 +24,18 @@ final class Toolkit extends Model
         'reception_date',
         'toolkit_received',
         'toolkit_cost',
-        'subsidized_percent',
+
         'sector',
         'total',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
+
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
 
     public function project(): BelongsTo
     {

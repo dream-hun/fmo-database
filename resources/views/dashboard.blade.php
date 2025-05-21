@@ -56,7 +56,7 @@
             <section class="col-lg-12">
 
                 <div class="row mt-5">
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-4 mb-4">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Microcredit Individual Loan Distribution</h3>
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
@@ -78,7 +78,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <x-toolkit-component/>
+                    </div>
+
+                    <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
@@ -91,7 +95,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">Scholarship By year</div>
                             <div class="card-body">
@@ -99,6 +103,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>
@@ -126,5 +131,4 @@
     {!! $scholarshipByYear->script() !!}
     {!! $scholarshipOptionChart->script() !!}
     {!! $goatDistributionChart->script() !!}
-
 @endpush

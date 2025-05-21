@@ -32,30 +32,25 @@ final class ScholarshipSeeder extends Seeder
         // Read CSV file
         $file = fopen($csvPath, 'r');
 
-        // Get headers
-        $headers = fgetcsv($file);
-
         // Count the number of rows for the progress bar (excluding header)
         $rowCount = count(file($csvPath)) - 1;
-        $this->command->info("Found {$rowCount} records to import.");
+        $this->command->info("Found $rowCount records to import.");
 
         // Create a progress bar
         $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
         $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
         $progressBar->start();
 
-        // Truncate the table before seeding
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('scholarships')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        // Process each row
         $row = 0;
         $successCount = 0;
         $errorCount = 0;
 
         while (($data = fgetcsv($file)) !== false) {
-            // Skip header row
+
             if ($row === 0) {
                 $row++;
 
@@ -63,7 +58,7 @@ final class ScholarshipSeeder extends Seeder
             }
 
             try {
-                // Skip empty rows
+
                 if (empty(mb_trim($data[1] ?? ''))) {
                     $row++;
                     $progressBar->advance();
@@ -71,7 +66,6 @@ final class ScholarshipSeeder extends Seeder
                     continue;
                 }
 
-                // Map CSV data to model fields with proper data cleaning
                 Scholarship::create([
                     'uuid' => Str::uuid(),
                     'project_id' => 2,
@@ -93,7 +87,7 @@ final class ScholarshipSeeder extends Seeder
             } catch (Exception $e) {
                 $errorCount++;
                 if ($errorCount <= 5) {
-                    $this->command->error("Error processing row {$row}: ".$e->getMessage());
+                    $this->command->error("Error processing row $row: ".$e->getMessage());
                 } elseif ($errorCount === 6) {
                     $this->command->error('Additional errors exist but are not being displayed...');
                 }
@@ -103,20 +97,18 @@ final class ScholarshipSeeder extends Seeder
             $row++;
         }
 
-        // Finish the progress bar
         $progressBar->finish();
 
-        // Close the file
         fclose($file);
 
         $this->command->newLine(2);
         $this->command->info('Scholarship data seeded successfully!');
-        $this->command->info("{$successCount} records imported, {$errorCount} errors.");
+        $this->command->info("$successCount records imported, $errorCount errors.");
 
         if ($successCount > 0) {
             $this->command->info('Example of imported data:');
             $example = Scholarship::first();
-            $this->command->info("Name: {$example->names}, School: {$example->school}, Study Option: {$example->study_option}");
+            $this->command->info("Name: $example->names, School: $example->school, Study Option: $example->study_option");
         }
     }
 }

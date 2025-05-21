@@ -37,6 +37,7 @@ final class DashboardController extends Controller
             'scholarshipByYear' => $scholarshipByYear,
             'scholarshipOptionChart' => $scholarshipOptionChart,
             'goatDistributionChart' => $goatDistributionChart,
+
         ]);
     }
 }

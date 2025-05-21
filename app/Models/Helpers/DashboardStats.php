@@ -10,6 +10,7 @@ use App\Models\Goat;
 use App\Models\Individual;
 use App\Models\Scholarship;
 use App\Models\Toolkit;
+use DB;
 
 final class DashboardStats
 {
@@ -390,9 +391,34 @@ final class DashboardStats
 
     }
 
-    public static function toolKit(): Chart
+    public static function toolKit(): array
     {
-        $toolkits = Toolkit::query()
-            ->select('');
+        $rawData = Toolkit::select(
+            DB::raw('toolkit_received'),
+            DB::raw('YEAR(STR_TO_DATE(reception_date, "%b %d, %Y")) as year'),
+            DB::raw('COUNT(*) as total')
+        )
+            ->groupBy('toolkit_received', 'year')
+            ->get();
+
+        $years = $rawData->pluck('year')->unique()->sort()->values();
+        $toolkits = $rawData->pluck('toolkit_received')->unique()->sort()->values();
+
+        $series = $toolkits->map(function ($toolkit) use ($years, $rawData) {
+            return [
+                'name' => $toolkit,
+                'data' => $years->map(function ($year) use ($toolkit, $rawData) {
+                    return $rawData
+                        ->where('toolkit_received', $toolkit)
+                        ->where('year', $year)
+                        ->sum('total');
+                })->toArray(),
+            ];
+        });
+
+        return [
+            'years' => $years->toArray(),
+            'series' => $series->toArray(),
+        ];
     }
 }

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Fruit;
-use App\Models\Toolkit;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
@@ -116,11 +115,12 @@ final class FruitSeeder extends Seeder
         }
     }
 
-    public function formattedDate(string $date): ?string {
+    public function formattedDate(string $date): ?string
+    {
 
         try {
-            return  Carbon::createFromFormat('d/m/Y',$date)->format('Y-m-d');
-        }catch (Exception $e){
+            return Carbon::createFromFormat('d/m/Y', $date)->format('Y-m-d');
+        } catch (Exception $e) {
             return null;
         }
 

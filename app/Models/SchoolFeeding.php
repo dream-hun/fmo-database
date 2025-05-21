@@ -23,22 +23,12 @@ final class SchoolFeeding extends Model
         'deleted_at',
     ];
 
-    protected $fillable = [
-        'name',
-        'grade',
-        'gender',
-        'school_name',
-        'district',
-        'sector',
-        'cell',
-        'village',
-        'fathers_name',
-        'mothers_name',
-        'project_id',
-        'created_at',
-        'updated_at',
-        'deleted_at',
-    ];
+    protected $guarded = [];
+
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
 
     public function project(): BelongsTo
     {

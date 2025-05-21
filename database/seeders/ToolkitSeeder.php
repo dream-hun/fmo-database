@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Toolkit;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +13,18 @@ use Illuminate\Support\Str;
 
 final class ToolkitSeeder extends Seeder
 {
+    public static function formatReceptionDate(string $date): ?string
+    {
+        try {
+            $formatted = Carbon::createFromFormat('M d, Y', $date);
+
+            return $formatted->format('Y-m-d');
+        } catch (Exception $e) {
+
+            return null;
+        }
+    }
+
     /**
      * Run the database seeds.
      */
@@ -76,7 +89,7 @@ final class ToolkitSeeder extends Seeder
                     'option' => mb_trim($data[5] ?? ''),
                     'level' => mb_trim($data[6] ?? ''),
                     'training_intake' => mb_trim($data[7] ?? ''),
-                    'reception_date' => mb_trim($data[8] ?? ''),
+                    'reception_date' => self::formatReceptionDate($data[8] ?? ''),
                     'toolkit_received' => mb_trim($data[9] ?? ''),
                     'sector' => mb_trim($data[10] ?? ''),
 
@@ -111,5 +124,6 @@ final class ToolkitSeeder extends Seeder
             $example = Toolkit::first();
             $this->command->info("Name: {$example->name}, School: {$example->tvet_attended}, Study Option: {$example->option}");
         }
+
     }
 }

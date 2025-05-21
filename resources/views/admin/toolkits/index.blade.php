@@ -111,7 +111,7 @@
                                 {{ trans('cruds.toolkit.fields.option') }}
                             </th>
                             <th>
-                                {{ trans('cruds.toolkit.fields.level') }}
+                                {{ trans('cruds.toolkit.fields.reception_date') }}
                             </th>
                             <th>
                                 &nbsp;
@@ -146,18 +146,19 @@
                                     {{ $toolkit->option ?? '' }}
                                 </td>
                                 <td>
-                                    {{ $toolkit->level ?? '' }}
+                                    {{ $toolkit->reception_date ?? '' }}
                                 </td>
+
                                 <td>
                                     @can('toolkit_edit')
                                         <a class="btn btn-xs btn-info"
-                                            href="{{ route('admin.toolkits.edit', $toolkit->id) }}">
+                                            href="{{ route('admin.toolkits.edit', $toolkit->uuid) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan
 
                                     @can('toolkit_delete')
-                                        <form action="{{ route('admin.toolkits.destroy', $toolkit->id) }}"
+                                        <form action="{{ route('admin.toolkits.destroy', $toolkit->uuid) }}"
                                             method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
                                             style="display: inline-block;">
                                             <input type="hidden" name="_method" value="DELETE">

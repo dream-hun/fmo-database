@@ -26,10 +26,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
      <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <style>
         body {
-            font-family: 'Inter var' !important;
+            font-family: 'Inter var', serif !important;
         }
     </style>
     @yield('styles')

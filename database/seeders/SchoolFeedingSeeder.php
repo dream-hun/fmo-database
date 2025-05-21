@@ -9,98 +9,86 @@ use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Throwable;
 
 final class SchoolFeedingSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @throws Throwable
-     */
     public function run(): void
     {
-        $this->command->warn(PHP_EOL.'Creating school feeding beneficiaries...');
 
-        // Get the path to the CSV file
-        $csvPath = database_path('seeders/Data/School Feeding.csv');
-
-        // Check if file exists
-        if (! file_exists($csvPath)) {
-            $this->command->error(PHP_EOL.'CSV file not found: '.$csvPath);
-
-            return;
+        $this->command->info('Seeding School Feeding data from CSV...');
+        $csvPath = database_path('seeders/Data/SchoolFeeding.csv');
+        if (!file_exists($csvPath)) {
+            $this->command->error('CSV file not found: ' . $csvPath);
         }
 
-        // Read CSV file
         $file = fopen($csvPath, 'r');
-
-        // Get headers
-        $headers = fgetcsv($file);
-
-        // Count the number of rows for the progress bar (excluding header)
         $rowCount = count(file($csvPath)) - 1;
-        $this->command->info("Found {$rowCount} records to import.");
+        $this->command->info("Seeding $rowCount School Feeding data from CSV...");
+        $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
+        $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
+        $progressBar->start();
 
-        // Create a progress bar
-        $progress = $this->command->getOutput()->createProgressBar($rowCount);
-        $progress->start();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('school_feedings')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        // Process each row
-        $count = 0;
+        $row = 0;
+        $successCount = 0;
+        $errorCount = 0;
 
-        // Begin transaction
-        DB::beginTransaction();
+        while (($data = fgetcsv($file)) !== false) {
+            if ($row === 0) {
+                $row++;
 
-        try {
-            while (($row = fgetcsv($file)) !== false) {
-                // Skip empty rows
-                if (empty($row[0]) || count(array_filter($row)) < 3) {
-                    $progress->advance();
+                continue;
+            }
+            try {
+                if (empty(mb_trim($data[1] ?? ''))) {
+                    $row++;
+                    $progressBar->advance();
 
                     continue;
                 }
-
-                // Map CSV columns to database fields
                 SchoolFeeding::create([
                     'uuid' => Str::uuid(),
                     'project_id' => 2,
-                    'name' => mb_trim($row[1] ?? ''), // Surname column
-                    'grade' => mb_trim($row[2] ?? ''),
-                    'gender' => mb_trim($row[3] ?? ''),
-                    'school_name' => mb_trim($row[4] ?? ''),
-                    'district' => mb_trim($row[5] ?? ''),
-                    'sector' => mb_trim($row[6] ?? ''),
-                    'cell' => mb_trim($row[7] ?? ''),
-                    'village' => mb_trim($row[8] ?? ''),
-                    'fathers_name' => mb_trim($row[9] ?? ''),
-                    'mothers_name' => mb_trim($row[10] ?? ''),
+                    'name' => $data[1],
+                    'grade' => $data[2] ?? null,
+                    'gender' => $data[3] ?? null,
+                    'school_name' => $data[4] ?? null,
+                    'district' => $data[5] ?? null,
+                    'sector' => $data[6] ?? null,
+                    'cell' => $data[7] ?? null,
+                    'village' => $data[8] ?? null,
+                    'fathers_name' => $data[9] ?? null,
+                    'mothers_name' => $data[10] ?? null,
+                    'home_phone' => $data[11] ?? null,
+
                 ]);
-
-                $count++;
-                $progress->advance();
+                $successCount++;
+            } catch (Exception $e) {
+                $errorCount++;
+                if ($errorCount <= 5) {
+                    $this->command->error("Error processing row $row: " . $e->getMessage());
+                } elseif ($errorCount === 6) {
+                    $this->command->error('Additional errors exist but are not being displayed...');
+                }
             }
+            $progressBar->advance();
+            $row++;
+        }
+        $progressBar->finish();
 
-            // Commit transaction
-            DB::commit();
+        fclose($file);
 
-            // Close the file
-            fclose($file);
+        $this->command->newLine(2);
+        $this->command->info('School feeding data seeded successfully!');
+        $this->command->info("$successCount records imported, $errorCount errors.");
 
-            // Finish the progress bar
-            $progress->finish();
-
-            $this->command->info(PHP_EOL."Successfully imported {$count} school feeding beneficiaries.");
-        } catch (Exception $e) {
-            // Rollback transaction on error
-            DB::rollBack();
-
-            $this->command->error(PHP_EOL.'Error importing data: '.$e->getMessage());
-
-            // Close the file
-            if (is_resource($file)) {
-                fclose($file);
-            }
+        if ($successCount > 0) {
+            $this->command->info('Example of imported data:');
+            $example = SchoolFeeding::first();
+            $this->command->info("Name: $example->name, School: $example->school_name, Grade: $example->grade");
         }
     }
 }

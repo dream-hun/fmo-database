@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('option')->nullable();
             $table->string('level')->nullable();
             $table->string('training_intake')->nullable();
-            $table->string('reception_date')->nullable();
+            $table->date('reception_date')->nullable();
             $table->string('toolkit_received')->nullable();
             $table->string('sector')->nullable();
             $table->timestamps();

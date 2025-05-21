@@ -27,15 +27,8 @@ return new class extends Migration
             $table->string('village')->nullable();
             $table->string('fathers_name')->nullable();
             $table->string('mothers_name')->nullable();
+            $table->string('home_phone')->nullable();
             $table->timestamps();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('school_feedings');
     }
 };

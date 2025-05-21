@@ -93,7 +93,7 @@ final class TotalNumbers
         return
             self::getCows() + self::getGoats() + self::getWaterTanks() +
             self::getScholarships() + self::getIndividualMicrocredits() +
-            self::getVslas() + self::getSchoolFeeding() + self::getMalnutrition() + self::totalToolkits()+self::totalTrees();
+            self::getVslas() + self::getSchoolFeeding() + self::getMalnutrition() + self::totalToolkits() + self::totalTrees();
     }
 
     public static function femaleBeneficiaries(): int
