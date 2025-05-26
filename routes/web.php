@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EcdController;
 use App\Http\Controllers\Admin\FruitController;
 use App\Http\Controllers\Admin\GirinkaController;
 use App\Http\Controllers\Admin\GoatController;
@@ -43,6 +44,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('fruits', FruitController::class)->except(['show']);
     Route::resource('toolkits', ToolKitController::class)->except(['show']);
     Route::post('toolkits/import', [ToolKitController::class, 'importData'])->name('toolkits.import');
+    Route::resource('ecds', EcdController::class)->except(['show']);
 
 });
 

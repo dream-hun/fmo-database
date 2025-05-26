@@ -57,6 +57,15 @@
                                     </a>
                                 </li>
                             @endcan
+                            @can('ecd_access')
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.ecds.index') }}"
+                                       class="nav-link {{ request()->is('admin/ecds*') ? 'active' : '' }}">
+                                        <i class="bi bi-person-plus-fill"></i>
+                                        <p>{{ trans('cruds.malnutrition.title') }}</p>
+                                    </a>
+                                </li>
+                            @endcan
                             @can('school_feeding_access')
                                     <li class="nav-item">
                                         <a href="{{ route('admin.school-feedings.index') }}"
@@ -161,7 +170,7 @@
                                     <a href="{{ route("admin.vslas.index") }}" class="nav-link {{ request()->is("admin/vslas") || request()->is("admin/vslas/*") ? "active" : "" }}">
                                         <i class="bi bi-people-fill"></i>
 
-                                        </i>
+
                                         <p>
                                             {{ trans('cruds.vsla.title') }}
                                         </p>

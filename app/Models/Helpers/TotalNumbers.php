@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Helpers;
 
+use App\Models\Ecd;
 use App\Models\Fruit;
 use App\Models\Girinka;
 use App\Models\Goat;
@@ -85,6 +86,12 @@ final class TotalNumbers
         return Fruit::count();
     }
 
+    public static function totalEcd(): int
+    {
+        return Ecd::count();
+
+    }
+
     /**
      * Get all counts as an associative array
      */
@@ -93,7 +100,9 @@ final class TotalNumbers
         return
             self::getCows() + self::getGoats() + self::getWaterTanks() +
             self::getScholarships() + self::getIndividualMicrocredits() +
-            self::getVslas() + self::getSchoolFeeding() + self::getMalnutrition() + self::totalToolkits() + self::totalTrees();
+            self::getVslas() + self::getSchoolFeeding() +
+            self::getMalnutrition() + self::totalToolkits() +
+            self::totalTrees() + self::totalEcd();
     }
 
     public static function femaleBeneficiaries(): int

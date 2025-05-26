@@ -81,6 +81,9 @@
                     <div class="col-md-4">
                         <x-toolkit-component/>
                     </div>
+                    <div class="col-md-4">
+                        <x-school-feeding-component/>
+                    </div>
 
                     <div class="col-md-4">
                         <div class="card">

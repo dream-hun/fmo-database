@@ -13,21 +13,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('school_feedings', function (Blueprint $table) {
+        Schema::create('ecds', function (Blueprint $table) {
             $table->id();
             $table->uuid();
             $table->foreignId('project_id')->constrained();
             $table->string('name');
             $table->string('grade')->nullable();
             $table->string('gender')->nullable();
-            $table->string('school_name')->nullable();
-            $table->string('academic_year')->nullable();
-            $table->string('district')->nullable();
+            $table->integer('academic_year')->nullable();
             $table->string('sector')->nullable();
             $table->string('cell')->nullable();
             $table->string('village')->nullable();
-            $table->string('fathers_name')->nullable();
-            $table->string('mothers_name')->nullable();
+            $table->string('father_name')->nullable();
+            $table->string('mother_name')->nullable();
             $table->string('home_phone')->nullable();
             $table->timestamps();
         });
