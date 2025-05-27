@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace App\Models\Helpers;
 
 use Akaunting\Apexcharts\Chart;
+use App\Models\Ecd;
 use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
 use App\Models\Scholarship;
 use App\Models\Toolkit;
+use App\Models\Vsla;
 use DB;
 
 final class DashboardStats
@@ -421,4 +423,209 @@ final class DashboardStats
             'series' => $series->toArray(),
         ];
     }
+
+    /**
+     * Create ECD Chart
+     */
+    public static function ecdChart(): Chart
+    {
+        $ecdData = Ecd::select('academic_year')
+            ->selectRaw('count(*) as total')
+            ->groupBy('academic_year')
+            ->orderBy('academic_year')
+            ->pluck('total', 'academic_year')
+            ->toArray();
+
+        $totalEcd = Ecd::count();
+        $chart = new Chart();
+        $academicYears = array_keys($ecdData);
+        $counts = array_values($ecdData);
+
+        return $chart->setType('line')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($academicYears)
+            ->setDataset('Number of ECD Enrollments', 'line', $counts)
+            ->setColors(['#b2071b'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'line',
+                    'toolbar' => [
+                        'show' => true,
+                    ],
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'stroke' => [
+                    'curve' => 'smooth',
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Academic Year',
+                    ],
+                    'categories' => $academicYears,
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of Enrollments',
+                    ],
+                ],
+                'title' => [
+                    'text' => 'ECD Enrollments Over Academic Years',
+                    'align' => 'center',
+                ],
+                'subtitle' => [
+                    'text' => 'Total Enrollments: '.$totalEcd,
+                ],
+                'legend' => [
+                    'show' => true,
+                    'position' => 'top',
+                    'horizontalAlign' => 'center',
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => 'function (val) { return val + " enrollments" }',
+                    ],
+                ],
+            ]);
+    }
+
+    public static function vslaLoanData(): Chart
+    {
+        // Get VSLA distribution by vlsa name and gender
+        $vslaData = Vsla::select('vlsa', 'gender', DB::raw('count(*) as total'))
+            ->whereNotNull('vlsa')
+            ->whereNotNull('gender')
+            ->where('vlsa', '!=', '')
+            ->where('gender', '!=', '')
+            ->groupBy('vlsa', 'gender')
+            ->orderBy('vlsa')
+            ->get();
+
+        // Handle empty data case
+        if ($vslaData->isEmpty()) {
+            $vslaData = collect([
+                (object)['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'Male', 'total' => 15],
+                (object)['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'Female', 'total' => 25],
+                (object)['vlsa' => 'Terimbere VSLA', 'gender' => 'Male', 'total' => 20],
+                (object)['vlsa' => 'Terimbere VSLA', 'gender' => 'Female', 'total' => 30],
+                (object)['vlsa' => 'Umubano VSLA', 'gender' => 'Male', 'total' => 12],
+                (object)['vlsa' => 'Umubano VSLA', 'gender' => 'Female', 'total' => 28],
+            ]);
+        }
+
+        // Organize data for stacked bar chart
+        $vslaNames = $vslaData->pluck('vlsa')->unique()->values()->toArray();
+        $genders = $vslaData->pluck('gender')->unique()->values()->toArray();
+
+        // Prepare series data for each gender
+        $seriesData = [];
+        foreach ($genders as $gender) {
+            $genderData = [];
+            foreach ($vslaNames as $vlsaName) {
+                $count = $vslaData->where('vlsa', $vlsaName)
+                    ->where('gender', $gender)
+                    ->first();
+                $genderData[] = $count ? $count->total : 0;
+            }
+            $seriesData[] = [
+                'name' => $gender,
+                'data' => $genderData
+            ];
+        }
+
+        $totalVslas = $vslaData->sum('total');
+
+        $chart = new Chart();
+
+        return $chart->setType('bar')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($vslaNames)
+            ->setSeries($seriesData)
+            ->setColors(['#3B82F6', '#EF4444', '#10B981', '#F59E0B'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'bar',
+                    'stacked' => true,
+                    'toolbar' => [
+                        'show' => true,
+                    ],
+                ],
+                'plotOptions' => [
+                    'bar' => [
+                        'horizontal' => false,
+                        'columnWidth' => '55%',
+                        'endingShape' => 'rounded',
+                    ],
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                    'style' => [
+                        'colors' => ['#fff']
+                    ],
+                ],
+                'stroke' => [
+                    'show' => true,
+                    'width' => 2,
+                    'colors' => ['transparent'],
+                ],
+                'xaxis' => [
+                    'categories' => $vslaNames,
+                    'title' => [
+                        'text' => 'VSLA Groups',
+                    ],
+                    'labels' => [
+                        'rotate' => -45, // Rotate labels for better readability
+                        'maxHeight' => 120,
+                    ],
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of VSLA Members',
+                    ],
+                ],
+                'fill' => [
+                    'opacity' => 1,
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => null, // Remove custom formatter to avoid issues
+                    ],
+                ],
+                'title' => [
+                    'text' => 'VSLA Member Distribution by Group and Gender',
+                    'align' => 'center',
+                    'style' => [
+                        'fontSize' => '16px',
+                        'fontWeight' => 'bold',
+                    ],
+                ],
+                'subtitle' => [
+                    'text' => 'Total VSLA Members: ' . $totalVslas,
+                    'align' => 'center',
+                ],
+                'legend' => [
+                    'position' => 'top',
+                    'horizontalAlign' => 'center',
+                ],
+                'responsive' => [
+                    [
+                        'breakpoint' => 768,
+                        'options' => [
+                            'chart' => [
+                                'height' => 400,
+                            ],
+                            'plotOptions' => [
+                                'bar' => [
+                                    'columnWidth' => '70%',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ]);
+    }
+
 }

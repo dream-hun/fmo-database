@@ -6,5 +6,9 @@ namespace App\Models\Traits;
 
 trait ModelUuid
 {
-    public static function boot() {}
+    public static function boot()
+    {
+        parent::boot();
+
+    }
 }

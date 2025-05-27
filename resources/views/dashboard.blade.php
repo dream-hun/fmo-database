@@ -56,23 +56,23 @@
             <section class="col-lg-12">
 
                 <div class="row mt-5">
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-8 mb-4">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Microcredit Individual Loan Distribution</h3>
-                            </div>
+
                             <div class="card-body">
-                               {!! $individual->container() !!}
+                                {!! $vslaChart->container() !!}
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
+                        <x-school-feeding-component/>
+                    </div>
+
+
+
+                    <div class="col-md-3">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    Goat Distribution per gender
-                                </h3>
-                            </div>
+
                             <div class="card-body">
                                 {!! $goatDistributionChart->container() !!}
                             </div>
@@ -81,26 +81,34 @@
                     <div class="col-md-4">
                         <x-toolkit-component/>
                     </div>
-                    <div class="col-md-4">
-                        <x-school-feeding-component/>
-                    </div>
 
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+
+                            <div class="card-body">
+                                {!! $individual->container() !!}
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-4">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    Girinka (One Milky Cow) Per Family
-                                </h3>
-                            </div>
+
                             <div class="card-body">
                                 {!! $girinkaChart->container() !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                {!! $ecdChart->container() !!}
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="card">
-                            <div class="card-header">Scholarship By year</div>
+
                             <div class="card-body">
                                 {!! $scholarshipByYear->container() !!}
                             </div>
@@ -115,9 +123,6 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    Scholarships by Study Option
-                </div>
                 <div class="card-body">
                     {!! $scholarshipOptionChart->container() !!}
                 </div>
@@ -134,4 +139,6 @@
     {!! $scholarshipByYear->script() !!}
     {!! $scholarshipOptionChart->script() !!}
     {!! $goatDistributionChart->script() !!}
+    {!! $ecdChart->script() !!}
+    {!! $vslaChart->script() !!}
 @endpush

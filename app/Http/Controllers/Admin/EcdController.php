@@ -13,7 +13,7 @@ final class EcdController extends Controller
 {
     public function index()
     {
-        $ecds = Ecd::select(['uuid', 'id', 'name', 'academic_year', 'gender', 'sector'])->get();
+        $ecds = Ecd::select(['uuid', 'id', 'name', 'academic_year', 'gender', 'grade', 'home_phone'])->get();
 
         return view('admin.ecds.index', compact('ecds'));
     }

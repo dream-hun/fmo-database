@@ -304,6 +304,32 @@ final class PermissionsTableSeeder extends Seeder
                 'id' => 73,
                 'title' => 'toolkit_delete',
             ],
+            [
+                'id' => 74,
+                'title' => 'ecd_access',
+
+            ],
+            [
+                'id' => 75,
+                'title' => 'ecd_create',
+            ],
+            [
+                'id' => 76,
+                'title' => 'ecd_edit',
+            ],
+            [
+                'id' => 77,
+                'title' => 'ecd_show',
+
+            ],
+            [
+                'id' => 78,
+                'title' => 'ecd_delete',
+            ],
+            [
+                'id' => 79,
+                'title' => 'urgent_community_access',
+            ],
         ];
 
         Permission::insert($permissions);

@@ -37,7 +37,7 @@
                 </li>
                 @can('childprotection_access')
                     <li
-                        class="nav-item {{ request()->is("admin/malnutritions*") ? "menu-open" : "" }} {{ request()->is("admin/school-feedings*") ? "menu-open" : "" }}">
+                        class="nav-item {{ request()->is("admin/malnutritions*") ? "menu-open" : "" }} {{ request()->is("admin/school-feedings*") ? "menu-open":""}} {{request()->is("admin/ecds*") ? "menu-open":""}}">
                         <a href="#"
                             class="nav-link {{ request()->is('admin/malnutritions*') ? 'active' : '' }}">
                             <i class="bi bi-people-fill"></i>
@@ -62,7 +62,7 @@
                                     <a href="{{ route('admin.ecds.index') }}"
                                        class="nav-link {{ request()->is('admin/ecds*') ? 'active' : '' }}">
                                         <i class="bi bi-person-plus-fill"></i>
-                                        <p>{{ trans('cruds.malnutrition.title') }}</p>
+                                        <p>{{ trans('cruds.ecd.title') }}</p>
                                     </a>
                                 </li>
                             @endcan
@@ -200,6 +200,67 @@
                                             </p>
                                         </a>
                                     </li>
+                            @endcan
+                        </ul>
+                    </li>
+                @endcan
+                @can('urgent_community_access')
+                    <li class="nav-item has-treeview {{ request()->is("admin/scholarships*") ? "menu-open" : "" }} {{ request()->is("admin/vslas*") ? "menu-open" : "" }} {{ request()->is("admin/individuals*") ? "menu-open" : "" }}{{ request()->is("admin/toolkits*")?"menu-open": "" }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/scholarships*") ? "active" : "" }} {{ request()->is("admin/vslas*") ? "active" : "" }} {{ request()->is("admin/individuals*") ? "active" : "" }}" href="#">
+                            <i class="bi bi-chevron-down right"></i>
+                            <p>
+                                {{ trans('cruds.workForceDevelopment.title') }}
+
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @can('scholarship_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.scholarships.index") }}" class="nav-link {{ request()->is("admin/scholarships") || request()->is("admin/scholarships/*") ? "active" : "" }}">
+                                        <i class="bi bi-building"></i>
+
+
+                                        <p>
+                                            {{ trans('cruds.scholarship.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('vsla_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.vslas.index") }}" class="nav-link {{ request()->is("admin/vslas") || request()->is("admin/vslas/*") ? "active" : "" }}">
+                                        <i class="bi bi-people-fill"></i>
+
+
+                                        <p>
+                                            {{ trans('cruds.vsla.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('individual_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.individuals.index") }}" class="nav-link {{ request()->is("admin/individuals") || request()->is("admin/individuals/*") ? "active" : "" }}">
+                                        <i class="bi bi-person">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.individual.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('toolkit_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.toolkits.index") }}" class="nav-link {{ request()->is("admin/toolkits") || request()->is("admin/toolkits/*") ? "active" : "" }}">
+                                        <i class="bi bi-gear">
+
+                                        </i>
+                                        <p>
+                                            {{trans('cruds.toolkit.title')}}
+                                        </p>
+                                    </a>
+                                </li>
                             @endcan
                         </ul>
                     </li>
