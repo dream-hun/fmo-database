@@ -56,7 +56,7 @@
             <section class="col-lg-12">
 
                 <div class="row mt-5">
-                    <div class="col-md-8 mb-4">
+                    <div class="col-md-6 mb-4">
                         <div class="card">
 
                             <div class="card-body">
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <x-school-feeding-component/>
                     </div>
 
@@ -145,5 +145,5 @@
     {!! $goatDistributionChart->script() !!}
     {!! $ecdChart->script() !!}
     {!! $vslaChart->script() !!}
-    {!! $vslaChart->script() !!}
+
 @endpush

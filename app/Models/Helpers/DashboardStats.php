@@ -561,7 +561,6 @@ final class DashboardStats
 
     public static function vslaLoanData(): Chart
     {
-
         $vslaData = Vsla::select('vlsa', 'gender', DB::raw('count(*) as total'))
             ->whereNotNull('vlsa')
             ->whereNotNull('gender')
@@ -570,7 +569,6 @@ final class DashboardStats
             ->groupBy('vlsa', 'gender')
             ->orderBy('vlsa')
             ->get();
-
 
         if ($vslaData->isEmpty()) {
             $vslaData = collect([
@@ -583,10 +581,8 @@ final class DashboardStats
             ]);
         }
 
-
         $vslaNames = $vslaData->pluck('vlsa')->unique()->values()->toArray();
         $genders = $vslaData->pluck('gender')->unique()->values()->toArray();
-
 
         $seriesData = [];
         foreach ($genders as $gender) {
@@ -623,7 +619,7 @@ final class DashboardStats
                 ],
                 'plotOptions' => [
                     'bar' => [
-                        'horizontal' => false,
+                        'horizontal' => true, // Changed to true for horizontal bars
                         'columnWidth' => '55%',
                         'endingShape' => 'rounded',
                     ],
@@ -642,16 +638,15 @@ final class DashboardStats
                 'xaxis' => [
                     'categories' => $vslaNames,
                     'title' => [
-                        'text' => 'VSLA Groups',
+                        'text' => 'Number of VSLA Members', // Swapped axis titles
                     ],
                     'labels' => [
-                        'rotate' => -45, // Rotate labels for better readability
-                        'maxHeight' => 120,
+                        'maxHeight' => 120, // Removed rotation as it's not needed for horizontal
                     ],
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'Number of VSLA Members',
+                        'text' => 'VSLA Groups', // Swapped axis titles
                     ],
                 ],
                 'fill' => [
@@ -659,7 +654,7 @@ final class DashboardStats
                 ],
                 'tooltip' => [
                     'y' => [
-                        'formatter' => null, // Remove custom formatter to avoid issues
+                        'formatter' => null,
                     ],
                 ],
                 'title' => [
