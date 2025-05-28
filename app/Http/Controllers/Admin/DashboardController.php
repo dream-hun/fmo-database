@@ -29,6 +29,7 @@ final class DashboardController extends Controller
         $goatDistributionChart = DashboardStats::goatDistribution();
         $ecdChart=DashboardStats::ecdChart();
         $vslaChart=DashboardStats::vslaLoanData();
+        $toolkitChart = DashboardStats::toolkit();
 
         return view('dashboard', [
             'total' => $totalBeneficiaries,
@@ -41,6 +42,7 @@ final class DashboardController extends Controller
             'goatDistributionChart' => $goatDistributionChart,
             'ecdChart' => $ecdChart,
             'vslaChart' => $vslaChart,
+            'toolkitChart' => $toolkitChart,
 
         ]);
     }

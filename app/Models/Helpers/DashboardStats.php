@@ -393,37 +393,105 @@ final class DashboardStats
 
     }
 
-    public static function toolKit(): array
+    public static function toolKit(): Chart
     {
         $rawData = Toolkit::select(
             DB::raw('toolkit_received'),
             DB::raw('YEAR(STR_TO_DATE(reception_date, "%b %d, %Y")) as year'),
             DB::raw('COUNT(*) as total')
         )
+            ->whereNotNull('reception_date')
+            ->where('reception_date', '!=', '')
             ->groupBy('toolkit_received', 'year')
             ->get();
 
-        $years = $rawData->pluck('year')->unique()->sort()->values();
+        // Get unique years and sort them
+        $years = $rawData->pluck('year')->unique()->sort()->values()->toArray();
+
+        // Get unique toolkit types and sort them
         $toolkits = $rawData->pluck('toolkit_received')->unique()->sort()->values();
 
-        $series = $toolkits->map(function ($toolkit) use ($years, $rawData) {
-            return [
-                'name' => $toolkit,
-                'data' => $years->map(function ($year) use ($toolkit, $rawData) {
-                    return $rawData
-                        ->where('toolkit_received', $toolkit)
-                        ->where('year', $year)
-                        ->sum('total');
-                })->toArray(),
-            ];
-        });
+        // Create chart instance
+        $chart = new Chart();
+        $chart->setType('bar')
+            ->setWidth('100%')
+            ->setHeight(400)
+            ->setLabels($years);
 
-        return [
-            'years' => $years->toArray(),
-            'series' => $series->toArray(),
-        ];
+        // Add dataset for each toolkit type
+        foreach ($toolkits as $index => $toolkit) {
+            $data = collect($years)->map(function ($year) use ($toolkit, $rawData) {
+                return $rawData
+                    ->where('toolkit_received', $toolkit)
+                    ->where('year', $year)
+                    ->sum('total');
+            })->toArray();
+
+            $chart->setDataset($toolkit, 'bar', $data);
+        }
+
+        // Set colors and options
+        $colors = ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26A69A', '#D4E157'];
+
+        return $chart->setColors($colors)
+            ->setOptions([
+                'chart' => [
+                    'type' => 'bar',
+                    'toolbar' => [
+                        'show' => true,
+                    ],
+                    'stacked' => false,
+                ],
+                'dataLabels' => [
+                    'enabled' => false,
+                ],
+                'stroke' => [
+                    'width' => 2,
+                    'curve' => 'straight',
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Years',
+                    ],
+                    'categories' => $years,
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of Toolkits',
+                    ],
+                ],
+                'title' => [
+                    'text' => 'Toolkit Distribution by Year',
+                    'align' => 'center',
+                ],
+                'subtitle' => [
+                    'text' => 'Total Toolkits: ' . $rawData->sum('total'),
+                    'align' => 'center',
+                ],
+                'legend' => [
+                    'show' => true,
+                    'position' => 'top',
+                    'horizontalAlign' => 'center',
+                ],
+                'grid' => [
+                    'show' => true,
+                    'borderColor' => '#e0e6ed',
+                    'strokeDashArray' => 1,
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => 'function (val) { return val + " toolkits" }',
+                    ],
+                ],
+                'plotOptions' => [
+                    'bar' => [
+                        'horizontal' => false,
+                        'columnWidth' => '55%',
+                        'endingShape' => 'rounded',
+                    ],
+                ],
+            ]);
     }
-
     /**
      * Create ECD Chart
      */
@@ -493,7 +561,7 @@ final class DashboardStats
 
     public static function vslaLoanData(): Chart
     {
-        // Get VSLA distribution by vlsa name and gender
+
         $vslaData = Vsla::select('vlsa', 'gender', DB::raw('count(*) as total'))
             ->whereNotNull('vlsa')
             ->whereNotNull('gender')
@@ -503,7 +571,7 @@ final class DashboardStats
             ->orderBy('vlsa')
             ->get();
 
-        // Handle empty data case
+
         if ($vslaData->isEmpty()) {
             $vslaData = collect([
                 (object)['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'Male', 'total' => 15],
@@ -515,11 +583,11 @@ final class DashboardStats
             ]);
         }
 
-        // Organize data for stacked bar chart
+
         $vslaNames = $vslaData->pluck('vlsa')->unique()->values()->toArray();
         $genders = $vslaData->pluck('gender')->unique()->values()->toArray();
 
-        // Prepare series data for each gender
+
         $seriesData = [];
         foreach ($genders as $gender) {
             $genderData = [];

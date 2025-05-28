@@ -79,7 +79,11 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <x-toolkit-component/>
+                       <div class="card">
+                           <div class="card-body">
+                               {!! $toolkitChart->container() !!}
+                           </div>
+                       </div>
                     </div>
 
                     <div class="col-md-4 mb-4">
@@ -140,5 +144,6 @@
     {!! $scholarshipOptionChart->script() !!}
     {!! $goatDistributionChart->script() !!}
     {!! $ecdChart->script() !!}
+    {!! $vslaChart->script() !!}
     {!! $vslaChart->script() !!}
 @endpush
