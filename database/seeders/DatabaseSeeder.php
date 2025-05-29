@@ -32,6 +32,7 @@ final class DatabaseSeeder extends Seeder
             FruitSeeder::class,
             ToolkitSeeder::class,
             EcdSeeder::class,
+            MusaSeeder::class,
         ]);
 
     }

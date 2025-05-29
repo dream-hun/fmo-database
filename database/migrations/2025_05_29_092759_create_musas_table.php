@@ -13,20 +13,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ecds', function (Blueprint $table) {
+        Schema::create('musas', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
-            $table->foreignId('project_id')->constrained();
             $table->string('name');
-            $table->string('grade')->nullable();
-            $table->string('gender')->nullable();
-            $table->integer('academic_year')->nullable();
+            $table->string('id_number')->nullable();
+            $table->string('family_members')->nullable();
+            $table->string('support_given')->nullable();
+            $table->date('support_date')->nullable();
             $table->string('sector')->nullable();
             $table->string('cell')->nullable();
             $table->string('village')->nullable();
-            $table->string('father_name')->nullable();
-            $table->string('mother_name')->nullable();
-            $table->string('home_phone')->nullable();
             $table->timestamps();
         });
     }

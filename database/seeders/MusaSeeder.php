@@ -4,23 +4,23 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\FoodAndHouse;
+use App\Models\Musa;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
-final class FoodAndHouseSeeder extends Seeder
+final class MusaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
+
     public function run(): void
     {
-        $this->command->info('Seeding Urgent community support data from CSV...');
-        $csvPath = database_path('seeders/Data/FoodAndHouse.csv');
+        $this->command->info('Seeding Musa data from CSV...');
+        $csvPath = database_path('seeders/Data/Musa.csv');
 
         if (! file_exists($csvPath)) {
             $this->command->error('CSV file not found: '.$csvPath);
@@ -31,13 +31,13 @@ final class FoodAndHouseSeeder extends Seeder
         $file = fopen($csvPath, 'r');
         $rowCount = count(file($csvPath)) - 1;
 
-        $this->command->info("Seeding $rowCount Urgent community support records...");
+        $this->command->info("Seeding $rowCount Musa support records...");
         $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
         $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
         $progressBar->start();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('food_and_houses')->truncate();
+        DB::table('musas')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $row = 0;
@@ -60,16 +60,16 @@ final class FoodAndHouseSeeder extends Seeder
                     continue;
                 }
 
-                FoodAndHouse::create([
-                    'uuid' => Str::uuid(),
-                    'project_id' => 2,
+                Musa::create([
                     'name' => $name,
                     'id_number' => $this->cleanIdNumber($data[2] ?? null),
-                    'cell' => $data[4] ?? null,
-                    'village' => $data[5] ?? null,
-                    'phone_number' => $data[6] ?? null,
-                    'support' => $data[7] ?? null,
-                    'date' => $this->parseDistributionDate($data[8] ?? null),
+                    'family_members' => $data[3] ?? null,
+                    'support_given' => $data[4] ?? null,
+                    'support_date' => $this->parseDistributionDate($data[5] ?? null),
+                    'sector' => $data[6] ?? null,
+                    'cell' => $data[7] ?? null,
+                    'village' => $data[8] ?? null,
+
                 ]);
 
                 $successCount++;
@@ -93,7 +93,7 @@ final class FoodAndHouseSeeder extends Seeder
         $this->command->info("Seeding completed: $successCount records imported, $errorCount errors.");
 
         if ($successCount > 0) {
-            $example = FoodAndHouse::first();
+            $example = Musa::first();
             $this->command->info("Example record — Name: $example->name, Cell: $example->cell, Village: $example->village");
         }
     }
@@ -122,7 +122,7 @@ final class FoodAndHouseSeeder extends Seeder
             }
 
             return Carbon::parse($dateString)->format('Y-m-d');
-        } catch (Exception) {
+        } catch (Exception $e) {
             Log::warning('Could not parse date: '.$dateString);
 
             return null;

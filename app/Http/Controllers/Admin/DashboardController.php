@@ -27,8 +27,8 @@ final class DashboardController extends Controller
 
         $scholarshipOptionChart = DashboardStats::scholarshipByOption();
         $goatDistributionChart = DashboardStats::goatDistribution();
-        $ecdChart=DashboardStats::ecdChart();
-        $vslaChart=DashboardStats::vslaLoanData();
+        $ecdChart = DashboardStats::ecdChart();
+        $vslaChart = DashboardStats::vslaLoanData();
         $toolkitChart = DashboardStats::toolkit();
 
         return view('dashboard', [

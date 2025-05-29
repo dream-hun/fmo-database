@@ -419,7 +419,7 @@ final class DashboardStats
             ->setLabels($years);
 
         // Add dataset for each toolkit type
-        foreach ($toolkits as $index => $toolkit) {
+        foreach ($toolkits as $toolkit) {
             $data = collect($years)->map(function ($year) use ($toolkit, $rawData) {
                 return $rawData
                     ->where('toolkit_received', $toolkit)
@@ -465,7 +465,7 @@ final class DashboardStats
                     'align' => 'center',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Toolkits: ' . $rawData->sum('total'),
+                    'text' => 'Total Toolkits: '.$rawData->sum('total'),
                     'align' => 'center',
                 ],
                 'legend' => [
@@ -492,6 +492,7 @@ final class DashboardStats
                 ],
             ]);
     }
+
     /**
      * Create ECD Chart
      */
@@ -572,12 +573,12 @@ final class DashboardStats
 
         if ($vslaData->isEmpty()) {
             $vslaData = collect([
-                (object)['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'Male', 'total' => 15],
-                (object)['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'Female', 'total' => 25],
-                (object)['vlsa' => 'Terimbere VSLA', 'gender' => 'Male', 'total' => 20],
-                (object)['vlsa' => 'Terimbere VSLA', 'gender' => 'Female', 'total' => 30],
-                (object)['vlsa' => 'Umubano VSLA', 'gender' => 'Male', 'total' => 12],
-                (object)['vlsa' => 'Umubano VSLA', 'gender' => 'Female', 'total' => 28],
+                (object) ['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'Male', 'total' => 15],
+                (object) ['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'Female', 'total' => 25],
+                (object) ['vlsa' => 'Terimbere VSLA', 'gender' => 'Male', 'total' => 20],
+                (object) ['vlsa' => 'Terimbere VSLA', 'gender' => 'Female', 'total' => 30],
+                (object) ['vlsa' => 'Umubano VSLA', 'gender' => 'Male', 'total' => 12],
+                (object) ['vlsa' => 'Umubano VSLA', 'gender' => 'Female', 'total' => 28],
             ]);
         }
 
@@ -595,7 +596,7 @@ final class DashboardStats
             }
             $seriesData[] = [
                 'name' => $gender,
-                'data' => $genderData
+                'data' => $genderData,
             ];
         }
 
@@ -627,7 +628,7 @@ final class DashboardStats
                 'dataLabels' => [
                     'enabled' => true,
                     'style' => [
-                        'colors' => ['#fff']
+                        'colors' => ['#fff'],
                     ],
                 ],
                 'stroke' => [
@@ -666,7 +667,7 @@ final class DashboardStats
                     ],
                 ],
                 'subtitle' => [
-                    'text' => 'Total VSLA Members: ' . $totalVslas,
+                    'text' => 'Total VSLA Members: '.$totalVslas,
                     'align' => 'center',
                 ],
                 'legend' => [
@@ -690,5 +691,4 @@ final class DashboardStats
                 ],
             ]);
     }
-
 }

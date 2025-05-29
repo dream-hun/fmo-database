@@ -330,6 +330,26 @@ final class PermissionsTableSeeder extends Seeder
                 'id' => 79,
                 'title' => 'urgent_community_access',
             ],
+            [
+                'id' => 80,
+                'title' => 'musa_create',
+            ],
+            [
+                'id' => 81,
+                'title' => 'musa_edit',
+            ],
+            [
+                'id' => 82,
+                'title' => 'musa_show',
+            ],
+            [
+                'id' => 83,
+                'title' => 'musa_delete',
+            ],
+            [
+                'id' => 84,
+                'title' => 'musa_access',
+            ],
         ];
 
         Permission::insert($permissions);

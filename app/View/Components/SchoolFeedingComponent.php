@@ -34,13 +34,13 @@ final class SchoolFeedingComponent extends Component
         $totals = array_values($data);
         $totalStudents = array_sum($totals);
 
-
         $legendLabels = [];
         foreach ($data as $year => $count) {
-            $legendLabels[] = $year . ' (' . $count . ' students)';
+            $legendLabels[] = $year.' ('.$count.' students)';
         }
 
         $chart = new Chart();
+
         return $chart->setType('donut')
             ->setWidth('100%')
             ->setHeight(500)
@@ -59,7 +59,7 @@ final class SchoolFeedingComponent extends Component
                     'align' => 'center',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Students: ' . $totalStudents,
+                    'text' => 'Total Students: '.$totalStudents,
                     'align' => 'center',
                 ],
                 'legend' => [
