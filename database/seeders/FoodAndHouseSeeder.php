@@ -10,7 +10,6 @@ use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 final class FoodAndHouseSeeder extends Seeder
 {
@@ -61,8 +60,7 @@ final class FoodAndHouseSeeder extends Seeder
                 }
 
                 FoodAndHouse::create([
-                    'uuid' => Str::uuid(),
-                    'project_id' => 2,
+
                     'name' => $name,
                     'id_number' => $this->cleanIdNumber($data[2] ?? null),
                     'cell' => $data[4] ?? null,

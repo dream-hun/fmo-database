@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::create('food_and_houses', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
-            $table->foreignId('project_id')->constrained();
             $table->string('name');
             $table->string('id_number')->nullable();
             $table->string('cell')->nullable();

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EcdController;
+use App\Http\Controllers\Admin\FoodAndHouseController;
 use App\Http\Controllers\Admin\FruitController;
 use App\Http\Controllers\Admin\GirinkaController;
 use App\Http\Controllers\Admin\GoatController;
@@ -49,6 +50,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('musas', MusaController::class)->except(['show']);
     Route::post('musas/parse-csv-import', [MusaController::class, 'parseCsvImport'])->name('musas.parseCsvImport');
     Route::post('musas/process-csv-import', [MusaController::class, 'processCsvImport'])->name('musas.processCsvImport');
+    Route::post('food-and-houses/parse-csv-import', [FoodAndHouseController::class,'parseCsvImport'])->name('food-and-houses.parseCsvImport');
+    Route::post('food-and-houses/process-csv-import', [FoodAndHouseController::class,'processCsvImport'])->name('food-and-houses.processCsvImport');
+    Route::resource('food-and-houses', FoodAndHouseController::class);
 
 });
 

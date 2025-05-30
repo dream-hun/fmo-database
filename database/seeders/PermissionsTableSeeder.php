@@ -350,6 +350,26 @@ final class PermissionsTableSeeder extends Seeder
                 'id' => 84,
                 'title' => 'musa_access',
             ],
+            [
+                'id' => 85,
+                'title' => 'food_and_house_access',
+            ],
+            [
+                'id' => 86,
+                'title' => 'food_and_house_create',
+            ],
+            [
+                'id' => 87,
+                'title' => 'food_and_house_edit',
+            ],
+            [
+                'id' => 88,
+                'title' => 'food_and_house_show',
+            ],
+            [
+                'id' => 89,
+                'title' => 'food_and_house_delete',
+            ],
         ];
 
         Permission::insert($permissions);

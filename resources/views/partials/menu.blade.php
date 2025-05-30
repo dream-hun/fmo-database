@@ -205,8 +205,8 @@
                     </li>
                 @endcan
                 @can('urgent_community_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/musas*") ? "menu-open" : "" }} {{ request()->is("admin/vslas*") ? "menu-open" : "" }} {{ request()->is("admin/individuals*") ? "menu-open" : "" }}{{ request()->is("admin/toolkits*")?"menu-open": "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/scholarships*") ? "active" : "" }} {{ request()->is("admin/vslas*") ? "active" : "" }} {{ request()->is("admin/individuals*") ? "active" : "" }}" href="#">
+                    <li class="nav-item has-treeview {{ request()->is("admin/musas*") ? "menu-open" : "" }} {{ request()->is("admin/food-and-houses*") ? "menu-open" : "" }} {{ request()->is("admin/individuals*") ? "menu-open" : "" }}{{ request()->is("admin/toolkits*")?"menu-open": "" }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/musas*") ? "active" : "" }} {{ request()->is("admin/food-and-houses*") ? "active" : "" }} {{ request()->is("admin/individuals*") ? "active" : "" }}" href="#">
                             <i class="bi bi-chevron-down right"></i>
                             <p>
                                 UCS
@@ -215,13 +215,23 @@
                         <ul class="nav nav-treeview">
                             @can('musa_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.musas.index") }}" class="nav-link {{ request()->is("admin/scholarships") || request()->is("admin/scholarships/*") ? "active" : "" }}">
+                                    <a href="{{ route("admin.musas.index") }}" class="nav-link {{ request()->is("admin/musas") || request()->is("admin/musas/*") ? "active" : "" }}">
                                         <i class="bi bi-building"></i>
                                         <p>
                                             {{ trans('cruds.musa.title') }}
                                         </p>
                                     </a>
                                 </li>
+                            @endcan
+                            @can('food_and_house_access')
+                                    <li class="nav-item">
+                                        <a href="{{ route("admin.food-and-houses.index") }}" class="nav-link {{ request()->is("admin/food-and-houses") || request()->is("admin/food-and-houses/*") ? "active" : "" }}">
+                                            <i class="bi bi-building"></i>
+                                            <p>
+                                                {{ trans('cruds.foodAndHouse.title') }}
+                                            </p>
+                                        </a>
+                                    </li>
                             @endcan
 
                         </ul>
