@@ -370,6 +370,22 @@ final class PermissionsTableSeeder extends Seeder
                 'id' => 89,
                 'title' => 'food_and_house_delete',
             ],
+            [
+                'id'    => 90,
+                'title' => 'mvtc_create',
+            ],
+            [
+                'id'    => 91,
+                'title' => 'mvtc_edit',
+            ],
+            [
+                'id'    => 92,
+                'title' => 'mvtc_delete',
+            ],
+            [
+                'id'    => 93,
+                'title' => 'mvtc_access',
+            ],
         ];
 
         Permission::insert($permissions);

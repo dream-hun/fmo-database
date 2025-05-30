@@ -15,6 +15,20 @@ return new class extends Migration
     {
         Schema::create('mvtcs', function (Blueprint $table) {
             $table->id();
+            $table->string('reg_no')->nullable();
+            $table->string('name');
+            $table->string('gender')->nullable();
+            $table->string('student_id')->nullable();
+            $table->string('student_contact')->nullable();
+            $table->string('trade')->nullable();
+            $table->string('village')->nullable();
+            $table->string('cell')->nullable();
+            $table->string('sector')->nullable();
+            $table->string('resident_district')->nullable();
+            $table->string('education_level')->nullable();
+            $table->string('payment_mode')->nullable();
+            $table->string('intake')->nullable();
+            $table->string('graduation_date')->nullable();
             $table->timestamps();
         });
     }

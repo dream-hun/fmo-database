@@ -20,6 +20,7 @@ final class DashboardController extends Controller
         $totalBeneficiaries = TotalNumbers::getAllCounts();
         $female = TotalNumbers::femaleBeneficiaries();
         $male = TotalNumbers::getMalnutrition();
+        $musa = DashboardStats::musaSupport();
 
         $girinkaChart = DashboardStats::girinkaStats();
         $individualChart = DashboardStats::individualStats();
@@ -30,6 +31,7 @@ final class DashboardController extends Controller
         $ecdChart = DashboardStats::ecdChart();
         $vslaChart = DashboardStats::vslaLoanData();
         $toolkitChart = DashboardStats::toolkit();
+        $mvtcChart = DashboardStats::mvtcChart();
 
         return view('dashboard', [
             'total' => $totalBeneficiaries,
@@ -43,6 +45,8 @@ final class DashboardController extends Controller
             'ecdChart' => $ecdChart,
             'vslaChart' => $vslaChart,
             'toolkitChart' => $toolkitChart,
+            'musa' => $musa,
+            'mvtc' => $mvtcChart,
 
         ]);
     }

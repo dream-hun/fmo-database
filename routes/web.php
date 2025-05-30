@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\GoatController;
 use App\Http\Controllers\Admin\IndividualController;
 use App\Http\Controllers\Admin\MalnutritionController;
 use App\Http\Controllers\Admin\MusaController;
+use App\Http\Controllers\Admin\MvtcController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ScholarshipController;
@@ -50,9 +51,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('musas', MusaController::class)->except(['show']);
     Route::post('musas/parse-csv-import', [MusaController::class, 'parseCsvImport'])->name('musas.parseCsvImport');
     Route::post('musas/process-csv-import', [MusaController::class, 'processCsvImport'])->name('musas.processCsvImport');
-    Route::post('food-and-houses/parse-csv-import', [FoodAndHouseController::class,'parseCsvImport'])->name('food-and-houses.parseCsvImport');
-    Route::post('food-and-houses/process-csv-import', [FoodAndHouseController::class,'processCsvImport'])->name('food-and-houses.processCsvImport');
+    Route::post('food-and-houses/parse-csv-import', [FoodAndHouseController::class, 'parseCsvImport'])->name('food-and-houses.parseCsvImport');
+    Route::post('food-and-houses/process-csv-import', [FoodAndHouseController::class, 'processCsvImport'])->name('food-and-houses.processCsvImport');
     Route::resource('food-and-houses', FoodAndHouseController::class);
+    Route::post('mvtcs/parse-csv-import', [MvtcController::class,'parseCsvImport'])->name('mvtcs.parseCsvImport');
+    Route::post('mvtcs/process-csv-import', [MvtcController::class,'processCsvImport'])->name('mvtcs.processCsvImport');
+    Route::resource('mvtcs', MvtcController::class, ['except' => ['show']]);
 
 });
 

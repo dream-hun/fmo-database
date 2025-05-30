@@ -201,6 +201,17 @@
                                         </a>
                                     </li>
                             @endcan
+                                @can('mvtc_access')
+                                    <li class="nav-item">
+                                        <a href="{{ route("admin.mvtcs.index") }}" class="nav-link {{ request()->is("admin/mvtcs") || request()->is("admin/mvtcs/*") ? "active" : "" }}">
+                                            <i class="bi bi-building"></i>
+
+                                            <p>
+                                                {{ trans('cruds.mvtc.title') }}
+                                            </p>
+                                        </a>
+                                    </li>
+                                @endcan
                         </ul>
                     </li>
                 @endcan

@@ -34,6 +34,7 @@ final class DatabaseSeeder extends Seeder
             EcdSeeder::class,
             MusaSeeder::class,
             FoodAndHouseSeeder::class,
+            MvtcSeeder::class,
         ]);
 
     }

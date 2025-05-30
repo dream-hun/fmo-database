@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace App\Models\Helpers;
 
 use App\Models\Ecd;
+use App\Models\FoodAndHouse;
 use App\Models\Fruit;
 use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
 use App\Models\Malnutrition;
+use App\Models\Musa;
 use App\Models\Scholarship;
 use App\Models\SchoolFeeding;
 use App\Models\Tank;
@@ -92,17 +94,36 @@ final class TotalNumbers
 
     }
 
+    public static function totalMusa(): int
+    {
+        return Musa::count();
+    }
+
+    public static function totalFoodAndHouse(): int
+    {
+        return FoodAndHouse::count();
+    }
+
     /**
      * Get all counts as an associative array
      */
     public static function getAllCounts(): int
     {
         return
-            self::getCows() + self::getGoats() + self::getWaterTanks() +
-            self::getScholarships() + self::getIndividualMicrocredits() +
-            self::getVslas() + self::getSchoolFeeding() +
-            self::getMalnutrition() + self::totalToolkits() +
-            self::totalTrees() + self::totalEcd();
+            self::getCows() +
+            self::getGoats() +
+            self::getWaterTanks() +
+            self::getScholarships() +
+            self::getIndividualMicrocredits() +
+            self::getVslas() +
+            self::getSchoolFeeding() +
+            self::getMalnutrition() +
+            self::totalToolkits() +
+            self::totalTrees() +
+            self::totalEcd() +
+            self::totalMusa() +
+            self::totalFoodAndHouse();
+
     }
 
     public static function femaleBeneficiaries(): int

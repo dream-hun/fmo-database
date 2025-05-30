@@ -9,6 +9,8 @@ use App\Models\Ecd;
 use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
+use App\Models\Musa;
+use App\Models\Mvtc;
 use App\Models\Scholarship;
 use App\Models\Toolkit;
 use App\Models\Vsla;
@@ -690,5 +692,80 @@ final class DashboardStats
                     ],
                 ],
             ]);
+    }
+
+    public static function musaSupport(): int
+    {
+        return Musa::count();
+
+    }
+
+    public static function mvtcChart(): Chart
+    {
+
+        $mvtcData = Mvtc::selectRaw('trade, COUNT(*) as count')
+            ->whereNotNull('trade')
+            ->groupBy('trade')
+            ->pluck('count', 'trade')
+            ->toArray();
+
+        $totalStudents=Mvtc::count();
+        $chart = new Chart();
+        $trades=array_keys($mvtcData);
+        $counts=array_values($mvtcData);
+
+        return $chart->setType('bar')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($trades)
+            ->setDataset('Number of student per trade', 'bar', $counts)
+            ->setColors(['#657278'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'bar',
+                    'toolbar' => [
+                        'show' => true,
+                    ],
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'stroke' => [
+                    'curve' => 'smooth',
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Trades',
+                    ],
+                    'categories' => $trades,
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of Students',
+                    ],
+                ],
+                'title' => [
+                    'text' => 'MVTC Student Distribution By Trade',
+                    'align' => 'center',
+                ],
+                'subtitle' => [
+                    'text' => 'Total students: '.$totalStudents,
+                ],
+                'legend' => [
+                    'show' => true,
+                    'position' => 'top',
+                    'horizontalAlign' => 'center',
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => 'function (val) { return val + " students" }',
+                    ],
+                ],
+
+            ]);
+
+
+
+
     }
 }
