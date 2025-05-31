@@ -26,12 +26,13 @@ final class DashboardController extends Controller
         $individualChart = DashboardStats::individualStats();
         $scholarshipByYear = DashboardStats::yearlyScholarship();
 
-        $scholarshipOptionChart = DashboardStats::scholarshipByOption();
+
         $goatDistributionChart = DashboardStats::goatDistribution();
         $ecdChart = DashboardStats::ecdChart();
         $vslaChart = DashboardStats::vslaLoanData();
         $toolkitChart = DashboardStats::toolkit();
         $mvtcChart = DashboardStats::mvtcChart();
+        $support=DashboardStats::supportDistribution();
 
         return view('dashboard', [
             'total' => $totalBeneficiaries,
@@ -40,13 +41,13 @@ final class DashboardController extends Controller
             'individual' => $individualChart,
             'girinkaChart' => $girinkaChart,
             'scholarshipByYear' => $scholarshipByYear,
-            'scholarshipOptionChart' => $scholarshipOptionChart,
             'goatDistributionChart' => $goatDistributionChart,
             'ecdChart' => $ecdChart,
             'vslaChart' => $vslaChart,
             'toolkitChart' => $toolkitChart,
             'musa' => $musa,
             'mvtc' => $mvtcChart,
+            'support' => $support,
 
         ]);
     }

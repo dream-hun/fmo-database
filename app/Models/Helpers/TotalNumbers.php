@@ -12,6 +12,7 @@ use App\Models\Goat;
 use App\Models\Individual;
 use App\Models\Malnutrition;
 use App\Models\Musa;
+use App\Models\Mvtc;
 use App\Models\Scholarship;
 use App\Models\SchoolFeeding;
 use App\Models\Tank;
@@ -103,6 +104,10 @@ final class TotalNumbers
     {
         return FoodAndHouse::count();
     }
+    public static function mvtcGraduate(): int
+    {
+        return Mvtc::count();
+    }
 
     /**
      * Get all counts as an associative array
@@ -122,7 +127,8 @@ final class TotalNumbers
             self::totalTrees() +
             self::totalEcd() +
             self::totalMusa() +
-            self::totalFoodAndHouse();
+            self::totalFoodAndHouse()+
+            self::mvtcGraduate();
 
     }
 

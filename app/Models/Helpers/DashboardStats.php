@@ -6,6 +6,7 @@ namespace App\Models\Helpers;
 
 use Akaunting\Apexcharts\Chart;
 use App\Models\Ecd;
+use App\Models\FoodAndHouse;
 use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
@@ -15,6 +16,7 @@ use App\Models\Scholarship;
 use App\Models\Toolkit;
 use App\Models\Vsla;
 use DB;
+use function Termwind\style;
 
 final class DashboardStats
 {
@@ -36,7 +38,7 @@ final class DashboardStats
 
         return $chart->setType('bar')
             ->setWidth('100%')
-            ->setHeight(350)
+            ->setHeight(500)
             ->setLabels($dates)
             ->setDataset('Number of Distributed Cows', 'bar', $counts)
             ->setColors(['#b2071b'])
@@ -111,7 +113,7 @@ final class DashboardStats
 
         return $chart->setType('line')
             ->setWidth('100%')
-            ->setHeight(350)
+            ->setHeight(500)
             ->setLabels($loanYears)
             ->setDataset('Number of Individual received loan', 'line', $loanCounts)
             ->setColors(['#b2071b'])
@@ -174,165 +176,57 @@ final class DashboardStats
 
     public static function yearlyScholarship(): Chart
     {
-        $scholarshipsByYear = Scholarship::selectRaw('entrance_year as year, COUNT(*) as total')
+        $data = Scholarship::selectRaw('entrance_year, COUNT(*) as total')
             ->groupBy('entrance_year')
             ->orderBy('entrance_year')
             ->get();
+        $totalScholarship = Scholarship::count();
 
-        // Get total number of scholarships for subtitle
-        $totalScholarships = Scholarship::count();
+        $years = $data->pluck('entrance_year')->toArray();
+        $counts = $data->pluck('total')->map(fn ($val) => (int) $val)->toArray();
 
-        // Extract years as array for labels
-        $years = $scholarshipsByYear->pluck('year')->toArray();
-
-        // Extract totals as array for dataset
-        $totals = $scholarshipsByYear->pluck('total')->toArray();
-
-        $chart = new Chart;
-
-        return $chart->setType('bar')
-            ->setWidth('100%')
-            ->setHeight(450)
+        return (new Chart)
+            ->setType('bar')
             ->setLabels($years)
-            ->setDataset('Yearly Scholarships', 'bar', $totals)
-            ->setColors(['#b2071b'])
+            ->setSeries([
+                [
+                    'name' => 'Scholars (Bar)',
+                    'type' => 'column',
+                    'data' => $counts,
+                ],
+                [
+                    'name' => 'Scholars (Line)',
+                    'type' => 'line',
+                    'data' => $counts,
+                ],
+            ])
             ->setOptions([
                 'chart' => [
-                    'type' => 'bar',
-                    'stacked' => true,
+                    'height' => 500,
+                    'type' => 'line',
                 ],
-                'plotOptions' => [
-                    'bar' => [
-                        'horizontal' => false,
-                        'columnWidth' => '55%',
-                        'columnHeight' => '55%',
-                        'minHeight' => 20,
-                        'endingShape' => 'rounded',
-                    ],
+                'stroke' => [
+                    'width' => [0, 4],
                 ],
                 'dataLabels' => [
                     'enabled' => true,
+                    'enabledOnSeries' => [1],
+                ],
+                'xaxis' => [
+                    'categories' => $years,
+                ],
+                'title' => [
+                    'text' => 'Scholars by Entrance Year',
+                    'align' => 'center',
+                ],
+                'legend' => [
+                    'position' => 'bottom',
+                ],
+                'subtitle' => [
+                    'text' => 'Total scholarship: '.number_format($totalScholarship),
+                    'align' => 'center',
                     'style' => [
                         'fontSize' => '14px',
-                        'fontWeight' => 400,
-                        'fontFamily' => 'Inter, sans-serif',
-                        'padding' => 10,
-                        'minHeight' => 20,
-                    ],
-                ],
-                'stroke' => [
-                    'show' => true,
-                    'width' => 2,
-                    'colors' => ['transparent'],
-                ],
-                'xaxis' => [
-                    'title' => [
-                        'text' => 'Year',
-                    ],
-                ],
-                'yaxis' => [
-                    'title' => [
-                        'text' => 'Total Scholarships',
-                    ],
-                ],
-                'fill' => [
-                    'opacity' => 1,
-                ],
-                'title' => [
-                    'text' => 'Yearly Scholarship Distribution',
-                    'align' => 'center',
-                ],
-                'subtitle' => [
-                    'text' => 'Total Scholars: '.$totalScholarships,
-                ],
-                'legend' => [
-                    'show' => true,
-                    'position' => 'top',
-                    'horizontalAlign' => 'center',
-                    'fontSize' => '14px',
-                    'fontFamily' => 'Inter, sans-serif',
-                    'fontWeight' => 400,
-                ],
-                'tooltip' => [
-                    'y' => [
-                        'formatter' => 'function (val) { return val + " scholarships" }',
-                    ],
-                ],
-            ]);
-
-    }
-
-    public static function scholarshipByOption(): Chart
-    {
-        $scholarshipsByOption = Scholarship::selectRaw('study_option, COUNT(*) as total')
-            ->groupBy('study_option')
-            ->orderBy('total', 'desc')
-            ->get();
-
-        $options = $scholarshipsByOption->pluck('study_option')->toArray();
-        $counts = $scholarshipsByOption->pluck('total')->toArray();
-
-        $totalScholarships = Scholarship::count();
-
-        $chart = new Chart;
-
-        return $chart->setType('bar')
-            ->setWidth('100%')
-            ->setHeight(1440)
-            ->setLabels($options)
-            ->setDataset('Scholarships by Study Option', 'bar', $counts)
-            ->setColors(['#b2071b'])
-            ->setOptions([
-                'chart' => [
-                    'type' => 'bar',
-                ],
-                'plotOptions' => [
-                    'bar' => [
-                        'horizontal' => true,
-                        'columnWidth' => '55%',
-                        'minHeight' => 40,
-                        'endingShape' => 'rounded',
-                    ],
-                ],
-                'dataLabels' => [
-                    'enabled' => true,
-                ],
-                'stroke' => [
-                    'show' => true,
-                    'width' => 1,
-                    'colors' => ['transparent'],
-                ],
-                'xaxis' => [
-                    'title' => [
-                        'text' => 'Study Option',
-                    ],
-                ],
-                'yaxis' => [
-                    'title' => [
-                        'text' => 'Number of Scholarships',
-                    ],
-                ],
-                'fill' => [
-                    'opacity' => 1,
-                ],
-                'title' => [
-                    'text' => 'Scholarships by Study Option',
-                    'align' => 'center',
-                ],
-                'subtitle' => [
-                    'text' => 'Total Beneficiaries: '.$totalScholarships,
-                ],
-                'legend' => [
-                    'show' => true,
-                    'position' => 'top',
-                    'horizontalAlign' => 'center',
-                    'fontSize' => '14px',
-                    'fontFamily' => 'Helvetica, Arial',
-                    'fontWeight' => 400,
-                ],
-                'tooltip' => [
-                    'y' => [
-                        'formatter' => 'function (val) { return val + " scholarships" }',
                     ],
                 ],
             ]);
@@ -341,7 +235,7 @@ final class DashboardStats
 
     public static function goatDistribution(): Chart
     {
-        // Get total goats by gender (M/F)
+
         $data = Goat::query()
             ->selectRaw('CASE WHEN gender = "M" THEN "Male" ELSE "Female" END as gender, SUM(number_of_goats) as total')
             ->whereIn('gender', ['M', 'F'])
@@ -349,7 +243,7 @@ final class DashboardStats
             ->orderBy('gender')
             ->get();
 
-        // Prepare chart data
+
         $labels = $data->pluck('gender')->toArray();
         $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
 
@@ -358,7 +252,7 @@ final class DashboardStats
         return (new Chart)
             ->setType('donut')
             ->setWidth('100%')
-            ->setHeight(350)
+            ->setHeight(500)
             ->setLabels($labels)
             ->setDataset('Goats by Gender', 'donut', $values)
             ->setColors(['#B2071B', '#657278'])
@@ -395,109 +289,134 @@ final class DashboardStats
 
     }
 
-    public static function toolKit(): Chart
+    public static function supportDistribution(): Chart
     {
-        $rawData = Toolkit::select(
-            DB::raw('toolkit_received'),
-            DB::raw('YEAR(STR_TO_DATE(reception_date, "%b %d, %Y")) as year'),
-            DB::raw('COUNT(*) as total')
-        )
-            ->whereNotNull('reception_date')
-            ->where('reception_date', '!=', '')
-            ->groupBy('toolkit_received', 'year')
+        $data = FoodAndHouse::query()
+            ->selectRaw('support, COUNT(*) as total')
+            ->whereNotNull('support')
+            ->groupBy('support')
+            ->orderBy('support')
             ->get();
 
-        // Get unique years and sort them
-        $years = $rawData->pluck('year')->unique()->sort()->values()->toArray();
+        $labels = $data->pluck('support')->toArray();
+        $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
+        $total = array_sum($values);
 
-        // Get unique toolkit types and sort them
-        $toolkits = $rawData->pluck('toolkit_received')->unique()->sort()->values();
-
-        // Create chart instance
-        $chart = new Chart();
-        $chart->setType('bar')
+        return (new Chart)
+            ->setType('donut')
             ->setWidth('100%')
-            ->setHeight(400)
-            ->setLabels($years);
+            ->setHeight(500)
+            ->setLabels($labels)
+            ->setDataset('Support Distribution', 'donut', $values)
+            ->setColors([
+                '#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26a69a'
+            ])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'donut',
+                ],
+                'plotOptions' => [
+                    'pie' => [
+                        'donut' => [
+                            'size' => '65%',
+                        ],
+                    ],
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'legend' => [
+                    'show' => true,
+                    'position' => 'bottom',
+                    'labels' => [
+                        'colors' => '#000',
+                        'useSeriesColors' => false,
+                    ],
+                ],
+                'title' => [
+                    'text' => 'Support Distribution by Type',
+                    'align' => 'center',
+                ],
+                'subtitle' => [
+                    'text' => 'Total: ' . number_format($total),
+                    'align' => 'center',
+                    'style' => [
+                        'fontSize' => '14px',
+                    ],
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => "function(val) { return val + ' people'; }",
+                    ],
+                ],
+            ]);
+    }
 
-        // Add dataset for each toolkit type
-        foreach ($toolkits as $toolkit) {
-            $data = collect($years)->map(function ($year) use ($toolkit, $rawData) {
-                return $rawData
-                    ->where('toolkit_received', $toolkit)
-                    ->where('year', $year)
-                    ->sum('total');
-            })->toArray();
+    public static function toolKit(): Chart
+    {
+        $mvtcData = Toolkit::selectRaw('toolkit_received, COUNT(*) as count')
+            ->whereNotNull('toolkit_received')
+            ->groupBy('toolkit_received')
+            ->pluck('count', 'toolkit_received')
+            ->toArray();
 
-            $chart->setDataset($toolkit, 'bar', $data);
-        }
+        $totalToolkits=Toolkit::count();
+        $chart = new Chart();
+        $toolkits=array_keys($mvtcData);
+        $counts=array_values($mvtcData);
 
-        // Set colors and options
-        $colors = ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26A69A', '#D4E157'];
-
-        return $chart->setColors($colors)
+        return $chart->setType('bar')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($toolkits)
+            ->setDataset('Number of beneficiaries received toolkits', 'bar', $counts)
+            ->setColors(['#B2071B'])
             ->setOptions([
                 'chart' => [
                     'type' => 'bar',
                     'toolbar' => [
                         'show' => true,
                     ],
-                    'stacked' => false,
                 ],
                 'dataLabels' => [
-                    'enabled' => false,
+                    'enabled' => true,
                 ],
                 'stroke' => [
-                    'width' => 2,
-                    'curve' => 'straight',
+                    'curve' => 'smooth',
                 ],
                 'xaxis' => [
                     'title' => [
-                        'text' => 'Years',
+                        'text' => 'Toolkits',
                     ],
-                    'categories' => $years,
+                    'categories' => $toolkits,
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'Number of Toolkits',
+                        'text' => 'Number of beneficiaries received toolkits',
                     ],
                 ],
                 'title' => [
-                    'text' => 'Toolkit Distribution by Year',
+                    'text' => 'Toolkit Distributions',
                     'align' => 'center',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Toolkits: '.$rawData->sum('total'),
-                    'align' => 'center',
+                    'text' => 'Total beneficiaries: '.$totalToolkits,
                 ],
                 'legend' => [
                     'show' => true,
                     'position' => 'top',
                     'horizontalAlign' => 'center',
                 ],
-                'grid' => [
-                    'show' => true,
-                    'borderColor' => '#e0e6ed',
-                    'strokeDashArray' => 1,
-                ],
                 'tooltip' => [
                     'y' => [
-                        'formatter' => 'function (val) { return val + " toolkits" }',
+                        'formatter' => 'function (val) { return val + " students" }',
                     ],
                 ],
-                'plotOptions' => [
-                    'bar' => [
-                        'horizontal' => false,
-                        'columnWidth' => '55%',
-                        'endingShape' => 'rounded',
-                    ],
-                ],
+
             ]);
+
     }
 
-    /**
-     * Create ECD Chart
-     */
     public static function ecdChart(): Chart
     {
         $ecdData = Ecd::select('academic_year')
@@ -611,7 +530,7 @@ final class DashboardStats
             ->setHeight(500)
             ->setLabels($vslaNames)
             ->setSeries($seriesData)
-            ->setColors(['#3B82F6', '#EF4444', '#10B981', '#F59E0B'])
+            ->setColors(['#B2071B', '#657278', '#10B981', '#F59E0B'])
             ->setOptions([
                 'chart' => [
                     'type' => 'bar',
@@ -622,9 +541,12 @@ final class DashboardStats
                 ],
                 'plotOptions' => [
                     'bar' => [
-                        'horizontal' => true, // Changed to true for horizontal bars
-                        'columnWidth' => '55%',
+                        'horizontal' => false, // Changed to true for horizontal bars
+                        'columnWidth' => '100%',
                         'endingShape' => 'rounded',
+                        'style'=>[
+                            'minHeight' => '60px',
+                        ]
                     ],
                 ],
                 'dataLabels' => [

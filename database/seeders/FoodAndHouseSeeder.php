@@ -63,11 +63,11 @@ final class FoodAndHouseSeeder extends Seeder
 
                     'name' => $name,
                     'id_number' => $this->cleanIdNumber($data[2] ?? null),
-                    'cell' => $data[4] ?? null,
-                    'village' => $data[5] ?? null,
-                    'phone_number' => $data[6] ?? null,
-                    'support' => $data[7] ?? null,
-                    'date' => $this->parseDistributionDate($data[8] ?? null),
+                    'cell' => $data[3] ?? null,
+                    'village' => $data[4] ?? null,
+                    'phone_number' => $data[5] ?? null,
+                    'support' => $data[6] ?? null,
+                    'date' => $this->parseDistributionDate($data[7] ?? null),
                 ]);
 
                 $successCount++;
