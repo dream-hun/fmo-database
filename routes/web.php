@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\ScholarshipController;
 use App\Http\Controllers\Admin\SchoolFeedingController;
 use App\Http\Controllers\Admin\TankController;
 use App\Http\Controllers\Admin\ToolKitController;
+use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\VslaController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,10 +54,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::post('musas/process-csv-import', [MusaController::class, 'processCsvImport'])->name('musas.processCsvImport');
     Route::post('food-and-houses/parse-csv-import', [FoodAndHouseController::class, 'parseCsvImport'])->name('food-and-houses.parseCsvImport');
     Route::post('food-and-houses/process-csv-import', [FoodAndHouseController::class, 'processCsvImport'])->name('food-and-houses.processCsvImport');
-    Route::resource('food-and-houses', FoodAndHouseController::class);
-    Route::post('mvtcs/parse-csv-import', [MvtcController::class,'parseCsvImport'])->name('mvtcs.parseCsvImport');
-    Route::post('mvtcs/process-csv-import', [MvtcController::class,'processCsvImport'])->name('mvtcs.processCsvImport');
-    Route::resource('mvtcs', MvtcController::class, ['except' => ['show']]);
+    Route::resource('food-and-houses', FoodAndHouseController::class)->except(['show']);
+    Route::post('mvtcs/parse-csv-import', [MvtcController::class, 'parseCsvImport'])->name('mvtcs.parseCsvImport');
+    Route::post('mvtcs/process-csv-import', [MvtcController::class, 'processCsvImport'])->name('mvtcs.processCsvImport');
+    Route::resource('mvtcs', MvtcController::class)->except(['show']);
+    Route::post('trainings/parse-csv-import', [TrainingController::class, 'parseCsvImport'])->name('trainings.parseCsvImport');
+    Route::post('trainings/process-csv-import', [TrainingController::class, 'processCsvImport'])->name('trainings.processCsvImport');
+    Route::resource('trainings', TrainingController::class)->except(['show']);
 
 });
 

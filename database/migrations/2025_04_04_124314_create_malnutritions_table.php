@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('malnutritions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id')->nullable()->constrained();
             $table->string('surname');
             $table->string('first_name');
             $table->string('gender')->nullable();
@@ -28,9 +27,6 @@ return new class extends Migration
             $table->string('mother_name')->nullable();
             $table->string('home_phone')->nullable();
             $table->date('package_reception_date')->nullable();
-            $table->integer('entry_muac')->nullable();
-            $table->integer('currently_muac')->nullable();
-            $table->string('current_malnutrition_code')->nullable();
             $table->timestamps();
         });
     }

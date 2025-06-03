@@ -7,41 +7,25 @@ namespace App\Http\Requests\Admin;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 
-final class StoreMvtcRequest extends FormRequest
+final class UpdateTrainingRequest extends FormRequest
 {
-    public function authorize(): bool
+    public function authorize()
     {
-        return Gate::allows('mvtc_create');
+        return Gate::allows('training_edit');
     }
 
-    public function rules(): array
+    public function rules()
     {
         return [
-            'reg_no' => [
-                'string',
-                'nullable',
-            ],
             'name' => [
                 'string',
                 'required',
             ],
-            'student' => [
+            'national' => [
                 'string',
                 'nullable',
             ],
-            'student_contact' => [
-                'string',
-                'nullable',
-            ],
-            'trade' => [
-                'string',
-                'nullable',
-            ],
-            'village' => [
-                'string',
-                'nullable',
-            ],
-            'cell' => [
+            'district' => [
                 'string',
                 'nullable',
             ],
@@ -49,24 +33,24 @@ final class StoreMvtcRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'resident_district' => [
+            'telephone' => [
                 'string',
                 'nullable',
             ],
-            'education_level' => [
+            'training_given' => [
                 'string',
                 'nullable',
             ],
-            'payment_mode' => [
+            'position' => [
                 'string',
                 'nullable',
             ],
-            'intake' => [
+            'institution' => [
                 'string',
                 'nullable',
             ],
-            'graduation_date' => [
-                'string',
+            'training_date' => [
+                'date_format:'.config('panel.date_format'),
                 'nullable',
             ],
         ];

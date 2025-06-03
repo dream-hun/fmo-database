@@ -104,6 +104,7 @@ final class TotalNumbers
     {
         return FoodAndHouse::count();
     }
+
     public static function mvtcGraduate(): int
     {
         return Mvtc::count();
@@ -127,7 +128,7 @@ final class TotalNumbers
             self::totalTrees() +
             self::totalEcd() +
             self::totalMusa() +
-            self::totalFoodAndHouse()+
+            self::totalFoodAndHouse() +
             self::mvtcGraduate();
 
     }

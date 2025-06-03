@@ -15,8 +15,8 @@ use App\Models\Mvtc;
 use App\Models\Scholarship;
 use App\Models\Toolkit;
 use App\Models\Vsla;
+use App\Models\Malnutrition;
 use DB;
-use function Termwind\style;
 
 final class DashboardStats
 {
@@ -243,7 +243,6 @@ final class DashboardStats
             ->orderBy('gender')
             ->get();
 
-
         $labels = $data->pluck('gender')->toArray();
         $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
 
@@ -309,7 +308,7 @@ final class DashboardStats
             ->setLabels($labels)
             ->setDataset('Support Distribution', 'donut', $values)
             ->setColors([
-                '#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26a69a'
+                '#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26a69a',
             ])
             ->setOptions([
                 'chart' => [
@@ -338,7 +337,7 @@ final class DashboardStats
                     'align' => 'center',
                 ],
                 'subtitle' => [
-                    'text' => 'Total: ' . number_format($total),
+                    'text' => 'Total: '.number_format($total),
                     'align' => 'center',
                     'style' => [
                         'fontSize' => '14px',
@@ -360,10 +359,10 @@ final class DashboardStats
             ->pluck('count', 'toolkit_received')
             ->toArray();
 
-        $totalToolkits=Toolkit::count();
+        $totalToolkits = Toolkit::count();
         $chart = new Chart();
-        $toolkits=array_keys($mvtcData);
-        $counts=array_values($mvtcData);
+        $toolkits = array_keys($mvtcData);
+        $counts = array_values($mvtcData);
 
         return $chart->setType('bar')
             ->setWidth('100%')
@@ -494,12 +493,12 @@ final class DashboardStats
 
         if ($vslaData->isEmpty()) {
             $vslaData = collect([
-                (object) ['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'Male', 'total' => 15],
-                (object) ['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'Female', 'total' => 25],
-                (object) ['vlsa' => 'Terimbere VSLA', 'gender' => 'Male', 'total' => 20],
-                (object) ['vlsa' => 'Terimbere VSLA', 'gender' => 'Female', 'total' => 30],
-                (object) ['vlsa' => 'Umubano VSLA', 'gender' => 'Male', 'total' => 12],
-                (object) ['vlsa' => 'Umubano VSLA', 'gender' => 'Female', 'total' => 28],
+                (object) ['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'M', 'total' => 15],
+                (object) ['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'F', 'total' => 25],
+                (object) ['vlsa' => 'Terimbere VSLA', 'gender' => 'M', 'total' => 20],
+                (object) ['vlsa' => 'Terimbere VSLA', 'gender' => 'F', 'total' => 30],
+                (object) ['vlsa' => 'Umubano VSLA', 'gender' => 'M', 'total' => 12],
+                (object) ['vlsa' => 'Umubano VSLA', 'gender' => 'F', 'total' => 28],
             ]);
         }
 
@@ -516,7 +515,7 @@ final class DashboardStats
                 $genderData[] = $count ? $count->total : 0;
             }
             $seriesData[] = [
-                'name' => $gender,
+                'name' => Vsla::GENDER_SELECT[$gender] ?? $gender, // Use the readable gender label
                 'data' => $genderData,
             ];
         }
@@ -541,12 +540,12 @@ final class DashboardStats
                 ],
                 'plotOptions' => [
                     'bar' => [
-                        'horizontal' => false, // Changed to true for horizontal bars
+                        'horizontal' => false,
                         'columnWidth' => '100%',
                         'endingShape' => 'rounded',
-                        'style'=>[
+                        'style' => [
                             'minHeight' => '60px',
-                        ]
+                        ],
                     ],
                 ],
                 'dataLabels' => [
@@ -563,15 +562,15 @@ final class DashboardStats
                 'xaxis' => [
                     'categories' => $vslaNames,
                     'title' => [
-                        'text' => 'Number of VSLA Members', // Swapped axis titles
+                        'text' => 'VSLA Groups',
                     ],
                     'labels' => [
-                        'maxHeight' => 120, // Removed rotation as it's not needed for horizontal
+                        'maxHeight' => 120,
                     ],
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'VSLA Groups', // Swapped axis titles
+                        'text' => 'Number of VSLA Members',
                     ],
                 ],
                 'fill' => [
@@ -631,10 +630,10 @@ final class DashboardStats
             ->pluck('count', 'trade')
             ->toArray();
 
-        $totalStudents=Mvtc::count();
+        $totalStudents = Mvtc::count();
         $chart = new Chart();
-        $trades=array_keys($mvtcData);
-        $counts=array_values($mvtcData);
+        $trades = array_keys($mvtcData);
+        $counts = array_values($mvtcData);
 
         return $chart->setType('bar')
             ->setWidth('100%')
@@ -686,8 +685,92 @@ final class DashboardStats
 
             ]);
 
+    }
 
+    public static function malnutritionChart(): Chart
+    {
+        $beneficiaries = Malnutrition::select(
+            DB::raw('YEAR(package_reception_date) as year'),
+            DB::raw('COUNT(*) as total')
+        )
+            ->groupBy('year')
+            ->orderBy('year', 'ASC')
+            ->pluck('total', 'year')
+            ->toArray();
 
+        $children = Malnutrition::count();
+        $years = array_keys($beneficiaries);
+        $totalBeneficiaries = array_values($beneficiaries);
+        $totalChildren = array_sum($totalBeneficiaries);
 
+        $chart = new Chart();
+
+        return $chart->setType('line')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($years)
+            ->setDataset('Children', 'line', $totalBeneficiaries)
+            ->setColors(['#1f77b4'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'line',
+                    'toolbar' => ['show' => true],
+                    'zoom' => ['enabled' => true],
+                ],
+                'title' => [
+                    'text' => 'Malnutrition children distribution',
+                    'align' => 'left',
+                ],
+                'subtitle' => [
+                    'text' => 'Total children: '.$children,
+                    'align' => 'left',
+                ],
+                'xaxis' => [
+                    'categories' => $years,
+                    'title' => ['text' => 'Years'],
+                ],
+                'yaxis' => [
+                    'title' => ['text' => 'Number of children'],
+                ],
+                'stroke' => [
+                    'curve' => 'smooth',
+                    'width' => 3,
+                ],
+                'markers' => [
+                    'size' => 6,
+                    'colors' => ['#1f77b4'],
+                    'strokeColors' => '#fff',
+                    'strokeWidth' => 2,
+                    'hover' => ['size' => 8],
+                ],
+                'grid' => [
+                    'show' => true,
+                    'borderColor' => '#e0e6ed',
+                    'strokeDashArray' => 5,
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                    'style' => [
+                        'fontSize' => '12px',
+                        'fontWeight' => 'bold',
+                        'colors' => ['#304758'],
+                    ],
+                ],
+                'tooltip' => [
+                    'enabled' => true,
+                    'y' => [
+                        'formatter' => 'function(val) { return val + " children"; }',
+                    ],
+                ],
+                'responsive' => [
+                    [
+                        'breakpoint' => 480,
+                        'options' => [
+                            'chart' => ['width' => '100%'],
+                            'legend' => ['position' => 'bottom'],
+                        ],
+                    ],
+                ],
+            ]);
     }
 }

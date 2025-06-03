@@ -56,7 +56,7 @@ final class SchoolFeedingComponent extends Component
                     'align' => 'center',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Students: ' . $totalStudents,
+                    'text' => 'Total Students: '.$totalStudents,
                     'align' => 'center',
                 ],
                 'xaxis' => [
@@ -120,6 +120,7 @@ final class SchoolFeedingComponent extends Component
 
     public function render(): View
     {
-        return view('components.school-feeding-component', ['schoolFeedingChart' => $this->schoolFeedingChart]);
+        return view('components.school-feeding-component',
+            ['schoolFeedingChart' => $this->schoolFeedingChart]);
     }
 }

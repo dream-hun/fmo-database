@@ -58,7 +58,7 @@ final class MvtcSeeder extends Seeder
                 }
 
                 Mvtc::create([
-                    'reg_no'=>$data[1] ?? null,
+                    'reg_no' => $data[1] ?? null,
                     'name' => $name,
                     'gender' => $data[3] ?? null,
                     'student_id' => $this->cleanIdNumber($data[4] ?? null),
@@ -69,9 +69,9 @@ final class MvtcSeeder extends Seeder
                     'sector' => $data[9] ?? null,
                     'resident_district' => $data[10] ?? null,
                     'education_level' => $data[11] ?? null,
-                    'payment_mode'=>$data[12] ?? null,
-                    'intake'=>$data[13] ?? null,
-                    'graduation_date'=>$data[14] ?? null,
+                    'payment_mode' => $data[12] ?? null,
+                    'intake' => $data[13] ?? null,
+                    'graduation_date' => $data[14] ?? null,
 
                 ]);
 
@@ -108,6 +108,4 @@ final class MvtcSeeder extends Seeder
     {
         return $idNumber ? mb_ltrim($idNumber, '*') : null;
     }
-
-
 }

@@ -12,9 +12,9 @@ No,Surname ,First name ,Gender,Age(months),HC,Sector ,Cell,Village ,father name 
 11,Uwingeneye ,Kellia,F,,Hc Rilima,Rilima,Kabeza,,Nzabamfa John,Nyirabagenzi Jacqueline,,02/04/2023,12.5,12.5,Yellow
 12,Kamikazi ,Noela,F,,Hc Rilima,Rilima,Kimaranzara,,Ndikubwimana Frolent,Nikuze Valantine,,02/04/2023,12,14.5,Green
 13,Uwingeneye ,Kellia,F,,Hc Rilima,Rilima,Kabeza,,Nzabanita John,Nyirabagenzi Jacqueline,,02/04/2023,12,13.5,Green
-14,Uwase ,Kevine,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,0728273814,02/04/2023,12,13,Green
-15,Uwineza,Solange,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,0728273814,02/04/2023,12,13,Green
-16,Uwiduhaye,Ishimwe Diane,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,0728273814,02/04/2023,12,14,Green
+14,Uwase ,Kevine,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,728273814,02/04/2023,12,13,Green
+15,Uwineza,Solange,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,728273814,02/04/2023,12,13,Green
+16,Uwiduhaye,Ishimwe Diane,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,728273814,02/04/2023,12,14,Green
 17,Uwimpuhwe,Cassy,M,,Hc Rilima,Rilima,Kabeza,,Nsengiyumva Protos,Nyiranzeyimana Jeanette,,02/04/2023,13,13,Green
 18,Niyonzima,Emile,M,,Hc Rilima,Rilima,Kimaranzara,,Niyonzima,Maniriho Jeanine,,02/04/2023,12,12.5,Yellow
 19,Uwineza,Fiona,F,,Hc Rilima,Rilima,Kabeza,,Hacineza Jean Bosco,Nyiranshimiyimana,,02/04/2023,12,12,Yellow
@@ -62,7 +62,7 @@ No,Surname ,First name ,Gender,Age(months),HC,Sector ,Cell,Village ,father name 
 61,Irakoze,Pacifique,M,,Hc Nyarugenge,Nyarugenge,Murambi,,Rwanduha Telesphore,Bagwire Peragie,,25/01/2024,11.8,12,Yellow
 62,Kamikazi ,Chanella,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuvuga Delphine,,25/01/2024,13,13.5,Green
 63,Tuyishimire,Firmine,F,,Hc Nyarugenge,Nyarugenge,Murambi,,Uwihanganye Nafuta,Muhawenimana Frodette,,25/01/2024,12.5,13,Green
-64,Niyogisubizo,Brino,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Musafiri Eric,Ahishakiye Elevanie,,,12,12.5,Yellow
+64,Niyogisubizo,Brino,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Musafiri Eric,Ahishakiye Elevanie,,25/01/2024,12,12.5,Yellow
 65,Uwase ,Pascaline,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Nsabimana Pascal,Mukarushema Francine,,25/01/2024,12,12,Yellow
 66,Kundwa,Emma Queen,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Nsanzimana Emmanuel,Yibwirebyose Beatrice,,25/01/2024,12,12,Yellow
 67,Ishimwe  ,Kerve,F,,Hc Nyarugenge,Nyarugenge,Muyange,,Karera Stanislus,Nyiratebuka Christine,,25/01/2024,12,14,Green
@@ -111,7 +111,7 @@ No,Surname ,First name ,Gender,Age(months),HC,Sector ,Cell,Village ,father name 
 110,Ishimwe  ,Kellia,F,,Hc Musenyi,Musenyi,Rugando,,Renzaho,Nyirandikubwimana,,25/01/2024,12,12,Yellow
 111,Ninziza,Feza Chanceline,F,,Hc Musenyi,Musenyi,Nyagasagara,,Niyodushima,Mukanshuti Julienne,,25/01/2024,12,12,Yellow
 112,Akimana,Jeanne,F,,Hc Musenyi,Musenyi,Rulindo,,Ngaruyingoma Jonas,Iradukunda ,,25/01/2024,11,12,Yellow
-113,Urikumwenatwe,Edisson,M,,Hc Musenyi,Musenyi,Rurindo,,,,,,,,
+113,Urikumwenatwe,Edisson,M,,Hc Musenyi,Musenyi,Rurindo,,,,,25/01/2024,,,
 114,Irakoze,Nathacha,F,,Hc Shyara,Shyara,Rutare,,,Dusabimana Solange,,25/01/2024,11,11,Yellow
 115,Uwineza,Aimee Alice,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye,,25/01/2024,12,12.5,Yellow
 116,TWizerimana,Bonheur,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,25/01/2024,12,13,Green
@@ -162,12 +162,12 @@ No,Surname ,First name ,Gender,Age(months),HC,Sector ,Cell,Village ,father name 
 161,Mukiza ,Jonas,M,1yrs,Hc Musenyi,Musenyi,Musenyi,,Gahakwa John,Uwamurera Jeanette,,11/03/2024,11.5,11.5,Yellow
 162,Ishimwe  ,Belyse,F,7Months,Hc Musenyi,Musenyi,Musenyi,,Gakwaya,Nyiraminani Sandrine,,11/03/2024,11,11,Red
 163,Isano king Mucyo,Parfait,M,14 Months,Hc Rilima,Rilima,Kimaranzara,,Nzabonimana Theoneste,Mukashyaka Patricia,,11/03/2024,12,12,Yellow
-164,Mutoniwase,Thierry Stella,F,28 Months,Hc Rilima,Rilima,Nyabagendwa,MUBUGA,Irakiza Thierry,Muhawenayo Chanseline,0791734682,11/03/2024,12,12,Yellow
-165,Ituze Queen,Parfait,F,14 Months,Hc Rilima,Rilima,Kimaranzara,KIMARANZARA,Nzabanimana Theoneste,Mukashyaka Patricia,0789423104,11/03/2024,12,12,Yellow
-166,Turikumwenayo ,Emmanuel,M,23 Months,Hc Rilima,Rilima,Nyabagendwa,MUKOMA,Tugirimana Alphonse,Mukamazimpaka Alice,0780152447,11/03/2024,12.5,12.5,Yellow
+164,Mutoniwase,Thierry Stella,F,28 Months,Hc Rilima,Rilima,Nyabagendwa,MUBUGA,Irakiza Thierry,Muhawenayo Chanseline,791734682,11/03/2024,12,12,Yellow
+165,Ituze Queen,Parfait,F,14 Months,Hc Rilima,Rilima,Kimaranzara,KIMARANZARA,Nzabanimana Theoneste,Mukashyaka Patricia,789423104,11/03/2024,12,12,Yellow
+166,Turikumwenayo ,Emmanuel,M,23 Months,Hc Rilima,Rilima,Nyabagendwa,MUKOMA,Tugirimana Alphonse,Mukamazimpaka Alice,780152447,11/03/2024,12.5,12.5,Yellow
 167,Abijuru,Korimeri,F,10Months,Hc Rilima,Rilima,Nyabagendwa,,Hagenimana Thacien,Nyiranzabahimana ,,11/03/2024,12,12.5,Yellow
-168,Uwihanaganye,Jean Bosco,M,33Months,Hc Rilima,Rilima,Nyabagendwa,NYAMIZI,Ntawiheba Jean Bosco,Mukandayisenga,0783580047,11/03/2024,12.5,12.5,Yellow
-169,Mucyo,Frank,M,18Months,Hc Rilima,Rilima,Nyabagendwa,Mukoma,Uwamahirwe Partas,Mukeshimana Diane,0783632520,11/03/2024,12.5,12.5,Yellow
+168,Uwihanaganye,Jean Bosco,M,33Months,Hc Rilima,Rilima,Nyabagendwa,NYAMIZI,Ntawiheba Jean Bosco,Mukandayisenga,783580047,11/03/2024,12.5,12.5,Yellow
+169,Mucyo,Frank,M,18Months,Hc Rilima,Rilima,Nyabagendwa,Mukoma,Uwamahirwe Partas,Mukeshimana Diane,783632520,11/03/2024,12.5,12.5,Yellow
 170,Inema Nshuti ,Shema,M,17Months,Hc Rilima,Rilima,Kimaranzara,,Rukundo Pasifique,Ntakirutimana Solange,,11/03/2024,12,12,Yellow
 171,Masengesho ,Aimee Shalom,F,15 Months,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,11/03/2024,12.5,12.5,Yellow
 172,Irakoze ,Nathacha,F,19 Months,Hc Shyara,Shyara,Kabagugu,,Dusabimana Claude,,,11/03/2024,12.2,12.5,Yellow

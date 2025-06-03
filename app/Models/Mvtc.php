@@ -9,17 +9,17 @@ use Illuminate\Database\Eloquent\Model;
 
 final class Mvtc extends Model
 {
+    public const GENDER_SELECT = [
+        'FEMALE' => 'Female',
+        'MALE' => 'Male',
+    ];
+
     public $table = 'mvtcs';
 
     protected array $dates = [
         'created_at',
         'updated_at',
         'deleted_at',
-    ];
-
-    public const GENDER_SELECT = [
-        'FEMALE' => 'Female',
-        'MALE'   => 'Male',
     ];
 
     protected $fillable = [
