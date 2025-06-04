@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('malnutritions', function (Blueprint $table) {
             $table->id();
-            $table->string('surname');
-            $table->string('first_name');
+            $table->string('name');
             $table->string('gender')->nullable();
             $table->string('age')->nullable();
             $table->string('health_center')->nullable();
