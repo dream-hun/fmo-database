@@ -10,12 +10,12 @@ use App\Models\FoodAndHouse;
 use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
+use App\Models\Malnutrition;
 use App\Models\Musa;
 use App\Models\Mvtc;
 use App\Models\Scholarship;
 use App\Models\Toolkit;
 use App\Models\Vsla;
-use App\Models\Malnutrition;
 use DB;
 
 final class DashboardStats
@@ -236,6 +236,8 @@ final class DashboardStats
     public static function goatDistribution(): Chart
     {
 
+        $totalBeneficiaries = Goat::count();
+
         $data = Goat::query()
             ->selectRaw('CASE WHEN gender = "M" THEN "Male" ELSE "Female" END as gender, SUM(number_of_goats) as total')
             ->whereIn('gender', ['M', 'F'])
@@ -246,7 +248,10 @@ final class DashboardStats
         $labels = $data->pluck('gender')->toArray();
         $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
 
-        $totalGoats = array_sum($values);
+        $totalGoats = Goat::sum('number_of_goats');
+        $male = Goat::where('gender', 'M')->count();
+
+        $female = Goat::where('gender', 'F')->count();
 
         return (new Chart)
             ->setType('donut')
@@ -274,18 +279,18 @@ final class DashboardStats
                     'position' => 'bottom',
                 ],
                 'title' => [
-                    'text' => 'Goats Distribution by Gender',
-                    'align' => 'center',
+                    'text' => 'Beneficiaries who benefited in Goat Distribution',
+                    'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Goats: '.number_format($totalGoats),
-                    'align' => 'center',
+                    'text' => 'Total Beneficiaries is:'.$totalBeneficiaries.'   Total Goats: '.$totalGoats.'  Male: '.number_format($male).'  Female: '.number_format($female),
+                    'align' => 'left',
                     'style' => [
                         'fontSize' => '14px',
+                        'margin' => '10px',
                     ],
                 ],
             ]);
-
     }
 
     public static function supportDistribution(): Chart
@@ -710,7 +715,7 @@ final class DashboardStats
             ->setHeight(500)
             ->setLabels($years)
             ->setDataset('Children', 'line', $totalBeneficiaries)
-            ->setColors(['#1f77b4'])
+            ->setColors(['#b2071b'])
             ->setOptions([
                 'chart' => [
                     'type' => 'line',

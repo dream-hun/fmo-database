@@ -36,7 +36,7 @@ final class DashboardController extends Controller
             'ecdChart' => $ecdChart,
             'vslaChart' => $vslaChart,
             'toolkitChart' => $toolkitChart,
-            'malnutritionChart'=>$malnutritionChart,
+            'malnutritionChart' => $malnutritionChart,
             'mvtc' => $mvtcChart,
             'support' => $support,
 

@@ -19,49 +19,10 @@ trait CsvImportTrait
      */
     public function processCsvImport(Request $request): object
     {
-        $filename = $request->input('filename', false);
-        $path = storage_path('app/csv_import/'.$filename);
-
-        $hasHeader = $request->input('hasHeader', false);
-
-        $fields = $request->input('fields', false);
-        $fields = array_flip(array_filter($fields));
-
-        $modelName = $request->input('modelName', false);
-        $model = "App\Models\\".$modelName;
-
-        $reader = new SpreadsheetReader($path);
-        $insert = [];
-
-        foreach ($reader as $key => $row) {
-            if ($hasHeader && $key === 0) {
-                continue;
-            }
-
-            $tmp = [];
-            foreach ($fields as $header => $k) {
-                if (isset($row[$k])) {
-                    $tmp[$header] = $row[$k];
-                }
-            }
-
-            if (count($tmp) > 0) {
-                $insert[] = $tmp;
-            }
-        }
-
-        $for_insert = array_chunk($insert, 100);
-
-        foreach ($for_insert as $insert_item) {
-            $model::insert($insert_item);
-        }
-
-        $rows = count($insert);
-        $table = Str::plural($modelName);
-
-        File::delete($path);
-
-        session()->flash('message', trans('global.app_imported_rows_to_table', ['rows' => $rows, 'table' => $table]));
+        $config = $this->extractImportConfig($request);
+        $data = $this->readCsvData($config);
+        $this->insertDataInBatches($data, $config['model']);
+        $this->cleanupAndFlashMessage($config, count($data));
 
         return redirect($request->input('redirect'));
     }
@@ -71,27 +32,155 @@ trait CsvImportTrait
      */
     public function parseCsvImport(Request $request): View|Factory|\Illuminate\View\View
     {
-        $file = $request->file('csv_file');
+        $this->validateCsvFile($request);
+
+        $parseConfig = $this->extractParseConfig($request);
+        $csvData = $this->extractCsvPreview($parseConfig);
+        $viewData = $this->prepareViewData($parseConfig, $csvData, $request);
+
+        return view('csvImport.parseInput', $viewData);
+    }
+
+    /**
+     * Extract configuration from request
+     */
+    private function extractImportConfig(Request $request): array
+    {
+        $filename = $request->input('filename', false);
+        $path = storage_path('app/csv_import/'.$filename);
+        $hasHeader = $request->input('hasHeader', false);
+        $fields = array_flip(array_filter($request->input('fields', [])));
+        $modelName = $request->input('modelName', false);
+        $model = "App\Models\\".$modelName;
+
+        return compact('filename', 'path', 'hasHeader', 'fields', 'modelName', 'model');
+    }
+
+    /**
+     * Read and process CSV data
+     *
+     * @throws Exception
+     */
+    private function readCsvData(array $config): array
+    {
+        $reader = new SpreadsheetReader($config['path']);
+        $data = [];
+
+        foreach ($reader as $key => $row) {
+            if ($this->shouldSkipRow($key, $config['hasHeader'])) {
+                continue;
+            }
+
+            $processedRow = $this->processRow($row, $config['fields']);
+
+            if (! empty($processedRow)) {
+                $data[] = $processedRow;
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+     * Check if row should be skipped
+     */
+    private function shouldSkipRow(int $key, bool $hasHeader): bool
+    {
+        return $hasHeader && $key === 0;
+    }
+
+    /**
+     * Process a single row
+     */
+    private function processRow(array $row, array $fields): array
+    {
+        $processedRow = [];
+
+        foreach ($fields as $header => $columnIndex) {
+            if (isset($row[$columnIndex])) {
+                $processedRow[$header] = $row[$columnIndex];
+            }
+        }
+
+        return $processedRow;
+    }
+
+    /**
+     * Insert data in batches
+     */
+    private function insertDataInBatches(array $data, string $model): void
+    {
+        $batches = array_chunk($data, 100);
+
+        foreach ($batches as $batch) {
+            $model::insert($batch);
+        }
+    }
+
+    /**
+     * Cleanup file and flash success message
+     */
+    private function cleanupAndFlashMessage(array $config, int $rowCount): void
+    {
+        File::delete($config['path']);
+
+        $table = Str::plural($config['modelName']);
+        session()->flash('message', trans('global.app_imported_rows_to_table', [
+            'rows' => $rowCount,
+            'table' => $table,
+        ]));
+    }
+
+    /**
+     * Validate uploaded CSV file
+     */
+    private function validateCsvFile(Request $request): void
+    {
         $request->validate([
             'csv_file' => 'mimes:csv,txt',
         ]);
+    }
 
+    /**
+     * Extract parsing configuration
+     */
+    private function extractParseConfig(Request $request): array
+    {
+        $file = $request->file('csv_file');
         $path = $file->path();
         $hasHeader = (bool) $request->input('header', false);
+        $filename = Str::random(10).'.csv';
 
-        $reader = new SpreadsheetReader($path);
+        $file->storeAs('csv_import', $filename);
+
+        return compact('file', 'path', 'hasHeader', 'filename');
+    }
+
+    /**
+     * Extract CSV preview data
+     *
+     * @throws Exception
+     */
+    private function extractCsvPreview(array $config): array
+    {
+        $reader = new SpreadsheetReader($config['path']);
         $headers = $reader->current();
         $lines = [];
 
-        $i = 0;
-        while ($reader->next() !== false && $i < 5) {
+        $previewCount = 0;
+        while ($reader->next() !== false && $previewCount < 5) {
             $lines[] = $reader->current();
-            $i++;
+            $previewCount++;
         }
 
-        $filename = Str::random(10).'.csv';
-        $file->storeAs('csv_import', $filename);
+        return compact('headers', 'lines');
+    }
 
+    /**
+     * Prepare data for view
+     */
+    private function prepareViewData(array $parseConfig, array $csvData, Request $request): array
+    {
         $modelName = $request->input('model', false);
         $fullModelName = "App\Models\\".$modelName;
 
@@ -99,9 +188,15 @@ trait CsvImportTrait
         $fillables = $model->getFillable();
 
         $redirect = url()->previous();
-
         $routeName = 'admin.'.mb_strtolower(Str::plural(Str::kebab($modelName))).'.processCsvImport';
 
-        return view('csvImport.parseInput', compact('headers', 'filename', 'fillables', 'hasHeader', 'modelName', 'lines', 'redirect', 'routeName'));
+        return array_merge($csvData, [
+            'filename' => $parseConfig['filename'],
+            'fillables' => $fillables,
+            'hasHeader' => $parseConfig['hasHeader'],
+            'modelName' => $modelName,
+            'redirect' => $redirect,
+            'routeName' => $routeName,
+        ]);
     }
 }

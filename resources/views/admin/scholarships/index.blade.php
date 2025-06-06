@@ -8,46 +8,6 @@
                         {{ trans('global.add') }} {{ trans('cruds.scholarship.title_singular') }}
                     </a>
                 </div>
-                <div class="col-md-8">
-                    <form action="{{ route('admin.scholarships.import') }}" method="post" enctype="multipart/form-data" class="row">
-                        @csrf
-                        <div class="form-group col-md-6">
-                            <label for="importFile">Choose File <span class="text-danger">*</span></label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file"
-                                        class="custom-file-input {{ $errors->has('file') ? 'is-invalid' : '' }}"
-                                        name="file" id="importFile"
-                                        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
-                                    <label class="custom-file-label" for="importFile">Select file</label>
-                                </div>
-                            </div>
-                            @if ($errors->has('file'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('file') }}
-                                </div>
-                            @endif
-                        </div>
-                        <div class="form-group col-md-6 d-flex align-items-end">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="bi bi-file-earmark-arrow-up"></i> {{ trans('global.import_data') }}
-                            </button>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <div class="alert alert-info mb-0">
-                                <strong>Import Instructions:</strong>
-                                <ul class="mb-0 pl-3">
-                                    <li>File must be CSV or Excel (.xlsx) format</li>
-                                    <li>First row must contain column headers</li>
-                                    <li>Required columns: <strong>Names</strong> and <strong>Year of Entrance</strong></li>
-                                    <li>Optional columns: Gender, ID, District, Sector, Cell, Village, Telephone, Email, School, Study Option</li>
-                                    <li>Gender values should be: <em>F</em> for female or <em>M</em> for male</li>
-                                    <li>Maximum file size: <strong>10MB</strong></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </div>
 
             </div>
         </div>
@@ -98,15 +58,6 @@
                                 {{ trans('cruds.scholarship.fields.names') }}
                             </th>
                             <th>
-                                {{ trans('cruds.scholarship.fields.gender') }}
-                            </th>
-                            <th>
-                                {{ trans('cruds.scholarship.fields.id_number') }}
-                            </th>
-                            <th>
-                                {{ trans('cruds.scholarship.fields.telephone') }}
-                            </th>
-                            <th>
                                 {{ trans('cruds.scholarship.fields.school') }}
                             </th>
                             <th>
@@ -130,16 +81,7 @@
                                     {{ $scholarship->id ?? '' }}
                                 </td>
                                 <td>
-                                    {{ $scholarship->names ?? '' }}
-                                </td>
-                                <td>
-                                    {{ App\Models\Scholarship::GENDER_SELECT[$scholarship->gender] ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $scholarship->id_number ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $scholarship->telephone ?? '' }}
+                                    {{ $scholarship->name ?? '' }}
                                 </td>
 
                                 <td>

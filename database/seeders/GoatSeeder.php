@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Goat;
-use App\Models\Project;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 final class GoatSeeder extends Seeder
 {
@@ -19,134 +18,85 @@ final class GoatSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = database_path('seeders/Data/Goats.csv');
-
-        echo "Looking for CSV file at: {$csvFile}\n";
-
-        if (! file_exists($csvFile)) {
-            echo "ERROR: Goats CSV file not found: {$csvFile}\n";
+        $this->command->info('Starting importing Goats Distributions');
+        $csvPath = database_path('seeders/Data/Goats.csv');
+        if (! file_exists($csvPath)) {
+            $this->command->error('CSV file not found: '.$csvPath);
 
             return;
         }
 
-        echo "CSV file found!\n";
+        $file = fopen($csvPath, 'r');
 
-        // Get default project ID (assuming there's at least one project in the database)
-        $defaultProjectId = Project::first()?->id;
-        echo 'Default Project ID: '.($defaultProjectId ?? 'NULL')."\n";
+        $rowCount = count(file($csvPath)) - 1;
+        $this->command->info("Found $rowCount records to import.");
+        $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
+        $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
+        $progressBar->start();
 
-        // If no project exists, create a default one
-        if ($defaultProjectId === null) {
-            $project = Project::create([
-                'name' => 'Default Project',
-                'description' => 'Created by GoatSeeder',
-            ]);
-            $defaultProjectId = $project->id;
-            echo "Created default project with ID: {$defaultProjectId}\n";
-        }
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('goats')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        // Read and parse CSV file
-        $this->seedFromCsv($csvFile, $defaultProjectId);
-    }
-
-    /**
-     * Seed goats data from CSV file
-     *
-     * @param  string  $csvFile  Path to CSV file
-     * @param  int|null  $projectId  Default project ID
-     */
-    private function seedFromCsv(string $csvFile, ?int $projectId = null): void
-    {
-        $handle = fopen($csvFile, 'r');
-
-        if ($handle === false) {
-            echo "ERROR: Unable to open CSV file: {$csvFile}\n";
-
-            return;
-        }
-
-        echo "Successfully opened CSV file\n";
-
-        // Count total rows for progress calculation
-        $totalRows = 0;
-        while (fgetcsv($handle) !== false) {
-            $totalRows++;
-        }
-        rewind($handle);
-
-        // Skip header row
-        $header = fgetcsv($handle);
-        $totalRows--; // Exclude header from count
-
-        echo "Found {$totalRows} records to process\n";
-        echo "Starting import...\n";
-
-        // Process each row
-        $count = 0;
+        $row = 0;
+        $successCount = 0;
         $errorCount = 0;
-        $progressStep = max(1, floor($totalRows / 20)); // Show progress every 5%
-        $lastProgressPercent = 0;
 
-        while (($data = fgetcsv($handle)) !== false) {
-            // Skip empty rows
-            if (empty($data[1])) {
+        while (($data = fgetcsv($file)) !== false) {
+
+            if ($row === 0) {
+                $row++;
+
                 continue;
             }
 
             try {
-                $this->createGoatFromCsvRow($data, $projectId);
-                $count++;
 
-                // Show progress
-                $currentPercent = floor(($count + $errorCount) / $totalRows * 100);
-                if ($currentPercent >= $lastProgressPercent + 5) {
-                    echo "Progress: {$currentPercent}% ({$count} records imported)\n";
-                    $lastProgressPercent = $currentPercent;
+                if (empty(mb_trim($data[1] ?? ''))) {
+                    $row++;
+                    $progressBar->advance();
+
+                    continue;
                 }
+
+                Goat::create([
+
+                    'name' => mb_trim($data[1] ?? ''),
+                    'id_number' => $this->cleanIdNumber($data[2] ?? ''),
+                    'sector' => mb_trim($data[3] ?? ''),
+                    'village' => mb_trim($data[4] ?? ''),
+                    'distribution_date' => $this->parseDistributionDate($data[5] ?? ''),
+                    'number_of_goats' => mb_trim($data[6] ?? ''),
+                    'gender' => mb_trim($data[7] ?? ''),
+                ]);
+
+                $successCount++;
             } catch (Exception $e) {
                 $errorCount++;
-                // Log error but don't show in console to keep output clean
-                $rowNum = $count + $errorCount;
-                Log::error("Error seeding goat on row {$rowNum}: {$e->getMessage()}", [
-                    'data' => $data,
-                ]);
+                if ($errorCount <= 5) {
+                    $this->command->error("Error processing row $row: ".$e->getMessage());
+                } elseif ($errorCount === 6) {
+                    $this->command->error('Additional errors exist but are not being displayed...');
+                }
             }
+
+            $progressBar->advance();
+            $row++;
         }
 
-        fclose($handle);
-        echo "\nImport completed:\n";
-        echo "✓ {$count} goat records successfully imported\n";
+        $progressBar->finish();
 
-        if ($errorCount > 0) {
-            echo "✗ {$errorCount} records failed (see logs for details)\n";
+        fclose($file);
+
+        $this->command->newLine(2);
+        $this->command->info('Goat distribution data seeded successfully!');
+        $this->command->info("$successCount records imported, $errorCount errors.");
+
+        if ($successCount > 0) {
+            $this->command->info('Example of imported data:');
+            $example = Goat::first();
+            $this->command->info("Name: $example->name, Sector: $example->sector, Received goats: $example->number_of_goats");
         }
-    }
-
-    /**
-     * Create a goat record from CSV row data
-     *
-     * @param  array  $data  CSV row data
-     * @param  int|null  $projectId  Default project ID
-     */
-    private function createGoatFromCsvRow(array $data, ?int $projectId = null): Goat
-    {
-        // Map CSV columns to model attributes
-        $goatData = [
-            'uuid' => Str::uuid(),
-            'names' => $data[1] ?? null,
-            'id_number' => $this->cleanIdNumber($data[2] ?? null),
-            'sector' => $data[3] ?? null,
-            'village' => $data[4] ?? null,
-            'cell' => $data[5] ?? null,
-            'distribution_date' => $this->parseDistributionDate($data[6] ?? null),
-            'number_of_goats' => (int) ($data[7] ?? 3),
-            'gender' => $data[8] ?? null,
-            'pass_over' => ! empty($data[9]) ? $data[9] : null,
-            'comment' => $data[10] ?? null,
-            'project_id' => $projectId,
-        ];
-
-        return Goat::create($goatData);
     }
 
     /**

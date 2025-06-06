@@ -4,40 +4,38 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\Scholarship;
+use App\Models\Urgent;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
-final class ScholarshipSeeder extends Seeder
+final class UrgentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $this->command->info('Seeding scholarship data from CSV...');
-        $csvPath = database_path('seeders/Data/Scholarship.csv');
+        $this->command->info('Starting to seed urgent community support data from csv file');
+        $csvPath = database_path('seeders/Data/Urgent.csv');
         if (! file_exists($csvPath)) {
             $this->command->error('CSV file not found: '.$csvPath);
 
             return;
         }
 
-        // Read CSV file
         $file = fopen($csvPath, 'r');
 
-        // Count the number of rows for the progress bar (excluding header)
         $rowCount = count(file($csvPath)) - 1;
         $this->command->info("Found $rowCount records to import.");
-
-        // Create a progress bar
         $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
         $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
         $progressBar->start();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('scholarships')->truncate();
+        DB::table('urgents')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $row = 0;
@@ -61,20 +59,18 @@ final class ScholarshipSeeder extends Seeder
                     continue;
                 }
 
-                Scholarship::create([
+                Urgent::create([
 
                     'name' => mb_trim($data[1] ?? ''),
                     'gender' => mb_trim($data[2] ?? ''),
-                    'id_number' => mb_trim($data[3] ?? ''),
-                    'district' => mb_trim($data[4] ?? ''),
-                    'sector' => mb_trim($data[5] ?? ''),
-                    'cell' => mb_trim($data[6] ?? ''),
-                    'village' => mb_trim($data[7] ?? ''),
-                    'telephone' => mb_trim($data[8] ?? ''),
-                    'email' => mb_trim($data[9] ?? ''),
-                    'school' => mb_trim($data[10] ?? ''),
-                    'study_option' => mb_trim($data[11] ?? ''),
-                    'entrance_year' => mb_trim($data[12] ?? ''),
+                    'id_number' => $this->cleanUpId($data[3] ?? ''),
+                    'sector' => mb_trim($data[4] ?? ''),
+                    'cell' => mb_trim($data[5] ?? ''),
+                    'village' => mb_trim($data[6] ?? ''),
+                    'phone_number' => mb_trim($data[7] ?? ''),
+                    'support' => mb_trim($data[8] ?? ''),
+                    'support_date' => $this->parseDistributionDate($data[9] ?? ''),
+
                 ]);
 
                 $successCount++;
@@ -96,13 +92,44 @@ final class ScholarshipSeeder extends Seeder
         fclose($file);
 
         $this->command->newLine(2);
-        $this->command->info('Scholarship data seeded successfully!');
+        $this->command->info('Urgent community data seeded successfully!');
         $this->command->info("$successCount records imported, $errorCount errors.");
 
         if ($successCount > 0) {
             $this->command->info('Example of imported data:');
-            $example = Scholarship::first();
-            $this->command->info("Name: $example->names, School: $example->school, Study Option: $example->study_option");
+            $example = Urgent::first();
+            $this->command->info("Name: $example->name, Sector: $example->sector, Support: $example->support");
+        }
+    }
+
+    private function cleanUpId(?string $idNumber): ?string
+    {
+        if (empty($idNumber)) {
+            return null;
+        }
+
+        return mb_ltrim($idNumber, '*');
+
+    }
+
+    private function parseDistributionDate(?string $dateString): ?string
+    {
+        if (empty($dateString)) {
+            return null;
+        }
+
+        try {
+            // Handle year-only format
+            if (preg_match('/^\d{4}$/', $dateString)) {
+                return $dateString.'-01-01';
+            }
+
+            // Parse various date formats
+            return Carbon::parse($dateString)->format('Y-m-d');
+        } catch (Exception $e) {
+            Log::warning('Could not parse date: '.$dateString);
+
+            return null;
         }
     }
 }

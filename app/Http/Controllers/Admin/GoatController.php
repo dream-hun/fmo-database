@@ -19,7 +19,7 @@ final class GoatController extends Controller
     {
         abort_if(Gate::denies('goat_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $goats = Goat::with(['project'])->get();
+        $goats = Goat::all();
 
         return view('admin.goats.index', compact('goats'));
     }

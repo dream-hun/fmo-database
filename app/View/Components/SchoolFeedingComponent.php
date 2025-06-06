@@ -32,15 +32,17 @@ final class SchoolFeedingComponent extends Component
         $years = array_keys($data);
         $totals = array_values($data);
         $totalStudents = array_sum($totals);
+        $males = SchoolFeeding::where('gender', 'M')->count();
+        $females = SchoolFeeding::where('gender', 'F')->count();
 
         $chart = new Chart();
 
         return $chart->setType('line')
             ->setWidth('100%')
             ->setHeight(500)
-            ->setLabels($years) // Use years as x-axis labels
+            ->setLabels($years)
             ->setDataset('Students', 'line', $totals)
-            ->setColors(['#1f77b4'])
+            ->setColors(['#b2071b'])
             ->setOptions([
                 'chart' => [
                     'type' => 'line',
@@ -52,12 +54,12 @@ final class SchoolFeedingComponent extends Component
                     ],
                 ],
                 'title' => [
-                    'text' => 'School Feeding Trend by Academic Year',
-                    'align' => 'center',
+                    'text' => 'School Feeding Chart by Academic Year',
+                    'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Students: '.$totalStudents,
-                    'align' => 'center',
+                    'text' => 'Total number of Students: '.$totalStudents.' Number of female is '.$females.' Number of male is '.$males,
+                    'align' => 'left',
                 ],
                 'xaxis' => [
                     'categories' => $years,

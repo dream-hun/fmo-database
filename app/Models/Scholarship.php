@@ -6,7 +6,6 @@ namespace App\Models;
 
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class Scholarship extends Model
 {
@@ -24,9 +23,7 @@ final class Scholarship extends Model
     ];
 
     protected $fillable = [
-        'uuid',
-        'project_id',
-        'names',
+        'name',
         'gender',
         'id_number',
         'district',
@@ -41,16 +38,6 @@ final class Scholarship extends Model
         'created_at',
         'updated_at',
     ];
-
-    public function getRouteKeyName(): string
-    {
-        return 'uuid';
-    }
-
-    public function project(): BelongsTo
-    {
-        return $this->belongsTo(Project::class, 'project_id');
-    }
 
     protected function serializeDate(DateTimeInterface $date): string
     {

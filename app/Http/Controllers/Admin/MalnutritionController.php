@@ -5,20 +5,22 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreMalnutritionRequest;
-use App\Http\Requests\UpdateMalnutritionRequest;
+use App\Http\Requests\Admin\StoreMalnutritionRequest;
+use App\Http\Requests\Admin\UpdateMalnutritionRequest;
 use App\Models\Malnutrition;
-use App\Models\Project;
+use App\Models\Traits\CsvImportTrait;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 final class MalnutritionController extends Controller
 {
+    use CsvImportTrait;
+
     public function index()
     {
         abort_if(Gate::denies('malnutrition_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $malnutritions = Malnutrition::with(['project'])->get();
+        $malnutritions = Malnutrition::all();
 
         return view('admin.malnutritions.index', compact('malnutritions'));
     }
@@ -27,9 +29,7 @@ final class MalnutritionController extends Controller
     {
         abort_if(Gate::denies('malnutrition_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $projects = Project::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        return view('admin.malnutritions.create', compact('projects'));
+        return view('admin.malnutritions.create');
     }
 
     public function store(StoreMalnutritionRequest $request)
@@ -43,11 +43,7 @@ final class MalnutritionController extends Controller
     {
         abort_if(Gate::denies('malnutrition_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $projects = Project::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        $malnutrition->load('project');
-
-        return view('admin.malnutritions.edit', compact('malnutrition', 'projects'));
+        return view('admin.malnutritions.edit', compact('malnutrition'));
     }
 
     public function update(UpdateMalnutritionRequest $request, Malnutrition $malnutrition)
@@ -55,15 +51,6 @@ final class MalnutritionController extends Controller
         $malnutrition->update($request->all());
 
         return redirect()->route('admin.malnutritions.index');
-    }
-
-    public function show(Malnutrition $malnutrition)
-    {
-        abort_if(Gate::denies('malnutrition_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        $malnutrition->load('project');
-
-        return view('admin.malnutritions.show', compact('malnutrition'));
     }
 
     public function destroy(Malnutrition $malnutrition)

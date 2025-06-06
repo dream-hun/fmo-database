@@ -8,44 +8,45 @@ use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
-final class Goat extends Model
+final class Urgent extends Model
 {
     public const GENDER_SELECT = [
         'M' => 'Male',
         'F' => 'Female',
     ];
 
-    public $table = 'goats';
+    public $table = 'urgents';
 
     protected array $dates = [
-        'distribution_date',
+        'support_date',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
     protected $fillable = [
-        'names',
+        'name',
+        'gender',
         'id_number',
         'sector',
         'cell',
         'village',
-        'distribution_date',
-        'number_of_goats',
-        'gender',
+        'phone_number',
+        'support',
+        'support_date',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
-    public function getDistributionDateAttribute($value): ?string
+    public function getSupportDateAttribute($value): ?string
     {
         return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
     }
 
-    public function setDistributionDateAttribute($value): void
+    public function setSupportDateAttribute($value): void
     {
-        $this->attributes['distribution_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+        $this->attributes['support_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     protected function serializeDate(DateTimeInterface $date): string

@@ -38,10 +38,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('girinkas', GirinkaController::class)->except(['show']);
     Route::post('girinkas/import', [GirinkaController::class, 'import'])->name('girinkas.import');
     Route::resource('goats', GoatController::class)->except(['show']);
+    Route::post('malnutritions/parse-csv-import', [MalnutritionController::class, 'parseCsvImport'])->name('malnutritions.parseCsvImport');
+    Route::post('malnutritions/process-csv-import', [MalnutritionController::class, 'processCsvImport'])->name('malnutritions.processCsvImport');
     Route::resource('malnutritions', MalnutritionController::class)->except(['show']);
     Route::resource('tanks', TankController::class)->except(['show']);
     Route::resource('scholarships', ScholarshipController::class)->except(['show']);
-    Route::post('scholarships/import', [ScholarshipController::class, 'import'])->name('scholarships.import');
     Route::resource('vslas', VslaController::class)->except(['show']);
     Route::resource('individuals', IndividualController::class)->except(['show']);
     Route::resource('school-feedings', SchoolFeedingController::class)->except(['show']);

@@ -23,7 +23,7 @@ final class ScholarshipController extends Controller
     {
         abort_if(Gate::denies('scholarship_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $scholarships = Scholarship::with(['project'])->get();
+        $scholarships = Scholarship::all();
 
         return view('admin.scholarships.index', compact('scholarships'));
     }

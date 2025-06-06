@@ -43,9 +43,7 @@
                             <th>
                                 {{ trans('cruds.goat.fields.gender') }}
                             </th>
-                            <th>
-                                {{ trans('cruds.goat.fields.pass_over') }}
-                            </th>
+
 
                             <th>
                                 &nbsp;
@@ -62,7 +60,7 @@
                                     {{ $goat->id ?? '' }}
                                 </td>
                                 <td>
-                                    {{ $goat->names ?? '' }}
+                                    {{ $goat->name ?? '' }}
                                 </td>
                                 <td>
                                     {{ $goat->id_number ?? '' }}
@@ -79,10 +77,7 @@
                                 <td>
                                     {{ App\Models\Goat::GENDER_SELECT[$goat->gender] ?? '' }}
                                 </td>
-                                <td>
-                                    <span style="display:none">{{ $goat->pass_over ?? '' }}</span>
-                                    <input type="checkbox" disabled="disabled" {{ $goat->pass_over ? 'checked' : '' }}>
-                                </td>
+
                                 <td>
                                     @can('goat_edit')
                                         <a class="btn btn-xs btn-info" href="{{ route('admin.goats.edit', $goat->id) }}">

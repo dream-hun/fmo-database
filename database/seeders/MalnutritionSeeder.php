@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Malnutrition;
-
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-
 
 final class MalnutritionSeeder extends Seeder
 {
@@ -63,7 +61,7 @@ final class MalnutritionSeeder extends Seeder
                     'father_name' => $data[7] ?? null,
                     'mother_name' => $data[8] ?? null,
                     'home_phone' => $data[9] ?? null,
-                    'package_reception_date'=>$this->receptionDate($data[10]??null),
+                    'package_reception_date' => $this->receptionDate($data[10] ?? null),
 
                 ]);
                 $successCount++;
@@ -92,7 +90,8 @@ final class MalnutritionSeeder extends Seeder
             $this->command->info("Name: $example->name, Age: $example->age, Associated health Center: $example->health_center");
         }
     }
-    public function  receptionDate(?string $dateString):?string
+
+    public function receptionDate(?string $dateString): ?string
     {
         if (empty($dateString)) {
             return null;
@@ -102,9 +101,11 @@ final class MalnutritionSeeder extends Seeder
                 return $dateString.'-01-01';
 
             }
+
             return Carbon::parse($dateString)->format('Y-m-d');
-        }catch (Exception $e) {
+        } catch (Exception $e) {
             Log::warning('Could not parse date: '.$dateString);
+
             return $e->getMessage();
         }
 

@@ -20,14 +20,14 @@ Review
 10. On Ecd we need to update data by years  2019, 2022
 11. Update toolkits data for importation
 12. Order dashboard by programs
-13. Basic Healt care(MUSA&Medical support)
+13. Basic Health care(MUSA&Medical support)
 14. revise data  of urgent community support(New houses, house rehabilitation,food support).
 15. Update Individual micro credit data (2017)
 16. Use same type of chat by project
 17. Check Columns of entrance on scholarships
 18. Change title of MVTC to Graduated MVTC students by Trade
 18. Arrange TVET (MVTC ) by year and gender.
-19. ECD Empowerment: rehabilitation, construction, equipments and care givers  trained.
+19. ECD Empowerment: rehabilitation, construction, equipments and caregivers  trained.
 20. Arrange all types of training by names gender training type and date of training.
 21. Add fruits trees
 

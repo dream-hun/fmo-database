@@ -7,14 +7,12 @@ namespace App\Models;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class Malnutrition extends Model
 {
-    public const CURRENT_MALNUTRITION_CODE_SELECT = [
-        'yellow' => 'Yellow',
-        'green' => 'Green',
-        'red' => 'Red',
+    public const GENDER_SELECT = [
+        'F' => 'Female',
+        'M' => 'Male',
     ];
 
     public $table = 'malnutritions';
@@ -27,9 +25,9 @@ final class Malnutrition extends Model
     ];
 
     protected $fillable = [
-        'project_id',
-        'surname',
-        'first_name',
+
+        'name',
+        'gender',
         'age',
         'health_center',
         'sector',
@@ -39,18 +37,10 @@ final class Malnutrition extends Model
         'mother_name',
         'home_phone',
         'package_reception_date',
-        'entry_muac',
-        'currently_muac',
-        'current_malnutrition_code',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
-
-    public function project(): BelongsTo
-    {
-        return $this->belongsTo(Project::class, 'project_id');
-    }
 
     public function getPackageReceptionDateAttribute($value): ?string
     {
