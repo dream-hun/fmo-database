@@ -11,7 +11,6 @@ use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
 use App\Models\Malnutrition;
-use App\Models\Musa;
 use App\Models\Mvtc;
 use App\Models\Scholarship;
 use App\Models\SchoolFeeding;
@@ -95,15 +94,6 @@ final class TotalNumbers
 
     }
 
-    public static function totalMusa(): int
-    {
-        return Musa::count();
-    }
-
-    public static function totalFoodAndHouse(): int
-    {
-        return FoodAndHouse::count();
-    }
 
     public static function mvtcGraduate(): int
     {
@@ -127,8 +117,7 @@ final class TotalNumbers
             self::totalToolkits() +
             self::totalTrees() +
             self::totalEcd() +
-            self::totalMusa() +
-            self::totalFoodAndHouse() +
+
             self::mvtcGraduate();
 
     }

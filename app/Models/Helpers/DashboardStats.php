@@ -6,15 +6,14 @@ namespace App\Models\Helpers;
 
 use Akaunting\Apexcharts\Chart;
 use App\Models\Ecd;
-use App\Models\FoodAndHouse;
 use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
 use App\Models\Malnutrition;
-use App\Models\Musa;
 use App\Models\Mvtc;
 use App\Models\Scholarship;
 use App\Models\Toolkit;
+use App\Models\Urgent;
 use App\Models\Vsla;
 use DB;
 
@@ -293,69 +292,6 @@ final class DashboardStats
             ]);
     }
 
-    public static function supportDistribution(): Chart
-    {
-        $data = FoodAndHouse::query()
-            ->selectRaw('support, COUNT(*) as total')
-            ->whereNotNull('support')
-            ->groupBy('support')
-            ->orderBy('support')
-            ->get();
-
-        $labels = $data->pluck('support')->toArray();
-        $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
-        $total = array_sum($values);
-
-        return (new Chart)
-            ->setType('donut')
-            ->setWidth('100%')
-            ->setHeight(500)
-            ->setLabels($labels)
-            ->setDataset('Support Distribution', 'donut', $values)
-            ->setColors([
-                '#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26a69a',
-            ])
-            ->setOptions([
-                'chart' => [
-                    'type' => 'donut',
-                ],
-                'plotOptions' => [
-                    'pie' => [
-                        'donut' => [
-                            'size' => '65%',
-                        ],
-                    ],
-                ],
-                'dataLabels' => [
-                    'enabled' => true,
-                ],
-                'legend' => [
-                    'show' => true,
-                    'position' => 'bottom',
-                    'labels' => [
-                        'colors' => '#000',
-                        'useSeriesColors' => false,
-                    ],
-                ],
-                'title' => [
-                    'text' => 'Support Distribution by Type',
-                    'align' => 'center',
-                ],
-                'subtitle' => [
-                    'text' => 'Total: '.number_format($total),
-                    'align' => 'center',
-                    'style' => [
-                        'fontSize' => '14px',
-                    ],
-                ],
-                'tooltip' => [
-                    'y' => [
-                        'formatter' => "function(val) { return val + ' people'; }",
-                    ],
-                ],
-            ]);
-    }
-
     public static function toolKit(): Chart
     {
         $mvtcData = Toolkit::selectRaw('toolkit_received, COUNT(*) as count')
@@ -620,12 +556,6 @@ final class DashboardStats
             ]);
     }
 
-    public static function musaSupport(): int
-    {
-        return Musa::count();
-
-    }
-
     public static function mvtcChart(): Chart
     {
 
@@ -778,4 +708,65 @@ final class DashboardStats
                 ],
             ]);
     }
+
+    public static function urgentCommunitySupportChart(): Chart
+    {
+        $beneficiaries = Urgent::select('support')->selectRaw('count(*) as total')->groupBy('support')->orderBy('support')->pluck('total', 'support')->toArray();
+        $totalBeneficiaries = Urgent::count();
+        $males=Urgent::where('gender','M')->count();
+        $females=Urgent::where('gender','F')->count();
+        $chart= new Chart();
+        $supports=array_keys($beneficiaries);
+        $total=array_values($beneficiaries);
+        return $chart->setType('bar')->setWidth('100%')
+            ->setHeight(500)->setLabels($supports)
+            ->setDataset('Beneficiaries reach out in urgent community support','bar', $total)
+            ->setColors(['#b2071b'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'bar',
+                    'toolbar' => [
+                        'show' => true,
+
+                    ],
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'stroke' => [
+                    'curve' => 'smooth',
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Supports',
+                    ],
+                    'categories' => $supports,
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of beneficiaries',
+                    ],
+                ],
+                'title' => [
+                    'text' => 'Beneficiaries in Urgent Community Support',
+                    'align' => 'left',
+                ],
+                'subtitle' => [
+                    'text' => 'Total beneficiaries is '.$totalBeneficiaries.' Total female is '.$females.' Total male is '.$males,
+                    'align' => 'left',
+                ],
+                'legend' => [
+                    'show' => true,
+                    'position' => 'bottom',
+                    'horizontalAlign' => 'left',
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => 'function (val) { return val + " supports" }',
+                    ],
+                ],
+            ]);
+
+    }
+
 }

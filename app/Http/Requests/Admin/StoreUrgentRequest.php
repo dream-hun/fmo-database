@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace App\Http\Requests\Admin;
 
-use Gate;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
-final class UpdateFoodAndHouseRequest extends FormRequest
+final class StoreUrgentRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return Gate::allows('food_and_house_edit');
+        return Gate::allows('urgent_create');
     }
 
     public function rules(): array
@@ -21,7 +21,14 @@ final class UpdateFoodAndHouseRequest extends FormRequest
                 'string',
                 'required',
             ],
+            'gender' => [
+                'required',
+            ],
             'id_number' => [
+                'string',
+                'nullable',
+            ],
+            'sector' => [
                 'string',
                 'nullable',
             ],
@@ -41,9 +48,9 @@ final class UpdateFoodAndHouseRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'date' => [
+            'support_date' => [
+                'required',
                 'date_format:'.config('panel.date_format'),
-                'nullable',
             ],
         ];
     }

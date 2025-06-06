@@ -7,11 +7,11 @@ namespace App\Http\Requests\Admin;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 
-final class StoreMusaRequest extends FormRequest
+final class UpdateUrgentRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return Gate::allows('musa_create');
+        return Gate::allows('urgent_edit');
     }
 
     public function rules(): array
@@ -21,23 +21,11 @@ final class StoreMusaRequest extends FormRequest
                 'string',
                 'required',
             ],
+            'gender' => [
+                'required',
+            ],
             'id_number' => [
                 'string',
-                'nullable',
-            ],
-            'family_members' => [
-                'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
-            ],
-            'support_given' => [
-                'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
-            ],
-            'support_date' => [
                 'nullable',
             ],
             'sector' => [
@@ -51,6 +39,18 @@ final class StoreMusaRequest extends FormRequest
             'village' => [
                 'string',
                 'nullable',
+            ],
+            'phone_number' => [
+                'string',
+                'nullable',
+            ],
+            'support' => [
+                'string',
+                'nullable',
+            ],
+            'support_date' => [
+                'required',
+                'date_format:'.config('panel.date_format'),
             ],
         ];
     }

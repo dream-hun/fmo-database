@@ -352,23 +352,23 @@ final class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id' => 85,
-                'title' => 'food_and_house_access',
+                'title' => 'urgent_access',
             ],
             [
                 'id' => 86,
-                'title' => 'food_and_house_create',
+                'title' => 'urgent_create',
             ],
             [
                 'id' => 87,
-                'title' => 'food_and_house_edit',
+                'title' => 'urgent_edit',
             ],
             [
                 'id' => 88,
-                'title' => 'food_and_house_show',
+                'title' => 'urgent_show',
             ],
             [
                 'id' => 89,
-                'title' => 'food_and_house_delete',
+                'title' => 'urgent_delete',
             ],
             [
                 'id' => 90,

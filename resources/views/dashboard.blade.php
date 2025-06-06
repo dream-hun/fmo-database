@@ -44,7 +44,6 @@
 
                 <div class="col-md-6">
                     <div class="card">
-
                         <div class="card-body">
                             {!! $goatDistributionChart->container() !!}
                         </div>
@@ -53,7 +52,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            {!! $support->container() !!}
+                            {!! $urgentCommunity->container() !!}
                         </div>
                     </div>
                 </div>
@@ -116,6 +115,6 @@
     {!! $vslaChart->script() !!}
     {!! $mvtc->script() !!}
     {!! $toolkitChart->script() !!}
-    {!! $support->script() !!}
+    {!! $urgentCommunity->script() !!}
     {!! $malnutritionChart->script() !!}
 @endpush
