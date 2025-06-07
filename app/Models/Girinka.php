@@ -46,7 +46,7 @@ final class Girinka extends Model
         return 'uuid';
     }
 
-    public function getDistributionDateAttribute($value)
+    public function getDistributionDateAttribute($value): ?string
     {
         return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
     }

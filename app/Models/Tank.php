@@ -12,7 +12,7 @@ final class Tank extends Model
 {
     public $table = 'tanks';
 
-    protected $dates = [
+    protected array $dates = [
         'distribution_date',
         'created_at',
         'updated_at',
@@ -33,11 +33,6 @@ final class Tank extends Model
         'updated_at',
         'deleted_at',
     ];
-
-    public function getRouteKeyName(): string
-    {
-        return 'uuid';
-    }
 
     public function getDistributionDateAttribute($value): ?string
     {

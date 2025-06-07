@@ -19,6 +19,157 @@ use DB;
 
 final class DashboardStats
 {
+    public static function malnutritionChart(): Chart
+    {
+        $beneficiaries = Malnutrition::select(
+            DB::raw('YEAR(package_reception_date) as year'),
+            DB::raw('COUNT(*) as total')
+        )
+            ->groupBy('year')
+            ->orderBy('year', 'ASC')
+            ->pluck('total', 'year')
+            ->toArray();
+
+        $children = Malnutrition::count();
+        $years = array_keys($beneficiaries);
+        $totalBeneficiaries = array_values($beneficiaries);
+        $totalChildren = array_sum($totalBeneficiaries);
+
+        $chart = new Chart();
+
+        return $chart->setType('line')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($years)
+            ->setDataset('Children', 'line', $totalBeneficiaries)
+            ->setColors(['#b2071b'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'line',
+                    'toolbar' => ['show' => true],
+                    'zoom' => ['enabled' => true],
+                ],
+                'title' => [
+                    'text' => 'Malnutrition children distribution',
+                    'align' => 'left',
+                ],
+                'subtitle' => [
+                    'text' => 'Total children: '.$children,
+                    'align' => 'left',
+                ],
+                'xaxis' => [
+                    'categories' => $years,
+                    'title' => ['text' => 'Years'],
+                ],
+                'yaxis' => [
+                    'title' => ['text' => 'Number of children'],
+                ],
+                'stroke' => [
+                    'curve' => 'smooth',
+                    'width' => 3,
+                ],
+                'markers' => [
+                    'size' => 6,
+                    'colors' => ['#1f77b4'],
+                    'strokeColors' => '#fff',
+                    'strokeWidth' => 2,
+                    'hover' => ['size' => 8],
+                ],
+                'grid' => [
+                    'show' => true,
+                    'borderColor' => '#e0e6ed',
+                    'strokeDashArray' => 5,
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                    'style' => [
+                        'fontSize' => '12px',
+                        'fontWeight' => 'bold',
+                        'colors' => ['#304758'],
+                    ],
+                ],
+                'tooltip' => [
+                    'enabled' => true,
+                    'y' => [
+                        'formatter' => 'function(val) { return val + " children"; }',
+                    ],
+                ],
+                'responsive' => [
+                    [
+                        'breakpoint' => 480,
+                        'options' => [
+                            'chart' => ['width' => '100%'],
+                            'legend' => ['position' => 'bottom'],
+                        ],
+                    ],
+                ],
+            ]);
+    }
+
+    public static function ecdChart(): Chart
+    {
+        $ecdData = Ecd::select('academic_year')
+            ->selectRaw('count(*) as total')
+            ->groupBy('academic_year')
+            ->orderBy('academic_year')
+            ->pluck('total', 'academic_year')
+            ->toArray();
+
+        $totalEcd = Ecd::count();
+        $chart = new Chart();
+        $academicYears = array_keys($ecdData);
+        $counts = array_values($ecdData);
+
+        return $chart->setType('line')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($academicYears)
+            ->setDataset('Number of ECD Enrollments', 'line', $counts)
+            ->setColors(['#b2071b'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'line',
+                    'toolbar' => [
+                        'show' => true,
+                    ],
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'stroke' => [
+                    'curve' => 'smooth',
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Academic Year',
+                    ],
+                    'categories' => $academicYears,
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of Enrollments',
+                    ],
+                ],
+                'title' => [
+                    'text' => 'ECD Enrollments Over Academic Years',
+                    'align' => 'center',
+                ],
+                'subtitle' => [
+                    'text' => 'Total Enrollments: '.$totalEcd,
+                ],
+                'legend' => [
+                    'show' => true,
+                    'position' => 'top',
+                    'horizontalAlign' => 'center',
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => 'function (val) { return val + " enrollments" }',
+                    ],
+                ],
+            ]);
+    }
+
     public static function girinkaStats(): Chart
     {
         $girinkaData = Girinka::selectRaw('YEAR(distribution_date) as year, COUNT(*) as count')
@@ -26,72 +177,98 @@ final class DashboardStats
             ->groupBy('year')
             ->orderBy('year')
             ->get();
-
-        $dates = $girinkaData->pluck('year')->toArray();
-
-        $counts = $girinkaData->pluck('count')->toArray();
+        $male = Girinka::where('gender', 'M')->count();
+        $female = Girinka::where('gender', 'F')->count();
+        $cows = Girinka::count();
 
         $chart = new Chart;
-
         $totalGirinkaBeneficiaries = Girinka::count();
 
-        return $chart->setType('bar')
+        return $chart->setType('donut')
             ->setWidth('100%')
             ->setHeight(500)
-            ->setLabels($dates)
-            ->setDataset('Number of Distributed Cows', 'bar', $counts)
-            ->setColors(['#b2071b'])
+            ->setLabels($girinkaData->pluck('year')->toArray())
+            ->setDataset('Girinka Distribution', 'donut', $girinkaData->pluck('count')->toArray())
             ->setOptions([
                 'chart' => [
-                    'type' => 'bar',
+                    'type' => 'donut',
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'legend' => [
+                    'position' => 'bottom',
+                ],
+                'title' => [
+                    'text' => 'Girinka Distribution by Year',
+                    'align' => 'left',
+                ],
+                'subtitle' => [
+                    'text' => 'Total Beneficiaries: '.$totalGirinkaBeneficiaries.' Female beneficiaries is: '.$female.' Male beneficiaries: '.$male.' Total cows :'.$cows,
+                    'align' => 'left',
+                ],
+            ]);
+    }
+
+    public static function goatDistribution(): Chart
+    {
+        $totalBeneficiaries = (int) Goat::count();
+
+        $data = Goat::query()
+            ->selectRaw('CASE WHEN gender = "M" THEN "Male" ELSE "Female" END as gender, SUM(number_of_goats) as total')
+            ->whereIn('gender', ['M', 'F'])
+            ->groupBy('gender')
+            ->orderBy('gender')
+            ->get();
+
+        $labels = $data->pluck('gender')->toArray();
+        $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
+
+        $totalGoats = (int) Goat::sum('number_of_goats');
+
+        // Count of male and female beneficiaries
+        $maleBeneficiaries = (int) Goat::where('gender', 'M')->count();
+        $femaleBeneficiaries = (int) Goat::where('gender', 'F')->count();
+
+        return (new Chart)
+            ->setType('donut')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($labels)
+            ->setDataset('Goats by Gender', 'donut', $values)
+            ->setColors(['#B2071B', '#657278'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'donut',
                 ],
                 'plotOptions' => [
-                    'bar' => [
-                        'horizontal' => false,
-                        'columnWidth' => '55%',
-                        'endingShape' => 'rounded',
+                    'pie' => [
+                        'donut' => [
+                            'size' => '65%',
+                        ],
                     ],
                 ],
                 'dataLabels' => [
                     'enabled' => true,
                 ],
-                'stroke' => [
-                    'show' => true,
-                    'width' => 2,
-                    'colors' => ['transparent'],
-                ],
-                'xaxis' => [
-                    'title' => [
-                        'text' => 'Year',
-                    ],
-                ],
-                'yaxis' => [
-                    'title' => [
-                        'text' => 'Number of Distributed Cows',
-                    ],
-                ],
-                'fill' => [
-                    'opacity' => 1,
-                ],
-                'title' => [
-                    'text' => 'Yearly Girinka Distribution',
-                    'align' => 'center',
-                ],
-                'subtitle' => [
-                    'text' => 'Total Beneficiaries: '.$totalGirinkaBeneficiaries,
-                ],
                 'legend' => [
                     'show' => true,
-                    'position' => 'top',
-                    'horizontalAlign' => 'center',
-                    'floating' => false,
-                    'fontSize' => '14px',
-                    'fontFamily' => 'Helvetica, Arial',
-                    'fontWeight' => 400,
+                    'position' => 'bottom',
                 ],
-                'tooltip' => [
-                    'y' => [
-                        'formatter' => 'function (val) { return val + " distributions" }',
+
+                'title' => [
+                    'text' => 'Beneficiaries who benefited in Goat Distribution',
+                    'align' => 'left',
+                ],
+                'subtitle' => [
+                    'text' => 'Total Beneficiaries: '.number_format($totalBeneficiaries).
+                        '   Total Goats: '.number_format($totalGoats).
+                        '   Male Beneficiaries: '.number_format($maleBeneficiaries).
+                        '   Female Beneficiaries: '.number_format($femaleBeneficiaries),
+                    'align' => 'left',
+                    'style' => [
+                        'fontSize' => '14px',
+                        'margin' => '10px',
                     ],
                 ],
             ]);
@@ -183,111 +360,50 @@ final class DashboardStats
 
         $years = $data->pluck('entrance_year')->toArray();
         $counts = $data->pluck('total')->map(fn ($val) => (int) $val)->toArray();
+        $males = Scholarship::where('gender', 'M')->count();
+        $females = Scholarship::where('gender', 'F')->count();
 
         return (new Chart)
             ->setType('bar')
-            ->setLabels($years)
-            ->setSeries([
-                [
-                    'name' => 'Scholars (Bar)',
-                    'type' => 'column',
-                    'data' => $counts,
-                ],
-                [
-                    'name' => 'Scholars (Line)',
-                    'type' => 'line',
-                    'data' => $counts,
-                ],
-            ])
-            ->setOptions([
-                'chart' => [
-                    'height' => 500,
-                    'type' => 'line',
-                ],
-                'stroke' => [
-                    'width' => [0, 4],
-                ],
-                'dataLabels' => [
-                    'enabled' => true,
-                    'enabledOnSeries' => [1],
-                ],
-                'xaxis' => [
-                    'categories' => $years,
-                ],
-                'title' => [
-                    'text' => 'Scholars by Entrance Year',
-                    'align' => 'center',
-                ],
-                'legend' => [
-                    'position' => 'bottom',
-                ],
-                'subtitle' => [
-                    'text' => 'Total scholarship: '.number_format($totalScholarship),
-                    'align' => 'center',
-                    'style' => [
-                        'fontSize' => '14px',
-                    ],
-                ],
-            ]);
-
-    }
-
-    public static function goatDistribution(): Chart
-    {
-
-        $totalBeneficiaries = Goat::count();
-
-        $data = Goat::query()
-            ->selectRaw('CASE WHEN gender = "M" THEN "Male" ELSE "Female" END as gender, SUM(number_of_goats) as total')
-            ->whereIn('gender', ['M', 'F'])
-            ->groupBy('gender')
-            ->orderBy('gender')
-            ->get();
-
-        $labels = $data->pluck('gender')->toArray();
-        $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
-
-        $totalGoats = Goat::sum('number_of_goats');
-        $male = Goat::where('gender', 'M')->count();
-
-        $female = Goat::where('gender', 'F')->count();
-
-        return (new Chart)
-            ->setType('donut')
             ->setWidth('100%')
             ->setHeight(500)
-            ->setLabels($labels)
-            ->setDataset('Goats by Gender', 'donut', $values)
-            ->setColors(['#B2071B', '#657278'])
+            ->setLabels($years)
+            ->setDataset('Scholars', 'bar', $counts)
+            ->setColors(['#657278'])
             ->setOptions([
                 'chart' => [
-                    'type' => 'donut',
+                    'type' => 'bar',
                 ],
                 'plotOptions' => [
-                    'pie' => [
-                        'donut' => [
-                            'size' => '65%',
-                        ],
+                    'bar' => [
+                        'horizontal' => true,
+                        'barHeight' => '70%',
                     ],
                 ],
                 'dataLabels' => [
                     'enabled' => true,
                 ],
-                'legend' => [
-                    'show' => true,
-                    'position' => 'bottom',
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Number of Scholars',
+                    ],
+                    'categories' => $years,
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Entrance Year',
+                    ],
                 ],
                 'title' => [
-                    'text' => 'Beneficiaries who benefited in Goat Distribution',
+                    'text' => 'Provided scholarship by year',
                     'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Beneficiaries is:'.$totalBeneficiaries.'   Total Goats: '.$totalGoats.'  Male: '.number_format($male).'  Female: '.number_format($female),
+                    'text' => 'Total scholarships: '.$totalScholarship.' Total female scholars is: '.$females.' Total male scholars is: '.$males,
                     'align' => 'left',
-                    'style' => [
-                        'fontSize' => '14px',
-                        'margin' => '10px',
-                    ],
+                ],
+                'legend' => [
+                    'show' => false,
                 ],
             ]);
     }
@@ -357,111 +473,18 @@ final class DashboardStats
 
     }
 
-    public static function ecdChart(): Chart
-    {
-        $ecdData = Ecd::select('academic_year')
-            ->selectRaw('count(*) as total')
-            ->groupBy('academic_year')
-            ->orderBy('academic_year')
-            ->pluck('total', 'academic_year')
-            ->toArray();
-
-        $totalEcd = Ecd::count();
-        $chart = new Chart();
-        $academicYears = array_keys($ecdData);
-        $counts = array_values($ecdData);
-
-        return $chart->setType('line')
-            ->setWidth('100%')
-            ->setHeight(500)
-            ->setLabels($academicYears)
-            ->setDataset('Number of ECD Enrollments', 'line', $counts)
-            ->setColors(['#b2071b'])
-            ->setOptions([
-                'chart' => [
-                    'type' => 'line',
-                    'toolbar' => [
-                        'show' => true,
-                    ],
-                ],
-                'dataLabels' => [
-                    'enabled' => true,
-                ],
-                'stroke' => [
-                    'curve' => 'smooth',
-                ],
-                'xaxis' => [
-                    'title' => [
-                        'text' => 'Academic Year',
-                    ],
-                    'categories' => $academicYears,
-                ],
-                'yaxis' => [
-                    'title' => [
-                        'text' => 'Number of Enrollments',
-                    ],
-                ],
-                'title' => [
-                    'text' => 'ECD Enrollments Over Academic Years',
-                    'align' => 'center',
-                ],
-                'subtitle' => [
-                    'text' => 'Total Enrollments: '.$totalEcd,
-                ],
-                'legend' => [
-                    'show' => true,
-                    'position' => 'top',
-                    'horizontalAlign' => 'center',
-                ],
-                'tooltip' => [
-                    'y' => [
-                        'formatter' => 'function (val) { return val + " enrollments" }',
-                    ],
-                ],
-            ]);
-    }
-
     public static function vslaLoanData(): Chart
     {
-        $vslaData = Vsla::select('vlsa', 'gender', DB::raw('count(*) as total'))
+        $vslaData = Vsla::select(DB::raw('TRIM(vlsa) as vlsa'), DB::raw('count(*) as total'))
             ->whereNotNull('vlsa')
-            ->whereNotNull('gender')
             ->where('vlsa', '!=', '')
-            ->where('gender', '!=', '')
-            ->groupBy('vlsa', 'gender')
+            ->groupBy('vlsa')
             ->orderBy('vlsa')
             ->get();
 
-        if ($vslaData->isEmpty()) {
-            $vslaData = collect([
-                (object) ['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'M', 'total' => 15],
-                (object) ['vlsa' => 'Ubwiyunge VSLA', 'gender' => 'F', 'total' => 25],
-                (object) ['vlsa' => 'Terimbere VSLA', 'gender' => 'M', 'total' => 20],
-                (object) ['vlsa' => 'Terimbere VSLA', 'gender' => 'F', 'total' => 30],
-                (object) ['vlsa' => 'Umubano VSLA', 'gender' => 'M', 'total' => 12],
-                (object) ['vlsa' => 'Umubano VSLA', 'gender' => 'F', 'total' => 28],
-            ]);
-        }
-
         $vslaNames = $vslaData->pluck('vlsa')->unique()->values()->toArray();
-        $genders = $vslaData->pluck('gender')->unique()->values()->toArray();
-
-        $seriesData = [];
-        foreach ($genders as $gender) {
-            $genderData = [];
-            foreach ($vslaNames as $vlsaName) {
-                $count = $vslaData->where('vlsa', $vlsaName)
-                    ->where('gender', $gender)
-                    ->first();
-                $genderData[] = $count ? $count->total : 0;
-            }
-            $seriesData[] = [
-                'name' => Vsla::GENDER_SELECT[$gender] ?? $gender, // Use the readable gender label
-                'data' => $genderData,
-            ];
-        }
-
-        $totalVslas = $vslaData->sum('total');
+        $totals = $vslaData->pluck('total')->toArray();
+        $totalVslas = array_sum($totals);
 
         $chart = new Chart();
 
@@ -469,101 +492,61 @@ final class DashboardStats
             ->setWidth('100%')
             ->setHeight(500)
             ->setLabels($vslaNames)
-            ->setSeries($seriesData)
-            ->setColors(['#B2071B', '#657278', '#10B981', '#F59E0B'])
+            ->setSeries([
+                [
+                    'name' => 'Total Members',
+                    'data' => $totals,
+                ],
+            ])
+            ->setColors(['#B2071B'])
             ->setOptions([
                 'chart' => [
                     'type' => 'bar',
-                    'stacked' => true,
-                    'toolbar' => [
-                        'show' => true,
-                    ],
+                    'stacked' => false,
                 ],
                 'plotOptions' => [
                     'bar' => [
-                        'horizontal' => false,
-                        'columnWidth' => '100%',
-                        'endingShape' => 'rounded',
-                        'style' => [
-                            'minHeight' => '60px',
-                        ],
+                        'horizontal' => true,
+                        'barHeight' => '70%',
                     ],
                 ],
                 'dataLabels' => [
                     'enabled' => true,
-                    'style' => [
-                        'colors' => ['#fff'],
-                    ],
-                ],
-                'stroke' => [
-                    'show' => true,
-                    'width' => 2,
-                    'colors' => ['transparent'],
                 ],
                 'xaxis' => [
-                    'categories' => $vslaNames,
                     'title' => [
-                        'text' => 'VSLA Groups',
+                        'text' => 'Number of Members',
                     ],
-                    'labels' => [
-                        'maxHeight' => 120,
-                    ],
+                    'categories' => $vslaNames,
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'Number of VSLA Members',
-                    ],
-                ],
-                'fill' => [
-                    'opacity' => 1,
-                ],
-                'tooltip' => [
-                    'y' => [
-                        'formatter' => null,
+                        'text' => 'VSLA Groups',
                     ],
                 ],
                 'title' => [
-                    'text' => 'VSLA Member Distribution by Group and Gender',
+                    'text' => 'Total VSLA Members by Group',
                     'align' => 'center',
-                    'style' => [
-                        'fontSize' => '16px',
-                        'fontWeight' => 'bold',
-                    ],
                 ],
                 'subtitle' => [
-                    'text' => 'Total VSLA Members: '.$totalVslas,
+                    'text' => 'Total Members Across All VSLAs: '.$totalVslas,
                     'align' => 'center',
                 ],
                 'legend' => [
-                    'position' => 'top',
-                    'horizontalAlign' => 'center',
-                ],
-                'responsive' => [
-                    [
-                        'breakpoint' => 768,
-                        'options' => [
-                            'chart' => [
-                                'height' => 400,
-                            ],
-                            'plotOptions' => [
-                                'bar' => [
-                                    'columnWidth' => '70%',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'show' => false,
                 ],
             ]);
     }
 
     public static function mvtcChart(): Chart
     {
-
         $mvtcData = Mvtc::selectRaw('trade, COUNT(*) as count')
             ->whereNotNull('trade')
             ->groupBy('trade')
             ->pluck('count', 'trade')
             ->toArray();
+        $males = Mvtc::where('gender', 'MALE')->count();
+        $females = Mvtc::where('gender', 'FEMALE')->count();
 
         $totalStudents = Mvtc::count();
         $chart = new Chart();
@@ -583,29 +566,37 @@ final class DashboardStats
                         'show' => true,
                     ],
                 ],
+                'plotOptions' => [
+                    'bar' => [
+                        'horizontal' => true,
+                        'barHeight' => '70%',
+                        'distributed' => false,
+                    ],
+                ],
                 'dataLabels' => [
                     'enabled' => true,
                 ],
                 'stroke' => [
-                    'curve' => 'smooth',
+                    'width' => 1,
                 ],
                 'xaxis' => [
                     'title' => [
-                        'text' => 'Trades',
+                        'text' => 'Number of Students',
                     ],
                     'categories' => $trades,
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'Number of Students',
+                        'text' => 'Trades',
                     ],
                 ],
                 'title' => [
-                    'text' => 'MVTC Student Distribution By Trade',
-                    'align' => 'center',
+                    'text' => 'MVTC Graduates by Trades',
+                    'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total students: '.$totalStudents,
+                    'text' => 'Total students: '.$totalStudents.' Graduated female is '.$females.' Graduated male is '.$males,
+                    'align' => 'left',
                 ],
                 'legend' => [
                     'show' => true,
@@ -613,114 +604,28 @@ final class DashboardStats
                     'horizontalAlign' => 'center',
                 ],
                 'tooltip' => [
-                    'y' => [
-                        'formatter' => 'function (val) { return val + " students" }',
-                    ],
-                ],
-
-            ]);
-
-    }
-
-    public static function malnutritionChart(): Chart
-    {
-        $beneficiaries = Malnutrition::select(
-            DB::raw('YEAR(package_reception_date) as year'),
-            DB::raw('COUNT(*) as total')
-        )
-            ->groupBy('year')
-            ->orderBy('year', 'ASC')
-            ->pluck('total', 'year')
-            ->toArray();
-
-        $children = Malnutrition::count();
-        $years = array_keys($beneficiaries);
-        $totalBeneficiaries = array_values($beneficiaries);
-        $totalChildren = array_sum($totalBeneficiaries);
-
-        $chart = new Chart();
-
-        return $chart->setType('line')
-            ->setWidth('100%')
-            ->setHeight(500)
-            ->setLabels($years)
-            ->setDataset('Children', 'line', $totalBeneficiaries)
-            ->setColors(['#b2071b'])
-            ->setOptions([
-                'chart' => [
-                    'type' => 'line',
-                    'toolbar' => ['show' => true],
-                    'zoom' => ['enabled' => true],
-                ],
-                'title' => [
-                    'text' => 'Malnutrition children distribution',
-                    'align' => 'left',
-                ],
-                'subtitle' => [
-                    'text' => 'Total children: '.$children,
-                    'align' => 'left',
-                ],
-                'xaxis' => [
-                    'categories' => $years,
-                    'title' => ['text' => 'Years'],
-                ],
-                'yaxis' => [
-                    'title' => ['text' => 'Number of children'],
-                ],
-                'stroke' => [
-                    'curve' => 'smooth',
-                    'width' => 3,
-                ],
-                'markers' => [
-                    'size' => 6,
-                    'colors' => ['#1f77b4'],
-                    'strokeColors' => '#fff',
-                    'strokeWidth' => 2,
-                    'hover' => ['size' => 8],
+                    'enabled' => true,
                 ],
                 'grid' => [
                     'show' => true,
-                    'borderColor' => '#e0e6ed',
-                    'strokeDashArray' => 5,
-                ],
-                'dataLabels' => [
-                    'enabled' => true,
-                    'style' => [
-                        'fontSize' => '12px',
-                        'fontWeight' => 'bold',
-                        'colors' => ['#304758'],
-                    ],
-                ],
-                'tooltip' => [
-                    'enabled' => true,
-                    'y' => [
-                        'formatter' => 'function(val) { return val + " children"; }',
-                    ],
-                ],
-                'responsive' => [
-                    [
-                        'breakpoint' => 480,
-                        'options' => [
-                            'chart' => ['width' => '100%'],
-                            'legend' => ['position' => 'bottom'],
-                        ],
-                    ],
                 ],
             ]);
     }
 
     public static function urgentCommunitySupportChart(): Chart
     {
-        $beneficiaries = Urgent::select('support')->selectRaw('count(*) as total')->groupBy('support')->orderBy('support')->pluck('total', 'support')->toArray();
+        $beneficiaries = Urgent::select('support')->selectRaw('count(*) as total')
+            ->groupBy('support')->orderBy('support')->pluck('total', 'support')->toArray();
         $totalBeneficiaries = Urgent::count();
-        $males=Urgent::where('gender','M')->count();
-        $females=Urgent::where('gender','F')->count();
-        $chart= new Chart();
-        $supports=array_keys($beneficiaries);
-        $total=array_values($beneficiaries);
+        $males = Urgent::where('gender', 'M')->count();
+        $females = Urgent::where('gender', 'F')->count();
+        $chart = new Chart();
+        $supports = array_keys($beneficiaries);
+        $total = array_values($beneficiaries);
+
         return $chart->setType('bar')->setWidth('100%')
             ->setHeight(500)->setLabels($supports)
-            ->setDataset('Beneficiaries reach out in urgent community support','bar', $total)
+            ->setDataset('Beneficiaries reach out in urgent community support', 'bar', $total)
             ->setColors(['#b2071b'])
             ->setOptions([
                 'chart' => [
@@ -768,5 +673,4 @@ final class DashboardStats
             ]);
 
     }
-
 }

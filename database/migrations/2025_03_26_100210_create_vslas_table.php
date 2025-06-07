@@ -15,11 +15,7 @@ return new class extends Migration
     {
         Schema::create('vslas', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
-            $table->foreignId('project_id')->constrained('projects');
             $table->string('vlsa');
-            $table->string('surname');
-            $table->string('first_name');
             $table->string('gender')->nullable();
             $table->string('id_number')->nullable();
             $table->string('telephone')->nullable();

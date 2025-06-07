@@ -23,10 +23,9 @@ final class Vsla extends Model
     ];
 
     protected $fillable = [
-        'project_id',
+
         'vlsa',
-        'surname',
-        'first_name',
+        'name',
         'gender',
         'id_number',
         'telephone',
@@ -38,10 +37,6 @@ final class Vsla extends Model
 
     ];
 
-    public function project(): BelongsTo
-    {
-        return $this->belongsTo(Project::class, 'project_id');
-    }
 
     protected function serializeDate(DateTimeInterface $date): string
     {

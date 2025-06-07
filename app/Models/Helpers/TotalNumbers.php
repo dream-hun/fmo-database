@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Models\Helpers;
 
 use App\Models\Ecd;
-use App\Models\FoodAndHouse;
 use App\Models\Fruit;
 use App\Models\Girinka;
 use App\Models\Goat;
@@ -93,7 +92,6 @@ final class TotalNumbers
         return Ecd::count();
 
     }
-
 
     public static function mvtcGraduate(): int
     {

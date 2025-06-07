@@ -4,9 +4,14 @@
         <!-- Small boxes (Stat box) -->
         <x-numbers-component />
         <!--Child protection program -->
+
         <div class="row mt-4">
             <div class="col-md-6">
-                <x-school-feeding-component />
+                <div class="card">
+                    <div class="card-body">
+                        {!! $malnutritionChart->container() !!}
+                    </div>
+                </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
@@ -16,16 +21,27 @@
                 </div>
             </div>
             <div class="col-md-6">
+                <x-school-feeding-component />
+            </div>
+
+
+            <!-- House Hold Strengthening-->
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        {!! $malnutritionChart->container() !!}
+                        {!! $goatDistributionChart->container() !!}
                     </div>
                 </div>
             </div>
-            <!-- House Hold Strengthening-->
-            <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
 
+                    <div class="card-body">
+                        {!! $girinkaChart->container() !!}
+                    </div>
+                </div>
             </div>
+
 
 
 
@@ -42,13 +58,7 @@
 
 
 
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            {!! $goatDistributionChart->container() !!}
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
@@ -72,14 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
 
-                        <div class="card-body">
-                            {!! $girinkaChart->container() !!}
-                        </div>
-                    </div>
-                </div>
 
 
                 <div class="col-md-6">
@@ -90,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="card">
 
                         <div class="card-body">

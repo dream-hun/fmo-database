@@ -25,7 +25,7 @@ final class DashboardController extends Controller
         $vslaChart = DashboardStats::vslaLoanData();
         $toolkitChart = DashboardStats::toolkit();
         $mvtcChart = DashboardStats::mvtcChart();
-        $urgentCommunity=DashboardStats::urgentCommunitySupportChart();
+        $urgentCommunity = DashboardStats::urgentCommunitySupportChart();
 
         return view('dashboard', [
 
@@ -38,7 +38,7 @@ final class DashboardController extends Controller
             'toolkitChart' => $toolkitChart,
             'malnutritionChart' => $malnutritionChart,
             'mvtc' => $mvtcChart,
-            'urgentCommunity'=>$urgentCommunity,
+            'urgentCommunity' => $urgentCommunity,
 
         ]);
     }
