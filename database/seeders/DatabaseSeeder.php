@@ -22,7 +22,6 @@ final class DatabaseSeeder extends Seeder
             RoleUserTableSeeder::class,
             GoatSeeder::class,
             GirinkaSeeder::class,
-            VslaSeeder::class,
             TankSeeder::class,
             IndividualSeeder::class,
             MalnutritionSeeder::class,
@@ -33,6 +32,7 @@ final class DatabaseSeeder extends Seeder
             EcdSeeder::class,
             UrgentSeeder::class,
             MvtcSeeder::class,
+            VslaSeeder::class,
         ]);
 
     }

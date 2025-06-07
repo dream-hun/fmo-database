@@ -6,7 +6,6 @@ namespace App\Models;
 
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class Vsla extends Model
 {
@@ -36,7 +35,6 @@ final class Vsla extends Model
         'updated_at',
 
     ];
-
 
     protected function serializeDate(DateTimeInterface $date): string
     {

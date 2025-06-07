@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('vslas', function (Blueprint $table) {
             $table->id();
-            $table->string('vlsa');
+            $table->string('vsla');
+            $table->string('name');
             $table->string('gender')->nullable();
             $table->string('id_number')->nullable();
             $table->string('telephone')->nullable();

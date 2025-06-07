@@ -17,7 +17,7 @@ final class VslaSeeder extends Seeder
     public function run(): void
     {
         $this->command->info('Starting to seed vsla data from csv file');
-        $csvPath = database_path('seeders/Data/Urgent.csv');
+        $csvPath = database_path('seeders/Data/Vsla.csv');
         if (! file_exists($csvPath)) {
             $this->command->error('CSV file not found: '.$csvPath);
 
