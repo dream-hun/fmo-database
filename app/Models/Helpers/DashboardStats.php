@@ -6,6 +6,7 @@ namespace App\Models\Helpers;
 
 use Akaunting\Apexcharts\Chart;
 use App\Models\Ecd;
+use App\Models\Fruit;
 use App\Models\Girinka;
 use App\Models\Goat;
 use App\Models\Individual;
@@ -13,6 +14,7 @@ use App\Models\Malnutrition;
 use App\Models\Mvtc;
 use App\Models\Scholarship;
 use App\Models\Toolkit;
+use App\Models\Training;
 use App\Models\Urgent;
 use App\Models\Vsla;
 use DB;
@@ -210,6 +212,44 @@ final class DashboardStats
             ]);
     }
 
+    public static function fruitTrees(): Chart
+    {
+        $fruitsData = Fruit::selectRaw('YEAR(distribution_date) as year, COUNT(*) as count')
+            ->whereNotNull('distribution_date')
+            ->groupBy('year')->orderBy('year')->get();
+        $male = Fruit::where('gender', 'M')->count();
+        $female = Fruit::where('gender', 'F')->count();
+        $institution = Fruit::where('gender', 'Institution')->count();
+        $chart = new Chart;
+        $totalFruitBeneficiaries = Fruit::count();
+
+        return $chart->setType('donut')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($fruitsData->pluck('year')->toArray())
+            ->setDataset('Fruits trees ', 'donut', $fruitsData->pluck('count')->toArray())
+            ->setOptions([
+                'chart' => [
+                    'type' => 'donut',
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'legend' => [
+                    'position' => 'bottom',
+                ],
+                'title' => [
+                    'text' => 'Fruit Trees Distribution by Year',
+                    'align' => 'left',
+                ],
+                'subtitle' => [
+                    'text' => 'Total Beneficiaries: '.$totalFruitBeneficiaries.' Female beneficiaries is: '.$female.' Male beneficiaries: '.$male.' Total Institutions :'.$institution,
+                    'align' => 'left',
+                ],
+
+            ]);
+    }
+
     public static function goatDistribution(): Chart
     {
         $totalBeneficiaries = (int) Goat::count();
@@ -276,7 +316,7 @@ final class DashboardStats
 
     public static function individualStats(): Chart
     {
-        // Loan data for chart
+
         $yearlyLoanPeople = Individual::selectRaw('YEAR(loan_date) as year, COUNT(DISTINCT id) as total_people')
             ->whereNotNull('loan_date')
             ->groupByRaw('YEAR(loan_date)')
@@ -291,15 +331,15 @@ final class DashboardStats
             ->setWidth('100%')
             ->setHeight(500)
             ->setLabels($loanYears)
-            ->setDataset('Number of Individual received loan', 'line', $loanCounts)
-            ->setColors(['#b2071b'])
+            ->setDataset('Individual Loan Distribution by Years', 'bar', $loanCounts)
+            ->setColors(['#657278'])
             ->setOptions([
                 'chart' => [
-                    'type' => 'line',
+                    'type' => 'bar',
                 ],
                 'plotOptions' => [
-                    'line' => [
-                        'horizontal' => false,
+                    'bar' => [
+                        'horizontal' => true,
                         'columnWidth' => '55%',
                         'endingShape' => 'rounded',
                     ],
@@ -310,36 +350,38 @@ final class DashboardStats
                 'stroke' => [
                     'show' => true,
                     'width' => 2,
-                    'colors' => ['#b2071b'],
+                    'colors' => ['#657278'],
                     'curve' => 'straight',
                 ],
                 'xaxis' => [
                     'title' => [
-                        'text' => 'Year',
+                        'text' => 'Number of Individuals',
                     ],
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'Number of Individuals',
+                        'text' => 'Years',
                     ],
                 ],
                 'fill' => [
                     'opacity' => 1,
                 ],
                 'title' => [
-                    'text' => 'Yearly Individual Loan Distribution',
-                    'align' => 'center',
+                    'text' => 'Individual Loan Distribution by Years',
+                    'align' => 'left',
                 ],
                 'subtitle' => [
                     'text' => 'Total Beneficiaries: '.$totalLoanPeople,
+                    'align'=>'left'
                 ],
                 'legend' => [
                     'show' => true,
                     'position' => 'top',
-                    'horizontalAlign' => 'center',
+                    'horizontalAlign' => 'left',
                     'fontSize' => '14px',
                     'fontFamily' => 'Helvetica, Arial',
                     'fontWeight' => 400,
+
                 ],
                 'tooltip' => [
                     'y' => [
@@ -453,15 +495,16 @@ final class DashboardStats
                 ],
                 'title' => [
                     'text' => 'Toolkit Distributions',
-                    'align' => 'center',
+                    'align' => 'left',
                 ],
                 'subtitle' => [
                     'text' => 'Total beneficiaries: '.$totalToolkits,
+                    'align' => 'left',
                 ],
                 'legend' => [
                     'show' => true,
                     'position' => 'top',
-                    'horizontalAlign' => 'center',
+                    'horizontalAlign' => 'left',
                 ],
                 'tooltip' => [
                     'y' => [
@@ -475,14 +518,16 @@ final class DashboardStats
 
     public static function vslaLoanData(): Chart
     {
-        $vslaData = Vsla::select(DB::raw('TRIM(vlsa) as vlsa'), DB::raw('count(*) as total'))
-            ->whereNotNull('vlsa')
-            ->where('vlsa', '!=', '')
-            ->groupBy('vlsa')
-            ->orderBy('vlsa')
+        $vslaData = Vsla::select(DB::raw('TRIM(vsla) as vsla'), DB::raw('count(*) as total'))
+            ->whereNotNull('vsla')
+            ->where('vsla', '!=', '')
+            ->groupBy('vsla')
+            ->orderBy('vsla')
             ->get();
+        $males=Vsla::where('gender', 'M')->count();
+        $females=Vsla::where('gender', 'F')->count();
 
-        $vslaNames = $vslaData->pluck('vlsa')->unique()->values()->toArray();
+        $vslaNames = $vslaData->pluck('vsla')->unique()->values()->toArray();
         $totals = $vslaData->pluck('total')->toArray();
         $totalVslas = array_sum($totals);
 
@@ -498,7 +543,7 @@ final class DashboardStats
                     'data' => $totals,
                 ],
             ])
-            ->setColors(['#B2071B'])
+            ->setColors(['#657278'])
             ->setOptions([
                 'chart' => [
                     'type' => 'bar',
@@ -526,11 +571,11 @@ final class DashboardStats
                 ],
                 'title' => [
                     'text' => 'Total VSLA Members by Group',
-                    'align' => 'center',
+                    'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Members Across All VSLAs: '.$totalVslas,
-                    'align' => 'center',
+                    'text' => 'Total Members Across All VSLAs: '.$totalVslas.' Female members '.$females.' Male members '.$males,
+                    'align' => 'left',
                 ],
                 'legend' => [
                     'show' => false,
@@ -596,6 +641,84 @@ final class DashboardStats
                 ],
                 'subtitle' => [
                     'text' => 'Total students: '.$totalStudents.' Graduated female is '.$females.' Graduated male is '.$males,
+                    'align' => 'left',
+                ],
+                'legend' => [
+                    'show' => true,
+                    'position' => 'top',
+                    'horizontalAlign' => 'center',
+                ],
+                'tooltip' => [
+                    'enabled' => true,
+                ],
+                'grid' => [
+                    'show' => true,
+                ],
+            ]);
+    }
+
+    public static function trainingChart(): Chart
+    {
+        // Get training data with proper structure
+        $trainingData = Training::select('training_given', DB::raw('count(*) as total'))
+            ->whereNotNull('training_given')
+            ->groupBy('training_given')
+            ->get();
+
+        // Extract labels (training names) and data (counts)
+        $trainingLabels = $trainingData->pluck('training_given')->toArray();
+        $trainingCounts = $trainingData->pluck('total')->toArray();
+
+        // Gender statistics
+        $males = Training::where('gender', 'M')->count();
+        $females = Training::where('gender', 'F')->count();
+        $totalTrainees = Training::count();
+
+        $chart = new Chart();
+
+        return $chart->setType('bar')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($trainingLabels) // Training names as labels
+            ->setDataset('Number of Trainees', 'bar', $trainingCounts) // Counts as data
+            ->setColors(['#657278'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'bar',
+                    'toolbar' => [
+                        'show' => true,
+                    ],
+                ],
+                'plotOptions' => [
+                    'bar' => [
+                        'horizontal' => true,
+                        'barHeight' => '70%',
+                        'distributed' => false,
+                    ],
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'stroke' => [
+                    'width' => 1,
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Number of Trainees',
+                    ],
+                    'categories' => $trainingLabels, // Training names as categories
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Training Types',
+                    ],
+                ],
+                'title' => [
+                    'text' => 'Number of Trainees by Training Type',
+                    'align' => 'left',
+                ],
+                'subtitle' => [
+                    'text' => 'Total trainees: ' . $totalTrainees . ' | Female: ' . $females . ' | Male: ' . $males,
                     'align' => 'left',
                 ],
                 'legend' => [

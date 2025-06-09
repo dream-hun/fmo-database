@@ -9,7 +9,7 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 
 final class FruitSeeder extends Seeder
 {
@@ -18,38 +18,29 @@ final class FruitSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->command->info('Seeding toolkit data from file...');
-
-        $csvPath = database_path('seeders/Data/Fruit.csv');
-
+        $this->command->info('Starting to seed Fruit trees data from csv file');
+        $csvPath = database_path('seeders/Data/Trees.csv');
         if (! file_exists($csvPath)) {
-            $this->command->error("CSV file not found at: {$csvPath}");
+            $this->command->error('CSV file not found: '.$csvPath);
 
             return;
         }
-
         $file = fopen($csvPath, 'r');
-        $header = fgetcsv($file);
-        $rowCount = count(file($csvPath)) - 1;
-        $this->command->info("Total rows to be inserted: {$rowCount}");
 
-        // Create a progress bar
+        $rowCount = count(file($csvPath)) - 1;
+        $this->command->info("Found $rowCount records to import.");
         $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
         $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
         $progressBar->start();
 
-        // Truncate the table before seeding
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('scholarships')->truncate();
+        DB::table('fruits')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
-        // Process each row
         $row = 0;
         $successCount = 0;
         $errorCount = 0;
-
         while (($data = fgetcsv($file)) !== false) {
-            // Skip header row
+
             if ($row === 0) {
                 $row++;
 
@@ -57,38 +48,32 @@ final class FruitSeeder extends Seeder
             }
 
             try {
-                // Skip empty rows
+
                 if (empty(mb_trim($data[1] ?? ''))) {
                     $row++;
                     $progressBar->advance();
 
                     continue;
                 }
-
-                // Map CSV data to model fields with proper data cleaning
                 Fruit::create([
-                    'uuid' => Str::uuid(),
-                    'project_id' => 2,
-                    'name' => mb_trim($data[0] ?? ''),
-                    'gender' => mb_trim($data[1] ?? ''),
-                    'id_number' => mb_trim($data[2] ?? ''),
-                    'sector' => mb_trim($data[3] ?? ''),
-                    'cell' => mb_trim($data[4] ?? ''),
-                    'village' => mb_trim($data[5] ?? ''),
-                    'mangoes' => mb_trim($data[6] ?? ''),
-                    'avocado' => mb_trim($data[7] ?? ''),
-                    'papaya' => mb_trim($data[8] ?? ''),
-                    'oranges' => mb_trim($data[9] ?? ''),
-                    'telephone' => mb_trim($data[10] ?? ''),
-                    'distribution_date' => $this->formattedDate($data[11] ?? ''),
-
+                    'name' => mb_trim($data[1]),
+                    'gender' => mb_trim($data[2]),
+                    'id_number' => $this->cleanIdNumber($data[3] ?? ''),
+                    'sector' => mb_trim($data[4]),
+                    'cell' => mb_trim($data[5]),
+                    'village' => mb_trim($data[6]),
+                    'mangoes' => $data[7],
+                    'avocado' => $data[8],
+                    'papaya' => $data[9],
+                    'oranges' => $data[10],
+                    'telephone' => $this->cleanPhoneNumber($data[11]),
+                    'distribution_date' => $this->distributionDate($data[12]),
                 ]);
-
                 $successCount++;
             } catch (Exception $e) {
                 $errorCount++;
                 if ($errorCount <= 5) {
-                    $this->command->error("Error processing row {$row}: ".$e->getMessage());
+                    $this->command->error("Error processing row $row: ".$e->getMessage());
                 } elseif ($errorCount === 6) {
                     $this->command->error('Additional errors exist but are not being displayed...');
                 }
@@ -98,31 +83,70 @@ final class FruitSeeder extends Seeder
             $row++;
         }
 
-        // Finish the progress bar
         $progressBar->finish();
 
-        // Close the file
         fclose($file);
 
         $this->command->newLine(2);
         $this->command->info('Fruit trees data seeded successfully!');
-        $this->command->info("{$successCount} records imported, {$errorCount} errors.");
+        $this->command->info("$successCount records imported, $errorCount errors.");
 
         if ($successCount > 0) {
             $this->command->info('Example of imported data:');
             $example = Fruit::first();
-            $this->command->info("Name: {$example->name}, Id Number: {$example->id_number}");
+            $this->command->info("Name: $example->name, Sector: $example->sector");
         }
     }
 
-    public function formattedDate(string $date): ?string
+    public function distributionDate(?string $dateString): ?string
     {
-
-        try {
-            return Carbon::createFromFormat('d/m/Y', $date)->format('Y-m-d');
-        } catch (Exception $e) {
+        if (empty($dateString)) {
             return null;
         }
 
+        try {
+            // Handle year-only format
+            if (preg_match('/^\d{4}$/', $dateString)) {
+                return $dateString.'-01-01';
+            }
+
+            // Handle DD/MM/YYYY format (European style)
+            if (preg_match('/^\d{1,2}\/\d{1,2}\/\d{4}$/', $dateString)) {
+                return Carbon::createFromFormat('d/m/Y', $dateString)->format('Y-m-d');
+            }
+
+            // Handle MM/DD/YYYY format (American style)
+            if (preg_match('/^\d{1,2}\/\d{1,2}\/\d{4}$/', $dateString)) {
+                return Carbon::createFromFormat('m/d/Y', $dateString)->format('Y-m-d');
+            }
+
+            // Try default Carbon parsing for other formats
+            return Carbon::parse($dateString)->format('Y-m-d');
+
+        } catch (Exception $e) {
+            Log::warning("Could not parse date: '$dateString' - ".$e->getMessage());
+
+            // Return null instead of error message to avoid database constraint violation
+            return null;
+        }
+    }
+
+    private function cleanIdNumber(?string $idNumber): ?string
+    {
+        if (empty($idNumber)) {
+            return null;
+        }
+
+        return mb_trim(str_replace(["'", '*'], '', $idNumber));
+    }
+
+    private function cleanPhoneNumber(?string $phoneNumber): ?string
+    {
+        if (empty($phoneNumber)) {
+            return null;
+        }
+        $cleaned = preg_replace('/[^0-9]/', '', $phoneNumber);
+
+        return $cleaned ?: null;
     }
 }

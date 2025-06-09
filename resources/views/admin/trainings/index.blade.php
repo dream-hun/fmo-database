@@ -80,7 +80,7 @@
                                 {{ App\Models\Training::GENDER_SELECT[$training->gender] ?? '' }}
                             </td>
                             <td>
-                                {{ $training->national ?? '' }}
+                                {{ $training->national_id ?? '' }}
                             </td>
                             <td>
                                 {{ $training->district ?? '' }}

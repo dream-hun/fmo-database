@@ -41,39 +41,18 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="card">
 
+                    <div class="card-body">
+                        {!! $fruitsChart->container() !!}
+                    </div>
+                </div>
+            </div>
 
 
 
             <div class="row mt-4">
-                <div class="col-md-12 mb-4">
-                    <div class="card">
-
-                        <div class="card-body">
-                            {!! $vslaChart->container() !!}
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            {!! $urgentCommunity->container() !!}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            {!! $toolkitChart->container() !!}
-                        </div>
-                    </div>
-                </div>
-
                 <div class="col-md-6 mb-4">
                     <div class="card">
 
@@ -82,8 +61,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
 
-
+                        <div class="card-body">
+                            {!! $vslaChart->container() !!}
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col-md-6">
                     <div class="card">
@@ -98,6 +83,28 @@
 
                         <div class="card-body">
                             {!! $mvtc->container() !!}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+
+                        <div class="card-body">
+                            {!! $trainingChart->container() !!}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            {!! $toolkitChart->container() !!}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            {!! $urgentCommunity->container() !!}
                         </div>
                     </div>
                 </div>
@@ -120,4 +127,6 @@
     {!! $toolkitChart->script() !!}
     {!! $urgentCommunity->script() !!}
     {!! $malnutritionChart->script() !!}
+    {!! $fruitsChart->script() !!}
+    {!! $trainingChart->script() !!}
 @endpush
