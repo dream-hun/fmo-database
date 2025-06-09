@@ -9,17 +9,25 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        {!! $malnutritionChart->container() !!}
+                        {!! $ecdChart->container() !!}
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        {!! $ecdChart->container() !!}
+                        {!! $empowermentChart->container() !!}
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        {!! $malnutritionChart->container() !!}
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-6">
                 <x-school-feeding-component />
             </div>
@@ -38,6 +46,14 @@
 
                     <div class="card-body">
                         {!! $girinkaChart->container() !!}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+
+                    <div class="card-body">
+                        {!! $waterTanks->container() !!}
                     </div>
                 </div>
             </div>
@@ -129,4 +145,6 @@
     {!! $malnutritionChart->script() !!}
     {!! $fruitsChart->script() !!}
     {!! $trainingChart->script() !!}
+    {!! $empowermentChart->script() !!}
+    {!! $waterTanks->script() !!}
 @endpush

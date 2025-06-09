@@ -28,6 +28,8 @@ final class DashboardController extends Controller
         $urgentCommunity = DashboardStats::urgentCommunitySupportChart();
         $fruitsChart = DashboardStats::fruitTrees();
         $trainingChart = DashboardStats::trainingChart();
+        $empowermentChart = DashboardStats::ecdEmpowerment();
+        $waterTanks = DashboardStats::sanitationStat();
 
         return view('dashboard', [
 
@@ -43,6 +45,8 @@ final class DashboardController extends Controller
             'urgentCommunity' => $urgentCommunity,
             'fruitsChart' => $fruitsChart,
             'trainingChart' => $trainingChart,
+            'empowermentChart' => $empowermentChart,
+            'waterTanks' => $waterTanks,
 
         ]);
     }

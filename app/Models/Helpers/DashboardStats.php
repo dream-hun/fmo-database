@@ -6,6 +6,7 @@ namespace App\Models\Helpers;
 
 use Akaunting\Apexcharts\Chart;
 use App\Models\Ecd;
+use App\Models\Empowerment;
 use App\Models\Fruit;
 use App\Models\Girinka;
 use App\Models\Goat;
@@ -13,6 +14,7 @@ use App\Models\Individual;
 use App\Models\Malnutrition;
 use App\Models\Mvtc;
 use App\Models\Scholarship;
+use App\Models\Tank;
 use App\Models\Toolkit;
 use App\Models\Training;
 use App\Models\Urgent;
@@ -141,6 +143,7 @@ final class DashboardStats
                 'stroke' => [
                     'curve' => 'smooth',
                 ],
+
                 'xaxis' => [
                     'title' => [
                         'text' => 'Academic Year',
@@ -150,14 +153,79 @@ final class DashboardStats
                 'yaxis' => [
                     'title' => [
                         'text' => 'Number of Enrollments',
+                        'align' => 'left',
                     ],
                 ],
                 'title' => [
                     'text' => 'ECD Enrollments Over Academic Years',
-                    'align' => 'center',
+                    'align' => 'left',
                 ],
                 'subtitle' => [
                     'text' => 'Total Enrollments: '.$totalEcd,
+                    'align' => 'left',
+                ],
+                'legend' => [
+                    'show' => true,
+                    'position' => 'top',
+                    'horizontalAlign' => 'left',
+
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => 'function (val) { return val + " enrollments" }',
+                    ],
+                ],
+            ]);
+    }
+
+    public static function ecdEmpowerment(): Chart
+    {
+        $empowerment = Empowerment::select('name', 'supported_children')
+            ->orderBy('supported_children', 'desc')->pluck('supported_children', 'name')
+            ->toArray();
+        $supportedChildren = Empowerment::sum('supported_children');
+        $empoweredEcd = Empowerment::count('name');
+        $chart = new Chart();
+        $empowerments = array_keys($empowerment);
+        $counts = array_values($empowerment);
+
+        return $chart->setType('line')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($empowerments)
+            ->setDataset('Number of Empowerments', 'line', $counts)
+            ->setColors(['#b2071b'])
+            ->setOptions([
+                'chart' => [
+                    'type' => 'line',
+                    'toolbar' => [
+                        'show' => true,
+                    ],
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'stroke' => [
+                    'curve' => 'smooth',
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Empowered ECDs',
+                    ],
+                    'categories' => $empowerments,
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Supported Children',
+                    ],
+                ],
+                'title' => [
+                    'text' => 'ECD Empowerments and supported Children',
+                    'align' => 'left',
+                ],
+                'subtitle' => [
+                    'text' => 'Total supported children: '.$supportedChildren.' Empowered ECDs '.$empoweredEcd,
+                    'align' => 'left',
                 ],
                 'legend' => [
                     'show' => true,
@@ -166,7 +234,7 @@ final class DashboardStats
                 ],
                 'tooltip' => [
                     'y' => [
-                        'formatter' => 'function (val) { return val + " enrollments" }',
+                        'formatter' => 'function (val) { return val + " empowerments" }',
                     ],
                 ],
             ]);
@@ -208,6 +276,72 @@ final class DashboardStats
                 'subtitle' => [
                     'text' => 'Total Beneficiaries: '.$totalGirinkaBeneficiaries.' Female beneficiaries is: '.$female.' Male beneficiaries: '.$male.' Total cows :'.$cows,
                     'align' => 'left',
+                ],
+            ]);
+    }
+
+    public static function sanitationStat(): Chart
+    {
+
+        $sanitation = Tank::selectRaw('gender, COUNT(*) as count')
+            ->whereNotNull('gender')
+            ->groupBy('gender')
+            ->orderBy('gender')
+            ->get();
+
+        $male = Tank::where('gender', 'M')->count();
+        $female = Tank::where('gender', 'F')->count();
+        $totalTanks = Tank::count();
+
+        // Prepare data for chart
+        $labels = [];
+        $data = [];
+
+        foreach ($sanitation as $item) {
+            $genderLabel = $item->gender === 'M' ? 'Male' : 'Female';
+            $labels[] = $genderLabel;
+            $data[] = $item->count;
+        }
+
+        $chart = new Chart;
+
+        return $chart->setType('donut')
+            ->setWidth('100%')
+            ->setHeight(500)
+            ->setLabels($labels)
+            ->setDataset('Clean Water And Sanitation Tanks', 'donut', $data)
+            ->setOptions([
+                'chart' => [
+                    'type' => 'donut',
+                ],
+                'dataLabels' => [
+                    'enabled' => true,
+                ],
+                'legend' => [
+                    'position' => 'bottom',
+                ],
+                'title' => [
+                    'text' => 'Clean Water And Sanitation Distribution',
+                    'align' => 'left',
+                ],
+                'subtitle' => [
+                    'text' => "Total Beneficiaries: {$totalTanks} | Female: {$female} | Male: {$male}",
+                    'align' => 'left',
+                ],
+                'colors' => ['#b2071b', '#4ECDC4'],
+                'plotOptions' => [
+                    'pie' => [
+                        'donut' => [
+                            'labels' => [
+                                'show' => true,
+                                'total' => [
+                                    'show' => true,
+                                    'label' => 'Total',
+                                    'formatter' => "function() { return {$totalTanks} }",
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ]);
     }
@@ -372,7 +506,7 @@ final class DashboardStats
                 ],
                 'subtitle' => [
                     'text' => 'Total Beneficiaries: '.$totalLoanPeople,
-                    'align'=>'left'
+                    'align' => 'left',
                 ],
                 'legend' => [
                     'show' => true,
@@ -468,12 +602,19 @@ final class DashboardStats
             ->setHeight(500)
             ->setLabels($toolkits)
             ->setDataset('Number of beneficiaries received toolkits', 'bar', $counts)
-            ->setColors(['#B2071B'])
+            ->setColors(['#657278'])
             ->setOptions([
                 'chart' => [
                     'type' => 'bar',
                     'toolbar' => [
                         'show' => true,
+                    ],
+
+                ],
+                'plotOptions' => [
+                    'bar' => [
+                        'horizontal' => true,
+                        'barHeight' => '70%',
                     ],
                 ],
                 'dataLabels' => [
@@ -524,8 +665,8 @@ final class DashboardStats
             ->groupBy('vsla')
             ->orderBy('vsla')
             ->get();
-        $males=Vsla::where('gender', 'M')->count();
-        $females=Vsla::where('gender', 'F')->count();
+        $males = Vsla::where('gender', 'M')->count();
+        $females = Vsla::where('gender', 'F')->count();
 
         $vslaNames = $vslaData->pluck('vsla')->unique()->values()->toArray();
         $totals = $vslaData->pluck('total')->toArray();
@@ -718,7 +859,7 @@ final class DashboardStats
                     'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total trainees: ' . $totalTrainees . ' | Female: ' . $females . ' | Male: ' . $males,
+                    'text' => 'Total trainees: '.$totalTrainees.' | Female: '.$females.' | Male: '.$males,
                     'align' => 'left',
                 ],
                 'legend' => [

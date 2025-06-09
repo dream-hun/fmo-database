@@ -9,7 +9,6 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 final class ToolkitSeeder extends Seeder
 {
@@ -52,7 +51,7 @@ final class ToolkitSeeder extends Seeder
 
         // Truncate the table before seeding
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('scholarships')->truncate();
+        DB::table('toolkits')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         // Process each row
@@ -79,19 +78,17 @@ final class ToolkitSeeder extends Seeder
 
                 // Map CSV data to model fields with proper data cleaning
                 Toolkit::create([
-                    'uuid' => Str::uuid(),
-                    'project_id' => 2,
-                    'name' => mb_trim($data[0] ?? ''),
-                    'gender' => mb_trim($data[1] ?? ''),
-                    'id_number' => mb_trim($data[2] ?? ''),
-                    'phone_number' => mb_trim($data[3] ?? ''),
-                    'tvet_attended' => mb_trim($data[4] ?? ''),
-                    'option' => mb_trim($data[5] ?? ''),
-                    'level' => mb_trim($data[6] ?? ''),
-                    'training_intake' => mb_trim($data[7] ?? ''),
-                    'reception_date' => self::formatReceptionDate($data[8] ?? ''),
-                    'toolkit_received' => mb_trim($data[9] ?? ''),
-                    'sector' => mb_trim($data[10] ?? ''),
+                    'name' => mb_trim($data[1] ?? ''),
+                    'gender' => mb_trim($data[2] ?? ''),
+                    'id_number' => mb_trim($data[3] ?? ''),
+                    'phone_number' => mb_trim($data[4] ?? ''),
+                    'tvet_attended' => mb_trim($data[5] ?? ''),
+                    'option' => mb_trim($data[6] ?? ''),
+                    'level' => mb_trim($data[7] ?? ''),
+                    'training_intake' => mb_trim($data[8] ?? ''),
+                    'reception_date' => self::formatReceptionDate($data[9] ?? ''),
+                    'toolkit_received' => mb_trim($data[10] ?? ''),
+                    'sector' => mb_trim($data[11] ?? ''),
 
                 ]);
 
@@ -116,13 +113,13 @@ final class ToolkitSeeder extends Seeder
         fclose($file);
 
         $this->command->newLine(2);
-        $this->command->info('Scholarship data seeded successfully!');
+        $this->command->info('Toolkits data seeded successfully!');
         $this->command->info("{$successCount} records imported, {$errorCount} errors.");
 
         if ($successCount > 0) {
             $this->command->info('Example of imported data:');
             $example = Toolkit::first();
-            $this->command->info("Name: {$example->name}, School: {$example->tvet_attended}, Study Option: {$example->option}");
+            $this->command->info("Name: {$example->name}, School: {$example->tvet_attended}, Option: {$example->option}");
         }
 
     }

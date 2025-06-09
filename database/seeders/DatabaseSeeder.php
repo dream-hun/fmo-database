@@ -33,6 +33,8 @@ final class DatabaseSeeder extends Seeder
             UrgentSeeder::class,
             MvtcSeeder::class,
             VslaSeeder::class,
+            TrainingSeeder::class,
+            EmpowermentSeeder::class,
         ]);
 
     }

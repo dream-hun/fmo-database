@@ -8,7 +8,6 @@ use App\Models\Ecd;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 final class EcdSeeder extends Seeder
 {
@@ -52,18 +51,17 @@ final class EcdSeeder extends Seeder
                     continue;
                 }
                 Ecd::create([
-                    'uuid' => Str::uuid(),
-                    'project_id' => 2,
-                    'name' => $data[0],
-                    'grade' => $data[1] ?? null,
-                    'gender' => $data[2] ?? null,
-                    'academic_year' => $data[3] ?? null,
-                    'sector' => $data[4] ?? null,
-                    'cell' => $data[5] ?? null,
-                    'village' => $data[6] ?? null,
-                    'father_name' => $data[7] ?? null,
-                    'mother_name' => $data[8] ?? null,
-                    'home_phone' => $data[9] ?? null,
+
+                    'name' => $data[1],
+                    'grade' => $data[2] ?? null,
+                    'gender' => $data[3] ?? null,
+                    'academic_year' => $data[4] ?? null,
+                    'sector' => $data[5] ?? null,
+                    'cell' => $data[6] ?? null,
+                    'village' => $data[7] ?? null,
+                    'father_name' => $data[8] ?? null,
+                    'mother_name' => $data[9] ?? null,
+                    'home_phone' => $data[10] ?? null,
 
                 ]);
                 $successCount++;
