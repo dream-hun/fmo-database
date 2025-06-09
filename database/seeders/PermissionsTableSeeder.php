@@ -402,6 +402,46 @@ final class PermissionsTableSeeder extends Seeder
                 'id' => 97,
                 'title' => 'training_access',
             ],
+            [
+                'id' => 98,
+                'title' => 'zamuka_access',
+            ],
+            [
+                'id' => 99,
+                'title' => 'zamuka_create',
+            ],
+            [
+                'id' => 100,
+                'title' => 'zamuka_edit',
+            ],
+            [
+                'id' => 110,
+                'title' => 'zamuka_show',
+            ],
+            [
+                'id' => 111,
+                'title' => 'zamuka_delete',
+            ],
+            [
+                'id' => 112,
+                'title' => 'empowerment_access',
+            ],
+            [
+                'id' => 113,
+                'title' => 'empowerment_create',
+            ],
+            [
+                'id' => 114,
+                'title' => 'empowerment_edit',
+            ],
+            [
+                'id' => 115,
+                'title' => 'empowerment_show',
+            ],
+            [
+                'id' => 116,
+                'title' => 'empowerment_delete',
+            ],
 
         ];
 

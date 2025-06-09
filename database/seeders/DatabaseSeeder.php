@@ -35,6 +35,7 @@ final class DatabaseSeeder extends Seeder
             VslaSeeder::class,
             TrainingSeeder::class,
             EmpowermentSeeder::class,
+            ZamukaSeeder::class,
         ]);
 
     }

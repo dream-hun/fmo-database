@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('village')->nullable();
             $table->string('house_hold_phone')->nullable();
             $table->integer('family_size')->nullable();
-            $table->string('main_source_of_income')->nullable();
             $table->string('entrance_year')->nullable();
             $table->timestamps();
         });
