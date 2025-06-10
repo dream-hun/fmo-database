@@ -6,7 +6,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-final class StoreZamukaRequest extends FormRequest
+final class StoreEmpowermentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

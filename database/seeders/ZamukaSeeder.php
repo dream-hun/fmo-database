@@ -1,24 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Zamuka;
 use Exception;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ZamukaSeeder extends Seeder
+final class ZamukaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $this->command->info("Starting to Seed Zamuka Data from CSV file");
+        $this->command->info('Starting to Seed Zamuka Data from CSV file');
         $csvPath = database_path('/seeders/Data/zamuka.csv');
-        if (!file_exists($csvPath)) {
-            $this->command->error('CSV file not found: ' . $csvPath);
+        if (! file_exists($csvPath)) {
+            $this->command->error('CSV file not found: '.$csvPath);
         }
 
         $file = fopen($csvPath, 'r');
@@ -65,7 +66,7 @@ class ZamukaSeeder extends Seeder
             } catch (Exception $e) {
                 $errorCount++;
                 if ($errorCount <= 5) {
-                    $this->command->error("Error processing row $row: " . $e->getMessage());
+                    $this->command->error("Error processing row $row: ".$e->getMessage());
                 } elseif ($errorCount === 6) {
                     $this->command->error('Additional errors exist but are not being displayed...');
                 }
@@ -88,5 +89,3 @@ class ZamukaSeeder extends Seeder
         }
     }
 }
-
-

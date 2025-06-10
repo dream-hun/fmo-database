@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EcdController;
+use App\Http\Controllers\Admin\EmpowermentController;
 use App\Http\Controllers\Admin\FruitController;
 use App\Http\Controllers\Admin\GirinkaController;
 use App\Http\Controllers\Admin\GoatController;
@@ -60,6 +61,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::post('urgents/parse-csv-import', [UrgentController::class, 'parseCsvImport'])->name('urgents.parseCsvImport');
     Route::post('urgents/process-csv-import', [UrgentController::class, 'processCsvImport'])->name('urgents.processCsvImport');
     Route::resource('urgents', UrgentController::class)->except(['show']);
+    Route::post('empowerments/parse-csv-import', [EmpowermentController::class, 'parseCsvImport'])->name('empowerments.parseCsvImport');
+    Route::post('empowerments/process-csv-import', [EmpowermentController::class, 'processCsvImport'])->name('empowerments.processCsvImport');
+    Route::resource('empowerments', EmpowermentController::class);
 
 });
 
