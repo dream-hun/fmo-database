@@ -37,7 +37,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        {!! $goatDistributionChart->container() !!}
+                        {{--{!! $goatDistributionChart->container() !!}--}}
                     </div>
                 </div>
             </div>
@@ -136,7 +136,7 @@
     {!! $girinkaChart->script() !!}
     {!! $individual->script() !!}
     {!! $scholarshipByYear->script() !!}
-    {!! $goatDistributionChart->script() !!}
+    {{--{!! $goatDistributionChart->script() !!}--}}
     {!! $ecdChart->script() !!}
     {!! $vslaChart->script() !!}
     {!! $mvtc->script() !!}

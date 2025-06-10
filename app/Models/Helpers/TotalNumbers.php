@@ -28,7 +28,7 @@ final class TotalNumbers
     }
 
     /**
-     * Get the total count of goats
+     * Get the total count of livestocks
      */
     public static function getGoats(): int
     {

@@ -85,8 +85,8 @@
                 @endcan
                 @can('house_hold_access')
                     <li
-                        class="nav-item has-treeview {{ request()->is('admin/tanks*') ? 'menu-open' : '' }} {{ request()->is('admin/girinkas*') ? 'menu-open' : '' }} {{ request()->is('admin/goats*') ? 'menu-open' : '' }} {{ request()->is('admin/fruits*') ? 'menu-open' : '' }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/tanks*') ? 'active' : '' }} {{ request()->is('admin/fruits*') ? 'active' : '' }} {{ request()->is('admin/girinkas*') ? 'active' : '' }} {{ request()->is('admin/goats*') ? 'active' : '' }}"
+                        class="nav-item has-treeview {{ request()->is('admin/tanks*') ? 'menu-open' : '' }} {{ request()->is('admin/girinkas*') ? 'menu-open' : '' }} {{ request()->is('admin/livestocks*') ? 'menu-open' : '' }} {{ request()->is('admin/fruits*') ? 'menu-open' : '' }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/tanks*') ? 'active' : '' }} {{ request()->is('admin/fruits*') ? 'active' : '' }} {{ request()->is('admin/girinkas*') ? 'active' : '' }} {{ request()->is('admin/livestocks*') ? 'active' : '' }}"
                            href="#">
                             <i class="bi bi-house-fill"> </i>
                             <p>
@@ -119,15 +119,15 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('goat_access')
+                            @can('livestock_access')
                                 <li class="nav-item">
-                                    <a href="{{ route('admin.goats.index') }}"
-                                       class="nav-link {{ request()->is('admin/goats') || request()->is('admin/goats/*') ? 'active' : '' }}">
+                                    <a href="{{ route('admin.livestocks.index') }}"
+                                       class="nav-link {{ request()->is('admin/livestocks') || request()->is('admin/livestocks/*') ? 'active' : '' }}">
                                         <i class="bi bi-bookmark-check"></i>
 
                                         </i>
                                         <p>
-                                            {{ trans('cruds.goat.title') }}
+                                            {{ trans('cruds.livestock.title') }}
                                         </p>
                                     </a>
                                 </li>
@@ -236,34 +236,31 @@
                         </ul>
                     </li>
                 @endcan
-                @can('urgent_community_access')
-                    <li
-                        class="nav-item has-treeview {{ request()->is('admin/urgents*') ? 'menu-open' : '' }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/urgents*') ? 'active' : '' }}"
-                           href="#">
-                            <i class="bi bi-chevron-down right"></i>
+
+
+                @can('urgent_access')
+                    <li class="nav-item">
+                        <a href="{{ route('admin.urgents.index') }}"
+                           class="nav-link {{ request()->is('admin/urgents') || request()->is('admin/urgents/*') ? 'active' : '' }}">
+                            <i class="bi bi-building"></i>
                             <p>
-                                UCS
+                                {{ trans('cruds.urgent.title') }}
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-
-                            @can('urgent_access')
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.urgents.index') }}"
-                                       class="nav-link {{ request()->is('admin/urgents') || request()->is('admin/urgents/*') ? 'active' : '' }}">
-                                        <i class="bi bi-building"></i>
-                                        <p>
-                                            {{ trans('cruds.urgent.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-
-                        </ul>
                     </li>
                 @endcan
 
+                @can('zamuka_access')
+                    <li class="nav-item">
+                        <a href="{{ route('admin.zamukas.index') }}"
+                           class="nav-link {{ request()->is('admin/zamukas') || request()->is('admin/zamukas/*') ? 'active' : '' }}">
+                            <i class="bi bi-building"></i>
+                            <p>
+                                {{ trans('cruds.zamuka.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
 
             </ul>
         </nav>

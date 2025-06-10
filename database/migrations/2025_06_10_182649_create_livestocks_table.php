@@ -13,18 +13,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('urgents', function (Blueprint $table) {
+        Schema::create('livestocks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('gender')->nullable();
             $table->string('id_number')->nullable();
             $table->string('sector')->nullable();
-            $table->string('cell')->nullable();
             $table->string('village')->nullable();
-            $table->string('phone_number')->nullable();
-            $table->string('support');
-            $table->date('support_date')->nullable();
-            $table->integer('benefiting_members')->nullable();
+            $table->string('type');
+            $table->date('distribution_date');
+            $table->integer('number');
+            $table->string('gender')->nullable();
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('urgents');
+        Schema::dropIfExists('livestocks');
     }
 };

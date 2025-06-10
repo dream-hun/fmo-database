@@ -384,7 +384,7 @@ final class DashboardStats
             ]);
     }
 
-    public static function goatDistribution(): Chart
+    /*public static function goatDistribution(): Chart
     {
         $totalBeneficiaries = (int) Goat::count();
 
@@ -446,7 +446,7 @@ final class DashboardStats
                     ],
                 ],
             ]);
-    }
+    }*/
 
     public static function individualStats(): Chart
     {

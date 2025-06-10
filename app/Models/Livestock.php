@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
-final class Goat extends Model
+final class Livestock extends Model
 {
     public const GENDER_SELECT = [
         'M' => 'Male',
@@ -25,13 +25,13 @@ final class Goat extends Model
     ];
 
     protected $fillable = [
-        'names',
+        'name',
         'id_number',
         'sector',
-        'cell',
         'village',
         'distribution_date',
-        'number_of_goats',
+        'type',
+        'number',
         'gender',
         'created_at',
         'updated_at',

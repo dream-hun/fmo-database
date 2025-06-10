@@ -20,7 +20,7 @@ final class DashboardController extends Controller
         $individualChart = DashboardStats::individualStats();
         $scholarshipByYear = DashboardStats::yearlyScholarship();
         $malnutritionChart = DashboardStats::malnutritionChart();
-        $goatDistributionChart = DashboardStats::goatDistribution();
+        /*$goatDistributionChart = DashboardStats::goatDistribution();*/
         $ecdChart = DashboardStats::ecdChart();
         $vslaChart = DashboardStats::vslaLoanData();
         $toolkitChart = DashboardStats::toolkit();
@@ -36,7 +36,7 @@ final class DashboardController extends Controller
             'individual' => $individualChart,
             'girinkaChart' => $girinkaChart,
             'scholarshipByYear' => $scholarshipByYear,
-            'goatDistributionChart' => $goatDistributionChart,
+            /*'goatDistributionChart' => $goatDistributionChart,*/
             'ecdChart' => $ecdChart,
             'vslaChart' => $vslaChart,
             'toolkitChart' => $toolkitChart,

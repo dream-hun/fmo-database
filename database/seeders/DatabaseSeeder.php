@@ -20,7 +20,6 @@ final class DatabaseSeeder extends Seeder
             PermissionsTableSeeder::class,
             PermissionRoleTableSeeder::class,
             RoleUserTableSeeder::class,
-            GoatSeeder::class,
             GirinkaSeeder::class,
             TankSeeder::class,
             IndividualSeeder::class,
@@ -36,6 +35,7 @@ final class DatabaseSeeder extends Seeder
             TrainingSeeder::class,
             EmpowermentSeeder::class,
             ZamukaSeeder::class,
+            LivestockSeeder::class,
         ]);
 
     }

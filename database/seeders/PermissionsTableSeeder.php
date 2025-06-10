@@ -222,23 +222,23 @@ final class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id' => 53,
-                'title' => 'goat_create',
+                'title' => 'livestock_create',
             ],
             [
                 'id' => 54,
-                'title' => 'goat_edit',
+                'title' => 'livestock_edit',
             ],
             [
                 'id' => 55,
-                'title' => 'goat_show',
+                'title' => 'livestock_show',
             ],
             [
                 'id' => 56,
-                'title' => 'goat_delete',
+                'title' => 'livestock_delete',
             ],
             [
                 'id' => 57,
-                'title' => 'goat_access',
+                'title' => 'livestock_access',
             ],
             [
                 'id' => 58,
