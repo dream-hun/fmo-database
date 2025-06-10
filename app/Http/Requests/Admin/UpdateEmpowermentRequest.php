@@ -5,26 +5,40 @@ declare(strict_types=1);
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 final class UpdateEmpowermentRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return Gate::allows('empowerment_edit');
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [
-            //
+            'name' => [
+                'string',
+                'required',
+            ],
+            'sector' => [
+                'string',
+                'required',
+            ],
+            'support' => [
+                'string',
+                'required',
+            ],
+            'support_date' => [
+                'required',
+                'date_format:'.config('panel.date_format'),
+            ],
+            'supported_children' => [
+                'nullable',
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+            ],
         ];
     }
 }

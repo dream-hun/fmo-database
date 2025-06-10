@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="{{ route('admin.dashboard') }}" class="brand-link">
         <img src="{{ asset('logo.png') }}" alt="FMO Rwanda Logo" class="brand-image img-circle elevation-0"
-            style="opacity: .8">
+             style="opacity: .8">
         <span class="brand-text font-weight-light"> &nbsp;</span>
     </a>
     <!-- Sidebar -->
@@ -24,7 +24,7 @@
                 <li class="nav-item">
                 <li class="nav-item">
                     <a href="{{ route('admin.dashboard') }}"
-                        class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                       class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                         <i class="bi bi-speedometer"></i>
                         <p>
                             Dashboard
@@ -47,7 +47,7 @@
                             @can('malnutrition_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.malnutritions.index') }}"
-                                        class="nav-link {{ request()->is('admin/malnutritions*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/malnutritions*') ? 'active' : '' }}">
                                         <i class="bi bi-person-plus-fill"></i>
                                         <p>{{ trans('cruds.malnutrition.title') }}</p>
                                     </a>
@@ -56,7 +56,7 @@
                             @can('ecd_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.ecds.index') }}"
-                                        class="nav-link {{ request()->is('admin/ecds*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/ecds*') ? 'active' : '' }}">
                                         <i class="bi bi-person-plus-fill"></i>
                                         <p>{{ trans('cruds.ecd.title') }}</p>
                                     </a>
@@ -65,9 +65,18 @@
                             @can('school_feeding_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.school-feedings.index') }}"
-                                        class="nav-link {{ request()->is('admin/school-feedings*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/school-feedings*') ? 'active' : '' }}">
                                         <i class="bi bi-person-plus-fill"></i>
                                         <p>{{ trans('cruds.schoolFeeding.title') }}</p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('empowerment_access')
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.empowerments.index') }}"
+                                       class="nav-link {{request()->is('admin/empowerments*')?'active':''}}">
+                                        <i class="bi bi-building"></i>
+                                        <p>{{ trans('cruds.empowerment.title') }}</p>
                                     </a>
                                 </li>
                             @endcan
@@ -78,7 +87,7 @@
                     <li
                         class="nav-item has-treeview {{ request()->is('admin/tanks*') ? 'menu-open' : '' }} {{ request()->is('admin/girinkas*') ? 'menu-open' : '' }} {{ request()->is('admin/goats*') ? 'menu-open' : '' }} {{ request()->is('admin/fruits*') ? 'menu-open' : '' }}">
                         <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/tanks*') ? 'active' : '' }} {{ request()->is('admin/fruits*') ? 'active' : '' }} {{ request()->is('admin/girinkas*') ? 'active' : '' }} {{ request()->is('admin/goats*') ? 'active' : '' }}"
-                            href="#">
+                           href="#">
                             <i class="bi bi-house-fill"> </i>
                             <p>
                                 HHST
@@ -89,7 +98,7 @@
                             @can('tank_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.tanks.index') }}"
-                                        class="nav-link {{ request()->is('admin/tanks') || request()->is('admin/tanks/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/tanks') || request()->is('admin/tanks/*') ? 'active' : '' }}">
                                         <i class="bi bi-water"></i>
                                         <p>
                                             {{ trans('cruds.tank.title') }}
@@ -100,7 +109,7 @@
                             @can('girinka_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.girinkas.index') }}"
-                                        class="nav-link {{ request()->is('admin/girinkas') || request()->is('admin/girinkas/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/girinkas') || request()->is('admin/girinkas/*') ? 'active' : '' }}">
                                         <i class="bi bi-bookmark-check"></i>
 
                                         </i>
@@ -113,7 +122,7 @@
                             @can('goat_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.goats.index') }}"
-                                        class="nav-link {{ request()->is('admin/goats') || request()->is('admin/goats/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/goats') || request()->is('admin/goats/*') ? 'active' : '' }}">
                                         <i class="bi bi-bookmark-check"></i>
 
                                         </i>
@@ -126,7 +135,7 @@
                             @can('fruit_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.fruits.index') }}"
-                                        class="nav-link {{ request()->is('admin/fruits') || request()->is('admin/fruits/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/fruits') || request()->is('admin/fruits/*') ? 'active' : '' }}">
                                         <i class="bi bi-tree"></i>
 
 
@@ -143,7 +152,7 @@
                     <li
                         class="nav-item has-treeview {{ request()->is('admin/scholarships*') ? 'menu-open' : '' }} {{ request()->is('admin/vslas*') ? 'menu-open' : '' }} {{ request()->is('admin/individuals*') ? 'menu-open' : '' }}{{ request()->is('admin/toolkits*') ? 'menu-open' : '' }}"{{ request()->is('admin/trainings*') ? 'menu-open' : '' }}>
                         <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/scholarships*') ? 'active' : '' }} {{ request()->is('admin/vslas*') ? 'active' : '' }} {{ request()->is('admin/individuals*') ? 'active' : '' }}"
-                            href="#">
+                           href="#">
                             <i class="bi bi-chevron-down right"></i>
                             <p>
                                 <i class="bi bi-gear"></i>
@@ -155,7 +164,7 @@
                             @can('scholarship_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.scholarships.index') }}"
-                                        class="nav-link {{ request()->is('admin/scholarships') || request()->is('admin/scholarships/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/scholarships') || request()->is('admin/scholarships/*') ? 'active' : '' }}">
                                         <i class="bi bi-building"></i>
                                         <p>
                                             {{ trans('cruds.scholarship.title') }}
@@ -166,7 +175,7 @@
                             @can('vsla_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.vslas.index') }}"
-                                        class="nav-link {{ request()->is('admin/vslas') || request()->is('admin/vslas/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/vslas') || request()->is('admin/vslas/*') ? 'active' : '' }}">
                                         <i class="bi bi-people-fill"></i>
                                         <p>
                                             {{ trans('cruds.vsla.title') }}
@@ -177,7 +186,7 @@
                             @can('individual_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.individuals.index') }}"
-                                        class="nav-link {{ request()->is('admin/individuals') || request()->is('admin/individuals/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/individuals') || request()->is('admin/individuals/*') ? 'active' : '' }}">
                                         <i class="bi bi-person">
 
                                         </i>
@@ -190,7 +199,7 @@
                             @can('toolkit_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.toolkits.index') }}"
-                                        class="nav-link {{ request()->is('admin/toolkits') || request()->is('admin/toolkits/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/toolkits') || request()->is('admin/toolkits/*') ? 'active' : '' }}">
                                         <i class="bi bi-gear">
 
                                         </i>
@@ -203,7 +212,7 @@
                             @can('mvtc_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.mvtcs.index') }}"
-                                        class="nav-link {{ request()->is('admin/mvtcs') || request()->is('admin/mvtcs/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/mvtcs') || request()->is('admin/mvtcs/*') ? 'active' : '' }}">
                                         <i class="bi bi-building"></i>
 
                                         <p>
@@ -215,7 +224,7 @@
                             @can('training_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.trainings.index') }}"
-                                        class="nav-link {{ request()->is('admin/trainings') || request()->is('admin/trainings/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/trainings') || request()->is('admin/trainings/*') ? 'active' : '' }}">
                                         <i class="bi bi-building"></i>
 
                                         <p>
@@ -231,7 +240,7 @@
                     <li
                         class="nav-item has-treeview {{ request()->is('admin/urgents*') ? 'menu-open' : '' }}">
                         <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/urgents*') ? 'active' : '' }}"
-                            href="#">
+                           href="#">
                             <i class="bi bi-chevron-down right"></i>
                             <p>
                                 UCS
@@ -242,7 +251,7 @@
                             @can('urgent_access')
                                 <li class="nav-item">
                                     <a href="{{ route('admin.urgents.index') }}"
-                                        class="nav-link {{ request()->is('admin/urgents') || request()->is('admin/urgents/*') ? 'active' : '' }}">
+                                       class="nav-link {{ request()->is('admin/urgents') || request()->is('admin/urgents/*') ? 'active' : '' }}">
                                         <i class="bi bi-building"></i>
                                         <p>
                                             {{ trans('cruds.urgent.title') }}

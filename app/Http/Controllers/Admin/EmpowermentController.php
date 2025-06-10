@@ -33,9 +33,9 @@ final class EmpowermentController extends Controller
 
     public function store(StoreEmpowermentRequest $request)
     {
-        $empowerment = Empowerment::create($request->all());
+        $empowerment = Empowerment::create($request->validated());
 
-        return to_route('admin.empowerments.index')->with('message', $empowerment->name.' Empowerment created successfully');
+        return to_route('admin.empowerments.index')->with('message', $empowerment->name.'  created successfully');
 
     }
 
@@ -55,9 +55,9 @@ final class EmpowermentController extends Controller
 
     public function update(UpdateEmpowermentRequest $request, Empowerment $empowerment)
     {
-        $empowerment->update($request->all());
+        $empowerment->update($request->validated());
 
-        return to_route('admin.empowerments.index')->with('message', $empowerment->name.' Empowerment updated successfully');
+        return to_route('admin.empowerments.index')->with('message', $empowerment->name.'  updated successfully');
 
     }
 
