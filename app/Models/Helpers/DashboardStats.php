@@ -264,17 +264,23 @@ final class DashboardStats
             $values = $girinkaData->pluck('count')->toArray();
         }
 
-        return $chart->setType('donut')
+        return $chart->setType('bar')
             ->setWidth('100%')
             ->setHeight(500)
             ->setLabels($labels)
-            ->setDataset('Girinka Distribution', 'donut', $values)
+            ->setDataset('Girinka Distribution', 'bar', $values)
             ->setOptions([
                 'chart' => [
-                    'type' => 'donut',
+                    'type' => 'bar',
                 ],
                 'dataLabels' => [
                     'enabled' => true,
+                ],
+                'stroke' => [
+                    'show' => true,
+                    'width' => 2,
+                    'colors' => ['#b2071b'],
+                    'curve' => 'straight',
                 ],
                 'legend' => [
                     'position' => 'bottom',
@@ -288,10 +294,20 @@ final class DashboardStats
                     'align' => 'left',
                 ],
                 'plotOptions' => [
-                    'pie' => [
-                        'donut' => [
-                            'size' => '65%',
-                        ],
+                    'bar' => [
+                        'horizontal' => false,
+                        'columnWidth' => '55%',
+                        'endingShape' => 'rounded',
+                    ],
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Years',
+                    ],
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of Distributions',
                     ],
                 ],
             ]);
@@ -307,6 +323,7 @@ final class DashboardStats
 
         $male = Tank::where('gender', 'M')->count();
         $female = Tank::where('gender', 'F')->count();
+        $community = Tank::where('gender', 'C')->count();
         $totalTanks = Tank::count();
 
         $labels = [];
@@ -318,7 +335,15 @@ final class DashboardStats
             $data = [1];
         } else {
             foreach ($sanitation as $item) {
-                $genderLabel = $item->gender === 'M' ? 'Male' : 'Female';
+                if ($item->gender === 'M') {
+                    $genderLabel = 'Male';
+                } elseif ($item->gender === 'F') {
+                    $genderLabel = 'Female';
+                } elseif ($item->gender === 'C') {
+                    $genderLabel = 'Community';
+                } else {
+                    $genderLabel = $item->gender;
+                }
                 $labels[] = $genderLabel;
                 $data[] = $item->count;
             }
@@ -326,14 +351,14 @@ final class DashboardStats
 
         $chart = new Chart;
 
-        return $chart->setType('donut')
+        return $chart->setType('bar')
             ->setWidth('100%')
             ->setHeight(500)
             ->setLabels($labels)
-            ->setDataset('Clean Water And Sanitation Tanks', 'donut', $data)
+            ->setDataset('Clean Water And Sanitation Tanks', 'bar', $data)
             ->setOptions([
                 'chart' => [
-                    'type' => 'donut',
+                    'type' => 'bar',
                 ],
                 'dataLabels' => [
                     'enabled' => true,
@@ -346,15 +371,30 @@ final class DashboardStats
                     'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => "Total Beneficiaries: {$totalTanks} | Female: {$female} | Male: {$male}",
+                    'text' => "Total Beneficiaries: {$totalTanks} | Female: {$female} | Male: {$male} | Community: {$community}",
                     'align' => 'left',
                 ],
                 'colors' => ['#b2071b', '#4ECDC4'],
                 'plotOptions' => [
-                    'pie' => [
-                        'donut' => [
-                            'size' => '65%',
-                        ],
+                    'bar' => [
+                        'horizontal' => false,
+                        'columnWidth' => '55%',
+                        'endingShape' => 'rounded',
+                    ],
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Gender',
+                    ],
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of Beneficiaries',
+                    ],
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => 'function(val) { return val + " beneficiaries"; }',
                     ],
                 ],
             ]);
@@ -380,20 +420,38 @@ final class DashboardStats
             $values = $fruitsData->pluck('count')->toArray();
         }
 
-        return $chart->setType('donut')
+        return $chart->setType('bar')
             ->setWidth('100%')
             ->setHeight(500)
             ->setLabels($labels)
-            ->setDataset('Fruits trees ', 'donut', $values)
+            ->setDataset('Fruits trees ', 'bar', $values)
             ->setOptions([
                 'chart' => [
-                    'type' => 'donut',
+                    'type' => 'bar',
+                    'toolbar' => [
+                        'show' => true,
+                    ],
                 ],
                 'dataLabels' => [
                     'enabled' => true,
                 ],
-                'legend' => [
-                    'position' => 'bottom',
+                'colors' => ['#b2071b'],
+                'plotOptions' => [
+                    'bar' => [
+                        'horizontal' => false,
+                        'columnWidth' => '55%',
+                        'endingShape' => 'rounded',
+                    ],
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Years',
+                    ],
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of Distributions',
+                    ],
                 ],
                 'title' => [
                     'text' => 'Fruit Trees Distribution by Year',
@@ -403,11 +461,9 @@ final class DashboardStats
                     'text' => 'Total Beneficiaries: '.$totalFruitBeneficiaries.' Female beneficiaries is: '.$female.' Male beneficiaries: '.$male.' Total Institutions :'.$institution,
                     'align' => 'left',
                 ],
-                'plotOptions' => [
-                    'pie' => [
-                        'donut' => [
-                            'size' => '65%',
-                        ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => 'function(val) { return val + " distributions"; }',
                     ],
                 ],
             ]);
@@ -445,21 +501,21 @@ final class DashboardStats
         $totalLivestock = (int) Livestock::sum('number');
 
         return (new Chart)
-            ->setType('donut')
+            ->setType('bar')
             ->setWidth('100%')
             ->setHeight(500)
             ->setLabels($labels)
-            ->setDataset('Livestock Distribution', 'donut', $values)
-            ->setColors(['#3B82F6', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'])
+            ->setDataset('Livestock Distribution', 'bar', $values)
+            ->setColors(['#b2071b', '#4ECDC4'])
             ->setOptions([
                 'chart' => [
-                    'type' => 'donut',
+                    'type' => 'bar',
                 ],
                 'plotOptions' => [
-                    'pie' => [
-                        'donut' => [
-                            'size' => '65%',
-                        ],
+                    'bar' => [
+                        'horizontal' => false,
+                        'columnWidth' => '55%',
+                        'endingShape' => 'rounded',
                     ],
                 ],
                 'dataLabels' => [
@@ -480,6 +536,16 @@ final class DashboardStats
                     'align' => 'left',
                     'style' => [
                         'fontSize' => '14px',
+                    ],
+                ],
+                'xaxis' => [
+                    'title' => [
+                        'text' => 'Livestock Type',
+                    ],
+                ],
+                'yaxis' => [
+                    'title' => [
+                        'text' => 'Number of Livestock',
                     ],
                 ],
             ]);
