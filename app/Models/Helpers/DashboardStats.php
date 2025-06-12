@@ -394,14 +394,14 @@ final class DashboardStats
             $values = $fruitsData->pluck('count')->toArray();
         }
 
-        return $chart->setType('line')
+        return $chart->setType('donut')
             ->setWidth('100%')
             ->setHeight(500)
             ->setLabels($labels)
-            ->setDataset('Fruits trees ', 'line', $values)
+            ->setDataset('Fruits trees ', 'donut', $values)
             ->setOptions([
                 'chart' => [
-                    'type' => 'line',
+                    'type' => 'donut',
                 ],
                 'dataLabels' => [
                     'enabled' => true,
