@@ -72,7 +72,7 @@
                     <div class="card">
 
                         <div class="card-body">
-                            {{--                            {!! $individual->container() !!}--}}
+                            {!! $individual->container() !!}
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     {!! $girinkaChart->script() !!}
-    {{--{!! $individual->script() !!}--}}
+    {!! $individual->script() !!}
     {!! $scholarshipByYear->script() !!}
 
     {!! $goatDistributionChart->script() !!}

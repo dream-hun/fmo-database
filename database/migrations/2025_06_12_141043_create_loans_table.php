@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('individuals', function (Blueprint $table) {
+        Schema::create('loans', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('gender');
-            $table->string('id_number')->nullable();
-            $table->string('telephone')->nullable();
-            $table->string('sector')->nullable();
-            $table->string('cell')->nullable();
-            $table->string('village')->nullable();
+            $table->foreignId('individual_id')->constrained();
+            $table->string('business_name')->nullable();
+            $table->integer('amount');
+            $table->date('done_at')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('individuals');
+        Schema::dropIfExists('loans');
     }
 };

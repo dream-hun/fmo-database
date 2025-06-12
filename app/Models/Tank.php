@@ -16,7 +16,7 @@ final class Tank extends Model
         'C' => 'Community',
     ];
 
-    protected $dates = [
+    protected array $dates = [
         'distribution_date',
         'created_at',
         'updated_at',

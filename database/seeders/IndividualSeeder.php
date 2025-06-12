@@ -54,7 +54,7 @@ final class IndividualSeeder extends Seeder
             }
 
             try {
-                if (empty(mb_trim($data[1] ?? ''))) {
+                if (empty(mb_trim($data[0] ?? ''))) {
                     $row++;
                     $progressBar->advance();
 
@@ -63,18 +63,14 @@ final class IndividualSeeder extends Seeder
 
                 // Create the individual record
                 Individual::create([
-                    'name' => $data[1] ?? null,
+                    'name' => $data[0] ?? null,
+                    'gender' => $data[1] ?? null,
                     'id_number' => mb_ltrim($data[2] ?? '', '*'),
-                    'business_name' => $data[3] ?? null,
-                    'telephone' => $this->cleanPhoneNumber($data[4] ?? ''),
-                    'guardian' => $data[5] ?? null,
-                    'guardian_phone' => $this->cleanPhoneNumber($data[6] ?? ''),
-                    'sector' => $data[7] ?? null,
-                    'cell' => $data[8] ?? null,
-                    'village' => $data[9] ?? null,
-                    'loan_amount' => $this->cleanAmount($data[10]),
-                    'loan_date' => $this->parseDate($data[11]),
-                    'gender' => $this->normalizeGender($data[12]),
+                    'telephone' => $this->cleanPhoneNumber($data[3] ?? ''),
+                    'sector' => $data[4] ?? null,
+                    'cell' => $data[5] ?? null,
+                    'village' => $data[6] ?? null,
+
                 ]);
 
                 $successCount++;
@@ -101,7 +97,7 @@ final class IndividualSeeder extends Seeder
         if ($successCount > 0) {
             $this->command->info('Example of imported data:');
             $example = Individual::first();
-            $this->command->info("Name: $example->name, Bussiness Name: $example->business_name, Gender: $example->gender");
+            $this->command->info("Name: $example->name, Sector: $example->sector, Gender: $example->gender");
         }
     }
 
@@ -144,32 +140,5 @@ final class IndividualSeeder extends Seeder
         } catch (Exception $e) {
             return null;
         }
-    }
-
-    /**
-     * Clean the amount string and convert to integer
-     */
-    protected function cleanAmount(?string $amount): ?int
-    {
-        if (empty($amount)) {
-            return null;
-        }
-
-        // Remove any non-digit characters except decimal point
-        $amount = preg_replace('/[^0-9.]/', '', $amount);
-
-        return (int) $amount;
-    }
-
-    /**
-     * Normalize gender value
-     */
-    protected function normalizeGender(?string $gender): ?string
-    {
-        if (empty($gender)) {
-            return null;
-        }
-
-        return mb_strtoupper($gender) === 'F' ? 'Female' : 'Male';
     }
 }

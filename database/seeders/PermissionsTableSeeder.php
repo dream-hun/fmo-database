@@ -446,6 +446,26 @@ final class PermissionsTableSeeder extends Seeder
                 'id' => 117,
                 'title' => 'transaction_access',
             ],
+            [
+                'id' => 118,
+                'title' => 'loan_create',
+            ],
+            [
+                'id' => 119,
+                'title' => 'loan_edit',
+            ],
+            [
+                'id' => 120,
+                'title' => 'loan_show',
+            ],
+            [
+                'id' => 121,
+                'title' => 'loan_delete',
+            ],
+            [
+                'id' => 122,
+                'title' => 'loan_access',
+            ],
 
         ];
 

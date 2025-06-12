@@ -6,7 +6,7 @@
                 <a class="btn btn-success" href="{{ route('admin.empowerments.create') }}">
                     {{ trans('global.add') }} {{ trans('cruds.empowerment.title_singular') }}
                 </a>
-                <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#csvImportModal">
                     {{ trans('global.app_csvImport') }}
                 </button>
                 @include('csvImport.modal', ['model' => 'Empowerment', 'route' => 'admin.empowerments.parseCsvImport'])
@@ -120,7 +120,7 @@
                 pageLength: 100,
             });
             let table = $('.datatable-Empowerment:not(.ajaxTable)').DataTable({ buttons: dtButtons })
-            $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e){
+            $('a[data-bs-toggle="tab"]').on('shown.bs.tab click', function(e){
                 $($.fn.dataTable.tables(true)).DataTable()
                     .columns.adjust();
             });

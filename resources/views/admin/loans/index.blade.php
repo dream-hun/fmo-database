@@ -1,48 +1,45 @@
 @extends('layouts.admin')
 @section('content')
-    @can('tank_create')
+    @can('loan_create')
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
-                <a class="btn btn-success" href="{{ route('admin.tanks.create') }}">
-                    {{ trans('global.add') }} {{ trans('cruds.tank.title_singular') }}
+                <a class="btn btn-success" href="{{ route('admin.loans.create') }}">
+                    {{ trans('global.add') }} {{ trans('cruds.loan.title_singular') }}
                 </a>
                 <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#csvImportModal">
                     {{ trans('global.app_csvImport') }}
                 </button>
-                @include('csvImport.modal', ['model' => 'Tank', 'route' => 'admin.tanks.parseCsvImport'])
+                @include('csvImport.modal', ['model' => 'Loan', 'route' => 'admin.loans.parseCsvImport'])
             </div>
         </div>
     @endcan
     <div class="card">
         <div class="card-header">
-            {{ trans('cruds.tank.title_singular') }} {{ trans('global.list') }}
+            {{ trans('cruds.loan.title_singular') }} {{ trans('global.list') }}
         </div>
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class=" table table-bordered table-striped table-hover datatable datatable-Tank">
+                <table class=" table table-bordered table-striped table-hover datatable datatable-Loan">
                     <thead>
                     <tr>
                         <th width="10">
 
                         </th>
                         <th>
-                            {{ trans('cruds.tank.fields.id') }}
+                            {{ trans('cruds.loan.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.tank.fields.name') }}
+                            {{ trans('cruds.loan.fields.individual') }}
                         </th>
                         <th>
-                            {{ trans('cruds.tank.fields.gender') }}
+                            {{ trans('cruds.loan.fields.business_name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.tank.fields.id_number') }}
+                            {{ trans('cruds.loan.fields.amount') }}
                         </th>
                         <th>
-                            {{ trans('cruds.tank.fields.sector') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.tank.fields.distribution_date') }}
+                            {{ trans('cruds.loan.fields.done_at') }}
                         </th>
                         <th>
                             &nbsp;
@@ -50,45 +47,44 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($tanks as $key => $tank)
-                        <tr data-entry-id="{{ $tank->id }}">
+                    @foreach($loans as $key => $loan)
+                        <tr data-entry-id="{{ $loan->id }}">
                             <td>
 
                             </td>
                             <td>
-                                {{ $tank->id ?? '' }}
+                                {{ $loan->id ?? '' }}
                             </td>
                             <td>
-                                {{ $tank->name ?? '' }}
+                                {{ $loan->individual->name ?? '' }}
                             </td>
                             <td>
-                                {{ App\Models\Tank::GENDER_SELECT[$tank->gender] ?? '' }}
+                                {{ $loan->business_name ?? '' }}
                             </td>
                             <td>
-                                {{ $tank->id_number ?? '' }}
+                                {{ $loan->amount ?? '' }}
                             </td>
                             <td>
-                                {{ $tank->sector ?? '' }}
+                                {{ $loan->done_at ?? '' }}
                             </td>
                             <td>
-                                {{ $tank->distribution_date ?? '' }}
-                            </td>
-                            <td>
+                                @can('loan_show')
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.loans.show', $loan->id) }}">
+                                        {{ trans('global.view') }}
+                                    </a>
+                                @endcan
 
-                                @can('tank_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.tanks.edit', $tank->id) }}">
+                                @can('loan_edit')
+                                    <a class="btn btn-xs btn-info" href="{{ route('admin.loans.edit', $loan->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
-                                @can('tank_delete')
-                                    <form action="{{ route('admin.tanks.destroy', $tank->id) }}" method="POST"
-                                          onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
-                                          style="display: inline-block;">
+                                @can('loan_delete')
+                                    <form action="{{ route('admin.loans.destroy', $loan->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger"
-                                               value="{{ trans('global.delete') }}">
+                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
                                 @endcan
 
@@ -102,6 +98,8 @@
         </div>
     </div>
 
+
+
 @endsection
 @section('scripts')
     @parent
@@ -109,13 +107,14 @@
         $(function () {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
 
+
             $.extend(true, $.fn.dataTable.defaults, {
                 orderCellsTop: true,
-                order: [[1, 'desc']],
+                order: [[ 1, 'desc' ]],
                 pageLength: 100,
             });
-            let table = $('.datatable-Tank:not(.ajaxTable)').DataTable({buttons: dtButtons})
-            $('a[data-bs-toggle="tab"]').on('shown.bs.tab click', function (e) {
+            let table = $('.datatable-Loan:not(.ajaxTable)').DataTable({ buttons: dtButtons })
+            $('a[data-bs-toggle="tab"]').on('shown.bs.tab click', function(e){
                 $($.fn.dataTable.tables(true)).DataTable()
                     .columns.adjust();
             });

@@ -6,7 +6,7 @@
                 <a class="btn btn-success" href="{{ route('admin.zamukas.create') }}">
                     {{ trans('global.add') }} {{ trans('cruds.zamuka.title_singular') }}
                 </a>
-                <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#csvImportModal">
                     {{ trans('global.app_csvImport') }}
                 </button>
                 @include('csvImport.modal', ['model' => 'Zamuka', 'route' => 'admin.zamukas.parseCsvImport'])
@@ -107,13 +107,14 @@
         $(function () {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
 
+
             $.extend(true, $.fn.dataTable.defaults, {
                 orderCellsTop: true,
                 order: [[ 1, 'desc' ]],
                 pageLength: 100,
             });
             let table = $('.datatable-Zamuka:not(.ajaxTable)').DataTable({ buttons: dtButtons })
-            $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e){
+            $('a[data-bs-toggle="tab"]').on('shown.bs.tab click', function(e){
                 $($.fn.dataTable.tables(true)).DataTable()
                     .columns.adjust();
             });

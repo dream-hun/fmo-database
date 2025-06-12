@@ -5,15 +5,17 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyIndividualRequest;
-use App\Http\Requests\StoreIndividualRequest;
-use App\Http\Requests\UpdateIndividualRequest;
+use App\Http\Requests\Admin\StoreIndividualRequest;
+use App\Http\Requests\Admin\UpdateIndividualRequest;
 use App\Models\Individual;
+use App\Models\Traits\CsvImport;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 final class IndividualController extends Controller
 {
+    use CsvImport;
+
     public function index()
     {
         abort_if(Gate::denies('individual_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -65,16 +67,5 @@ final class IndividualController extends Controller
         $individual->delete();
 
         return back();
-    }
-
-    public function massDestroy(MassDestroyIndividualRequest $request)
-    {
-        $individuals = Individual::find(request('ids'));
-
-        foreach ($individuals as $individual) {
-            $individual->delete();
-        }
-
-        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

@@ -6,7 +6,7 @@
                 <a class="btn btn-success" href="{{ route('admin.urgents.create') }}">
                     {{ trans('global.add') }} {{ trans('cruds.urgent.title_singular') }}
                 </a>
-                <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#csvImportModal">
                     {{ trans('global.app_csvImport') }}
                 </button>
                 @include('csvImport.modal', ['model' => 'Urgent', 'route' => 'admin.urgents.parseCsvImport'])

@@ -17,7 +17,7 @@ final class DashboardController extends Controller
     {
 
         $girinkaChart = DashboardStats::girinkaStats();
-        // $individualChart = DashboardStats::individualStats();
+        $individualChart = DashboardStats::individualStats();
         $scholarshipByYear = DashboardStats::yearlyScholarship();
         $malnutritionChart = DashboardStats::malnutritionChart();
         $goatDistributionChart = DashboardStats::LivestockDistribution();
@@ -33,7 +33,7 @@ final class DashboardController extends Controller
 
         return view('dashboard', [
 
-            // 'individual' => $individualChart,
+            'individual' => $individualChart,
             'girinkaChart' => $girinkaChart,
             'scholarshipByYear' => $scholarshipByYear,
             'goatDistributionChart' => $goatDistributionChart,

@@ -37,6 +37,7 @@ final class DatabaseSeeder extends Seeder
             GroupSeeder::class,
             MemberSeeder::class,
             TransactionSeeder::class,
+            LoanSeeder::class,
         ]);
 
     }

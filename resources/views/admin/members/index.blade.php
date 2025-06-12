@@ -6,7 +6,7 @@
                 <a class="btn btn-success" href="{{ route('admin.members.create') }}">
                     {{ trans('global.add') }} {{ trans('cruds.member.title_singular') }}
                 </a>
-                <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#csvImportModal">
                     {{ trans('global.app_csvImport') }}
                 </button>
                 @include('csvImport.modal', ['model' => 'Member', 'route' => 'admin.members.parseCsvImport'])
@@ -140,7 +140,7 @@
                 pageLength: 100,
             });
             let table = $('.datatable-Member:not(.ajaxTable)').DataTable({buttons: dtButtons})
-            $('a[data-toggle="tab"]').on('shown.bs.tab click', function (e) {
+            $('a[data-bs-toggle="tab"]').on('shown.bs.tab click', function (e) {
                 $($.fn.dataTable.tables(true)).DataTable()
                     .columns.adjust();
             });

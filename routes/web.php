@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\FruitController;
 use App\Http\Controllers\Admin\GirinkaController;
 use App\Http\Controllers\Admin\IndividualController;
 use App\Http\Controllers\Admin\LivestockController;
+use App\Http\Controllers\Admin\LoanController;
 use App\Http\Controllers\Admin\MalnutritionController;
 use App\Http\Controllers\Admin\MvtcController;
 use App\Http\Controllers\Admin\PermissionController;
@@ -19,7 +20,6 @@ use App\Http\Controllers\Admin\TankController;
 use App\Http\Controllers\Admin\ToolKitController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\UrgentController;
-use App\Http\Controllers\Admin\VslaController;
 use App\Http\Controllers\Admin\ZamukaController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,7 +36,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 
     Route::resource('permissions', PermissionController::class)->except(['show']);
     Route::resource('roles', RoleController::class)->except(['show']);
-    Route::resource('girinkas', GirinkaController::class)->except(['show']);
 
     Route::post('livestocks/parse-csv-import', [LivestockController::class, 'parseCsvImport'])->name('livestocks.parseCsvImport');
     Route::post('livestocks/process-csv-import', [LivestockController::class, 'processCsvImport'])->name('livestocks.processCsvImport');
@@ -50,17 +49,23 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::post('tanks/process-csv-import', [TankController::class, 'processCsvImport'])->name('tanks.processCsvImport');
     Route::resource('tanks', TankController::class)->except(['show']);
 
-    Route::resource('scholarships', ScholarshipController::class)->except(['show']);
+    Route::post('individuals/parse-csv-import', [IndividualController::class, 'parseCsvImport'])->name('individuals.parseCsvImport');
+    Route::post('individuals/process-csv-import', [IndividualController::class, 'processCsvImport'])->name('individuals.processCsvImport');
+    Route::resource('individuals', IndividualController::class);
 
-    Route::resource('individuals', IndividualController::class)->except(['show']);
+    Route::post('loans/parse-csv-import', [LoanController::class, 'parseCsvImport'])->name('loans.parseCsvImport');
+    Route::post('loans/process-csv-import', [LoanController::class, 'processCsvImport'])->name('loans.processCsvImport');
+    Route::resource('loans', LoanController::class);
+
     Route::resource('school-feedings', SchoolFeedingController::class)->except(['show']);
     Route::resource('fruits', FruitController::class)->except(['show']);
+    Route::resource('ecds', EcdController::class)->except(['show']);
+    Route::resource('scholarships', ScholarshipController::class)->except(['show']);
+    Route::resource('girinkas', GirinkaController::class)->except(['show']);
 
     Route::post('toolkits/parse-csv-import', [ToolKitController::class, 'parseCsvImport'])->name('toolkits.parseCsvImport');
     Route::post('toolkits/process-csv-import', [ToolKitController::class, 'processCsvImport'])->name('toolkits.processCsvImport');
     Route::resource('toolkits', ToolKitController::class);
-
-    Route::resource('ecds', EcdController::class)->except(['show']);
 
     Route::post('mvtcs/parse-csv-import', [MvtcController::class, 'parseCsvImport'])->name('mvtcs.parseCsvImport');
     Route::post('mvtcs/process-csv-import', [MvtcController::class, 'processCsvImport'])->name('mvtcs.processCsvImport');

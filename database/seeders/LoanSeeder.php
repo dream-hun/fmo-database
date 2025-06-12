@@ -4,64 +4,67 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\Zamuka;
+use App\Models\Loan;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
-final class ZamukaSeeder extends Seeder
+final class LoanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $this->command->info('Starting to Seed Zamuka Data from CSV file');
-        $csvPath = database_path('/seeders/Data/Zamuka.csv');
+        $this->command->info('Seeding Individual  Loan data from CSV...');
+        $csvPath = database_path('seeders/Data/Loans.csv');
         if (! file_exists($csvPath)) {
             $this->command->error('CSV file not found: '.$csvPath);
+
+            return;
         }
 
         $file = fopen($csvPath, 'r');
+
         $rowCount = count(file($csvPath)) - 1;
-        $this->command->info("Seeding $rowCount Zamuka Data from CSV...");
+        $this->command->info("Found $rowCount records to import.");
         $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
         $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
         $progressBar->start();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('zamukas')->truncate();
+        DB::table('loans')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         $row = 0;
         $successCount = 0;
         $errorCount = 0;
 
         while (($data = fgetcsv($file)) !== false) {
+
             if ($row === 0) {
                 $row++;
 
                 continue;
             }
+
             try {
-                if (empty(mb_trim($data[0] ?? ''))) {
+                if (empty(mb_trim($data[1] ?? ''))) {
                     $row++;
                     $progressBar->advance();
 
                     continue;
                 }
-                Zamuka::create([
 
-                    'head_of_household_name' => $data[0],
-                    'household_id_number' => $data[1] ?? null,
-                    'spouse_name' => $data[2] ?? null,
-                    'spouse_id_number' => ($data[3] ?? null),
-                    'sector' => $data[4] ?? null,
-                    'cell' => $data[5] ?? null,
-                    'village' => $data[6] ?? null,
-                    'family_size' => ! empty(mb_trim($data[7] ?? '')) ? (int) $data[7] : null,
-                    'entrance_year' => ! empty(mb_trim($data[8] ?? '')) ? $data[8] : null,
+                Loan::create([
+                    'individual_id' => $data[0] ?? '',
+                    'business_name' => $data[1] ?? '',
+                    'amount' => $data[2] ?? '',
+                    'done_at' => $this->doneAt($data[3] ?? ''),
 
                 ]);
+
                 $successCount++;
             } catch (Exception $e) {
                 $errorCount++;
@@ -71,21 +74,52 @@ final class ZamukaSeeder extends Seeder
                     $this->command->error('Additional errors exist but are not being displayed...');
                 }
             }
+
             $progressBar->advance();
             $row++;
         }
+
         $progressBar->finish();
 
         fclose($file);
-
         $this->command->newLine(2);
-        $this->command->info('Zamuka data  seeded successfully!');
+        $this->command->info('Loan of Individual data seeded successfully!');
         $this->command->info("$successCount records imported, $errorCount errors.");
 
         if ($successCount > 0) {
             $this->command->info('Example of imported data:');
-            $example = Zamuka::first();
-            $this->command->info("Name: $example->name, Sector: $example->sector");
+            $example = Loan::first();
+            $this->command->info("Name: $example->individual->name, Gender: $example->individual->gender");
+        }
+
+    }
+
+    public function doneAt(?string $dateString): ?string
+    {
+        if (empty($dateString)) {
+            return null;
+        }
+
+        try {
+
+            if (preg_match('/^\d{4}$/', $dateString)) {
+                return $dateString.'-01-01';
+            }
+
+            if (preg_match('/^\d{1,2}\/\d{1,2}\/\d{4}$/', $dateString)) {
+                return Carbon::createFromFormat('d/m/Y', $dateString)->format('Y-m-d');
+            }
+
+            if (preg_match('/^\d{1,2}\/\d{1,2}\/\d{4}$/', $dateString)) {
+                return Carbon::createFromFormat('m/d/Y', $dateString)->format('Y-m-d');
+            }
+
+            return Carbon::parse($dateString)->format('Y-m-d');
+
+        } catch (Exception $e) {
+            Log::warning("Could not parse date: '$dateString' - ".$e->getMessage());
+
+            return null;
         }
     }
 }

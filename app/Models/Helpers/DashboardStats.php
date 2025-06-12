@@ -10,8 +10,8 @@ use App\Models\Empowerment;
 use App\Models\Fruit;
 use App\Models\Girinka;
 use App\Models\Group;
-use App\Models\Individual;
 use App\Models\Livestock;
+use App\Models\Loan;
 use App\Models\Malnutrition;
 use App\Models\Member;
 use App\Models\Mvtc;
@@ -458,13 +458,12 @@ final class DashboardStats
 
     public static function individualStats(): Chart
     {
-
-        $yearlyLoanPeople = Individual::selectRaw('YEAR(loan_date) as year, COUNT(DISTINCT id) as total_people')
-            ->whereNotNull('loan_date')
-            ->groupByRaw('YEAR(loan_date)')
+        $yearlyLoanPeople = Loan::selectRaw('YEAR(done_at) as year, COUNT(DISTINCT individual_id) as total_people')
+            ->whereNotNull('done_at')
+            ->groupByRaw('YEAR(done_at)')
             ->orderBy('year', 'asc')
             ->get();
-        $totalLoanPeople = Individual::count();
+        $totalLoanPeople = Loan::distinct('individual_id')->count('individual_id');
         $loanYears = $yearlyLoanPeople->pluck('year')->toArray();
         $loanCounts = $yearlyLoanPeople->pluck('total_people')->toArray();
         $chart = new Chart;
@@ -513,7 +512,7 @@ final class DashboardStats
                     'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Beneficiaries: '.$totalLoanPeople,
+                    'text' => 'Total Individuals with Loans: '.$totalLoanPeople,
                     'align' => 'left',
                 ],
                 'legend' => [
