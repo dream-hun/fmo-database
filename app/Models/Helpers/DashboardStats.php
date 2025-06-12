@@ -296,7 +296,7 @@ final class DashboardStats
                                 'total' => [
                                     'show' => true,
                                     'label' => 'Total',
-                                    'formatter' => "function() { return {$totalGirinkaBeneficiaries} }",
+                                    'formatter' => "function() { return '{$totalGirinkaBeneficiaries}'; }",
                                 ],
                             ],
                         ],
@@ -367,7 +367,7 @@ final class DashboardStats
                                 'total' => [
                                     'show' => true,
                                     'label' => 'Total',
-                                    'formatter' => "function() { return {$totalTanks} }",
+                                    'formatter' => "function() { return '{$totalTanks}'; }",
                                 ],
                             ],
                         ],
@@ -428,7 +428,7 @@ final class DashboardStats
                                 'total' => [
                                     'show' => true,
                                     'label' => 'Total',
-                                    'formatter' => "function() { return {$totalFruitBeneficiaries} }",
+                                    'formatter' => "function() { return '{$totalFruitBeneficiaries}'; }",
                                 ],
                             ],
                         ],
