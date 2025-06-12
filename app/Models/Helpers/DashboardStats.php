@@ -371,6 +371,7 @@ final class DashboardStats
                                 ],
                             ],
                         ],
+                        'size' => '65%',
                     ],
                 ],
             ]);
@@ -431,6 +432,7 @@ final class DashboardStats
                                 ],
                             ],
                         ],
+                        'size' => '65%',
                     ],
                 ],
             ]);
