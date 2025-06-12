@@ -64,16 +64,16 @@ trait CsvImport
     private function readCsvData(array $config): array
     {
         // Check if file exists and is readable
-        if (!file_exists($config['path'])) {
+        if (! file_exists($config['path'])) {
             throw new Exception('SpreadsheetReader: File ('.$config['path'].') does not exist');
         }
 
         // Try to make the file readable if it's not
-        if (!is_readable($config['path'])) {
+        if (! is_readable($config['path'])) {
             chmod($config['path'], 0644);
 
             // Check again after attempting to fix permissions
-            if (!is_readable($config['path'])) {
+            if (! is_readable($config['path'])) {
                 throw new Exception('SpreadsheetReader: File ('.$config['path'].') exists but is not readable. Please check file permissions.');
             }
         }
@@ -187,16 +187,16 @@ trait CsvImport
     private function extractCsvPreview(array $config): array
     {
         // Check if file exists and is readable
-        if (!file_exists($config['path'])) {
+        if (! file_exists($config['path'])) {
             throw new Exception('SpreadsheetReader: File ('.$config['path'].') does not exist');
         }
 
         // Try to make the file readable if it's not
-        if (!is_readable($config['path'])) {
+        if (! is_readable($config['path'])) {
             chmod($config['path'], 0644);
 
             // Check again after attempting to fix permissions
-            if (!is_readable($config['path'])) {
+            if (! is_readable($config['path'])) {
                 throw new Exception('SpreadsheetReader: File ('.$config['path'].') exists but is not readable. Please check file permissions.');
             }
         }

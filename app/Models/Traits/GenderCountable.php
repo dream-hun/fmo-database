@@ -22,8 +22,27 @@ trait GenderCountable
         return static::where('gender', 'F')->count();
     }
 
+    /**
+     * Get the total count of institution
+     */
     public static function getInstitutionCount(): int
     {
         return static::where('gender', 'I')->count();
+    }
+
+    /**
+     * Get the total count of community
+     */
+    public static function getCommunityCount(): int
+    {
+        return static::where('gender', 'C')->count();
+    }
+
+    /**
+     * Get the total count of groups
+     */
+    public static function getGroupCount(): int
+    {
+        return static::where('gender', 'G')->count();
     }
 }

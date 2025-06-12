@@ -18,7 +18,6 @@ use App\Models\SchoolFeeding;
 use App\Models\Tank;
 use App\Models\Toolkit;
 use App\Models\Training;
-use App\Models\Urgent;
 use App\Models\Zamuka;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -39,8 +38,25 @@ final class NumbersComponent extends Component
      */
     public function render(): View|Closure|string
     {
-        $total = Ecd::count() + Empowerment::sum('supported_children') + Fruit::count() + Girinka::count() + Individual::count() + Livestock::count() + Malnutrition::count() + Member::count() + Mvtc::count() + Scholarship::count() + Scholarship::count() + Scholarship::count() + SchoolFeeding::count() + Tank::count() + Toolkit::count() + Training::count() + Urgent::sum('benefiting_members') + Zamuka::count();
+        $maleCount = Ecd::getMaleCount() + Fruit::getMaleCount() + Girinka::getMaleCount()
+            + Livestock::getMaleCount() + Malnutrition::getMaleCount() + Member::getMaleCount()
+            + Mvtc::getMaleCount() + Scholarship::getMaleCount() + SchoolFeeding::getMaleCount()
+            + Toolkit::getMaleCount() + Training::getMaleCount() + Tank::getMaleCount() + Individual::getMaleCount();
 
-        return view('components.numbers-component', ['total' => $total]);
+        $femaleCount = Ecd::getFemaleCount() + Fruit::getFemaleCount() + Girinka::getFemaleCount()
+            + Livestock::getFemaleCount() + Malnutrition::getFemaleCount() + Member::getFemaleCount()
+            + Mvtc::getFemaleCount() + Scholarship::getFemaleCount() + SchoolFeeding::getFemaleCount()
+            + Toolkit::getFemaleCount() + Training::getFemaleCount() + Tank::getFemaleCount() + Individual::getFemaleCount();
+
+        $otherCount = Empowerment::total() + Individual::getGroupCount() + Tank::getCommunityCount() + Zamuka::total();
+
+        $total = $maleCount + $femaleCount + $otherCount;
+
+        return view('components.numbers-component', [
+            'total' => $total,
+            'male' => $maleCount,
+            'female' => $femaleCount,
+            'other' => $otherCount,
+        ]);
     }
 }

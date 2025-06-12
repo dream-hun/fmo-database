@@ -30,6 +30,11 @@ final class Empowerment extends Model
         'deleted_at',
     ];
 
+    public static function total()
+    {
+        return self::sum('supported_children');
+    }
+
     public function getSupportDateAttribute($value): ?string
     {
         return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
@@ -38,11 +43,6 @@ final class Empowerment extends Model
     public function setSupportDateAttribute($value): void
     {
         $this->attributes['support_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
-    }
-
-    public function total()
-    {
-        return self::sum('supported_children');
     }
 
     protected function serializeDate(DateTimeInterface $date): string

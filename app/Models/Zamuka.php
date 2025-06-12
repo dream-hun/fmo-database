@@ -33,9 +33,9 @@ final class Zamuka extends Model
         'deleted_at',
     ];
 
-    public function total(): int
+    public static function total()
     {
-        return self::count();
+        return self::sum('family_size');
     }
 
     protected function serializeDate(DateTimeInterface $date): string

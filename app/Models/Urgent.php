@@ -4,15 +4,12 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-use App\Models\Traits\GenderCountable;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
 final class Urgent extends Model
 {
-    use GenderCountable;
-
     public const GENDER_SELECT = [
         'M' => 'Male',
         'F' => 'Female',
@@ -36,11 +33,17 @@ final class Urgent extends Model
         'village',
         'phone_number',
         'support',
+        'benefiting_members',
         'support_date',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
+
+    public static function total()
+    {
+        return self::sum('benefiting_members');
+    }
 
     public function getSupportDateAttribute($value): ?string
     {
