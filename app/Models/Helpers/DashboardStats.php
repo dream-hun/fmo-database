@@ -288,19 +288,10 @@ final class DashboardStats
                     'align' => 'left',
                 ],
                 'plotOptions' => [
-
                     'pie' => [
                         'donut' => [
-                            'labels' => [
-                                'show' => true,
-                                'total' => [
-                                    'show' => true,
-                                    'label' => 'Total',
-                                    'formatter' => "function() { return '{$totalGirinkaBeneficiaries}'; }",
-                                ],
-                            ],
+                            'size' => '65%',
                         ],
-                        'size' => '65%',
                     ],
                 ],
             ]);
@@ -362,16 +353,8 @@ final class DashboardStats
                 'plotOptions' => [
                     'pie' => [
                         'donut' => [
-                            'labels' => [
-                                'show' => true,
-                                'total' => [
-                                    'show' => true,
-                                    'label' => 'Total',
-                                    'formatter' => "function() { return '{$totalTanks}'; }",
-                                ],
-                            ],
+                            'size' => '65%',
                         ],
-                        'size' => '65%',
                     ],
                 ],
             ]);
@@ -423,16 +406,8 @@ final class DashboardStats
                 'plotOptions' => [
                     'pie' => [
                         'donut' => [
-                            'labels' => [
-                                'show' => true,
-                                'total' => [
-                                    'show' => true,
-                                    'label' => 'Total',
-                                    'formatter' => "function() { return '{$totalFruitBeneficiaries}'; }",
-                                ],
-                            ],
+                            'size' => '65%',
                         ],
-                        'size' => '65%',
                     ],
                 ],
             ]);
