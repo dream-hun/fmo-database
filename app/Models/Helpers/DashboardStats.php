@@ -255,11 +255,20 @@ final class DashboardStats
         $chart = new Chart;
         $totalGirinkaBeneficiaries = Girinka::count();
 
+        // Handle empty data
+        if ($girinkaData->isEmpty()) {
+            $labels = ['No Data'];
+            $values = [1];
+        } else {
+            $labels = $girinkaData->pluck('year')->toArray();
+            $values = $girinkaData->pluck('count')->toArray();
+        }
+
         return $chart->setType('donut')
             ->setWidth('100%')
             ->setHeight(500)
-            ->setLabels($girinkaData->pluck('year')->toArray())
-            ->setDataset('Girinka Distribution', 'donut', $girinkaData->pluck('count')->toArray())
+            ->setLabels($labels)
+            ->setDataset('Girinka Distribution', 'donut', $values)
             ->setOptions([
                 'chart' => [
                     'type' => 'donut',
@@ -283,7 +292,6 @@ final class DashboardStats
 
     public static function sanitationStat(): Chart
     {
-
         $sanitation = Tank::selectRaw('gender, COUNT(*) as count')
             ->whereNotNull('gender')
             ->groupBy('gender')
@@ -297,10 +305,16 @@ final class DashboardStats
         $labels = [];
         $data = [];
 
-        foreach ($sanitation as $item) {
-            $genderLabel = $item->gender === 'M' ? 'Male' : 'Female';
-            $labels[] = $genderLabel;
-            $data[] = $item->count;
+        // Handle empty data
+        if ($sanitation->isEmpty()) {
+            $labels = ['No Data'];
+            $data = [1];
+        } else {
+            foreach ($sanitation as $item) {
+                $genderLabel = $item->gender === 'M' ? 'Male' : 'Female';
+                $labels[] = $genderLabel;
+                $data[] = $item->count;
+            }
         }
 
         $chart = new Chart;
@@ -357,14 +371,23 @@ final class DashboardStats
         $chart = new Chart;
         $totalFruitBeneficiaries = Fruit::count();
 
-        return $chart->setType('donut')
-            ->setWidth('50%')
+        // Handle empty data
+        if ($fruitsData->isEmpty()) {
+            $labels = ['No Data'];
+            $values = [1];
+        } else {
+            $labels = $fruitsData->pluck('year')->toArray();
+            $values = $fruitsData->pluck('count')->toArray();
+        }
+
+        return $chart->setType('line')
+            ->setWidth('100%')
             ->setHeight(500)
-            ->setLabels($fruitsData->pluck('year')->toArray())
-            ->setDataset('Fruits trees ', 'donut', $fruitsData->pluck('count')->toArray())
+            ->setLabels($labels)
+            ->setDataset('Fruits trees ', 'line', $values)
             ->setOptions([
                 'chart' => [
-                    'type' => 'donut',
+                    'type' => 'line',
                 ],
                 'dataLabels' => [
                     'enabled' => true,
@@ -380,7 +403,6 @@ final class DashboardStats
                     'text' => 'Total Beneficiaries: '.$totalFruitBeneficiaries.' Female beneficiaries is: '.$female.' Male beneficiaries: '.$male.' Total Institutions :'.$institution,
                     'align' => 'left',
                 ],
-
             ]);
     }
 
