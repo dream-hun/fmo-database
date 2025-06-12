@@ -7,7 +7,6 @@ namespace App\Models;
 use App\Models\Traits\GenderCountable;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class Fruit extends Model
 {
@@ -20,10 +19,6 @@ final class Fruit extends Model
     ];
 
     protected $guarded = [];
-
-
-
-
 
     protected function serializeDate(DateTimeInterface $date): string
     {

@@ -288,6 +288,7 @@ final class DashboardStats
                     'align' => 'left',
                 ],
                 'plotOptions' => [
+
                     'pie' => [
                         'donut' => [
                             'labels' => [
@@ -299,6 +300,7 @@ final class DashboardStats
                                 ],
                             ],
                         ],
+                        'size' => '65%',
                     ],
                 ],
             ]);
