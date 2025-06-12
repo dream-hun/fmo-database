@@ -287,6 +287,20 @@ final class DashboardStats
                     'text' => 'Total Beneficiaries: '.$totalGirinkaBeneficiaries.' Female beneficiaries is: '.$female.' Male beneficiaries: '.$male.' Total cows :'.$cows,
                     'align' => 'left',
                 ],
+                'plotOptions' => [
+                    'pie' => [
+                        'donut' => [
+                            'labels' => [
+                                'show' => true,
+                                'total' => [
+                                    'show' => true,
+                                    'label' => 'Total',
+                                    'formatter' => "function() { return {$totalGirinkaBeneficiaries} }",
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ]);
     }
 
@@ -402,6 +416,20 @@ final class DashboardStats
                 'subtitle' => [
                     'text' => 'Total Beneficiaries: '.$totalFruitBeneficiaries.' Female beneficiaries is: '.$female.' Male beneficiaries: '.$male.' Total Institutions :'.$institution,
                     'align' => 'left',
+                ],
+                'plotOptions' => [
+                    'pie' => [
+                        'donut' => [
+                            'labels' => [
+                                'show' => true,
+                                'total' => [
+                                    'show' => true,
+                                    'label' => 'Total',
+                                    'formatter' => "function() { return {$totalFruitBeneficiaries} }",
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ]);
     }
