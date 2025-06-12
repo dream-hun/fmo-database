@@ -358,7 +358,7 @@ final class DashboardStats
         $totalFruitBeneficiaries = Fruit::count();
 
         return $chart->setType('donut')
-            ->setWidth('100%')
+            ->setWidth('80%')
             ->setHeight(500)
             ->setLabels($fruitsData->pluck('year')->toArray())
             ->setDataset('Fruits trees ', 'donut', $fruitsData->pluck('count')->toArray())
