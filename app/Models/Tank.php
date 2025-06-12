@@ -10,9 +10,13 @@ use Illuminate\Database\Eloquent\Model;
 
 final class Tank extends Model
 {
-    public $table = 'tanks';
+    public const GENDER_SELECT = [
+        'M' => 'Male',
+        'F' => 'Female',
+        'C' => 'Community',
+    ];
 
-    protected array $dates = [
+    protected $dates = [
         'distribution_date',
         'created_at',
         'updated_at',
@@ -20,7 +24,7 @@ final class Tank extends Model
     ];
 
     protected $fillable = [
-        'names',
+        'name',
         'gender',
         'id_number',
         'sector',
@@ -28,7 +32,6 @@ final class Tank extends Model
         'village',
         'no_of_tank',
         'distribution_date',
-        'status',
         'created_at',
         'updated_at',
         'deleted_at',

@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Models\Traits\GenderCountable;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class SchoolFeeding extends Model
 {
+    use GenderCountable;
+
     public const GENDER_SELECT = [
         'F' => 'Female',
         'M' => 'Male',

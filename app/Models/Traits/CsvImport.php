@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use SpreadsheetReader;
 
-trait CsvImportTrait
+trait CsvImport
 {
     /**
      * @throws Exception
@@ -73,7 +73,7 @@ trait CsvImportTrait
 
             $processedRow = $this->processRow($row, $config['fields']);
 
-            if (! empty($processedRow)) {
+            if ($this->isValidRow($processedRow)) {
                 $data[] = $processedRow;
             }
         }
@@ -103,6 +103,14 @@ trait CsvImportTrait
         }
 
         return $processedRow;
+    }
+
+    /**
+     * Check if processed row is valid (not empty)
+     */
+    private function isValidRow(array $processedRow): bool
+    {
+        return count($processedRow) > 0 && count(array_filter($processedRow, fn ($value) => $value !== null && $value !== '')) > 0;
     }
 
     /**

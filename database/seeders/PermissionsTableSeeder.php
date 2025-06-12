@@ -78,19 +78,19 @@ final class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id' => 17,
-                'title' => 'project_create',
+                'title' => 'transaction_create',
             ],
             [
                 'id' => 18,
-                'title' => 'project_edit',
+                'title' => 'transaction_edit',
             ],
             [
                 'id' => 19,
-                'title' => 'project_delete',
+                'title' => 'transaction_show',
             ],
             [
                 'id' => 20,
-                'title' => 'project_access',
+                'title' => 'transaction_delete',
             ],
             [
                 'id' => 21,
@@ -138,23 +138,23 @@ final class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id' => 32,
-                'title' => 'vsla_create',
+                'title' => 'member_create',
             ],
             [
                 'id' => 33,
-                'title' => 'vsla_edit',
+                'title' => 'member_edit',
             ],
             [
                 'id' => 34,
-                'title' => 'vsla_show',
+                'title' => 'member_show',
             ],
             [
                 'id' => 35,
-                'title' => 'vsla_delete',
+                'title' => 'member_delete',
             ],
             [
                 'id' => 36,
-                'title' => 'vsla_access',
+                'title' => 'member_access',
             ],
             [
                 'id' => 37,
@@ -332,23 +332,23 @@ final class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id' => 80,
-                'title' => 'musa_create',
+                'title' => 'group_create',
             ],
             [
                 'id' => 81,
-                'title' => 'musa_edit',
+                'title' => 'group_edit',
             ],
             [
                 'id' => 82,
-                'title' => 'musa_show',
+                'title' => 'group_show',
             ],
             [
                 'id' => 83,
-                'title' => 'musa_delete',
+                'title' => 'group_delete',
             ],
             [
                 'id' => 84,
-                'title' => 'musa_access',
+                'title' => 'group_access',
             ],
             [
                 'id' => 85,
@@ -441,6 +441,10 @@ final class PermissionsTableSeeder extends Seeder
             [
                 'id' => 116,
                 'title' => 'empowerment_delete',
+            ],
+            [
+                'id' => 117,
+                'title' => 'transaction_access',
             ],
 
         ];

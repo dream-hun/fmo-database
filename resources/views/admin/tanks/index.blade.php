@@ -6,6 +6,10 @@
                 <a class="btn btn-success" href="{{ route('admin.tanks.create') }}">
                     {{ trans('global.add') }} {{ trans('cruds.tank.title_singular') }}
                 </a>
+                <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
+                    {{ trans('global.app_csvImport') }}
+                </button>
+                @include('csvImport.modal', ['model' => 'Tank', 'route' => 'admin.tanks.parseCsvImport'])
             </div>
         </div>
     @endcan
@@ -18,123 +22,105 @@
             <div class="table-responsive">
                 <table class=" table table-bordered table-striped table-hover datatable datatable-Tank">
                     <thead>
-                        <tr>
-                            <th width="10">
+                    <tr>
+                        <th width="10">
 
-                            </th>
-                            <th>
-                                {{ trans('cruds.tank.fields.id') }}
-                            </th>
-                            <th>
-                                {{ trans('cruds.tank.fields.names') }}
-                            </th>
-                            <th>
-                                {{trans('cruds.tank.fields.gender')}}
-                            </th>
-                            <th>
-                                {{ trans('cruds.tank.fields.id_number') }}
-                            </th>
-                            <th>
-                                {{ trans('cruds.tank.fields.sector') }}
-                            </th>
-
-
-                            <th>
-                                {{ trans('cruds.tank.fields.no_of_tank') }}
-                            </th>
-                            <th>
-                                {{ trans('cruds.tank.fields.distribution_date') }}
-                            </th>
-                            <th>
-                                {{ trans('cruds.tank.fields.status') }}
-                            </th>
-                            <th>
-                                &nbsp;
-                            </th>
-                        </tr>
+                        </th>
+                        <th>
+                            {{ trans('cruds.tank.fields.id') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.tank.fields.name') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.tank.fields.gender') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.tank.fields.id_number') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.tank.fields.sector') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.tank.fields.distribution_date') }}
+                        </th>
+                        <th>
+                            &nbsp;
+                        </th>
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach ($tanks as $key => $tank)
-                            <tr data-entry-id="{{ $tank->id }}">
-                                <td>
+                    @foreach($tanks as $key => $tank)
+                        <tr data-entry-id="{{ $tank->id }}">
+                            <td>
 
-                                </td>
-                                <td>
-                                    {{ $tank->id ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $tank->names ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $tank->gender ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $tank->id_number ?? '' }}
-                                </td>
+                            </td>
+                            <td>
+                                {{ $tank->id ?? '' }}
+                            </td>
+                            <td>
+                                {{ $tank->name ?? '' }}
+                            </td>
+                            <td>
+                                {{ App\Models\Tank::GENDER_SELECT[$tank->gender] ?? '' }}
+                            </td>
+                            <td>
+                                {{ $tank->id_number ?? '' }}
+                            </td>
+                            <td>
+                                {{ $tank->sector ?? '' }}
+                            </td>
+                            <td>
+                                {{ $tank->distribution_date ?? '' }}
+                            </td>
+                            <td>
 
-                                <td>
-                                    {{ $tank->sector ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $tank->no_of_tank ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $tank->distribution_date ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $tank->status ?? '' }}
-                                </td>
-                                <td>
+                                @can('tank_edit')
+                                    <a class="btn btn-xs btn-info" href="{{ route('admin.tanks.edit', $tank->id) }}">
+                                        {{ trans('global.edit') }}
+                                    </a>
+                                @endcan
 
+                                @can('tank_delete')
+                                    <form action="{{ route('admin.tanks.destroy', $tank->id) }}" method="POST"
+                                          onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
+                                          style="display: inline-block;">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input type="submit" class="btn btn-xs btn-danger"
+                                               value="{{ trans('global.delete') }}">
+                                    </form>
+                                @endcan
 
-                                    @can('tank_edit')
-                                        <a class="btn btn-xs btn-info" href="{{ route('admin.tanks.edit', $tank->id) }}">
-                                            {{ trans('global.edit') }}
-                                        </a>
-                                    @endcan
+                            </td>
 
-                                    @can('tank_delete')
-                                        <form action="{{ route('admin.tanks.destroy', $tank->id) }}" method="POST"
-                                            onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
-                                            style="display: inline-block;">
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="submit" class="btn btn-xs btn-danger"
-                                                value="{{ trans('global.delete') }}">
-                                        </form>
-                                    @endcan
-
-                                </td>
-
-                            </tr>
-                        @endforeach
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
 @endsection
 @section('scripts')
     @parent
     <script>
-        $(function() {
+        $(function () {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
 
             $.extend(true, $.fn.dataTable.defaults, {
                 orderCellsTop: true,
-                order: [
-                    [1, 'desc']
-                ],
+                order: [[1, 'desc']],
                 pageLength: 100,
             });
-            let table = $('.datatable-Tank:not(.ajaxTable)').DataTable({
-                buttons: dtButtons
-            })
-            $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e) {
+            let table = $('.datatable-Tank:not(.ajaxTable)').DataTable({buttons: dtButtons})
+            $('a[data-toggle="tab"]').on('shown.bs.tab click', function (e) {
                 $($.fn.dataTable.tables(true)).DataTable()
                     .columns.adjust();
             });
 
         })
+
     </script>
 @endsection

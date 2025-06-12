@@ -8,13 +8,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreMvtcRequest;
 use App\Http\Requests\Admin\UpdateMvtcRequest;
 use App\Models\Mvtc;
-use App\Models\Traits\CsvImportTrait;
+use App\Models\Traits\CsvImport;
 use Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 final class MvtcController extends Controller
 {
-    use CsvImportTrait;
+    use CsvImport;
 
     public function index()
     {

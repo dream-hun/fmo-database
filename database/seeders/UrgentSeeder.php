@@ -70,6 +70,7 @@ final class UrgentSeeder extends Seeder
                     'phone_number' => mb_trim($data[7] ?? ''),
                     'support' => mb_trim($data[8] ?? ''),
                     'support_date' => $this->parseDistributionDate($data[9] ?? ''),
+                    'benefiting_members' => mb_trim($data[10] ?? ''),
 
                 ]);
 

@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Models\Traits\GenderCountable;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
 final class Training extends Model
 {
+    use GenderCountable;
+
     public const GENDER_SELECT = [
         'M' => 'Male',
         'F' => 'Female',

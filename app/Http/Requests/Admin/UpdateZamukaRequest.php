@@ -1,14 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\Admin;
 
-use App\Models\Zamuka;
-
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
 
-class UpdateZamukaRequest extends FormRequest
+final class UpdateZamukaRequest extends FormRequest
 {
     public function authorize(): bool
     {

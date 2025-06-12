@@ -4,20 +4,21 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Models\Traits\GenderCountable;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
 final class Girinka extends Model
 {
+    use GenderCountable;
+
     public const GENDER_SELECT = [
         'M' => 'Male',
         'F' => 'Female',
     ];
 
-    public $table = 'girinkas';
-
-    protected $dates = [
+    protected array $dates = [
         'distribution_date',
         'created_at',
         'updated_at',
@@ -35,7 +36,6 @@ final class Girinka extends Model
         'pass_over',
         'telephone',
         'comment',
-        'project_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -51,17 +51,12 @@ final class Girinka extends Model
         return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
     }
 
-    public function setDistributionDateAttribute($value)
+    public function setDistributionDateAttribute($value): void
     {
         $this->attributes['distribution_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
-    public function project()
-    {
-        return $this->belongsTo(Project::class, 'project_id');
-    }
-
-    protected function serializeDate(DateTimeInterface $date)
+    protected function serializeDate(DateTimeInterface $date): string
     {
         return $date->format('Y-m-d H:i:s');
     }

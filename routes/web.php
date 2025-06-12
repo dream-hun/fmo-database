@@ -46,14 +46,19 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::post('malnutritions/process-csv-import', [MalnutritionController::class, 'processCsvImport'])->name('malnutritions.processCsvImport');
     Route::resource('malnutritions', MalnutritionController::class)->except(['show']);
 
+    Route::post('tanks/parse-csv-import', [TankController::class, 'parseCsvImport'])->name('tanks.parseCsvImport');
+    Route::post('tanks/process-csv-import', [TankController::class, 'processCsvImport'])->name('tanks.processCsvImport');
     Route::resource('tanks', TankController::class)->except(['show']);
 
     Route::resource('scholarships', ScholarshipController::class)->except(['show']);
-    Route::resource('vslas', VslaController::class)->except(['show']);
+
     Route::resource('individuals', IndividualController::class)->except(['show']);
     Route::resource('school-feedings', SchoolFeedingController::class)->except(['show']);
     Route::resource('fruits', FruitController::class)->except(['show']);
-    Route::resource('toolkits', ToolKitController::class)->except(['show']);
+
+    Route::post('toolkits/parse-csv-import', [ToolKitController::class, 'parseCsvImport'])->name('toolkits.parseCsvImport');
+    Route::post('toolkits/process-csv-import', [ToolKitController::class, 'processCsvImport'])->name('toolkits.processCsvImport');
+    Route::resource('toolkits', ToolKitController::class);
 
     Route::resource('ecds', EcdController::class)->except(['show']);
 
@@ -77,6 +82,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::post('zamukas/process-csv-import', [ZamukaController::class, 'processCsvImport'])->name('zamukas.processCsvImport');
     Route::resource('zamukas', ZamukaController::class);
 
+    Route::post('members/parse-csv-import', [App\Http\Controllers\Admin\MemberController::class, 'parseCsvImport'])->name('members.parseCsvImport');
+    Route::post('members/process-csv-import', [App\Http\Controllers\Admin\MemberController::class, 'processCsvImport'])->name('members.processCsvImport');
+    Route::resource('members', App\Http\Controllers\Admin\MemberController::class);
+
+    Route::post('transactions/parse-csv-import', [App\Http\Controllers\Admin\TransactionController::class, 'parseCsvImport'])->name('transactions.parseCsvImport');
+    Route::post('transactions/process-csv-import', [App\Http\Controllers\Admin\TransactionController::class, 'processCsvImport'])->name('transactions.processCsvImport');
+    Route::resource('transactions', App\Http\Controllers\Admin\TransactionController::class);
+
+    Route::post('groups/parse-csv-import', [App\Http\Controllers\Admin\GroupController::class, 'parseCsvImport'])->name('groups.parseCsvImport');
+    Route::post('groups/process-csv-import', [App\Http\Controllers\Admin\GroupController::class, 'processCsvImport'])->name('groups.processCsvImport');
+    Route::resource('groups', App\Http\Controllers\Admin\GroupController::class);
 
 });
 

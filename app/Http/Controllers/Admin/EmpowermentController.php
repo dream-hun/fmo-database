@@ -8,13 +8,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreEmpowermentRequest;
 use App\Http\Requests\Admin\UpdateEmpowermentRequest;
 use App\Models\Empowerment;
-use App\Models\Traits\CsvImportTrait;
+use App\Models\Traits\CsvImport;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 final class EmpowermentController extends Controller
 {
-    use CsvImportTrait;
+    use CsvImport;
 
     public function index()
     {

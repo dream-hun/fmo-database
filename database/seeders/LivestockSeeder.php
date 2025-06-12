@@ -65,7 +65,7 @@ final class LivestockSeeder extends Seeder
                     'id_number' => $this->cleanIdNumber($data[2] ?? ''),
                     'sector' => mb_trim($data[3] ?? ''),
                     'village' => mb_trim($data[4] ?? ''),
-                    'type'=>mb_trim($data[5] ?? ''),
+                    'type' => mb_trim($data[5] ?? ''),
                     'distribution_date' => $this->parseDistributionDate($data[6] ?? ''),
                     'number' => mb_trim($data[7] ?? ''),
                     'gender' => mb_trim($data[8] ?? ''),
@@ -136,4 +136,3 @@ final class LivestockSeeder extends Seeder
         }
     }
 }
-

@@ -9,16 +9,17 @@ use App\Models\Ecd;
 use App\Models\Empowerment;
 use App\Models\Fruit;
 use App\Models\Girinka;
-use App\Models\Goat;
+use App\Models\Group;
 use App\Models\Individual;
+use App\Models\Livestock;
 use App\Models\Malnutrition;
+use App\Models\Member;
 use App\Models\Mvtc;
 use App\Models\Scholarship;
 use App\Models\Tank;
 use App\Models\Toolkit;
 use App\Models\Training;
 use App\Models\Urgent;
-use App\Models\Vsla;
 use DB;
 
 final class DashboardStats
@@ -293,7 +294,6 @@ final class DashboardStats
         $female = Tank::where('gender', 'F')->count();
         $totalTanks = Tank::count();
 
-        // Prepare data for chart
         $labels = [];
         $data = [];
 
@@ -384,33 +384,44 @@ final class DashboardStats
             ]);
     }
 
-    /*public static function goatDistribution(): Chart
+    public static function LivestockDistribution(): Chart
     {
-        $totalBeneficiaries = (int) Goat::count();
+        $totalBeneficiaries = Livestock::count();
 
-        $data = Goat::query()
-            ->selectRaw('CASE WHEN gender = "M" THEN "Male" ELSE "Female" END as gender, SUM(number_of_goats) as total')
-            ->whereIn('gender', ['M', 'F'])
-            ->groupBy('gender')
-            ->orderBy('gender')
+        $data = Livestock::query()
+            ->select('type', DB::raw('SUM(number) as total'))
+            ->whereNotNull('type')
+            ->where('type', '!=', '')
+            ->groupBy('type')
+            ->orderBy('total', 'desc')
             ->get();
 
-        $labels = $data->pluck('gender')->toArray();
-        $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
+        if ($data->isEmpty()) {
 
-        $totalGoats = (int) Goat::sum('number_of_goats');
+            $labels = ['No Data'];
+            $values = [1];
+            $typeBreakdown = 'No livestock data available';
+        } else {
+            $labels = $data->pluck('type')->map(function ($type) {
+                return ucfirst(mb_trim($type)); // Capitalize and trim
+            })->toArray();
 
-        // Count of male and female beneficiaries
-        $maleBeneficiaries = (int) Goat::where('gender', 'M')->count();
-        $femaleBeneficiaries = (int) Goat::where('gender', 'F')->count();
+            $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
+
+            $typeBreakdown = $data->pluck('total', 'type')->map(function ($count, $type) {
+                return ucfirst(mb_trim($type)).': '.number_format((int) $count);
+            })->implode(' | ');
+        }
+
+        $totalLivestock = (int) Livestock::sum('number');
 
         return (new Chart)
             ->setType('donut')
             ->setWidth('100%')
             ->setHeight(500)
             ->setLabels($labels)
-            ->setDataset('Goats by Gender', 'donut', $values)
-            ->setColors(['#B2071B', '#657278'])
+            ->setDataset('Livestock Distribution', 'donut', $values)
+            ->setColors(['#3B82F6', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'])
             ->setOptions([
                 'chart' => [
                     'type' => 'donut',
@@ -429,24 +440,21 @@ final class DashboardStats
                     'show' => true,
                     'position' => 'bottom',
                 ],
-
                 'title' => [
-                    'text' => 'Beneficiaries who benefited in Goat Distribution',
+                    'text' => 'Small Livestock Distribution',
                     'align' => 'left',
                 ],
                 'subtitle' => [
                     'text' => 'Total Beneficiaries: '.number_format($totalBeneficiaries).
-                        '   Total Goats: '.number_format($totalGoats).
-                        '   Male Beneficiaries: '.number_format($maleBeneficiaries).
-                        '   Female Beneficiaries: '.number_format($femaleBeneficiaries),
+                        ' | Total Livestock: '.number_format($totalLivestock).
+                        ($typeBreakdown ? ' | '.$typeBreakdown : ''),
                     'align' => 'left',
                     'style' => [
                         'fontSize' => '14px',
-                        'margin' => '10px',
                     ],
                 ],
             ]);
-    }*/
+    }
 
     public static function individualStats(): Chart
     {
@@ -586,10 +594,10 @@ final class DashboardStats
 
     public static function toolKit(): Chart
     {
-        $mvtcData = Toolkit::selectRaw('toolkit_received, COUNT(*) as count')
-            ->whereNotNull('toolkit_received')
-            ->groupBy('toolkit_received')
-            ->pluck('count', 'toolkit_received')
+        $mvtcData = Toolkit::selectRaw('business_name, COUNT(*) as count')
+            ->whereNotNull('business_name')
+            ->groupBy('business_name')
+            ->pluck('count', 'business_name')
             ->toArray();
 
         $totalToolkits = Toolkit::count();
@@ -625,13 +633,13 @@ final class DashboardStats
                 ],
                 'xaxis' => [
                     'title' => [
-                        'text' => 'Toolkits',
+                        'text' => 'Number of beneficiaries received toolkits',
                     ],
                     'categories' => $toolkits,
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'Number of beneficiaries received toolkits',
+                        'text' => 'Toolkits',
                     ],
                 ],
                 'title' => [
@@ -657,31 +665,32 @@ final class DashboardStats
 
     }
 
-    public static function vslaLoanData(): Chart
+    public static function groupMemberData(): Chart
     {
-        $vslaData = Vsla::select(DB::raw('TRIM(vsla) as vsla'), DB::raw('count(*) as total'))
-            ->whereNotNull('vsla')
-            ->where('vsla', '!=', '')
-            ->groupBy('vsla')
-            ->orderBy('vsla')
-            ->get();
-        $males = Vsla::where('gender', 'M')->count();
-        $females = Vsla::where('gender', 'F')->count();
 
-        $vslaNames = $vslaData->pluck('vsla')->unique()->values()->toArray();
-        $totals = $vslaData->pluck('total')->toArray();
-        $totalVslas = array_sum($totals);
+        $groupData = Group::withCount('members')
+            ->having('members_count', '>', 0)
+            ->orderBy('name')
+            ->get();
+
+        $males = Member::where('gender', 'M')->count();
+        $females = Member::where('gender', 'F')->count();
+
+        // Extract data for chart
+        $groupNames = $groupData->pluck('name')->toArray();
+        $memberCounts = $groupData->pluck('members_count')->toArray();
+        $totalMembers = array_sum($memberCounts);
 
         $chart = new Chart();
 
         return $chart->setType('bar')
             ->setWidth('100%')
             ->setHeight(500)
-            ->setLabels($vslaNames)
+            ->setLabels($groupNames)
             ->setSeries([
                 [
                     'name' => 'Total Members',
-                    'data' => $totals,
+                    'data' => $memberCounts,
                 ],
             ])
             ->setColors(['#657278'])
@@ -703,19 +712,19 @@ final class DashboardStats
                     'title' => [
                         'text' => 'Number of Members',
                     ],
-                    'categories' => $vslaNames,
+                    'categories' => $groupNames,
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'VSLA Groups',
+                        'text' => 'Groups',
                     ],
                 ],
                 'title' => [
-                    'text' => 'Total VSLA Members by Group',
+                    'text' => 'Total Members by VSLA',
                     'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Members Across All VSLAs: '.$totalVslas.' Female members '.$females.' Male members '.$males,
+                    'text' => 'Total Members Across All Groups: '.$totalMembers.' | Female: '.$females.' | Male: '.$males,
                     'align' => 'left',
                 ],
                 'legend' => [
@@ -800,17 +809,15 @@ final class DashboardStats
 
     public static function trainingChart(): Chart
     {
-        // Get training data with proper structure
+
         $trainingData = Training::select('training_given', DB::raw('count(*) as total'))
             ->whereNotNull('training_given')
             ->groupBy('training_given')
             ->get();
 
-        // Extract labels (training names) and data (counts)
         $trainingLabels = $trainingData->pluck('training_given')->toArray();
         $trainingCounts = $trainingData->pluck('total')->toArray();
 
-        // Gender statistics
         $males = Training::where('gender', 'M')->count();
         $females = Training::where('gender', 'F')->count();
         $totalTrainees = Training::count();
@@ -820,8 +827,8 @@ final class DashboardStats
         return $chart->setType('bar')
             ->setWidth('100%')
             ->setHeight(500)
-            ->setLabels($trainingLabels) // Training names as labels
-            ->setDataset('Number of Trainees', 'bar', $trainingCounts) // Counts as data
+            ->setLabels($trainingLabels)
+            ->setDataset('Number of Trainees', 'bar', $trainingCounts)
             ->setColors(['#657278'])
             ->setOptions([
                 'chart' => [

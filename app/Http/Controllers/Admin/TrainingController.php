@@ -8,13 +8,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreTrainingRequest;
 use App\Http\Requests\Admin\UpdateTrainingRequest;
 use App\Models\Training;
-use App\Models\Traits\CsvImportTrait;
+use App\Models\Traits\CsvImport;
 use Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 final class TrainingController extends Controller
 {
-    use CsvImportTrait;
+    use CsvImport;
 
     public function index()
     {

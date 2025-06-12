@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,7 +20,7 @@ return new class extends Migration
             $table->string('representer')->nullable();
             $table->string('representer_phone')->nullable();
             $table->date('mou_signed_at')->nullable();
-            $table->integer('number_of_members')->nullable();
+            $table->string('number_of_members')->nullable();
             $table->timestamps();
         });
     }

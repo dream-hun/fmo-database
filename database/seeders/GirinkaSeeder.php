@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Girinka;
-use App\Models\Project;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 final class GirinkaSeeder extends Seeder
 {
@@ -19,134 +18,122 @@ final class GirinkaSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = database_path('seeders/Data/Girinka.csv');
-
-        echo "Looking for CSV file at: {$csvFile}\n";
-
-        if (! file_exists($csvFile)) {
-            echo "ERROR: Girinka CSV file not found: {$csvFile}\n";
+        $this->command->info('Starting to read data from csv file');
+        $csvPath = database_path('seeders/Data/Girinka.csv');
+        if (! file_exists($csvPath)) {
+            $this->command->error('CSV file not found: '.$csvPath);
 
             return;
         }
 
-        echo "CSV file found!\n";
+        // Read CSV file
+        $file = fopen($csvPath, 'r');
 
-        // Get default project ID (assuming there's at least one project in the database)
-        $defaultProjectId = Project::first()?->id;
-        echo 'Default Project ID: '.($defaultProjectId ?? 'NULL')."\n";
+        // Count the number of rows for the progress bar (excluding header)
+        $rowCount = count(file($csvPath)) - 1;
+        $this->command->info("Found $rowCount records to import.");
+        // Create a progress bar
+        $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
+        $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
+        $progressBar->start();
 
-        // If no project exists, create a default one
-        if ($defaultProjectId === null) {
-            $project = Project::create([
-                'name' => 'Default Project',
-                'description' => 'Created by GirinkaSeeder',
-            ]);
-            $defaultProjectId = $project->id;
-            echo "Created default project with ID: {$defaultProjectId}\n";
-        }
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('girinkas')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        // Read and parse CSV file
-        $this->seedFromCsv($csvFile, $defaultProjectId);
-    }
-
-    /**
-     * Seed girinkas data from CSV file
-     *
-     * @param  string  $csvFile  Path to CSV file
-     * @param  int|null  $projectId  Default project ID
-     */
-    private function seedFromCsv(string $csvFile, ?int $projectId = null): void
-    {
-        $handle = fopen($csvFile, 'r');
-
-        if ($handle === false) {
-            echo "ERROR: Unable to open CSV file: {$csvFile}\n";
-
-            return;
-        }
-
-        echo "Successfully opened CSV file\n";
-
-        // Count total rows for progress calculation
-        $totalRows = 0;
-        while (fgetcsv($handle) !== false) {
-            $totalRows++;
-        }
-        rewind($handle);
-
-        // Skip header row
-        $header = fgetcsv($handle);
-        $totalRows--; // Exclude header from count
-
-        echo "Found {$totalRows} records to process\n";
-        echo "Starting import...\n";
-
-        // Process each row
-        $count = 0;
+        $row = 0;
+        $successCount = 0;
         $errorCount = 0;
-        $lastProgressPercent = 0;
+        while (($data = fgetcsv($file)) !== false) {
 
-        while (($data = fgetcsv($handle)) !== false) {
-            // Skip empty rows
-            if (empty($data[1])) {
+            if ($row === 0) {
+                $row++;
+
                 continue;
             }
 
             try {
-                $this->createGirinkaFromCsvRow($data, $projectId);
-                $count++;
+                if (empty(mb_trim($data[1] ?? ''))) {
+                    $row++;
+                    $progressBar->advance();
 
-                // Show progress
-                $currentPercent = floor(($count + $errorCount) / $totalRows * 100);
-                if ($currentPercent >= $lastProgressPercent + 5) {
-                    echo "Progress: {$currentPercent}% ({$count} records imported)\n";
-                    $lastProgressPercent = $currentPercent;
+                    continue;
                 }
+
+                // Create the individual record
+                Girinka::create([
+                    'name' => $data[1] ?? null,
+                    'gender' => $this->normalizeGender($data[2] ?? null),
+                    'id_number' => $this->cleanIdNumber(mb_ltrim($data[3] ?? '', '*')),
+                    'sector' => $data[4] ?? null,
+                    'village' => mb_trim($data[5] ?? ''),
+                    'cell' => mb_trim($data[6] ?? null),
+                    'distribution_date' => $this->parseDistributionDate(mb_trim($data[7] ?? null)),
+                    'm_status' => mb_rtrim($data[8] ?? null),
+                    'pass_over' => mb_trim($data[9] ?? null),
+                    'telephone' => $this->cleanPhoneNumber(mb_trim($data[10])),
+                    'comment' => mb_trim($data[11]),
+
+                ]);
+
+                $successCount++;
             } catch (Exception $e) {
                 $errorCount++;
-                // Log error but don't show in console to keep output clean
-                $rowNum = $count + $errorCount;
-                Log::error("Error seeding girinka on row {$rowNum}: {$e->getMessage()}", [
-                    'data' => $data,
-                ]);
+                if ($errorCount <= 5) {
+                    $this->command->error("Error processing row $row: ".$e->getMessage());
+                } elseif ($errorCount === 6) {
+                    $this->command->error('Additional errors exist but are not being displayed...');
+                }
             }
+
+            $progressBar->advance();
+            $row++;
         }
 
-        fclose($handle);
-        echo "\nImport completed:\n";
-        echo "✓ {$count} girinka records successfully imported\n";
+        $progressBar->finish();
 
-        if ($errorCount > 0) {
-            echo "✗ {$errorCount} records failed (see logs for details)\n";
+        fclose($file);
+        $this->command->newLine(2);
+        $this->command->info('Girinka data seeded successfully!');
+        $this->command->info("$successCount records imported, $errorCount errors.");
+
+        if ($successCount > 0) {
+            $this->command->info('Example of imported data:');
+            $example = Girinka::first();
+            $this->command->info("Name: $example->name, Sector: $example->sector, Gender: $example->gender");
         }
+
     }
 
-    /**
-     * Create a girinka record from CSV row data
-     *
-     * @param  array  $data  CSV row data
-     * @param  int|null  $projectId  Default project ID
-     */
-    private function createGirinkaFromCsvRow(array $data, ?int $projectId = null): void
+    protected function normalizeGender(?string $gender): ?string
     {
-        // Map CSV columns to model attributes
-        $girinkaData = [
-            'uuid' => Str::uuid(),
-            'names' => $data[1] ?? null,
-            'gender' => $data[2] ?? null,
-            'id_number' => $this->cleanIdNumber($data[3] ?? null),
-            'sector' => $data[4] ?? null,
-            'village' => $data[5] ?? null,
-            'cell' => $data[6] ?? null,
-            'distribution_date' => $this->parseDistributionDate($data[7] ?? null),
-            'm_status' => $data[8] ?? null,
-            'pass_over' => ! empty($data[9]) ? $data[9] : null,
-            'telephone' => $data[10] ?? null,
-            'comment' => $data[11] ?? null,
-            'project_id' => $projectId,
-        ];
+        if (empty($gender)) {
+            return null;
+        }
 
-        Girinka::create($girinkaData);
+        return mb_strtoupper($gender) === 'F' ? 'Female' : 'Male';
+    }
+
+    protected function cleanPhoneNumber(?string $phone): ?string
+    {
+        if (empty($phone)) {
+            return null;
+        }
+
+        // Remove any non-digit characters
+        $phone = preg_replace('/[^0-9]/', '', $phone);
+
+        // If it starts with 25, remove it
+        if (str_starts_with($phone, '25')) {
+            $phone = mb_substr($phone, 2);
+        }
+
+        // If it's not 9 or 10 digits, return null
+        if (! in_array(mb_strlen($phone), [9, 10])) {
+            return null;
+        }
+
+        return $phone;
     }
 
     /**

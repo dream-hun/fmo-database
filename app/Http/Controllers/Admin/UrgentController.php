@@ -7,14 +7,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreUrgentRequest;
 use App\Http\Requests\Admin\UpdateUrgentRequest;
-use App\Models\Traits\CsvImportTrait;
+use App\Models\Traits\CsvImport;
 use App\Models\Urgent;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 final class UrgentController extends Controller
 {
-    use CsvImportTrait;
+    use CsvImport;
 
     public function index()
     {

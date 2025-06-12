@@ -14,7 +14,7 @@
          </div>
      </div>
      <!-- ./col -->
-     <div class="col-lg-4 col-6">
+     {{--<div class="col-lg-4 col-6">
          <!-- small box -->
          <div class="small-box bg-gradient-primary">
              <div class="inner">
@@ -43,7 +43,7 @@
              </div>
              <a href="#" class="small-box-footer">&nbsp;</a>
          </div>
-     </div>
+     </div>--}}
      <!-- ./col -->
 
  </div>

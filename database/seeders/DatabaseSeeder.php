@@ -14,7 +14,6 @@ final class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            ProjectSeeder::class,
             UsersTableSeeder::class,
             RolesTableSeeder::class,
             PermissionsTableSeeder::class,
@@ -31,11 +30,13 @@ final class DatabaseSeeder extends Seeder
             EcdSeeder::class,
             UrgentSeeder::class,
             MvtcSeeder::class,
-            VslaSeeder::class,
             TrainingSeeder::class,
             EmpowermentSeeder::class,
             ZamukaSeeder::class,
             LivestockSeeder::class,
+            GroupSeeder::class,
+            MemberSeeder::class,
+            TransactionSeeder::class,
         ]);
 
     }

@@ -1,21 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
 use App\Http\Requests\Admin\StoreZamukaRequest;
 use App\Http\Requests\Admin\UpdateZamukaRequest;
-use App\Models\Traits\CsvImportTrait;
+use App\Models\Traits\CsvImport;
 use App\Models\Zamuka;
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
-class ZamukaController extends Controller
+final class ZamukaController extends Controller
 {
-    use CsvImportTrait;
+    use CsvImport;
 
     public function index()
     {
@@ -69,6 +68,4 @@ class ZamukaController extends Controller
 
         return back();
     }
-
-
 }

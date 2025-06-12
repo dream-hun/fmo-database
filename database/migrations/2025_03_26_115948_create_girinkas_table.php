@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('girinkas', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
-            $table->string('names');
+            $table->string('name');
             $table->string('gender')->nullable();
             $table->string('id_number')->nullable();
             $table->string('sector')->nullable();
@@ -27,7 +26,6 @@ return new class extends Migration
             $table->string('pass_over')->nullable();
             $table->string('telephone')->nullable();
             $table->longText('comment')->nullable();
-            $table->foreignId('project_id')->nullable()->constrained('projects')->nullOnDelete();
             $table->timestamps();
         });
     }

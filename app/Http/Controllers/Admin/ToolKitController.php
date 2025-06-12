@@ -5,14 +5,17 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\EditToolKitRequest;
-use App\Http\Requests\Admin\StoreToolKitRequest;
+use App\Http\Requests\Admin\StoreToolkitRequest;
+use App\Http\Requests\Admin\UpdateToolKitRequest;
 use App\Models\Toolkit;
+use App\Models\Traits\CsvImport;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 final class ToolKitController extends Controller
 {
+    use CsvImport;
+
     public function index()
     {
         abort_if(Gate::denies('toolkit_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -29,33 +32,40 @@ final class ToolKitController extends Controller
         return view('admin.toolkits.create');
     }
 
-    public function store(StoreToolKitRequest $request)
+    public function store(StoreToolkitRequest $request)
     {
-        $toolKit = Toolkit::create($request->all());
+        $toolkit = Toolkit::create($request->all());
 
-        return to_route('admin.toolkits.index')->with('success', $toolKit->name.' has been created.');
+        return redirect()->route('admin.toolkits.index');
     }
 
-    public function edit(Toolkit $toolKit)
+    public function edit(Toolkit $toolkit)
     {
         abort_if(Gate::denies('toolkit_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.toolkits.edit', compact('toolKit'));
+        return view('admin.toolkits.edit', compact('toolkit'));
     }
 
-    public function update(EditToolKitRequest $request, Toolkit $toolKit)
+    public function update(UpdateToolKitRequest $request, Toolkit $toolkit)
     {
-        $toolKit->update($request->all());
+        $toolkit->update($request->all());
 
-        return to_route('admin.toolkits.index')->with('success', $toolKit->name.'  data has been updated.');
+        return redirect()->route('admin.toolkits.index');
     }
 
-    public function destroy(Toolkit $toolKit)
+    public function show(Toolkit $toolkit)
+    {
+        abort_if(Gate::denies('toolkit_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        return view('admin.toolkits.show', compact('toolkit'));
+    }
+
+    public function destroy(Toolkit $toolkit)
     {
         abort_if(Gate::denies('toolkit_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $toolKit->delete();
+        $toolkit->delete();
 
-        return to_route('admin.toolkits.index')->with('success', $toolKit->name.' data has been deleted.');
+        return back();
     }
 }

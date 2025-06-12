@@ -8,13 +8,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreLivestockRequest;
 use App\Http\Requests\Admin\UpdateLivestockRequest;
 use App\Models\Livestock;
-use App\Models\Traits\CsvImportTrait;
+use App\Models\Traits\CsvImport;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 final class LivestockController extends Controller
 {
-    use CsvImportTrait;
+    use CsvImport;
 
     public function index()
     {

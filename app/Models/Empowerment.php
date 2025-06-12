@@ -6,13 +6,10 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use DateTimeInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 final class Empowerment extends Model
 {
-    use HasFactory;
-
     public $table = 'empowerments';
 
     protected array $dates = [
@@ -41,6 +38,11 @@ final class Empowerment extends Model
     public function setSupportDateAttribute($value): void
     {
         $this->attributes['support_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+    }
+
+    public function total()
+    {
+        return self::sum('supported_children');
     }
 
     protected function serializeDate(DateTimeInterface $date): string

@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Models\Traits\GenderCountable;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class Fruit extends Model
 {
-    public $table = 'fruits';
+    use GenderCountable;
 
     protected array $dates = [
         'created_at',

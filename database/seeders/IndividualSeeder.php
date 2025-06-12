@@ -8,96 +8,101 @@ use App\Models\Individual;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 final class IndividualSeeder extends Seeder
 {
-    protected $csvFile = 'database/seeders/Data/Individual.csv';
-
-    protected $projectName = 'Individual Loans';
-
-    protected $successCount = 0;
-
-    protected $errorCount = 0;
-
-    protected $totalRows = 0;
-
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-
-        if (! file_exists($this->csvFile)) {
-            $this->command->error("CSV file not found: {$this->csvFile}");
+        $this->command->info('Seeding Individual Microcredit data from CSV...');
+        $csvPath = database_path('seeders/Data/Individual.csv');
+        if (! file_exists($csvPath)) {
+            $this->command->error('CSV file not found: '.$csvPath);
 
             return;
         }
 
-        // Count total rows for progress tracking
-        $this->totalRows = count(file($this->csvFile)) - 1; // -1 for header row
-
-        // Create progress bar
-        $progress = $this->command->getOutput()->createProgressBar($this->totalRows);
-        $progress->setFormat(
-            "%current%/%max% [%bar%] %percent:3s%%\n"
-            ."Speed: %speed% records/sec, Memory: %memory:6s%\n"
-            .'Elapsed: %elapsed:6s%, Remaining: %remaining:-6s%'
-        );
-
-        $this->command->info("Starting to import {$this->totalRows} individuals...");
-        $progress->start();
-
         // Read CSV file
-        $handle = fopen($this->csvFile, 'r');
-        $headers = fgetcsv($handle); // Skip header row
+        $file = fopen($csvPath, 'r');
 
-        while (($row = fgetcsv($handle)) !== false) {
+        // Count the number of rows for the progress bar (excluding header)
+        $rowCount = count(file($csvPath)) - 1;
+        $this->command->info("Found $rowCount records to import.");
+
+        // Create a progress bar
+        $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
+        $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
+        $progressBar->start();
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('individuals')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+        $row = 0;
+        $successCount = 0;
+        $errorCount = 0;
+
+        while (($data = fgetcsv($file)) !== false) {
+
+            if ($row === 0) {
+                $row++;
+
+                continue;
+            }
+
             try {
-                // Map CSV columns to data array
-                $data = array_combine($headers, $row);
-                $progress->advance();
+                if (empty(mb_trim($data[1] ?? ''))) {
+                    $row++;
+                    $progressBar->advance();
+
+                    continue;
+                }
 
                 // Create the individual record
                 Individual::create([
-                    'uuid' => Str::uuid(),
-                    'project_id' => 1,
-                    'name' => $data['Name'] ?? null,
-                    'id_number' => mb_ltrim($data['ID'] ?? '', '*'),
-                    'business_name' => $data['Business name'] ?? null,
-                    'telephone' => $this->cleanPhoneNumber($data['Telephone']),
-                    'guardian' => $data['Guarantor '] ?? null,
-                    'guardian_phone' => $this->cleanPhoneNumber($data['Guarantor  Phone']),
-                    'sector' => $data['Sector'] ?? null,
-                    'cell' => $data['Cell'] ?? null,
-                    'village' => $data['Village'] ?? null,
-                    'loan_amount' => $this->cleanAmount($data['Loan Amount']),
-                    'loan_date' => $this->parseDate($data['Loan Date']),
-                    'gender' => $this->normalizeGender($data['Gender']),
+                    'name' => $data[1] ?? null,
+                    'id_number' => mb_ltrim($data[2] ?? '', '*'),
+                    'business_name' => $data[3] ?? null,
+                    'telephone' => $this->cleanPhoneNumber($data[4] ?? ''),
+                    'guardian' => $data[5] ?? null,
+                    'guardian_phone' => $this->cleanPhoneNumber($data[6] ?? ''),
+                    'sector' => $data[7] ?? null,
+                    'cell' => $data[8] ?? null,
+                    'village' => $data[9] ?? null,
+                    'loan_amount' => $this->cleanAmount($data[10]),
+                    'loan_date' => $this->parseDate($data[11]),
+                    'gender' => $this->normalizeGender($data[12]),
                 ]);
 
-                $this->successCount++;
+                $successCount++;
             } catch (Exception $e) {
-                $this->errorCount++;
-                Log::error('Error importing individual: '.$e->getMessage());
-                Log::error('Row data: '.json_encode($data ?? []));
+                $errorCount++;
+                if ($errorCount <= 5) {
+                    $this->command->error("Error processing row $row: ".$e->getMessage());
+                } elseif ($errorCount === 6) {
+                    $this->command->error('Additional errors exist but are not being displayed...');
+                }
             }
+
+            $progressBar->advance();
+            $row++;
         }
 
-        fclose($handle);
-        $progress->finish();
+        $progressBar->finish();
 
-        // Show final statistics
+        fclose($file);
         $this->command->newLine(2);
-        $this->command->info('✓ Import completed:');
-        $this->command->info("  - Successfully imported: {$this->successCount}");
-        $this->command->info("  - Errors: {$this->errorCount}");
+        $this->command->info('Scholarship data seeded successfully!');
+        $this->command->info("$successCount records imported, $errorCount errors.");
 
-        if ($this->errorCount > 0) {
-            $this->command->warn('  - Check the Laravel log file for error details.');
+        if ($successCount > 0) {
+            $this->command->info('Example of imported data:');
+            $example = Individual::first();
+            $this->command->info("Name: $example->name, Bussiness Name: $example->business_name, Gender: $example->gender");
         }
-        $this->command->newLine();
     }
 
     /**

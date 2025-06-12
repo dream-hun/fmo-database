@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\Project;
 use App\Models\Tank;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 final class TankSeeder extends Seeder
 {
@@ -19,138 +18,89 @@ final class TankSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = database_path('seeders/Data/Tanks.csv');
-
-        echo "Looking for CSV file at: {$csvFile}\n";
-
-        if (! file_exists($csvFile)) {
-            echo "ERROR: Tanks CSV file not found: {$csvFile}\n";
+        $this->command->info('Starting import from csv file');
+        $csvPath = database_path('seeders/Data/Tanks.csv');
+        if (! file_exists($csvPath)) {
+            $this->command->error('CSV file not found: '.$csvPath);
 
             return;
         }
 
-        echo "CSV file found!\n";
+        $file = fopen($csvPath, 'r');
 
-        // Get default project ID (assuming there's at least one project in the database)
-        $defaultProjectId = Project::first()?->id;
-        echo 'Default Project ID: '.($defaultProjectId ?? 'NULL')."\n";
+        $rowCount = count(file($csvPath)) - 1;
+        $this->command->info("Found $rowCount records to import.");
+        $progressBar = $this->command->getOutput()->createProgressBar($rowCount);
+        $progressBar->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% %memory:6s%');
+        $progressBar->start();
 
-        // If no project exists, create a default one
-        if ($defaultProjectId === null) {
-            $project = Project::create([
-                'name' => 'Default Project',
-                'description' => 'Created by TankSeeder',
-            ]);
-            $defaultProjectId = $project->id;
-            echo "Created default project with ID: {$defaultProjectId}\n";
-        }
-
-        // Read and parse CSV file
-        $this->seedFromCsv($csvFile, $defaultProjectId);
-    }
-
-    /**
-     * Seed tanks data from CSV file
-     *
-     * @param  string  $csvFile  Path to CSV file
-     * @param  int|null  $projectId  Default project ID
-     */
-    private function seedFromCsv(string $csvFile, ?int $projectId = null): void
-    {
-        $handle = fopen($csvFile, 'r');
-
-        if ($handle === false) {
-            echo "ERROR: Unable to open CSV file: {$csvFile}\n";
-
-            return;
-        }
-
-        echo "Successfully opened CSV file\n";
-
-        // Count total rows for progress calculation
-        $totalRows = 0;
-        while (fgetcsv($handle) !== false) {
-            $totalRows++;
-        }
-        rewind($handle);
-
-        // Skip header rows (there are 2 header rows in this CSV)
-        fgetcsv($handle); // Skip first header row
-        fgetcsv($handle); // Skip second header row
-        $totalRows -= 2; // Exclude header rows from count
-
-        echo "Found {$totalRows} records to process\n";
-        echo "Starting import...\n";
-
-        // Process each row
-        $count = 0;
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('tanks')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        $row = 0;
+        $successCount = 0;
         $errorCount = 0;
-        $lastProgressPercent = 0;
 
-        while (($data = fgetcsv($handle)) !== false) {
-            // Skip empty rows
-            if (empty($data[1])) {
+        while (($data = fgetcsv($file)) !== false) {
+
+            if ($row === 0) {
+                $row++;
+
                 continue;
             }
 
             try {
-                $this->createTankFromCsvRow($data, $projectId);
-                $count++;
 
-                // Show progress
-                $currentPercent = floor(($count + $errorCount) / $totalRows * 100);
-                if ($currentPercent >= $lastProgressPercent + 5) {
-                    echo "Progress: {$currentPercent}% ({$count} records imported)\n";
-                    $lastProgressPercent = $currentPercent;
+                if (empty(mb_trim($data[1] ?? ''))) {
+                    $row++;
+                    $progressBar->advance();
+
+                    continue;
                 }
+
+                Tank::create([
+
+                    'name' => mb_trim($data[1] ?? ''),
+                    'gender' => $this->normalizeGender(mb_trim($data[2] ?? '')),
+                    'id_number' => $this->cleanIdNumber($data[3] ?? ''),
+                    'sector' => mb_trim($data[4] ?? ''),
+                    'cell' => mb_trim($data[5] ?? ''),
+                    'village' => mb_trim($data[6] ?? ''),
+                    'no_of_tank' => mb_trim($data[7] ?? ''),
+                    'distribution_date' => $this->parseDistributionDate(mb_trim($data[8] ?? '')),
+                    'comment' => mb_trim($data[10] ?? ''),
+
+                ]);
+
+                $successCount++;
             } catch (Exception $e) {
                 $errorCount++;
-                // Log error but don't show in console to keep output clean
-                $rowNum = $count + $errorCount;
-                Log::error("Error seeding tank on row {$rowNum}: {$e->getMessage()}", [
-                    'data' => $data,
-                ]);
+                if ($errorCount <= 5) {
+                    $this->command->error("Error processing row $row: ".$e->getMessage());
+                } elseif ($errorCount === 6) {
+                    $this->command->error('Additional errors exist but are not being displayed...');
+                }
             }
+
+            $progressBar->advance();
+            $row++;
         }
 
-        fclose($handle);
-        echo "\nImport completed:\n";
-        echo "✓ {$count} tank records successfully imported\n";
+        $progressBar->finish();
 
-        if ($errorCount > 0) {
-            echo "✗ {$errorCount} records failed (see logs for details)\n";
+        fclose($file);
+
+        $this->command->newLine(2);
+        $this->command->info('Water tanks data seeded successfully!');
+        $this->command->info("$successCount records imported, $errorCount errors.");
+
+        if ($successCount > 0) {
+            $this->command->info('Example of imported data:');
+            $example = Tank::first();
+            $this->command->info("Name: $example->names, Sector: $example->sector, Support: $example->distribution_date");
         }
     }
 
-    /**
-     * Create a tank record from CSV row data
-     *
-     * @param  array  $data  CSV row data
-     * @param  int|null  $projectId  Default project ID
-     */
-    private function createTankFromCsvRow(array $data, ?int $projectId = null): Tank
-    {
-        // Map CSV columns to model attributes
-        $tankData = [
-            'uuid' => Str::uuid(),
-            'project_id' => $projectId,
-            'names' => $data[1] ?? null,
-            'gender' => $this->normalizeGender($data[2] ?? null),
-            'id_number' => $this->cleanIdNumber($data[3] ?? null),
-            'sector' => $data[4] ?? null,
-            'cell' => $data[5] ?? null,
-            'village' => $data[6] ?? null,
-            'no_of_tank' => $data[7] ?? null,
-            'distribution_date' => $this->parseDistributionDate($data[8] ?? null),
-            'comment' => $data[9] ?? null,
-        ];
-
-        return Tank::create($tankData);
-    }
-
-    /**
-     * Clean ID number by removing asterisk prefix
-     */
     private function cleanIdNumber(?string $idNumber): ?string
     {
         if (empty($idNumber)) {
@@ -160,9 +110,6 @@ final class TankSeeder extends Seeder
         return mb_ltrim($idNumber, '*');
     }
 
-    /**
-     * Normalize gender value to match the model's expected format
-     */
     private function normalizeGender(?string $gender): ?string
     {
         if (empty($gender)) {
@@ -171,7 +118,6 @@ final class TankSeeder extends Seeder
 
         $gender = mb_strtoupper(mb_trim($gender));
 
-        // Handle variations of gender values
         if (in_array($gender, ['MALE', 'M'])) {
             return 'M';
         }
@@ -182,9 +128,6 @@ final class TankSeeder extends Seeder
         return $gender;
     }
 
-    /**
-     * Parse distribution date from various formats
-     */
     private function parseDistributionDate(?string $dateString): ?string
     {
         if (empty($dateString)) {
@@ -192,12 +135,11 @@ final class TankSeeder extends Seeder
         }
 
         try {
-            // Handle year-only format
+
             if (preg_match('/^\d{4}$/', $dateString)) {
                 return $dateString.'-01-01';
             }
 
-            // Parse various date formats
             return Carbon::parse($dateString)->format('Y-m-d');
         } catch (Exception $e) {
             Log::warning('Could not parse date: '.$dateString);

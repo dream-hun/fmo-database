@@ -12,20 +12,30 @@ use Illuminate\View\Component;
 
 final class SchoolFeedingComponent extends Component
 {
-    public Chart $schoolFeedingChart;
+    private Chart $schoolFeedingChart;
 
     public function __construct()
     {
         $this->schoolFeedingChart = $this->createChart();
     }
 
-    public function createChart(): Chart
+    public function getSchoolFeedingChart(): Chart
+    {
+        return $this->schoolFeedingChart;
+    }
+
+    public function render(): View
+    {
+        return view('components.school-feeding-component');
+    }
+
+    private function createChart(): Chart
     {
         $data = SchoolFeeding::select('academic_year', DB::raw('COUNT(*) as total'))
             ->whereNotNull('academic_year')
             ->where('academic_year', '!=', '')
             ->groupBy('academic_year')
-            ->orderBy('academic_year', 'ASC') // Changed to ASC for proper line chart progression
+            ->orderBy('academic_year', 'ASC')
             ->pluck('total', 'academic_year')
             ->toArray();
 
@@ -118,11 +128,5 @@ final class SchoolFeedingComponent extends Component
                     ],
                 ],
             ]);
-    }
-
-    public function render(): View
-    {
-        return view('components.school-feeding-component',
-            ['schoolFeedingChart' => $this->schoolFeedingChart]);
     }
 }

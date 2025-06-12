@@ -16,16 +16,14 @@ return new class extends Migration
         Schema::create('toolkits', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('gender')->nullable();
+            $table->string('gender');
             $table->string('id_number')->nullable();
-            $table->string('phone_number')->nullable();
-            $table->string('tvet_attended')->nullable();
-            $table->string('option')->nullable();
-            $table->string('level')->nullable();
-            $table->string('training_intake')->nullable();
-            $table->date('reception_date')->nullable();
-            $table->string('toolkit_received')->nullable();
+            $table->string('business_name');
+            $table->string('telephone')->nullable();
             $table->string('sector')->nullable();
+            $table->string('cell')->nullable();
+            $table->string('village')->nullable();
+            $table->date('cohort');
             $table->timestamps();
         });
     }

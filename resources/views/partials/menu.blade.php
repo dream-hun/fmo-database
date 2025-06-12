@@ -150,8 +150,8 @@
                 @endcan
                 @can('work_force_development_access')
                     <li
-                        class="nav-item has-treeview {{ request()->is('admin/scholarships*') ? 'menu-open' : '' }} {{ request()->is('admin/vslas*') ? 'menu-open' : '' }} {{ request()->is('admin/individuals*') ? 'menu-open' : '' }}{{ request()->is('admin/toolkits*') ? 'menu-open' : '' }}"{{ request()->is('admin/trainings*') ? 'menu-open' : '' }}>
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/scholarships*') ? 'active' : '' }} {{ request()->is('admin/vslas*') ? 'active' : '' }} {{ request()->is('admin/individuals*') ? 'active' : '' }}"
+                        class="nav-item has-treeview {{ request()->is('admin/scholarships*') ? 'menu-open' : '' }} {{ request()->is('admin/groups*') ? 'menu-open' : '' }} {{ request()->is('admin/individuals*') ? 'menu-open' : '' }}{{ request()->is('admin/toolkits*') ? 'menu-open' : '' }}"{{ request()->is('admin/trainings*') ? 'menu-open' : '' }}>
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/scholarships*') ? 'active' : '' }} {{ request()->is('admin/groups*') ? 'active' : '' }} {{ request()->is('admin/individuals*') ? 'active' : '' }}"
                            href="#">
                             <i class="bi bi-chevron-down right"></i>
                             <p>
@@ -172,10 +172,10 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('vsla_access')
+                            @can('transaction_access')
                                 <li class="nav-item">
-                                    <a href="{{ route('admin.vslas.index') }}"
-                                       class="nav-link {{ request()->is('admin/vslas') || request()->is('admin/vslas/*') ? 'active' : '' }}">
+                                    <a href="{{ route('admin.transactions.index') }}"
+                                       class="nav-link {{ request()->is('admin/transactions') || request()->is('admin/transactions/*') ? 'active' : '' }}">
                                         <i class="bi bi-people-fill"></i>
                                         <p>
                                             {{ trans('cruds.vsla.title') }}
@@ -237,7 +237,7 @@
                     </li>
                 @endcan
 
-
+                <li class="nav-header text-red mt-3">Urgent Community Support</li>
                 @can('urgent_access')
                     <li class="nav-item">
                         <a href="{{ route('admin.urgents.index') }}"
@@ -250,6 +250,7 @@
                     </li>
                 @endcan
 
+                <li class="nav-header text-danger mt-3">Zamuka Program</li>
                 @can('zamuka_access')
                     <li class="nav-item">
                         <a href="{{ route('admin.zamukas.index') }}"

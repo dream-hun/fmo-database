@@ -33,7 +33,7 @@ final class VslaSeeder extends Seeder
         $progressBar->start();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('vslas')->truncate();
+        DB::table('groups')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $row = 0;

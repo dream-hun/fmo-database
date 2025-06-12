@@ -15,9 +15,7 @@ return new class extends Migration
     {
         Schema::create('tanks', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
-            $table->foreignId('project_id')->constrained('projects');
-            $table->string('names');
+            $table->string('name');
             $table->string('gender')->nullable();
             $table->string('id_number')->nullable();
             $table->string('sector')->nullable();

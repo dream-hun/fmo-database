@@ -17,13 +17,13 @@ final class DashboardController extends Controller
     {
 
         $girinkaChart = DashboardStats::girinkaStats();
-        $individualChart = DashboardStats::individualStats();
+        // $individualChart = DashboardStats::individualStats();
         $scholarshipByYear = DashboardStats::yearlyScholarship();
         $malnutritionChart = DashboardStats::malnutritionChart();
-        /*$goatDistributionChart = DashboardStats::goatDistribution();*/
+        $goatDistributionChart = DashboardStats::LivestockDistribution();
         $ecdChart = DashboardStats::ecdChart();
-        $vslaChart = DashboardStats::vslaLoanData();
-        $toolkitChart = DashboardStats::toolkit();
+        $vslaChart = DashboardStats::groupMemberData();
+        $toolkitChart = DashboardStats::toolKit();
         $mvtcChart = DashboardStats::mvtcChart();
         $urgentCommunity = DashboardStats::urgentCommunitySupportChart();
         $fruitsChart = DashboardStats::fruitTrees();
@@ -33,10 +33,10 @@ final class DashboardController extends Controller
 
         return view('dashboard', [
 
-            'individual' => $individualChart,
+            // 'individual' => $individualChart,
             'girinkaChart' => $girinkaChart,
             'scholarshipByYear' => $scholarshipByYear,
-            /*'goatDistributionChart' => $goatDistributionChart,*/
+            'goatDistributionChart' => $goatDistributionChart,
             'ecdChart' => $ecdChart,
             'vslaChart' => $vslaChart,
             'toolkitChart' => $toolkitChart,

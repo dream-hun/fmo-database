@@ -1,15 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use DateTimeInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Zamuka extends Model
+final class Zamuka extends Model
 {
-
-
     public $table = 'zamukas';
 
     protected array $dates = [
@@ -33,6 +32,11 @@ class Zamuka extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function total(): int
+    {
+        return self::count();
+    }
 
     protected function serializeDate(DateTimeInterface $date): string
     {

@@ -8,7 +8,6 @@ use App\Models\SchoolFeeding;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 final class SchoolFeedingSeeder extends Seeder
 {
@@ -50,8 +49,7 @@ final class SchoolFeedingSeeder extends Seeder
                     continue;
                 }
                 SchoolFeeding::create([
-                    'uuid' => Str::uuid(),
-                    'project_id' => 2,
+
                     'name' => $data[1],
                     'grade' => $data[2] ?? null,
                     'gender' => $data[3] ?? null,

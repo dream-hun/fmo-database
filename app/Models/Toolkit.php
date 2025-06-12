@@ -4,42 +4,52 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Models\Traits\GenderCountable;
+use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class Toolkit extends Model
 {
-    protected $fillable = [
-        'uuid',
-        'project_id',
-        'name',
-        'gender',
-        'identification_number',
-        'phone_number',
-        'tvet_attended',
-        'option',
-        'level',
-        'training_intake',
-        'reception_date',
-        'toolkit_received',
-        'toolkit_cost',
+    use GenderCountable;
 
-        'sector',
-        'total',
+    public const GENDER_SELECT = [
+        'F' => 'Female',
+        'M' => 'Male',
+    ];
+
+    public $table = 'toolkits';
+
+    protected array $dates = [
+        'cohort',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
-    public function getRouteKeyName(): string
+    protected $fillable = [
+        'name',
+        'gender',
+        'id_number',
+        'business_name',
+        'telephone',
+        'sector',
+        'cell',
+        'village',
+        'cohort',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
+    public function getCohortAttribute($value): ?string
     {
-        return 'uuid';
+        return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
     }
 
-    public function project(): BelongsTo
+    public function setCohortAttribute($value): void
     {
-        return $this->belongsTo(Project::class, 'project_id');
+        $this->attributes['cohort'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     protected function serializeDate(DateTimeInterface $date): string

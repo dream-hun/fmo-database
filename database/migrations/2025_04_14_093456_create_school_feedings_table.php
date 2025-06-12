@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::create('school_feedings', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
-            $table->foreignId('project_id')->constrained();
             $table->string('name');
             $table->string('grade')->nullable();
             $table->string('gender')->nullable();

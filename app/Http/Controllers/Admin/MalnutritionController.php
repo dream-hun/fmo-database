@@ -8,13 +8,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreMalnutritionRequest;
 use App\Http\Requests\Admin\UpdateMalnutritionRequest;
 use App\Models\Malnutrition;
-use App\Models\Traits\CsvImportTrait;
+use App\Models\Traits\CsvImport;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 final class MalnutritionController extends Controller
 {
-    use CsvImportTrait;
+    use CsvImport;
 
     public function index()
     {

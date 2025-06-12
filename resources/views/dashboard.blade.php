@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <x-numbers-component />
+        <x-numbers-component/>
         <!--Child protection program -->
 
         <div class="row mt-4">
@@ -29,7 +29,7 @@
             </div>
 
             <div class="col-md-6">
-                <x-school-feeding-component />
+                <x-school-feeding-component/>
             </div>
 
 
@@ -37,7 +37,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        {{--{!! $goatDistributionChart->container() !!}--}}
+                        {!! $goatDistributionChart->container() !!}
                     </div>
                 </div>
             </div>
@@ -67,13 +67,12 @@
             </div>
 
 
-
             <div class="row mt-4">
                 <div class="col-md-6 mb-4">
                     <div class="card">
 
                         <div class="card-body">
-                            {!! $individual->container() !!}
+                            {{--                            {!! $individual->container() !!}--}}
                         </div>
                     </div>
                 </div>
@@ -129,14 +128,18 @@
 
         </div>
     </div>
+    </div>
 @endsection
+
 
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     {!! $girinkaChart->script() !!}
-    {!! $individual->script() !!}
+    {{--{!! $individual->script() !!}--}}
     {!! $scholarshipByYear->script() !!}
-    {{--{!! $goatDistributionChart->script() !!}--}}
+
+    {!! $goatDistributionChart->script() !!}
+
     {!! $ecdChart->script() !!}
     {!! $vslaChart->script() !!}
     {!! $mvtc->script() !!}
@@ -148,3 +151,4 @@
     {!! $empowermentChart->script() !!}
     {!! $waterTanks->script() !!}
 @endpush
+
