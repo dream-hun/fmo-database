@@ -17,69 +17,52 @@ final class StoreFruitRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'surname' => [
-                'string',
-                'required',
-            ],
-            'first_name' => [
+            'name' => [
                 'string',
                 'required',
             ],
             'gender' => [
-                'string',
-                'nullable',
+                'required',
             ],
-            'national' => [
+            'id_number' => [
                 'string',
-                'nullable',
+                'required',
             ],
             'sector' => [
                 'string',
-                'nullable',
+                'required',
             ],
             'cell' => [
                 'string',
-                'nullable',
+                'required',
             ],
             'village' => [
                 'string',
-                'nullable',
+                'required',
             ],
             'mangoes' => [
+                'string',
                 'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
             ],
             'avocado' => [
+                'string',
                 'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
             ],
             'papaya' => [
+                'string',
                 'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
             ],
             'oranges' => [
+                'string',
                 'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
             ],
             'telephone' => [
                 'string',
                 'nullable',
             ],
             'distribution_date' => [
-                'string',
-                'nullable',
-            ],
-            'project_id' => [
                 'required',
-                'integer',
+                'date_format:'.config('panel.date_format'),
             ],
         ];
     }

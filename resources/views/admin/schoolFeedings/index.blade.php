@@ -6,6 +6,10 @@
                 <a class="btn btn-success" href="{{ route('admin.school-feedings.create') }}">
                     {{ trans('global.add') }} {{ trans('cruds.schoolFeeding.title_singular') }}
                 </a>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#csvImportModal">
+                    {{ trans('global.app_csvImport') }}
+                </button>
+                @include('csvImport.modal', ['model' => 'SchoolFeeding', 'route' => 'admin.school-feedings.parseCsvImport'])
             </div>
         </div>
     @endcan
@@ -29,13 +33,13 @@
                             {{ trans('cruds.schoolFeeding.fields.name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.schoolFeeding.fields.grade') }}
-                        </th>
-                        <th>
                             {{ trans('cruds.schoolFeeding.fields.gender') }}
                         </th>
                         <th>
                             {{ trans('cruds.schoolFeeding.fields.school_name') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.schoolFeeding.fields.academic_year') }}
                         </th>
                         <th>
                             {{ trans('cruds.schoolFeeding.fields.fathers_name') }}
@@ -43,7 +47,9 @@
                         <th>
                             {{ trans('cruds.schoolFeeding.fields.mothers_name') }}
                         </th>
-
+                        <th>
+                            {{ trans('cruds.schoolFeeding.fields.home_phone') }}
+                        </th>
                         <th>
                             &nbsp;
                         </th>
@@ -62,13 +68,13 @@
                                 {{ $schoolFeeding->name ?? '' }}
                             </td>
                             <td>
-                                {{ $schoolFeeding->grade ?? '' }}
-                            </td>
-                            <td>
                                 {{ App\Models\SchoolFeeding::GENDER_SELECT[$schoolFeeding->gender] ?? '' }}
                             </td>
                             <td>
                                 {{ $schoolFeeding->school_name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $schoolFeeding->academic_year ?? '' }}
                             </td>
                             <td>
                                 {{ $schoolFeeding->fathers_name ?? '' }}
@@ -76,21 +82,27 @@
                             <td>
                                 {{ $schoolFeeding->mothers_name ?? '' }}
                             </td>
-
+                            <td>
+                                {{ $schoolFeeding->home_phone ?? '' }}
+                            </td>
                             <td>
 
 
                                 @can('school_feeding_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.school-feedings.edit', $schoolFeeding->id) }}">
+                                    <a class="btn btn-xs btn-info"
+                                       href="{{ route('admin.school-feedings.edit', $schoolFeeding->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
                                 @can('school_feeding_delete')
-                                    <form action="{{ route('admin.school-feedings.destroy', $schoolFeeding->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.school-feedings.destroy', $schoolFeeding->id) }}"
+                                          method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
+                                          style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                        <input type="submit" class="btn btn-xs btn-danger"
+                                               value="{{ trans('global.delete') }}">
                                     </form>
                                 @endcan
 
@@ -104,21 +116,20 @@
         </div>
     </div>
 
-
-
 @endsection
 @section('scripts')
     @parent
     <script>
         $(function () {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
+
             $.extend(true, $.fn.dataTable.defaults, {
                 orderCellsTop: true,
-                order: [[ 1, 'desc' ]],
+                order: [[1, 'desc']],
                 pageLength: 100,
             });
-            let table = $('.datatable-SchoolFeeding:not(.ajaxTable)').DataTable({ buttons: dtButtons })
-            $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e){
+            let table = $('.datatable-SchoolFeeding:not(.ajaxTable)').DataTable({buttons: dtButtons})
+            $('a[data-toggle="tab"]').on('shown.bs.tab click', function (e) {
                 $($.fn.dataTable.tables(true)).DataTable()
                     .columns.adjust();
             });

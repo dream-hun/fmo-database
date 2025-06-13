@@ -14,23 +14,24 @@ final class Girinka extends Model
     use GenderCountable;
 
     public const GENDER_SELECT = [
-        'M' => 'Male',
         'F' => 'Female',
+        'M' => 'Male',
     ];
 
     protected array $dates = [
         'distribution_date',
         'created_at',
         'updated_at',
+        'deleted_at',
     ];
 
     protected $fillable = [
-        'names',
+        'name',
         'gender',
         'id_number',
         'sector',
-        'village',
         'cell',
+        'village',
         'distribution_date',
         'm_status',
         'pass_over',
@@ -40,11 +41,6 @@ final class Girinka extends Model
         'updated_at',
         'deleted_at',
     ];
-
-    public function getRouteKeyName(): string
-    {
-        return 'uuid';
-    }
 
     public function getDistributionDateAttribute($value): ?string
     {

@@ -13,8 +13,8 @@ final class Scholarship extends Model
     use GenderCountable;
 
     public const GENDER_SELECT = [
-        'F' => 'Female',
         'M' => 'Male',
+        'F' => 'Female',
     ];
 
     public $table = 'scholarships';
@@ -40,6 +40,7 @@ final class Scholarship extends Model
         'entrance_year',
         'created_at',
         'updated_at',
+        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date): string

@@ -7,15 +7,14 @@ namespace App\Models;
 use App\Models\Traits\GenderCountable;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class SchoolFeeding extends Model
 {
     use GenderCountable;
 
     public const GENDER_SELECT = [
-        'F' => 'Female',
         'M' => 'Male',
+        'F' => 'Female',
     ];
 
     public $table = 'school_feedings';
@@ -26,17 +25,23 @@ final class SchoolFeeding extends Model
         'deleted_at',
     ];
 
-    protected $guarded = [];
-
-    public function getRouteKeyName(): string
-    {
-        return 'uuid';
-    }
-
-    public function project(): BelongsTo
-    {
-        return $this->belongsTo(Project::class, 'project_id');
-    }
+    protected $fillable = [
+        'name',
+        'grade',
+        'gender',
+        'school_name',
+        'academic_year',
+        'district',
+        'sector',
+        'cell',
+        'village',
+        'fathers_name',
+        'mothers_name',
+        'home_phone',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 
     protected function serializeDate(DateTimeInterface $date): string
     {

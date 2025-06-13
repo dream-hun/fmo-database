@@ -5,26 +5,65 @@ declare(strict_types=1);
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 final class StoreScholarshipRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return Gate::allows('scholarship_create');
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [
-            //
+            'name' => [
+                'string',
+                'required',
+            ],
+            'gender' => [
+                'required',
+            ],
+            'id_number' => [
+                'string',
+                'required',
+            ],
+            'district' => [
+                'string',
+                'required',
+            ],
+            'sector' => [
+                'string',
+                'required',
+            ],
+            'cell' => [
+                'string',
+                'required',
+            ],
+            'village' => [
+                'string',
+                'nullable',
+            ],
+            'telephone' => [
+                'string',
+                'required',
+            ],
+            'email' => [
+                'string',
+                'required',
+            ],
+            'school' => [
+                'string',
+                'required',
+            ],
+            'study_option' => [
+                'string',
+                'required',
+            ],
+            'entrance_year' => [
+                'string',
+                'required',
+            ],
         ];
     }
 }

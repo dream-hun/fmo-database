@@ -7,11 +7,11 @@ namespace App\Http\Requests\Admin;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 
-final class UpdateScholarshipRequest extends FormRequest
+final class UpdateSchoolFeedingRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return Gate::allows('scholarship_edit');
+        return Gate::allows('school_feeding_edit');
     }
 
     public function rules(): array
@@ -21,10 +21,18 @@ final class UpdateScholarshipRequest extends FormRequest
                 'string',
                 'required',
             ],
+            'grade' => [
+                'string',
+                'required',
+            ],
             'gender' => [
                 'required',
             ],
-            'id_number' => [
+            'school_name' => [
+                'string',
+                'required',
+            ],
+            'academic_year' => [
                 'string',
                 'required',
             ],
@@ -44,25 +52,17 @@ final class UpdateScholarshipRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'telephone' => [
+            'fathers_name' => [
                 'string',
-                'required',
+                'nullable',
             ],
-            'email' => [
+            'mothers_name' => [
                 'string',
-                'required',
+                'nullable',
             ],
-            'school' => [
+            'home_phone' => [
                 'string',
-                'required',
-            ],
-            'study_option' => [
-                'string',
-                'required',
-            ],
-            'entrance_year' => [
-                'string',
-                'required',
+                'nullable',
             ],
         ];
     }

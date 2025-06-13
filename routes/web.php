@@ -57,10 +57,24 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::post('loans/process-csv-import', [LoanController::class, 'processCsvImport'])->name('loans.processCsvImport');
     Route::resource('loans', LoanController::class);
 
-    Route::resource('school-feedings', SchoolFeedingController::class)->except(['show']);
-    Route::resource('fruits', FruitController::class)->except(['show']);
+    Route::post('ecds/parse-csv-import', [EcdController::class, 'parseCsvImport'])->name('ecds.parseCsvImport');
+    Route::post('ecds/process-csv-import', [EcdController::class, 'processCsvImport'])->name('ecds.processCsvImport');
     Route::resource('ecds', EcdController::class)->except(['show']);
+
+    Route::post('school-feedings/parse-csv-import', [SchoolFeedingController::class, 'parseCsvImport'])->name('school-feedings.parseCsvImport');
+    Route::post('school-feedings/process-csv-import', [SchoolFeedingController::class, 'processCsvImport'])->name('school-feedings.processCsvImport');
+    Route::resource('school-feedings', SchoolFeedingController::class)->except(['show']);
+
+    Route::post('fruits/parse-csv-import', [FruitController::class, 'parseCsvImport'])->name('fruits.parseCsvImport');
+    Route::post('fruits/process-csv-import', [FruitController::class, 'processCsvImport'])->name('fruits.processCsvImport');
+    Route::resource('fruits', FruitController::class)->except(['show']);
+
+    Route::post('scholarships/parse-csv-import', [ScholarshipController::class, 'parseCsvImport'])->name('scholarships.parseCsvImport');
+    Route::post('scholarships/process-csv-import', [ScholarshipController::class, 'processCsvImport'])->name('scholarships.processCsvImport');
     Route::resource('scholarships', ScholarshipController::class)->except(['show']);
+
+    Route::post('girinkas/parse-csv-import', [GirinkaController::class, 'parseCsvImport'])->name('girinkas.parseCsvImport');
+    Route::post('girinkas/process-csv-import', [GirinkaController::class, 'processCsvImport'])->name('girinkas.processCsvImport');
     Route::resource('girinkas', GirinkaController::class)->except(['show']);
 
     Route::post('toolkits/parse-csv-import', [ToolKitController::class, 'parseCsvImport'])->name('toolkits.parseCsvImport');

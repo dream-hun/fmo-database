@@ -6,6 +6,10 @@
                 <a class="btn btn-success" href="{{ route('admin.ecds.create') }}">
                     {{ trans('global.add') }} {{ trans('cruds.ecd.title_singular') }}
                 </a>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#csvImportModal">
+                    {{ trans('global.app_csvImport') }}
+                </button>
+                @include('csvImport.modal', ['model' => 'Ecd', 'route' => 'admin.ecds.parseCsvImport'])
             </div>
         </div>
     @endcan
@@ -16,7 +20,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class=" table table-bordered table-striped table-hover datatable datatable-ecd">
+                <table class=" table table-bordered table-striped table-hover datatable datatable-Ecd">
                     <thead>
                     <tr>
                         <th width="10">
@@ -26,17 +30,19 @@
                             {{ trans('cruds.ecd.fields.id') }}
                         </th>
                         <th>
-                            Name
-                        </th>
-
-                        <th>
-                            {{ trans('cruds.ecd.fields.gender') }}
+                            {{ trans('cruds.ecd.fields.name') }}
                         </th>
                         <th>
                             {{ trans('cruds.ecd.fields.grade') }}
                         </th>
                         <th>
-                            {{ trans('cruds.ecd.fields.academic_year') }}
+                            {{ trans('cruds.ecd.fields.gender') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.ecd.fields.father_name') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.ecd.fields.mother_name') }}
                         </th>
                         <th>
                             {{ trans('cruds.ecd.fields.home_phone') }}
@@ -58,15 +64,17 @@
                             <td>
                                 {{ $ecd->name ?? '' }}
                             </td>
-
                             <td>
-                                {{ $ecd->gender ?? '' }}
+                                {{ App\Models\Ecd::GRADE_SELECT[$ecd->grade] ?? '' }}
                             </td>
                             <td>
-                                {{ $ecd->grade ?? '' }}
+                                {{ App\Models\Ecd::GENDER_SELECT[$ecd->gender] ?? '' }}
                             </td>
                             <td>
-                                {{ $ecd->academic_year ?? '' }}
+                                {{ $ecd->father_name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $ecd->mother_name ?? '' }}
                             </td>
                             <td>
                                 {{ $ecd->home_phone ?? '' }}
@@ -80,10 +88,13 @@
                                 @endcan
 
                                 @can('ecd_delete')
-                                    <form action="{{ route('admin.ecds.destroy', $ecd->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.ecds.destroy', $ecd->id) }}" method="POST"
+                                          onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
+                                          style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                        <input type="submit" class="btn btn-xs btn-danger"
+                                               value="{{ trans('global.delete') }}">
                                     </form>
                                 @endcan
 
@@ -97,8 +108,6 @@
         </div>
     </div>
 
-
-
 @endsection
 @section('scripts')
     @parent
@@ -106,14 +115,13 @@
         $(function () {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
 
-
             $.extend(true, $.fn.dataTable.defaults, {
                 orderCellsTop: true,
-                order: [[ 1, 'desc' ]],
+                order: [[1, 'desc']],
                 pageLength: 100,
             });
-            let table = $('.datatable-ecd:not(.ajaxTable)').DataTable({ buttons: dtButtons })
-            $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e){
+            let table = $('.datatable-Ecd:not(.ajaxTable)').DataTable({buttons: dtButtons})
+            $('a[data-toggle="tab"]').on('shown.bs.tab click', function (e) {
                 $($.fn.dataTable.tables(true)).DataTable()
                     .columns.adjust();
             });

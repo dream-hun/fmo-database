@@ -7,11 +7,11 @@ namespace App\Http\Requests\Admin;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 
-final class UpdateScholarshipRequest extends FormRequest
+final class StoreGirinkaRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return Gate::allows('scholarship_edit');
+        return Gate::allows('girinka_create');
     }
 
     public function rules(): array
@@ -26,11 +26,7 @@ final class UpdateScholarshipRequest extends FormRequest
             ],
             'id_number' => [
                 'string',
-                'required',
-            ],
-            'district' => [
-                'string',
-                'required',
+                'nullable',
             ],
             'sector' => [
                 'string',
@@ -42,27 +38,19 @@ final class UpdateScholarshipRequest extends FormRequest
             ],
             'village' => [
                 'string',
+                'required',
+            ],
+            'distribution_date' => [
+                'required',
+                'date_format:'.config('panel.date_format'),
+            ],
+            'm_status' => [
+                'string',
                 'nullable',
             ],
             'telephone' => [
                 'string',
-                'required',
-            ],
-            'email' => [
-                'string',
-                'required',
-            ],
-            'school' => [
-                'string',
-                'required',
-            ],
-            'study_option' => [
-                'string',
-                'required',
-            ],
-            'entrance_year' => [
-                'string',
-                'required',
+                'nullable',
             ],
         ];
     }
