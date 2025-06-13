@@ -204,8 +204,8 @@ return [
         ],
     ],
     'girinka' => [
-        'title' => 'Girinka (One Milky Cow)',
-        'title_singular' => 'Girinka (One Milky Cow)',
+        'title' => 'One Milky Cow',
+        'title_singular' => 'One Milky Cow',
         'fields' => [
             'id' => 'ID',
             'id_helper' => ' ',
@@ -560,7 +560,7 @@ return [
         ],
     ],
     'empowerment' => [
-        'title' => 'Empowerment',
+        'title' => ' ECD Empowerment',
         'title_singular' => 'Empowerment',
         'fields' => [
             'id' => 'ID',

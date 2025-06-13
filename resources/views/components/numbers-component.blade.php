@@ -1,11 +1,11 @@
  <div class="row">
      <div class="col-lg-3 col-6">
          <!-- small box -->
-         <div class="small-box bg-[#]">
+         <div class="small-box" style="background-color: #b2071b;">
              <div class="inner">
-                 <h3>{{ $total }}</h3>
+                 <h3 class="text-white">{{ $total }}</h3>
 
-                 <p>Total Beneficiaries</p>
+                 <p class="text-white">Total Beneficiaries</p>
              </div>
              <div class="icon">
                  <i class="bi bi-people"></i>
@@ -51,7 +51,7 @@
              <div class="inner">
                  <h3>{{ $other }}</h3>
 
-                 <p>Male Beneficiaries</p>
+                 <p>Communities and Institutions</p>
              </div>
              <div class="icon">
                  <i class="bi bi-person"></i>
