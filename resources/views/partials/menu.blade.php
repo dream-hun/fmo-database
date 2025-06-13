@@ -212,7 +212,7 @@
                     </li>
                 @endcan
 
-                <li class="nav-header mt-3">ZAMUKA PROGRAMe</li>
+                <li class="nav-header mt-3">ZAMUKA PROGRAM</li>
                 @can('zamuka_access')
                     <li class="nav-item">
                         <a href="{{ route('admin.zamukas.index') }}"
@@ -224,56 +224,50 @@
                         </a>
                     </li>
                 @endcan
+
                 @can('user_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/permissions*") ? "menu-open" : "" }} {{ request()->is("admin/roles*") ? "menu-open" : "" }} {{ request()->is("admin/users*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/permissions*") ? "active" : "" }} {{ request()->is("admin/roles*") ? "active" : "" }} {{ request()->is("admin/users*") ? "active" : "" }}" href="#">
-                            <i class="fa-fw nav-icon fas fa-users">
+                    <li class="nav-header mt-3">USERS MANAGEMENT</li>
 
-                            </i>
-                            <p>
-                                {{ trans('cruds.userManagement.title') }}
-                                <i class="right fa fa-fw fa-angle-left nav-icon"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            @can('permission_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.permissions.index") }}" class="nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-unlock-alt">
+                    @can('permission_access')
+                        <li class="nav-item">
+                            <a href="{{ route("admin.permissions.index") }}"
+                               class="nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "active" : "" }}">
+                                <i class="bi nav-icon bi-lock">
 
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.permission.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('role_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.roles.index") }}" class="nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-briefcase">
+                                </i>
+                                <p>
+                                    {{ trans('cruds.permission.title') }}
+                                </p>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('role_access')
+                        <li class="nav-item">
+                            <a href="{{ route("admin.roles.index") }}"
+                               class="nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "active" : "" }}">
+                                <i class="bi nav-icon bi-briefcase">
 
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.role.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('user_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.users.index") }}" class="nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-user">
+                                </i>
+                                <p>
+                                    {{ trans('cruds.role.title') }}
+                                </p>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('user_access')
+                        <li class="nav-item">
+                            <a href="{{ route("admin.users.index") }}"
+                               class="nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "active" : "" }}">
+                                <i class="bi nav-icon bi-people-fill">
 
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.user.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                        </ul>
-                    </li>
+                                </i>
+                                <p>
+                                    {{ trans('cruds.user.title') }}
+                                </p>
+                            </a>
+                        </li>
+                    @endcan
+
                 @endcan
 
             </ul>

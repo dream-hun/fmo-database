@@ -105,8 +105,6 @@ final class GirinkaSeeder extends Seeder
 
     }
 
-
-
     protected function cleanPhoneNumber(?string $phone): ?string
     {
         if (empty($phone)) {
