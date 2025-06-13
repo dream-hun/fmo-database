@@ -472,41 +472,55 @@ final class DashboardStats
     public static function LivestockDistribution(): Chart
     {
         $totalBeneficiaries = Livestock::count();
+        $totalLivestock = (int) Livestock::sum('number');
 
-        $data = Livestock::query()
-            ->select('type', DB::raw('SUM(number) as total'))
-            ->whereNotNull('type')
-            ->where('type', '!=', '')
-            ->groupBy('type')
-            ->orderBy('total', 'desc')
-            ->get();
+        // Get all unique years from distribution_date
+        $years = Livestock::selectRaw('YEAR(distribution_date) as year')
+            ->whereNotNull('distribution_date')
+            ->groupBy('year')
+            ->orderBy('year')
+            ->pluck('year')
+            ->toArray();
 
-        if ($data->isEmpty()) {
-
-            $labels = ['No Data'];
-            $values = [1];
+        // If no data, set default values
+        if (empty($years)) {
+            $years = ['No Data'];
+            $totalsByYear = [0];
             $typeBreakdown = 'No livestock data available';
         } else {
-            $labels = $data->pluck('type')->map(function ($type) {
-                return ucfirst(mb_trim($type)); // Capitalize and trim
-            })->toArray();
+            // Get total livestock distributed per year (summing across all types)
+            $yearlyData = Livestock::selectRaw('YEAR(distribution_date) as year, SUM(number) as total')
+                ->whereNotNull('distribution_date')
+                ->groupBy('year')
+                ->orderBy('year')
+                ->pluck('total', 'year')
+                ->toArray();
 
-            $values = $data->pluck('total')->map(fn ($value) => (int) $value)->toArray();
+            $totalsByYear = [];
+            foreach ($years as $year) {
+                $totalsByYear[] = isset($yearlyData[$year]) ? (int) $yearlyData[$year] : 0;
+            }
 
-            $typeBreakdown = $data->pluck('total', 'type')->map(function ($count, $type) {
-                return ucfirst(mb_trim($type)).': '.number_format((int) $count);
-            })->implode(' | ');
+            // Create type breakdown for subtitle (keep this for reference)
+            $typeBreakdown = Livestock::select('type', DB::raw('SUM(number) as total'))
+                ->whereNotNull('type')
+                ->where('type', '!=', '')
+                ->groupBy('type')
+                ->get()
+                ->pluck('total', 'type')
+                ->map(function ($count, $type) {
+                    return ucfirst(mb_trim($type)).': '.number_format((int) $count);
+                })
+                ->implode(' | ');
         }
-
-        $totalLivestock = (int) Livestock::sum('number');
 
         return (new Chart)
             ->setType('bar')
             ->setWidth('100%')
             ->setHeight(500)
-            ->setLabels($labels)
-            ->setDataset('Livestock Distribution', 'bar', $values)
-            ->setColors(['#b2071b', '#4ECDC4'])
+            ->setLabels($years)
+            ->setDataset('Total Livestock', 'bar', $totalsByYear)
+            ->setColors(['#b2071b'])
             ->setOptions([
                 'chart' => [
                     'type' => 'bar',
@@ -526,7 +540,7 @@ final class DashboardStats
                     'position' => 'bottom',
                 ],
                 'title' => [
-                    'text' => 'Small Livestock Distribution',
+                    'text' => 'Total Small Livestock Distribution by Year',
                     'align' => 'left',
                 ],
                 'subtitle' => [
@@ -540,12 +554,17 @@ final class DashboardStats
                 ],
                 'xaxis' => [
                     'title' => [
-                        'text' => 'Livestock Type',
+                        'text' => 'Years',
                     ],
                 ],
                 'yaxis' => [
                     'title' => [
                         'text' => 'Number of Livestock',
+                    ],
+                ],
+                'tooltip' => [
+                    'y' => [
+                        'formatter' => 'function(val) { return val + " livestock"; }',
                     ],
                 ],
             ]);
