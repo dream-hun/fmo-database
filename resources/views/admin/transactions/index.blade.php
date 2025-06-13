@@ -36,6 +36,7 @@
                         <th>
                             {{ trans('cruds.transaction.fields.member') }}
                         </th>
+                        <th>{{ trans('cruds.member.fields.gender') }}</th>
                         <th>
                             {{ trans('cruds.transaction.fields.amount') }}
                         </th>
@@ -63,6 +64,7 @@
                             <td>
                                 {{ $transaction->member->name ?? '' }}
                             </td>
+                            <th>{{$transaction->member->gender}}</th>
                             <td>
                                 {{ $transaction->formatAmount() ?? '' }}
                             </td>
