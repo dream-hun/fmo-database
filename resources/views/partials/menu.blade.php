@@ -91,7 +91,6 @@
                                class="nav-link {{ request()->is('admin/girinkas') || request()->is('admin/girinkas/*') ? 'active' : '' }}">
                                 <i class="bi bi-bookmark-check"></i>
 
-                                </i>
                                 <p>
                                     {{ trans('cruds.girinka.title') }}
                                 </p>
@@ -104,7 +103,6 @@
                                class="nav-link {{ request()->is('admin/livestocks') || request()->is('admin/livestocks/*') ? 'active' : '' }}">
                                 <i class="bi bi-bookmark-check"></i>
 
-                                </i>
                                 <p>
                                     {{ trans('cruds.livestock.title') }}
                                 </p>
@@ -214,7 +212,7 @@
                     </li>
                 @endcan
 
-                <li class="nav-header mt-3">ZAMUKA PROGRAMS</li>
+                <li class="nav-header mt-3">ZAMUKA PROGRAMe</li>
                 @can('zamuka_access')
                     <li class="nav-item">
                         <a href="{{ route('admin.zamukas.index') }}"

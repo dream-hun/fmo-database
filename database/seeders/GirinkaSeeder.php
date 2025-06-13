@@ -63,11 +63,11 @@ final class GirinkaSeeder extends Seeder
                 // Create the individual record
                 Girinka::create([
                     'name' => $data[1] ?? null,
-                    'gender' => $this->normalizeGender($data[2] ?? null),
+                    'gender' => $data[2] ?? null,
                     'id_number' => $this->cleanIdNumber(mb_ltrim($data[3] ?? '', '*')),
                     'sector' => $data[4] ?? null,
-                    'village' => mb_trim($data[5] ?? ''),
-                    'cell' => mb_trim($data[6] ?? null),
+                    'cell' => mb_trim($data[5] ?? null),
+                    'village' => mb_trim($data[6] ?? ''),
                     'distribution_date' => $this->parseDistributionDate(mb_trim($data[7] ?? null)),
                     'm_status' => mb_rtrim($data[8] ?? null),
                     'pass_over' => mb_trim($data[9] ?? null),
@@ -105,14 +105,7 @@ final class GirinkaSeeder extends Seeder
 
     }
 
-    protected function normalizeGender(?string $gender): ?string
-    {
-        if (empty($gender)) {
-            return null;
-        }
 
-        return mb_strtoupper($gender) === 'F' ? 'Female' : 'Male';
-    }
 
     protected function cleanPhoneNumber(?string $phone): ?string
     {

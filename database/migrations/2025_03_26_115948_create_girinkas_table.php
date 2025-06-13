@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->string('id_number')->nullable();
             $table->string('sector')->nullable();
-            $table->string('village')->nullable();
             $table->string('cell')->nullable();
+            $table->string('village')->nullable();
             $table->date('distribution_date')->nullable();
             $table->string('m_status')->nullable();
             $table->string('pass_over')->nullable();
