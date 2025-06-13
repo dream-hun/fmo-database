@@ -7,10 +7,12 @@ use App\Http\Controllers\Admin\EcdController;
 use App\Http\Controllers\Admin\EmpowermentController;
 use App\Http\Controllers\Admin\FruitController;
 use App\Http\Controllers\Admin\GirinkaController;
+use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\IndividualController;
 use App\Http\Controllers\Admin\LivestockController;
 use App\Http\Controllers\Admin\LoanController;
 use App\Http\Controllers\Admin\MalnutritionController;
+use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\Admin\MvtcController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
@@ -19,7 +21,9 @@ use App\Http\Controllers\Admin\SchoolFeedingController;
 use App\Http\Controllers\Admin\TankController;
 use App\Http\Controllers\Admin\ToolKitController;
 use App\Http\Controllers\Admin\TrainingController;
+use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\UrgentController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\ZamukaController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +40,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 
     Route::resource('permissions', PermissionController::class)->except(['show']);
     Route::resource('roles', RoleController::class)->except(['show']);
+    Route::resource('users', UsersController::class)->except(['show']);
 
     Route::post('livestocks/parse-csv-import', [LivestockController::class, 'parseCsvImport'])->name('livestocks.parseCsvImport');
     Route::post('livestocks/process-csv-import', [LivestockController::class, 'processCsvImport'])->name('livestocks.processCsvImport');
@@ -101,17 +106,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::post('zamukas/process-csv-import', [ZamukaController::class, 'processCsvImport'])->name('zamukas.processCsvImport');
     Route::resource('zamukas', ZamukaController::class);
 
-    Route::post('members/parse-csv-import', [App\Http\Controllers\Admin\MemberController::class, 'parseCsvImport'])->name('members.parseCsvImport');
-    Route::post('members/process-csv-import', [App\Http\Controllers\Admin\MemberController::class, 'processCsvImport'])->name('members.processCsvImport');
-    Route::resource('members', App\Http\Controllers\Admin\MemberController::class);
+    Route::post('members/parse-csv-import', [MemberController::class, 'parseCsvImport'])->name('members.parseCsvImport');
+    Route::post('members/process-csv-import', [MemberController::class, 'processCsvImport'])->name('members.processCsvImport');
+    Route::resource('members', MemberController::class);
 
-    Route::post('transactions/parse-csv-import', [App\Http\Controllers\Admin\TransactionController::class, 'parseCsvImport'])->name('transactions.parseCsvImport');
-    Route::post('transactions/process-csv-import', [App\Http\Controllers\Admin\TransactionController::class, 'processCsvImport'])->name('transactions.processCsvImport');
-    Route::resource('transactions', App\Http\Controllers\Admin\TransactionController::class);
+    Route::post('transactions/parse-csv-import', [TransactionController::class, 'parseCsvImport'])->name('transactions.parseCsvImport');
+    Route::post('transactions/process-csv-import', [TransactionController::class, 'processCsvImport'])->name('transactions.processCsvImport');
+    Route::resource('transactions', TransactionController::class);
 
-    Route::post('groups/parse-csv-import', [App\Http\Controllers\Admin\GroupController::class, 'parseCsvImport'])->name('groups.parseCsvImport');
-    Route::post('groups/process-csv-import', [App\Http\Controllers\Admin\GroupController::class, 'processCsvImport'])->name('groups.processCsvImport');
-    Route::resource('groups', App\Http\Controllers\Admin\GroupController::class);
+    Route::post('groups/parse-csv-import', [GroupController::class, 'parseCsvImport'])->name('groups.parseCsvImport');
+    Route::post('groups/process-csv-import', [GroupController::class, 'processCsvImport'])->name('groups.processCsvImport');
+    Route::resource('groups', GroupController::class);
 
 });
 
