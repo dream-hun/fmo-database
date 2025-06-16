@@ -30,5 +30,11 @@ Review
 26. ECD Empowerment: rehabilitation, construction, equipments and caregivers  trained. _[**Done**]_
 27. Arrange all types of training by names gender training type and date of training. _[**Done**]_
 28. Add fruits trees _[**Done**]_
-29. 
-
+=============================================================
+29. Kimaranzara child protection center (ECD model) _[**Done**]_
+30. Malnutrition & child growth stunting prevention _[**Done**]_
+31. Add total number of vslas on chart _[**Done**]_
+32. specialised training for community capacity building _[**Done**]_
+33. check on toolkits: Domestic electricity, plumbing, culinary arts,coffee shops,
+34. Check for urgent community support.
+35. Present Zamuka data by support they received(Food support, House construction,etc.)

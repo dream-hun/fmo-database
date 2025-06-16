@@ -55,7 +55,7 @@ final class DashboardStats
                     'zoom' => ['enabled' => true],
                 ],
                 'title' => [
-                    'text' => 'Malnutrition children distribution',
+                    'text' => 'Malnutrition & Child Growth Stunting Prevention',
                     'align' => 'left',
                 ],
                 'subtitle' => [
@@ -129,7 +129,7 @@ final class DashboardStats
             ->setWidth('100%')
             ->setHeight(500)
             ->setLabels($academicYears)
-            ->setDataset('Number of ECD Enrollments', 'line', $counts)
+            ->setDataset('Number of ECD children', 'line', $counts)
             ->setColors(['#b2071b'])
             ->setOptions([
                 'chart' => [
@@ -153,16 +153,16 @@ final class DashboardStats
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'Number of Enrollments',
+                        'text' => 'Number of children',
                         'align' => 'left',
                     ],
                 ],
                 'title' => [
-                    'text' => 'ECD Enrollments Over Academic Years',
+                    'text' => 'Kimaranzara child protection center (ECD model)',
                     'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Enrollments: '.$totalEcd,
+                    'text' => 'Total children: '.$totalEcd,
                     'align' => 'left',
                 ],
                 'legend' => [
@@ -173,7 +173,7 @@ final class DashboardStats
                 ],
                 'tooltip' => [
                     'y' => [
-                        'formatter' => 'function (val) { return val + " enrollments" }',
+                        'formatter' => 'function (val) { return val + " children" }',
                     ],
                 ],
             ]);
@@ -788,6 +788,7 @@ final class DashboardStats
 
         $males = Member::where('gender', 'M')->count();
         $females = Member::where('gender', 'F')->count();
+        $totalGroups = Group::count();
 
         // Extract data for chart
         $groupNames = $groupData->pluck('name')->toArray();
@@ -829,7 +830,7 @@ final class DashboardStats
                 ],
                 'yaxis' => [
                     'title' => [
-                        'text' => 'Groups',
+                        'text' => 'VSLAs',
                     ],
                 ],
                 'title' => [
@@ -837,7 +838,7 @@ final class DashboardStats
                     'align' => 'left',
                 ],
                 'subtitle' => [
-                    'text' => 'Total Members Across All Groups: '.$totalMembers.' | Female: '.$females.' | Male: '.$males,
+                    'text' => 'Total Members Across All VSLAs: '.$totalMembers.' | Female: '.$females.' | Male: '.$males.' | Total Vsla: '.$totalGroups,
                     'align' => 'left',
                 ],
                 'legend' => [
@@ -975,7 +976,7 @@ final class DashboardStats
                     ],
                 ],
                 'title' => [
-                    'text' => 'Number of Trainees by Training Type',
+                    'text' => 'Specialised Training For Community Capacity Building',
                     'align' => 'left',
                 ],
                 'subtitle' => [
