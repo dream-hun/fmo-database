@@ -21,7 +21,7 @@ final class Fruit extends Model
 
     public $table = 'fruits';
 
-    protected $dates = [
+    protected array $dates = [
         'distribution_date',
         'created_at',
         'updated_at',
@@ -53,7 +53,7 @@ final class Fruit extends Model
 
     public function setDistributionDateAttribute($value): string
     {
-        $this->attributes['distribution_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+       return $this->attributes['distribution_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     protected function serializeDate(DateTimeInterface $date): string
