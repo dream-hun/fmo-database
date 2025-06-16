@@ -47,8 +47,8 @@ trait CsvImport
     private function extractImportConfig(Request $request): array
     {
         $filename = $request->input('filename', false);
-        $path = storage_path('app/csv_import/'.$filename);
-        $hasHeader = $request->input('hasHeader', false);
+        $path = storage_path('app/private/csv_import/'.$filename);
+        $hasHeader = (bool) $request->input('hasHeader', false);
         $fields = array_flip(array_filter($request->input('fields', [])));
         $modelName = $request->input('modelName', false);
         $model = "App\Models\\".$modelName;
@@ -204,6 +204,11 @@ trait CsvImport
         $reader = new SpreadsheetReader($config['path']);
         $headers = $reader->current();
         $lines = [];
+
+        // If file doesn't have a header row, include the first row in the preview data
+        if (! $config['hasHeader']) {
+            $lines[] = $headers;
+        }
 
         $previewCount = 0;
         while ($reader->next() !== false && $previewCount < 5) {

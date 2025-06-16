@@ -16,7 +16,7 @@ final class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
-        //DB::table('users')->truncate();
+        // DB::table('users')->truncate();
         $users = [
             [
                 'uuid' => Str::uuid(),

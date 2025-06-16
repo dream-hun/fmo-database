@@ -53,7 +53,7 @@ final class Fruit extends Model
 
     public function setDistributionDateAttribute($value): string
     {
-       return $this->attributes['distribution_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+        return $this->attributes['distribution_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     protected function serializeDate(DateTimeInterface $date): string

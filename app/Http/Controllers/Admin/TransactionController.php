@@ -24,7 +24,6 @@ final class TransactionController extends Controller
 
         $transactions = Transaction::with(['group', 'member'])->get();
 
-
         return view('admin.transactions.index', compact('transactions'));
     }
 
