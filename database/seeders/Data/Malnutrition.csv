@@ -1,78 +1,78 @@
-Name,Gender,Age(months),HC,Sector,Cell,Village,father name,Mother name,Home tel,package reception date
+Names,Gender,,HC,Sector,Cell,Village,father name,Mother name,Home tel,DISTRIBUTION DATE
 Mutuyimana Josiane,M,,HC Nyarugenge,Nyarugenge,Gihinga,,Mutuyeyezu Joseph,Mukakarangwa Christine,,2023
 Mpano Jackson,F,,HC Nyarugenge,Nyarugenge,Gihinga,,Ndayisenga Athanase,Uwimana Fortune,,2023
-Niyonsaba Diane,M,,HC Nyarugenge,Nyarugenge,Gihinga,,Havugimana Innocent,Nirere Marie,,2023
-Niyigena Gerardine,F,,HC Nyarugenge,Nyarugenge,Murambi,,Hakizimana Charles,Musabyimana Jacqueline,,2023
+Niyonsaba  Diane,M,,HC Nyarugenge,Nyarugenge,Gihinga,,Havugimana Innocent,Nirere Marie,,2023
+Niyigena  Gerardine,F,,HC Nyarugenge,Nyarugenge,Murambi,,Hakizimana Charles,Musabyimana Jacqueline,,2023
 Mutuyimana Josiane,F,,HC Nyarugenge,Nyarugenge,Gihinga,,Mutuyeyezu Joseph,Mukakarangwa Christine,,2023
 Uwineza Fiona,F,,Hc Rilima,Rilima,Kabeza,,Nyiranshimiyimana Varelia,Habineza Jean Bosco,,2023
 Uwihanganye Jean Bosco,M,,Hc Rilima,Rilima,Nyabagendwa,,Ntawiheba Jean Bosco,Mukandayisenga Donatha,,2023
-Uwikunda Alice,F,,Hc Rilima,Rilima,Kabeza,,Habimana Zakayo,Kampire,,2023
-Urinzwenimana Frugence,M,,Hc Rilima,Rilima,Nyabagendwa,,Nsengiyumva Bertin,Nzayituriki Dorosera,,2023
-Uwimpuhwe Cassy,M,,Hc Rilima,Rilima,Kabeza,,Nsengiyumva Portase,Nyiranzeyimana Jeanette,,2023
-Uwingeneye Kellia,F,,Hc Rilima,Rilima,Kabeza,,Nzabamfa John,Nyirabagenzi Jacqueline,,2023
-Kamikazi Noela,F,,Hc Rilima,Rilima,Kimaranzara,,Ndikubwimana Frolent,Nikuze Valantine,,2023
-Uwingeneye Kellia,F,,Hc Rilima,Rilima,Kabeza,,Nzabanita John,Nyirabagenzi Jacqueline,,2023
-Uwase Kevine,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,728273814,2023
+Uwikunda Alice,F,,Hc Rilima,Rilima,Kabeza,,Habimana  Zakayo,Kampire elina,,2023
+Urinzwenimana  Frugence,M,,Hc Rilima,Rilima,Nyabagendwa,,Nsengiyumva Bertin,Nzayituriki Dorosera,,2023
+Uwimpuhwe Cassy,M,,Hc Rilima,Rilima,Kabeza,,Nsengiyumva  Portase,Nyiranzeyimana Jeanette,,2023
+Uwingeneye  Kellia,F,,Hc Rilima,Rilima,Kabeza,,Nzabanita  John,Nyirabagenzi Jacqueline,,2023
+Kamikazi  Noela,F,,Hc Rilima,Rilima,Kimaranzara,,Ndikubwimana Frolent,Nikuze Valantine,,2023
+Uwingeneye  Kellia,F,,Hc Rilima,Rilima,Kabeza,,Nzabanita John,Nyirabagenzi Jacqueline,,2023
+Uwase  Kevine,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,728273814,2023
 Uwineza Solange,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,728273814,2023
 Uwiduhaye Ishimwe Diane,F,,Hc Rilima,Rilima,Kabeza,GICACA,Ntirivamunda Fabien,Mukanyangezi Jacqueline,728273814,2023
 Uwimpuhwe Cassy,M,,Hc Rilima,Rilima,Kabeza,,Nsengiyumva Protos,Nyiranzeyimana Jeanette,,2023
 Niyonzima Emile,M,,Hc Rilima,Rilima,Kimaranzara,,Niyonzima,Maniriho Jeanine,,2023
 Uwineza Fiona,F,,Hc Rilima,Rilima,Kabeza,,Hacineza Jean Bosco,Nyiranshimiyimana,,2023
 Uwihanganye Jean Bosco,M,,Hc Rilima,Rilima,nyabagendwa,,Ntawiheba Jean Bosco,Mukandayisenga Donatha,,2023
-Uwase Kevine,F,,Hc Rilima,Rilima,Special,,Ntirivamunda Fabien,Mukanyangezi Jacqueline,,2023
+Uwase  Kevine,F,,Hc Rilima,Rilima,Special,,Ntirivamunda Fabien,Mukanyangezi Jacqueline,,2023
 Uwineza Solange,F,,Hc Rilima,Rilima,Special,,Ntirivamunda Fabien,Mukanyangezi Jacqueline,,2023
 Uwiduhaye Ishimwe Diane,F,,Hc Rilima,Rilima,Special,,Ntirivamunda Fabien,Mukanyangezi Jacqueline,,2023
 Uwineza Fiona,F,,Hc Rilima,Rilima,Special,,Hacineza Jean Bosco,Nyiranshimiyimana,,2023
-Uwimpuhwe Cassy,F,,Hc Rilima,Rilima,Special,,Nsengiyumva Protos,,,2023
-Uwihanganye Jean Bosco,M,,Hc Rilima,Rilima,Nyabagendwa,,,Mukandayisenga Donatha,,2023
+Uwimpuhwe Cassy,F,,Hc Rilima,Rilima,KABEZA,,Nsengiyumva Protos,MUKANDAYISENGA Donatha,,2023
+Uwihanganye Jean Bosco,M,,Hc Rilima,Rilima,Nyabagendwa,,Ntawiheba Jean Bosco,Mukandayisenga Donatha,,2023
 Niyomurengezi Aimee,M,,Hc Rilima,Rilima,,,Bamporineza,,,2023
 Nkunzingabo Erineste,M,,Hc Rilima,Rilima,Kabeza,BIRARO,HABUMUGISHA FABIEN,Mukakimenyi Flodonatha,,2023
 Cyomoro Aimee Androw,M,,Hc Rilima,Rilima,Nyabagendwa,,,Niyonsaba Aline,,2023
 Irakoze Kevine,F,,Hc Rilima,Rilima,Nyabagendwa,,,Uwimana Jeanine,,2023
 Manirafasha Davide,M,,Hc Rilima,Rilima,Nyabagendwa,,,Yamfashije Donatha,,2023
-Igihozo Adia Jolly,F,,Hc Rilima,Rilima,,,,Nyirahoranimana Dative,,2023
-Kamikazi Pria,F,,Hc Rilima,Rilima,Kabeza,,,Uwase Florence,,2023
-Kwizera Brayan,M,,Hc Rilima,Rilima,Kabeza,,,Nzayisenga Gaudance,,2023
+Igihozo  Adia Jolly,F,,Hc Rilima,Rilima,KABEZA,KARAMBO,,Nyirahoranimana Dative,,2023
+Kamikazi  Pria,F,,Hc Rilima,Rilima,Kabeza,KALILISI,,Uwase Florence,,2023
+Kwizera  Brayan,M,,Hc Rilima,Rilima,Kabeza,KABEZA,,Nzayisenga Gaudance,,2023
 Irakoze Nathacha,F,,Hc Shyara,Shyara,Kabagugu,,Emmanuel,Dusabimana Solange,,2023
 Twizerimana Bonheur,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,2023
 Tuyisingize Jean,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,2023
-Masengesho Aimee Chalome,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,2023
-Tuza Fred,M,,HC Nyarugenge,Nyarugenge,Gihinga,,Harerimana Gaspard,Mukaremera M.Gorette,,2023
-Kamikazi Chanella,F,,HC Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuvuga Delphine,,2023
-Dushime Jean de Dieu,F,,HC Nyarugenge,Nyarugenge,Kabuye,,Havugimana Emmanuel,Vuguziga Dorcella,,2023
-Niyomugabo Tangishaka Augstave,F,,HC Nyarugenge,Nyarugenge,Murambi,,Kayonga Thariscisse,Musabyimana Jamilla,,2023
+Masengesho  Aimee Chalome,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,2023
+Tuza  Fred,M,,HC Nyarugenge,Nyarugenge,Gihinga,,Harerimana Gaspard,Mukaremera M.Gorette,,2023
+Kamikazi  Chanella,F,,HC Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuvuga Delphine,,2023
+Dushime  Jean de Dieu,F,,HC Nyarugenge,Nyarugenge,Kabuye,,Havugimana Emmanuel,Vuguziga Dorcella,,2023
+Niyomugabo  Tangishaka Augstave,F,,HC Nyarugenge,Nyarugenge,Murambi,,Kayonga Thariscisse,Musabyimana Jamilla,,2023
 Katete Hasiane,F,,HC Nyarugenge,Nyarugenge,Gihinga,,,Uwimpaye Peragie,,2023
-Igitangaza Hirwa Kenedy,F,,Hc Rilima,Rilima,Kabeza,,,Iradukunda Diane,,2023
-Ishimwe Aimee Jesca,F,,Hc Rilima,Rilima,Kimaranzara,,Namahame Donacien,Nyabenda Evangeline,,2023
-Ishimwe Honoline,F,,Hc Rilima,Rilima,Nyabagendwa,,Niringiyimana Viatory,Nikobahoze Daphorose,,2023
+Igitangaza  Hirwa Kenedy,F,,Hc Rilima,Rilima,Kabeza,,NSANZIMANA  EMMANUEL,Iradukunda Diane,,2023
+Ishimwe   Aimee Jesca,F,,Hc Rilima,Rilima,Kimaranzara,,Namahame Donacien,Nyabenda Evangeline,,2023
+Ishimwe   Honoline,F,,Hc Rilima,Rilima,Nyabagendwa,,Niringiyimana Viatory,Nikobahoze Daphorose,,2023
 Manirafasha David,M,,Hc Rilima,Rilima,Nyabagendwa,KAMABUYE,Siborurema Celestin,Yamfashije Donatha,,2023
 Uwihanganye Jean Bosco,M,,Hc Rilima,Rilima,Nyabagendwa,,Ntawiheba Jean Bosco,Mukandayisenga Donatha,,2023
 Irakoze Kevine,F,,Hc Rilima,Rilima,Nyabagendwa,,Bapfakurera Vianney,Uwimana Jeanine,,2023
 Nyinzingabo Manzi Elineste,M,,Hc Rilima,Rilima,Kabeza,,Habumugisha Fabien,Mukakimenyi Flodonatha,,2023
 Cyomoro Aimee Androw,M,,Hc Rilima,Rilima,Nyabagendwa,,Semana Thadee,Niyonsaba Aliane,,2023
-Igihozo Adia Jolly,M,,Hc Rilima,Rilima,Nyabagendwa,,,Nyirahoranimana Dative,,2023
+Igihozo  Adia Jolly,M,,Hc Rilima,Rilima,Nyabagendwa,,,Nyirahoranimana Dative,,2023
 Gikundiro Grancien,M,,Hc Musenyi,Musenyi,Musenyi,,Niringiyimana Damier,Nikuze Sifolla,,2023
 Iganze Jovan,M,,Hc Musenyi,Musenyi,Rulindo,,Rugerero Emmanuel,Mukamana Claudine,,2023
-Mukiza Yonas,M,,Hc Musenyi,Musenyi,Musenyi,,Gahakwa John,Uwamurera Jeanette,,2023
+Mukiza  Yonas,M,,Hc Musenyi,Musenyi,Musenyi,,Gahakwa John,Uwamurera Jeanette,,2023
 Maniratuje Divine,F,,Hc Musenyi,Musenyi,Nyagasagara,,Hakizimana Zakalie,Mukeshimana Eliana,,2023
-Irasubiza Rebecca,F,,Hc Musenyi,Musenyi,Rulindo,,Ntibihezwa Damascen,Nyirabariyanga Derina,,2023
+Irasubiza  Rebecca,F,,Hc Musenyi,Musenyi,Rulindo,,Ntibihezwa Damascen,Nyirabariyanga Derina,,2023
 Iradukunda Jean Baptiste,M,,Hc Musenyi,Musenyi,Gicaca,,Hitimana Celestin,Uwimana Gabdiose,,2023
 Munezero Larissa,F,,Hc Musenyi,Musenyi,Musenyi,,Bizimana Charles,Mukabaranga Jackeline,,2023
-Dushime Jean de Dieu,M,,Hc Nyarugenge,Nyarugenge,Kabuye,,Havugimana Emmanuel,Vuguziga Dorcella,,2024
+Dushime  Jean de Dieu,M,,Hc Nyarugenge,Nyarugenge,Kabuye,,Havugimana Emmanuel,Vuguziga Dorcella,,2024
 Irakoze Pacifique,M,,Hc Nyarugenge,Nyarugenge,Murambi,,Rwanduha Telesphore,Bagwire Peragie,,2024
-Kamikazi Chanella,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuvuga Delphine,,2024
+Kamikazi  Chanella,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuvuga Delphine,,2024
 Tuyishimire Firmine,F,,Hc Nyarugenge,Nyarugenge,Murambi,,Uwihanganye Nafuta,Muhawenimana Frodette,,2024
 Niyogisubizo Brino,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Musafiri Eric,Ahishakiye Elevanie,,2024
-Uwase Pascaline,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Nsabimana Pascal,Mukarushema Francine,,2024
+Uwase  Pascaline,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Nsabimana Pascal,Mukarushema Francine,,2024
 Kundwa Emma Queen,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Nsanzimana Emmanuel,Yibwirebyose Beatrice,,2024
-Ishimwe Kerve,F,,Hc Nyarugenge,Nyarugenge,Muyange,,Karera Stanislus,Nyiratebuka Christine,,2024
+Ishimwe   Kerve,F,,Hc Nyarugenge,Nyarugenge,Muyange,,Karera Stanislus,Nyiratebuka Christine,,2024
 Dufitimana Prence,M,,Hc Nyarugenge,Nyarugenge,Murambi,,Niyomugabo Hassan,Muhawenimana Clementine,,2024
 Murekatete Hoziane,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Habimana Thadee,Mukasano Anastasie,,2024
 Twizerimana Drocie Bielve,F,,Hc Nyarugenge,Nyarugenge,Murambi,,Twizerimana Leonard,Wambabariye Gorette,,2024
 Uwamahoro Queen,F,,Hc Nyarugenge,Nyarugenge,Kabuye,,Bizimana Vianney,Mukasibo Valeria,,2024
 Izibyose Nell Brez,M,,Hc Nyarugenge,Nyarugenge,Kabuye,,Nsengimana Innocent,Mukeshimana Monique,,2024
 Nshimyimukiza Kerve,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Nahayo Andre,Hagenimana Josephine,,2024
-Tuza Fred,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Harerimana Gaspard,Mukaremera M.Gorette,,2024
+Tuza  Fred,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Harerimana Gaspard,Mukaremera M.Gorette,,2024
 Niyibikora Benife,F,,Hc Nyarugenge,Nyarugenge,Rugando,,Birori Pascal,Nyiramasuka Damarce,,2024
 Niyokwizerwa Angel,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Ntawiyanga Bizimana,Muhawenimana Vestine,,2024
 Iradukunda David,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Mubirigi John,Niyonsaba Vestine,,2024
@@ -81,45 +81,45 @@ Mpano Jackson,M,,Hc Nyarugenge,Nyarugenge,Gihinga,,Ndayisenga Athanase,Uwimana F
 Muhawenimana Diane,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Byimana Celestin,Mukantwari Clementine,,2024
 Mugisha Gift peace,F,,Hc Nyarugenge,Nyarugenge,Kabuye,,Hakizimana Emille,Tuyishime Enatha,,2024
 Sindikubwabo Emmanuel,M,,Hc Nyarugenge,Nyarugenge,Rugando,,Musabyimana Charles,Nyiransengimana Gaudance,,2024
-Uwineza Sofia,F,,Hc Nyarugenge,Nyarugenge,Kabuye,,Bigirimana Daniel,Nzayisenga Jeanne,,2024
+Uwineza  Sofia,F,,Hc Nyarugenge,Nyarugenge,Kabuye,,Bigirimana Daniel,Nzayisenga Jeanne,,2024
 Iravuga Losine,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Habineza Etienne,Kampire Emmacule,,2024
 Muhawenimana Losine,F,,Hc Nyarugenge,Nyarugenge,Gihinga,,Bigenimana Cypinane,Mukanzasaba Alexie,,2024
-Tumukunde Liliane,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Niyomugabo Hodale,Mukamiza Claudine,,2024
+Tumukunde  Liliane,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Niyomugabo Hodale,Mukamiza Claudine,,2024
 Ntwari Irakoze,F,,Hc Nyarugenge,Nyarugenge,Ngenda,,Harindintwari Joseph,Ayinkamiye Efulasie,,2024
 Igiraneza Kevine,F,,Hc Musenyi,Musenyi,Cyanika,,Uzatsinda Emmanuel,Nirere Antoinette,,2024
-Mukiza Janas,M,,Hc Musenyi,Musenyi,Rugeyo,,Gahakwa Jean,Uwamurera Jeanette,,2024
+Mukiza  Janas,M,,Hc Musenyi,Musenyi,Rugeyo,,Gahakwa Jean,Uwamurera Jeanette,,2024
 Irakiza Mugisha Vincent,M,,Hc Musenyi,Musenyi,Rugando,,Manirakiza Vincent,Kwitanze Christine,,2024
 Umukundwa Jolie,F,,Hc Musenyi,Musenyi,Rushubi,,Mugisha Frank,Nyirabakenineza,,2024
-Uwase Kamikazi,F,,Hc Musenyi,Musenyi,Rulindo,,Nsengiyumva Justin,Uwimana Penina,,2024
+Uwase  Kamikazi,F,,Hc Musenyi,Musenyi,Rulindo,,Nsengiyumva Justin,Uwimana Penina,,2024
 Maniratuje Zakalie,F,,Hc Musenyi,Musenyi,Nyagasagara,,Hakizimana Zakalie,Mukeshimana Eliane,,2024
-Isingizwe Denyse,F,,Hc Musenyi,Musenyi,Bishinge,,Gakwaya Faustin,Nyiraminani Sandrine,,2024
+Isingizwe  Denyse,F,,Hc Musenyi,Musenyi,Bishinge,,Gakwaya Faustin,Nyiraminani Sandrine,,2024
 Gikundiro Grancien,M,,Hc Musenyi,Musenyi,Rugando,,Niringiyimana,Ntamahungiro Debora,,2024
 Ntirushwa Mabako Valens,M,,Hc Musenyi,Musenyi,Musenyi,,Nshimyimana Jean Paul,Uwamariya Varelia,,2024
-Uwase Umuhoza Kevine,F,,Hc Musenyi,Musenyi,Musenyi,,Nsaguye Samusoni,Niyonsenga Esperance,,2024
+Uwase  Umuhoza Kevine,F,,Hc Musenyi,Musenyi,Musenyi,,Nsaguye Samusoni,Niyonsenga Esperance,,2024
 Munezero Raissa,F,,Hc Musenyi,Musenyi,Musenyi,,Bizimana charles,Mukabaranga Jackeline,,2024
-Mutimutije Eliminate,F,,Hc Musenyi,Musenyi,Rurindo,,Tuyisenge Francois,Ikizanye,,2024
-Ishimwe Laurent,M,,Hc Musenyi,Musenyi,Bisenga,,Ntabwo Amusi,Ishimwe Sandra,,2024
-Iradukunda Jean Baptiste,M,,Hc Musenyi,Musenyi,Gicaca,,Bizimana Celestin,Uwimana Gabdiose,,2024
+Mutimutije  Eliminate,F,,Hc Musenyi,Musenyi,Rurindo,,Tuyisenge Francois,Ikizanye,,2024
+Ishimwe   Laurent,M,,Hc Musenyi,Musenyi,Bisenga,,Ntabwo Amusi,Ishimwe Sandra,,2024
+Iradukunda  Jean Baptiste,M,,Hc Musenyi,Musenyi,Gicaca,,Bizimana Celestin,Uwimana Gabdiose,,2024
 Ineza Teta Ellor,F,,Hc Musenyi,Musenyi,Cyeru,,Nyirantezimana Donatha,,,2024
-Niyigena Pascaline,F,,Hc Musenyi,Musenyi,Rugando,,Dushimirimana Emmanuel,Ndayisenga Immaculee,,2024
-Ineza Cheilla,F,,Hc Musenyi,Musenyi,Rwankeri,,Ukurikiyeyezu Noeli,Karara Marie Jeanne,,2024
+Niyigena  Pascaline,F,,Hc Musenyi,Musenyi,Rugando,,Dushimirimana Emmanuel,Ndayisenga Immaculee,,2024
+Ineza Cheilla,F,,Hc Musenyi,Musenyi,Rwankeri,,Ukurikiyeyezu  Noeli,Karara Marie Jeanne,,2024
 Hakizimana Valentine,F,,Hc Musenyi,Musenyi,Nyamuri,,Harerimana,Mukakarangwa,,2024
-Iganze Jehovanis,F,,Hc Musenyi,Musenyi,Runyoza,,Rugerero Emmanuel,Mukamana,,2024
+Iganze  Jehovanis,F,,Hc Musenyi,Musenyi,Runyoza,,Rugerero Emmanuel,Mukamana,,2024
 Irakoze Manzi Ivan,M,,Hc Musenyi,Musenyi,Nyagihunika,,Ndagijimana Desire,Uwajeneza Sandrine,,2024
 Uwayisenga Grace,F,,Hc Musenyi,Musenyi,Nyagasagara,,Maniragaba Donacien,Uwimana Claudine,,2024
 Iraguha Pierre,M,,Hc Musenyi,Musenyi,Cyanika,,Kabera Pierre,Mukandanga Angelique,,2024
-Ishimwe Kellia,F,,Hc Musenyi,Musenyi,Rugando,,Renzaho,Nyirandikubwimana,,2024
+Ishimwe   Kellia,F,,Hc Musenyi,Musenyi,Rugando,,Renzaho,Nyirandikubwimana,,2024
 Ninziza Feza Chanceline,F,,Hc Musenyi,Musenyi,Nyagasagara,,Niyodushima,Mukanshuti Julienne,,2024
 Akimana Jeanne,F,,Hc Musenyi,Musenyi,Rulindo,,Ngaruyingoma Jonas,Iradukunda,,2024
 Urikumwenatwe Edisson,M,,Hc Musenyi,Musenyi,Rurindo,,,,,2024
 Irakoze Nathacha,F,,Hc Shyara,Shyara,Rutare,,,Dusabimana Solange,,2024
 Uwineza Aimee Alice,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye,,2024
 TWizerimana Bonheur,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,2024
-Masengesho Aimee Shalome,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye,,2024
+Masengesho   Aimee Shalome,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye,,2024
 Tuyisingize Jean,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,2024
-Uwase Pascaline,F,,H c Nyarugenge,Nyarugenge,Muyange,,Nsabimana Pascal,Mukarushema Francine,,2024
+Uwase  Pascaline,F,,H c Nyarugenge,Nyarugenge,Muyange,,Nsabimana Pascal,Mukarushema Francine,,2024
 Muhawenimana Diane,F,,H c Nyarugenge,Nyarugenge,Muyange,,Byimana Celestin,Mukantwari Clementine,,2024
-Kamikazi Chanella,F,,H c Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuguga Deliphine,,2024
+Kamikazi  Chanella,F,,H c Nyarugenge,Nyarugenge,Gihinga,,Sindikubwabo Jean Pierre,Ujyakuguga Deliphine,,2024
 Irakoze Pacific,M,,H c Nyarugenge,Nyarugenge,Murambi,,Rwandoha Telesphore,Tuyishimire Charlotte,,2024
 Muhawenimana Losine,F,,H c Nyarugenge,Nyarugenge,Gihinga,,Bigenimana Cyprien,Mukanzasaba Alexia,,2024
 Mpano Jackson,M,,H c Nyarugenge,Nyarugenge,Gihinga,,Ndayisenga Athanase,Uwimana Fortune,,2024
@@ -128,320 +128,1529 @@ Mureketete Hoziane,F,,H c Nyarugenge,Nyarugenge,Gihinga,,,Mukansanga Anonciatta,
 Sindikubwabo Emmanuel,M,,H c Nyarugenge,Nyarugenge,Kamahirwe Rugando,,Musabyimana Charles,Nyiransengimana Gaudance,,2024
 Ntwarinduwe Kayonga Roger,M,,H c Nyarugenge,Nyarugenge,Rubona Ngenda,,Harindintwari Joseph,Ayinkamiye Francine,,2024
 Kundwa Aimee Queen,F,,H c Nyarugenge,Nyarugenge,MuyangeNgenda,,Nsanzimana Emmanuel,Yibwirebyose Breatrice,,2024
-Ishimwe Kevine,F,,H c Nyarugenge,Nyarugenge,MuyangeNgenda,,Karera Stanslas,Nyiratebuka Christine,,2024
+Ishimwe   Kevine,F,,H c Nyarugenge,Nyarugenge,MuyangeNgenda,,Karera Stanslas,Nyiratebuka Christine,,2024
 Izibyose Nelly,F,,H c Nyarugenge,Nyarugenge,NyakabingoKabuye,,Nsengimana Innocent,Mukeshimana Monique,,2024
 Mugisha Peace,F,,H c Nyarugenge,Nyarugenge,Kabuye,,Hakizimana Emille,Tuyishime Lenatha,,2024
-Gikundiro Gratien,M,18 Months,Hc Musenyi,Musenyi,Rulindo,,Niringiyimana Daniel,Ntamahungiro Deborah,,2024
-Uwase Kamikazi,F,13,Hc Musenyi,Musenyi,Rulindo,,Nsengiyumva Justin,Uwimana Penina,,2024
+Gikundiro Gratien,M,,Hc Musenyi,Musenyi,Rulindo,,Niringiyimana Daniel,Ntamahungiro Deborah,,2024
+Uwase  Kamikazi,F,,Hc Musenyi,Musenyi,Rulindo,,Nsengiyumva Justin,Uwimana Penina,,2024
 Irakoze Manzi Ivan,M,,Hc Musenyi,Musenyi,Nyakajuri,,Ndagijimana Desire,Uwajeneza Sandrine,,2024
 Umukundwa Jolie,F,,Hc Musenyi,Musenyi,Rushubi,,Mugisha Frank,Nyirabakinineza Priscilla,,2024
-Ishimwe Kelia,F,3yrs,Hc Musenyi,Musenyi,Musenyi,,Renzaho Michel,Nyirandikubwimana Yvonne,,2024
-Isingizwe Denyse,F,3yrs,Hc Musenyi,Musenyi,Musenyi,,Gakwaya,Nyiraminani,,2024
-Ishimwe Laurent,M,1yrs,Hc Musenyi,Musenyi,Musenyi,,,Ishimwe Sandra,,2024
-Mutimutije Eliminatha,F,2 yrs,Hc Musenyi,Musenyi,Kogunga,,Ikizanye,Tuyisenge Froncoise,,2024
-Uzayisenga Grace,F,12 Months,Hc Musenyi,Musenyi,Musenyi,,Maniragaba,Uwimana Cloudine,,2024
-Uwineza Nizire Kellia,F,12 Months,Hc Musenyi,Musenyi,Cyarika,,Uzatsinda Emmanuel,Nirere Antoinette,,2024
-Berinayo Patrick,M,12 Months,Hc Musenyi,Musenyi,Gitori,,Shumbusha Emmanuel,Mukasine Judith,,2024
-Niyodusenga Olivier,M,1 yrs,Hc Musenyi,Musenyi,Musenyi,,,Ikizanye Florida,,2024
-Niyogisubizo Regis,M,3 yrs,Hc Musenyi,Musenyi,Rulindo,,Habinshuti nsengiyumva,Akimaniduhaye Vestine,,2024
-Ineza Keziya,F,1 yrs,Hc Musenyi,Musenyi,Gicaca,,Gatera,Mukashyaka,,2024
-Uwimanikunda Hornoline,F,1yrs,Hc Musenyi,Musenyi,Rulindo,,Bariyanga,Dusabumuremyi,,2024
-Nziranziza Chonceline,F,1yrs,Hc Musenyi,Musenyi,Musenyi,,Niyodushima,Mukanshuti Julienne,,2024
-Imaniratuje Divine,F,15 Months,Hc Musenyi,Musenyi,Nyagasagara,,Hakizimana Zakalie,Mukeshimana Eliana,,2024
-Niyigena Pascaline,F,1 yrs,Hc Musenyi,Musenyi,Gicaca,,Dushimimana,Ndayisenga Emmaculee,,2024
-Tuyizere Joselyne,F,1yrs 5Months,Hc Musenyi,Musenyi,Rulindo,,Hakizimana Emmanuel,Kampire Triphine,,2024
-Tuyishimire Fabien,M,1yrs 2Months,Hc Musenyi,Musenyi,Gicaca,,Nyandwi,Minani Odetta,,2024
-Byosenibikora Breya,F,10Months,Hc Musenyi,Musenyi,Gicaca,,Sibomana,Nyirabikari Denyse,,2024
-Ntirushwamaboko Valens,M,9 Months,Hc Musenyi,Musenyi,Nunga,,Nshimiyimana Jean Paul,Uwamariya Valerie,,2024
-Hakizimana Valentin,M,13 Months,Hc Musenyi,Musenyi,Rulindo,,Harerimana Galasie,Mukakarangwa Chantal,,2024
-Giraneza Nirere Kevine,F,12Months,Hc Musenyi,Musenyi,Gicca,,Uzatsinda Emmanuel,Nirere Antoinette,,2024
-Ineza Teta Ella,F,1yrs,Hc Musenyi,Musenyi,Musenyi,,Tuyishimire Eric,Nyiranteziryayo Donatha,,2024
-Irikumwenatwe Komezusenge Edimo,M,15 Months,Hc Musenyi,Musenyi,Rulindo,,Barura Floriyane,Mukamusoni Console,,2024
-Irasubiza Rebecca,F,72 Months,Hc Musenyi,Musenyi,Rulindo,,Ntibihezwa Damascen,Nyirabariyanga Penina,,2024
-Munezero Raissa,F,15Months,Hc Musenyi,Musenyi,Nyagasagara,,Ntezimana Charles,Mukabaranga Jacqueline,,2024
-Mukiza Jonas,M,1yrs,Hc Musenyi,Musenyi,Musenyi,,Gahakwa John,Uwamurera Jeanette,,2024
-Ishimwe Belyse,F,7Months,Hc Musenyi,Musenyi,Musenyi,,Gakwaya,Nyiraminani Sandrine,,2024
-Isano king Mucyo Parfait,M,14 Months,Hc Rilima,Rilima,Kimaranzara,,Nzabonimana Theoneste,Mukashyaka Patricia,,2024
-Mutoniwase Thierry Stella,F,28 Months,Hc Rilima,Rilima,Nyabagendwa,MUBUGA,Irakiza Thierry,Muhawenayo Chanseline,791734682,2024
-Ituze Queen Parfait,F,14 Months,Hc Rilima,Rilima,Kimaranzara,KIMARANZARA,Nzabanimana Theoneste,Mukashyaka Patricia,789423104,2024
-Turikumwenayo Emmanuel,M,23 Months,Hc Rilima,Rilima,Nyabagendwa,MUKOMA,Tugirimana Alphonse,Mukamazimpaka Alice,780152447,2024
-Abijuru Korimeri,F,10Months,Hc Rilima,Rilima,Nyabagendwa,,Hagenimana Thacien,Nyiranzabahimana,,2024
-Uwihanaganye Jean Bosco,M,33Months,Hc Rilima,Rilima,Nyabagendwa,NYAMIZI,Ntawiheba Jean Bosco,Mukandayisenga,783580047,2024
-Mucyo Frank,M,18Months,Hc Rilima,Rilima,Nyabagendwa,Mukoma,Uwamahirwe Partas,Mukeshimana Diane,783632520,2024
-Inema Nshuti Shema,M,17Months,Hc Rilima,Rilima,Kimaranzara,,Rukundo Pasifique,Ntakirutimana Solange,,2024
-Masengesho Aimee Shalom,F,15 Months,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,2024
-Irakoze Nathacha,F,19 Months,Hc Shyara,Shyara,Kabagugu,,Dusabimana Claude,,,2024
-Tuyisingize Jean,M,19 Months,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,2024
-Twizerimana Bonheur,M,19 Months,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,2024
-Uwineza Aimee Alice,F,15 Months,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,2024
-MUSHIMIYIMANA ALEXINE,F,16 Months,Hc Nyarugenge,NYARUGENGE,GIHINGA,NYAGASOZI,NSHIMIYIMANA ALEX,MUKABUGINGO FORTINE,,2021
-Tumukunde SANDRINE,F,1/12/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,NDOREYAHO FOUSTIN,NTIBAZIYABO FELESITTA,,2021
-MUGIRANEZA FISTON,M,3/1/2020,HC NYARUGENGE,NYARUGENGE,MURAMBI,NYAGAKOMBE,HABIMANA HEREMA GERARD,NYIRANKUNDWANABERA NAOME,,2021
-MUHAWENIMANA Kevine,F,2/1/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,MURAGIJIMANA BOSCO,MUHAWENIMANA CLEMANTINE,,2021
-Niyigena GERDINE,F,6/1/2020,HC NYARUGENGE,NYARUGENGE,MURAMBI,KANOMBE,HAKIZIMANA CHARLES,MUSABYIMANA JACCQUELINE,,2021
-KWIZERA FLEBO,M,10/1/2018,HC NYARUGENGE,NYARUGENGE,KABUYE,CYAHAFI,ITANGISHAKA J.POUL,KABAGWIRA CLARISSE,,2021
-MUSHIMIYIMANA ALEXINE,F,9/1/2019,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,NSHIMIYIMANA ALEX,MUKABUGINGO FORTUNE,,2021
-Tumukunde SANDRINE,F,1/12/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,NDOREYAHO FOUSTIN,NTIBAZIYARE MYE FELESITA,,2021
-MUHAWENIMANA KEVINE,F,2/1/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,MURAGIJIMANA BOSCO,MUHAWENIMANA CLEMANTINE,,2021
-Niyigena GERDINE,F,6/1/2020,HC NYARUGENGE,NYARUGENGE,MURAMBI,KANOMBE,HAKIZIMANA CHARLES,MUSABYIMANA JACQUELINE,,2021
-MUREKATETE JEANINE,F,11/1/2019,HC NYARUGENGE,NYARUGENGE,MURAMBI,RUGANDARA,NDAYISENGA EMMANUEL,MUKACYUBAHIRO,,2021
-SHEMA FRACK,M,2/1/2020,HC NYARUGENGE,NYARUGENGE,MURAMBI,RUGANDARA,NIZEYIMANA VENCENT,NYIRANSABIMANA DAMARISE,,2021
-MURAGIJIMANA VABEL,M,11/1/2019,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,SIBOMANA YUVELIANA,UWAMAHORO VENELANDA,,2021
-Tumukunde SANDRINE,F,1/1/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,NDOREYAHO FOUSTIN,NTIBAZIYAREMYE FELESITA,,2021
-MUREKATETE JEANINE,F,11/1/2019,HC NYARUGENGE,NYARUGENGE,MURAMBI,RUGANDARA,NDAYISENGA EMMANUEL,MUKACYUBAHIRO,,2021
-SHEMA FRANK,M,2/1/2020,HC NYARUGENGE,NYARUGENGE,MURAMBI,RUGANDARA,NIZEYIMANA VENCENT,NYIRANSABIMANA DAMARISE,,2021
-MUHAWENIMANA KEVINE,F,3/1/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,MURAGIJIMANA BOSCO,MUHAWENIMANA CLEMANTINE,,2021
-Niyigena GERDINE,F,6/1/2020,HC NYARUGENGE,NYARUGENGE,MURAMBI,KANOMBE,HAKIZIMANA CHARLES,MUSABYIMANA JACQUELINE,,2021
-Tumukunde SANDRINE,F,1/1/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,NDOREYAHO FOUSTIN,NTIBAZIYAREMYE FELESITA,,2021
-Niyigena GERDINE,F,6/1/2020,HC NYARUGENGE,NYARUGENGE,MURAMBI,KANOMBE,HAKIZIMANA CHARLES,MUSABYIMANA JACQUELINE,,2021
-MUHAWENIMANA KEVINE,F,3/1/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,MURAGIJIMANA BOSCO,MUHAWENIMANA CLEMANTINE,,2021
-IRABARUTA JOICE,F,12/1/2021,HC NYARUGENGE,NYARUGENGE,KABUYE,CYAHAFI,NIZEYIMANA,BASANGIRA ESTHER,,2021
-ITABAZA JESCA,F,12/1/2021,HC NYARUGENGE,NYARUGENGE,KABUYE,CYAHAFI,NIZEYIMANA,BASANGIRA ESTHER,,2021
-IYAMUREMYE ERIC,M,12/1/2021,HC NYARUGENGE,NYARUGENGE,KABUYE,NYARUSAMBU,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
-UWASE BIONCE,F,11/1/2021,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTRE,MUHAYIMANA PASCASIE,,2021
-UWAYO LEONTINE,F,10/1/2021,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAKABUYE,NSIGAYE,NYIRAHATEGEKIMANA PASCASIE,,2021
-IYAMUREMYE ERIC,M,12/1/2021,HC NYARUGENGE,NYARUGENGE,KABUYE,NYARUSAMBU,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
-UWASE BIONCE,F,11/1/2021,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTRE,MUHAYIMANA PASCASIE,,2021
-DUFITUMUKIZA EMELYNE,F,10/1/2021,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,UWIZEYIMANA DAMSCEN,NTIBAGWIRE VESTINE,,2021
-IYAMUREMYE ERIC,M,12/1/2021,HC NYARUGENGE,NYARUGENGE,KABUYE,NYARUSAMBU,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
-UWASE BIONCE,F,11/1/2021,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTRE,MUHAYIMANA PASCASIE,,2021
-DUFITUMUKIZA EMELYNE,F,10/1/2021,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,UWIZEYIMANA DAMSCEN,NTIBAGWIRE VESTINE,,2021
-UMUHOZA JEANNETE,F,4/1/2021,HC NYARUGENGE,NYARUGENGE,,,,,,2021
-Izibyose ALINE,F,4/1/2021,HC NYARUGENGE,NYARUGENGE,,,,,,2021
-KWIZERA ERIC,F,11/1/2019,HC NYARUGENGE,NYARUGENGE,,,,,,2021
-UWASE BIONCE,F,11/1/2021,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTRE,MUHAYIMANA PASCASIE,,2021
-DUFITUMUKIZA EMELYNE,F,10/1/2021,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,UWIZEYIMANA DAMSCENE,NTIBAGWIRE VESTINE,,2021
-Izibyose ALINE,F,4/1/2021,HC NYARUGENGE,NYARUGENGE,,,,,,2021
-IYAMUREMYE ERIC,F,12/1/2021,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAGASOZI,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
-DUFITUMUKIZA EMELYNE,F,10/1/2021,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,UWIZEYIMANA DAMSCENE,NTIBAGWIRE VESTINE,,2021
-Izibyose ALINE,F,4/1/2021,HC NYARUGENGE,NYARUGENGE,,,,,,2021
-UWASE BIONCE,F,11/1/2021,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTE,MUHAYIMANA PASCASIE,,2021
-IYAMUREMYE ERIC,M,12/1/2021,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAGASOZI,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
-NIYONKURU FISTON,M,5/1/2021,HC NYARUGENGE,NYARUGENGE,MURAMBI,NYAGAKOMBE,HABIMANA HEREMA GERARD,NYIRANKUNDWANABERA NAOME,,2021
-UWIRINGIYIMANA FLEX,M,1/1/2020,HC NYARUGENGE,NYARUGENGE,,,,,,2021
-BAYUBAHE AGASARO ELLA,F,,Hc Rilima,Rilima,KABEZA,,,MUKASINE ADELa,,2021
-NISHIMWE CLEMANCE,F,,Hc Rilima,RILIMA,NYABAGENDWA,,,UWIZEYIMANA ODETTE,,2021
-IRANZI VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NIYONTEZE CLARISSE,,2021
-Irasubiza CLARISSE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NYIRABANANI CONSOLE,,2021
+Ishimwe   Kelia,F,,Hc Musenyi,Musenyi,Musenyi,,Renzaho Michel,Nyirandikubwimana Yvonne,,2024
+Isingizwe  Denyse,F,,Hc Musenyi,Musenyi,Musenyi,,Gakwaya,Nyiraminani,,2024
+Ishimwe   Laurent,M,,Hc Musenyi,Musenyi,Musenyi,,,Ishimwe Sandra,,2024
+Mutimutije Eliminatha,F,,Hc Musenyi,Musenyi,Kogunga,,Ikizanye,Tuyisenge Froncoise,,2024
+Uzayisenga Grace,F,,Hc Musenyi,Musenyi,Musenyi,,Maniragaba,Uwimana Cloudine,,2024
+Uwineza Nizire Kellia,F,,Hc Musenyi,Musenyi,Cyarika,,Uzatsinda Emmanuel,Nirere Antoinette,,2024
+Berinayo Patrick,M,,Hc Musenyi,Musenyi,Gitori,,Shumbusha Emmanuel,Mukasine Judith,,2024
+Niyodusenga  Olivier,M,,Hc Musenyi,Musenyi,Musenyi,,,Ikizanye Florida,,2024
+Niyogisubizo Regis,M,,Hc Musenyi,Musenyi,Rulindo,,Habinshuti nsengiyumva,Akimaniduhaye Vestine,,2024
+Ineza Keziya,F,,Hc Musenyi,Musenyi,Gicaca,,Gatera,Mukashyaka,,2024
+Uwimanikunda  Hornoline,F,,Hc Musenyi,Musenyi,Rulindo,,Bariyanga,Dusabumuremyi,,2024
+Nziranziza Chonceline,F,,Hc Musenyi,Musenyi,Musenyi,,Niyodushima,Mukanshuti Julienne,,2024
+Imaniratuje Divine,F,,Hc Musenyi,Musenyi,Nyagasagara,,Hakizimana Zakalie,Mukeshimana Eliana,,2024
+Niyigena  Pascaline,F,,Hc Musenyi,Musenyi,Gicaca,,Dushimimana,Ndayisenga Emmaculee,,2024
+Tuyizere  Joselyne,F,,Hc Musenyi,Musenyi,Rulindo,,Hakizimana Emmanuel,Kampire Triphine,,2024
+Tuyishimire Fabien,M,,Hc Musenyi,Musenyi,Gicaca,,Nyandwi,Minani Odetta,,2024
+Byosenibikora Breya,F,,Hc Musenyi,Musenyi,Gicaca,,Sibomana,Nyirabikari Denyse,,2024
+Ntirushwamaboko Valens,M,,Hc Musenyi,Musenyi,Nunga,,Nshimiyimana Jean Paul,Uwamariya Valerie,,2024
+Hakizimana Valentin,M,,Hc Musenyi,Musenyi,Rulindo,,Harerimana Galasie,Mukakarangwa Chantal,,2024
+Giraneza Nirere Kevine,F,,Hc Musenyi,Musenyi,Gicca,,Uzatsinda Emmanuel,Nirere Antoinette,,2024
+Ineza Teta  Ella,F,,Hc Musenyi,Musenyi,Musenyi,,Tuyishimire Eric,Nyiranteziryayo Donatha,,2024
+Irikumwenatwe Komezusenge Edimo,M,,Hc Musenyi,Musenyi,Rulindo,,Barura Floriyane,Mukamusoni Console,,2024
+Irasubiza  Rebecca,F,,Hc Musenyi,Musenyi,Rulindo,,Ntibihezwa Damascen,Nyirabariyanga Penina,,2024
+Munezero  Raissa,F,,Hc Musenyi,Musenyi,Nyagasagara,,Ntezimana Charles,Mukabaranga Jacqueline,,2024
+Mukiza  Jonas,M,,Hc Musenyi,Musenyi,Musenyi,,Gahakwa John,Uwamurera Jeanette,,2024
+Ishimwe   Belyse,F,,Hc Musenyi,Musenyi,Musenyi,,Gakwaya,Nyiraminani Sandrine,,2024
+Isano king Mucyo Parfait,M,,Hc Rilima,Rilima,Kimaranzara,,Nzabonimana Theoneste,Mukashyaka Patricia,,2024
+Mutoniwase Thierry Stella,F,,Hc Rilima,Rilima,Nyabagendwa,MUBUGA,Irakiza Thierry,Muhawenayo Chanseline,791734682,2024
+Ituze Queen Parfait,F,,Hc Rilima,Rilima,Kimaranzara,KIMARANZARA,Nzabanimana Theoneste,Mukashyaka Patricia,789423104,2024
+Turikumwenayo  Emmanuel,M,,Hc Rilima,Rilima,Nyabagendwa,MUKOMA,Tugirimana Alphonse,Mukamazimpaka Alice,780152447,2024
+Abijuru Korimeri,F,,Hc Rilima,Rilima,Nyabagendwa,,Hagenimana Thacien,Nyiranzabahimana,,2024
+Uwihanaganye Jean Bosco,M,,Hc Rilima,Rilima,Nyabagendwa,NYAMIZI,Ntawiheba Jean Bosco,Mukandayisenga,783580047,2024
+Mucyo Frank,M,,Hc Rilima,Rilima,Nyabagendwa,Mukoma,Uwamahirwe Partas,Mukeshimana Diane,783632520,2024
+Inema Nshuti  Shema,M,,Hc Rilima,Rilima,Kimaranzara,,Rukundo Pasifique,Ntakirutimana Solange,,2024
+Masengesho  Aimee Shalom,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,2024
+Irakoze  Nathacha,F,,Hc Shyara,Shyara,Kabagugu,,Dusabimana Claude,,,2024
+Tuyisingize Jean,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,2024
+Twizerimana Bonheur,M,,Hc Shyara,Shyara,Rebero,,Sibomana Jean Claude,Mukeshimana Agnes,,2024
+Uwineza Aimee Alice,F,,Hc Shyara,Shyara,Rebero,,Urayeneza Emmanuel,Nyirambaruramye Rachel,,2024
+ISINGIZWE  DENYSE,F,,HC GAKURAZO,Musenyi,Musenyi,RUGANDO,,,,2024
+UMUHOZA  DARLENE,F,,HC GAKURAZO,MUSENYI,GICACA,CYARUBAZI,,,,2024
+UWIKUNDA  CHARTINE,F,,HC GAKURAZO,MUSENYI,RULINDO,KABEZA,,,,2024
+MUGISHA  UWASE,F,,HC GAKURAZO,MUSENYI,MUSENYI,GAKURAZO,,,,2024
+IRAKOZE  RILIANE,F,,HC GAKURAZO,MUSENYI,GICACA,CYANIKA,,,,2024
+MUSHIMIYIMANA ALEXINE,F,,Hc Nyarugenge,NYARUGENGE,GIHINGA,NYAGASOZI,NSHIMIYIMANA ALEX,MUKABUGINGO FORTINE,,2021
+Tumukunde SANDRINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,NDOREYAHO FOUSTIN,NTIBAZIYABO FELESITTA,,2021
+MUGIRANEZA FISTON,M,,HC NYARUGENGE,NYARUGENGE,MURAMBI,NYAGAKOMBE,HABIMANA HEREMA GERARD,NYIRANKUNDWANABERA NAOME,,2021
+MUHAWENIMANA Kevine,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,MURAGIJIMANA BOSCO,MUHAWENIMANA CLEMANTINE,,2021
+Niyigena GERDINE,F,,HC NYARUGENGE,NYARUGENGE,MURAMBI,KANOMBE,HAKIZIMANA CHARLES,MUSABYIMANA JACCQUELINE,,2021
+KWIZERA FLEBO,M,,HC NYARUGENGE,NYARUGENGE,KABUYE,CYAHAFI,ITANGISHAKA J.POUL,KABAGWIRA CLARISSE,,2021
+BAYUBAHE AGASARO ELLA,F,,Hc Rilima,Rilima,KABEZA,,NDAYISABA PASCAL,MUKASINE ADELa,,2021
+NISHIMWE CLEMANCE,F,,Hc Rilima,RILIMA,NYABAGENDWA,,HABIMANA CELESTIN,UWIZEYIMANA ODETTE,,2021
+IRANZI VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,DUSABE EPHREM,NIYONTEZE CLARISSE,,2021
+Irasubiza CLARISSE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,HATEGEKIMANA BONIFACE,NYIRABANANI CONSOLE,,2021
+NZAMBAZA MALIYA GISELE,F,,HC SHYARA,SHYARA,,,,,,2021
+IRAMUZI IGIHOZO YVETTE,F,,HC SHYARA,SHYARA,,,,,,2021
+NIYODUSHIMA BENITHA,F,,HC SHYARA,SHYARA,,,,,,2021
+SEZERANA LAIVE,F,,HC SHYARA,SHYARA,,,,,,2021
+GISUBIZO DIONCRES,M,,HC SHYARA,SHYARA,,,,,,2021
+MUGISHA JAQUES HERTIER,M,,HC SHYARA,SHYARA,,,,,,2021
+BIMENYIMANA CLOUDE,M,,HC SHYARA,SHYARA,RUTARE,RUTARE,SINDIKUBWABO DAMSCENE,,,2021
+IGITANGAZA HIRWA KENEDY,F,,HC RILIMA,RILIMA,,,,IRADUKUNDA DIAE,,2021
+CYIZA CLEMENT,M,,HC MUSENYI,MUSENYI,NYAGIHUNIKA,,,NYIRAMANA JUDITH,,2021
+MUSHIMIYIMANA ALEXINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,NSHIMIYIMANA ALEX,MUKABUGINGO FORTUNE,,2021
+Tumukunde SANDRINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,NDOREYAHO FOUSTIN,NTIBAZIYARE MYE FELESITA,,2021
+MUHAWENIMANA KEVINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,MURAGIJIMANA BOSCO,MUHAWENIMANA CLEMANTINE,,2021
+Niyigena GERDINE,F,,HC NYARUGENGE,NYARUGENGE,MURAMBI,KANOMBE,HAKIZIMANA CHARLES,MUSABYIMANA JACQUELINE,,2021
+MUREKATETE JEANINE,F,,HC NYARUGENGE,NYARUGENGE,MURAMBI,RUGANDARA,NDAYISENGA EMMANUEL,MUKACYUBAHIRO,,2021
+SHEMA FRACK,M,,HC NYARUGENGE,NYARUGENGE,MURAMBI,RUGANDARA,NIZEYIMANA VENCENT,NYIRANSABIMANA DAMARISE,,2021
+MURAGIJIMANA VABEL,M,,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,SIBOMANA YUVELIANA,UWAMAHORO VENELANDA,,2021
 CYUBAHIRO BRYAN,M,,HC RILIMA,RILIMA,KIMARANZARA,,,YVETTE,,2021
 BAYUBAHE AGASARO ELLA,F,,HC RILMA,RILIMA,KABEZA,,,MUKASINE ADELa,,2021
 Kamikazi NOELA,F,,HC RILIMA,RILIMA,BYIMANA,,,NIKUZE VALENTINE,,2021
 IRANZI VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NIYONTEZE CLARISSE,,2021
-Irasubiza CLARISSE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NYIRABANANI CONSOLE,,2021
+Irasubiza CLARISSE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,HATEGEKIMANA BONIFACE,NYIRABANANI CONSOLE,,2021
+SEZERANA LAIVE,M,,HC SHYARA,SHYARA,,,,,,2021
+GISUBIZO DIONCRES,M,,HC SHYARA,SHYARA,,,,,,2021
+NIYODUSHIMA BENITHA,F,,HC SHYARA,SHYARA,,,,,,2021
+NZAMBAZA MALIYA GISELE,F,,HC SHYARA,SHYARA,,,,,,2021
+MUGISHA JAQUES HERTIER,M,,HC SHYARA,SHYARA,,,,,,2021
+IRAMUZI IGIHOZO YVETTE,F,,HC SHYARA,SHYARA,,,,,,2021
+BIMENYIMANA CLOUDE,M,,HC SHYARA,SHYARA,,,,,,2021
+Tumukunde SANDRINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,NDOREYAHO FOUSTIN,NTIBAZIYAREMYE FELESITA,,2021
+MUREKATETE JEANINE,F,,HC NYARUGENGE,NYARUGENGE,MURAMBI,RUGANDARA,NDAYISENGA EMMANUEL,MUKACYUBAHIRO,,2021
+SHEMA FRANK,M,,HC NYARUGENGE,NYARUGENGE,MURAMBI,RUGANDARA,NIZEYIMANA VENCENT,NYIRANSABIMANA DAMARISE,,2021
+MUHAWENIMANA KEVINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,MURAGIJIMANA BOSCO,MUHAWENIMANA CLEMANTINE,,2021
+Niyigena GERDINE,F,,HC NYARUGENGE,NYARUGENGE,MURAMBI,KANOMBE,HAKIZIMANA CHARLES,MUSABYIMANA JACQUELINE,,2021
 CYUBAHIRO BRYAN,M,,HC RILIMA,RILIMA,KIMARANZARA,,,NYIRAMISIGARO JOSYLYNE,,2021
 BAYUBAHE AGASARO ELLA,F,,HC RILIMA,RILIMA,KABEZA,,,MUKASINE ADELa,,2021
 KAMIKAZI NOELLA,F,,HC RILIMA,RILIMA,BYIMANA,,,NIKUZE VALENTINE,,2021
 IRANZI VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NIYONTEZE CLARISSE,,2021
 Irasubiza CLARISSE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NYIRABANANI CONSOLE,,2021
+GISUBIZO DIONCRES,M,,HC SHYARA,SHYARA,,,,,,2021
+MUGISHA JAQUES HERTIER,M,,HC SHYARA,SHYARA,,,,,,2021
+BIMENYIMANA CLOUDE,M,,HC SHYARA,SHYARA,,,,,,2021
+NZAMBAZA MALIYA GISELE,F,,HC SHYARA,SHYARA,,,,,,2021
+NIYIODUSHIMA BENITHA,F,,HC SHYARA,SHYARA,,,,,,2021
+NIYOKWIZERWA CHANTAL,F,,HC SHYARA,SHYARA,,,,,,2021
+IHABWIKUZO CLEMANTINE,F,,HC SHYARA,SHYARA,,,,,,2021
+Tumukunde SANDRINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,NDOREYAHO FOUSTIN,NTIBAZIYAREMYE FELESITA,,2021
+Niyigena GERDINE,F,,HC NYARUGENGE,NYARUGENGE,MURAMBI,KANOMBE,HAKIZIMANA CHARLES,MUSABYIMANA JACQUELINE,,2021
+MUHAWENIMANA KEVINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,RWABUSORO,MURAGIJIMANA BOSCO,MUHAWENIMANA CLEMANTINE,,2021
 HABUMUGISHA CLOUDE,M,,HC RILIMA,RILIMA,KIMARANZARA,,,MUTUYIMANA CLESENCE,,2021
 BAYUBAHE AGASARO ELLA,F,,HC RILIMA,RILIMA,KABEZA,,,MUKASINE ADELa,,2021
 KAMIKAZI NOELLA,F,,HC RILIMA,RILIMA,BYIMANA,,,NIKUZE VALENTINE,,2021
 IRANZI VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NIYONTEZE CLARISSE,,2021
 Irasubiza CLARISSE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NYIRABANANI CONSOLE,,2021
+HABUMUGISHA J'CLOUDE,M,,HC RILMA,,,,,MUTUYIMANA Clesene,,2021
 IRANZI VANNESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NIYONTEZE CLARISSE,,2021
 KAMIKAZI NOELLA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,NIKUZE VALENTINE,,2021
 HABUMUGISHA J.CLOUDE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,MUTUYIMANA XXX,,2021
-NZAMBAZA MALIYA GISELE,F,9/1/2020,HC SHYARA,SHYARA,,,,,,2021
-IRAMUZI IGIHOZO YVETTE,F,9/1/2020,HC SHYARA,SHYARA,,,,,,2021
-NIYODUSHIMA BENITHA,F,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-SEZERANA LAIVE,F,2/1/2020,HC SHYARA,SHYARA,,,,,,2021
-GISUBIZO DIONCRES,M,2/1/2020,HC SHYARA,SHYARA,,,,,,2021
-MUGISHA JAQUES HERTIER,M,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-BIMENYIMANA CLOUDE,M,6/1/2020,HC SHYARA,SHYARA,,,,,,2021
-SEZERANA LAIVE,M,2/1/2020,HC SHYARA,SHYARA,,,,,,2021
-GISUBIZO DIONCRES,M,2/1/2020,HC SHYARA,SHYARA,,,,,,2021
-NIYODUSHIMA BENITHA,F,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-NZAMBAZA MALIYA GISELE,F,9/1/2020,HC SHYARA,SHYARA,,,,,,2021
-MUGISHA JAQUES HERTIER,M,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-IRAMUZI IGIHOZO YVETTE,F,9/1/2020,HC SHYARA,SHYARA,,,,,,2021
-BIMENYIMANA CLOUDE,M,6/1/2020,HC SHYARA,SHYARA,,,,,,2021
-BIMENYIMANA CLOUDE,M,6/1/2020,HC SHYARA,SHYARA,,,,,,2021
-IHABWIKUZO CLEMANTINE,F,10/1/2020,HC SHYARA,SHYARA,,,,,,2021
-Niyokwizerwa CHANTAL,F,10/1/2020,HC SHYARA,SHYARA,,,,,,2021
-MUGISHA JAQUES HERTIER,M,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-NDUNGUTSE EPPA,M,11/1/2018,HC SHYARA,SHYARA,,,,,,2021
-BIMENYIMANA CLOUDE,M,6/1,HC SHYARA,SHYARA,,,,,,2021
-IHABWIKUZO CLEMANTINE,F,10/1/2020,HC SHYARA,SHYARA,,,,,,2021
-Niyokwizerwa CHANTAL,F,10/1/2020,HC SHYARA,SHYARA,,,,,,2021
-MUGISHA JAQUES HERTIER,M,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-NDUNGUTSE EPPA,M,11/1/2018,HC SHYARA,SHYARA,,,,,,2021
-BIMENYIMANA CLOUDE,M,6/1/2020,HC SHYARA,SHYARA,,,,,,2021
-NDUNGUTSE EPPA,M,11/1/2018,HC SHYARA,SHYARA,,,,,,2021
-IHABWIKUZO CLEMANTINE,F,10/1/2020,HC SHYARA,SHYARA,,,,,,2021
-Niyokwizerwa CLOMBE,F,10/1/2020,HC SHYARA,SHYARA,,,,,,2021
-MUGISHA JAQUES HERTIER,M,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-GISUBIZO DIONCRES,M,2/1/2020,HC SHYARA,SHYARA,,,,,,2021
-MUGISHA JAQUES HERTIER,M,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-BIMENYIMANA CLOUDE,M,6/1/2020,HC SHYARA,SHYARA,,,,,,2021
-NZAMBAZA MALIYA GISELE,F,9/1/2020,HC SHYARA,SHYARA,,,,,,2021
-NIYIODUSHIMA BENITHA,F,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-NIYOKWIZERWA CHANTAL,F,1/1/2020,HC SHYARA,SHYARA,,,,,,2021
-IHABWIKUZO CLEMANTINE,F,10/1/2020,HC SHYARA,SHYARA,,,,,,2021
-uwase bionce,F,11/1/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTER,MUHAYIMANA PASCASIE,,2021
-UWAYO LEONTINE,F,10/1/2020,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAKABUYE,NSIGAYE,NYIRAHATEGEKIMANA PASCASIE,,2021
-IYAMUREMYE ERIC,M,12/1/2020,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAGASOZI,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
-UWASE Bionce,F,11/1/2020,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTER,MUHAYIMANA PASCASIE,,2021
-IRASUBIZA REBECCA,F,6 years,HC GAKURAZO,MUSENYI,RULINDO,,NTIBIHEZWA DAMASCENE,NYIRABARIYANGA BENIGNE,,2021
-IRASUBIZA Chantal,F,10 Months,HC GAKURAZO,MUSENYI,RULINDO,,HABYARIMANA Venuste,KAYITESI Josiane,,2023
-HAKIZIMANA Jules,M,,GS GAKURAZO,MUSENYI,MUSENYI,,HAKIZIMANA Celesitine,MUKANYANDWI,,2023
-TWIZERIMANA Jennifer,F,10/3/2017,GS GAKURAZO,MUSENYI,MUSENYI,,NKUNDABAGENZI,NYIRABAGENZI Angelique,,2023
-TWIZERIMANA Jennifer,F,10/3/2017,HC GAKURAZO,MUSENYI,MUSENYI,,NKUNDABAGENZI,NYIRABAGENZI Angelique,,2023
-UWASE KEVINE,F,,HC RILIMA,RILIMA,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2023
-IRASUBIZA REBECCA,F,6years,GS GAKURAZO,MUSENYI,MUSENYI,,NTIBIHEZWA Damascen,NYIRABARIYANGA Benigne,,2023
-HAKIZIMANA JULES,M,10/6/2018,HC GAKURAZO,MUSENYI,MUSENYI,,HAKIZIMANA Tharcisse,MUKANYANDWI Clemantine,,2023
-NZABONIMANA Emmanuel,M,9MOIS,GS GAKURAZO,MUSENYI,MUSENYI,,NKUNDABAGENZI Leonard,,,2023
-UWINEZA SOLANGE,M,,HC RILIMA,RILIMA,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2023
-CYIZA FILS Clement,F,22/11/2023,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,,HAKIZIMANA Athanasie,NYIRAMANA Judithe,,2023
-UWIDUHAYE DIANE,F,,HC RILIMA,,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUEL,,2023
-BIKORIMANA DANIEL,M,22/3/2018,HC GAKURAZO,MUSENYI,MUSENYI,,SIBOMANA Jacques,DUSHIMIRIMANA Francine,,2023
-NZABONIMPA Emmanuel,M,25/7/2022,HC GAKURAZO,MUSENYI,MUSENYI,,NKUNDABAGENZI Leonard,UWINGENEYE Bernadethe,,2023
-UWIMPUNDU KEVIN,F,27/3/2022,HC RILIMA,RILIMA,,,NTEZIRYAYO Jean,UWAMAHORO Marie,,2023
-IRASUBIZA KEZA,F,3YEARS,HC RILIMA,RILIMA,,,TUYISENGE DAVIDE,NZAYISENGA ESTHER,,2023
-CYIFUZO Honole,M,17/2/2023,HC GAKURAZO,MUSENYI,RULINDO,,UWASABIMANA Etienne,NYIRANKUNDUMURYANGO Kansilda,,2023
-UWINEZA Fiona,F,1.6 Years,HC RILIMA,RILIMA,KABEZA,,HACINEZA J Bosco,NYIRANSHIMIYIMANA,,2023
-UWINEZA ANGE KELIA,F,3YEARS,HC RILIMA,RILIMA,,,,MUKANDUNGUTSE MEDIA,,2023
-ISINGIZWE Denyse,F,2years,HC GAKURAZO,MUSENYI,MUSENYI,,GAKARAYA Faustin,NYIRAMINANI Sandrine,,2023
-IHIMBAZWE Suvenille,F,2.10Years,HC RILIMA,RILIMA,KIMARANZARA,,RWAHAMA Innocent,NIYONIZEYE Colombe,,2023
-MANIRAHARI JUSTIN,M,19/2/2022,HC GAKURAZO,MUSENYI,MUSENYI,,NTIRUGIRIMBABAZI Vicent,NZAMWITAKUZE Josephine,,2023
-IRANZI GANZA BRUNO,M,2YEARS,HC RILIMA,RILIMA,,,BIZIMANA INNOCENT,MUKANYANDWI PRIMITIVE,,2023
-MANZI REGIS,M,3YEARS,HC RILIMA,RILIMA,,,NDABAMENYE REGIS,MUKASAFARI HUGE,,2023
-ABAYISENGA GENEFER,F,8 MONTH,HC RILIMA,RILIMA,NYABAGENDWA,,,MUKANDAYISENGA,,2023
-IRASUBIZA UWASE JAYDEN,F,3YEARS,HC RILIMA,RILIMA,,,TUYISENGE DAVIDE,NZAYISENGA ESTHER,,2023
-IRANZI VANNESA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NIYONEZE CLARISSE,,2023
-ABAYISENGA GENIFER,F,7MONTH,HC RILIMA,RILIMA,,,,MUKANDAYISENGA,,2023
-AGANZE ANAYA NADGIDA,F,6 MONTH,,,,,BIZUMUREMYI DIEDONON,UWIRAGIYE MARIE CHANTAL,,2021
-IGITANGAZA HIRWA KENEDY,F,,HC RILIMA,RILIMA,,,,IRADUKUNDA DIAE,,2021
-ABAYISENGA GENIFER,F,9 Months,HC RILIMA,RILIMA,,,,MUKANDAYISENGA,,2023
-GANZA AMAZA CHAILLA,F,6MONTH,,,,,BIZIMUNGU DIEDONE,UWIRAGIYE MARIE CHANTAL,,2023
-MWUNGUZI ALIFORIS,M,6MONTH,,,,,,,,2023
-TWIZERIMANA Boneheur,M,12months,HC GIHINGA,SHYARA,REBERO,,SIBOMAN Jean cloude,MUKESHIMANA Agnes,,2023
-MUKAMANA Athanasie,F,,HC GIHINGA,SHYARA,SHYARA,,NARAMABUYE Philippo,NYIRABAGENZI Concolee,,2022
-IMANIKUNDABAYO Rosine,F,3.3 Months,HC MAYANGE,NYARUGENGE,MWAMBI,,KWIZERIMANA Jotham,MUTUNGIREHE EPIPHANIE,,2022
-INEZAYIMANA Adeline Adeline,F,3.6Months,HC MAYANGE,NYARUGENGE,MURAMBI,,NGEZAHAYO Isaie,UWIMPUHWE Adelphine,,2022
-MUHAWENIMANA Diane,F,3.3Months,HC MAYANGE,NYARUGENGE,NGENDA,,BYIMANA Celestine,MUKAMA Clementine,,2022
-NIYOGUSHIMWA Rebbecca,F,2Years,HC MAYANGE,NYARUGENGE,GIHINGA,,HARERIMANA Daniel,NYIRANSABIMANA Chalrotte,,2022
-HAKIZIMANA Lacky,M,24Months,HC MAYANGE,NYARUGENGE,NGENDA,,HAKIZIMANA Damascent,NYIRANZABAMWITA Cadette,,2022
-RUTAYISIRE IRIZA Keilla,F,13Months,HC RILIMA,RILIMA,KABEZA,,RUTAYISIRE Emmanuel,MUKESHIMANA Madeline,,2022
-MUTUYIMANA Josiane,F,9Months,HC MAYANGE,NYARUGENGE,GIHINGA,,MUTUYEYEZU Josephy,MUKAKARANGWA Christine,,2022
-MPANO Jackson,M,"2,8Months",HC MAYANGE,NYARUGENGE,GIHINGA,,NDAYISENGA Athanase,UWIMANA Fortune,,2022
-NIYIGENA Germe,M,"2,2Months",HC MAYANGE,NYARUGENGE,MURAMBI,,HAKIZIMANA Chales,MUSABYIMANA Jaqueline,,2022
-UWASE Kevine,F,3 MONTH,HC RILIMA,RILIMA,,,NTIRIVAMUNDA FABIE,MUKANYANGEZI JACQUELINE,,2023
-UWINEZA SOLANGE,F,3MONTH,HC RILIMA,RILIMA,,,NTIRIVAMUNDA FABIE,MUKANYANGEZI JACQUELINE,,2023
-TWIZERIMANA JENNIFER,F,7YESRS,HC GAKURAZO,MUSENYI,MUSENYI,,,NYIRABAGENZI ANGELIQUE,,2023
-IGANZE BERWA NEILLA,F,16MONTHS,HC GAKURAZO,MUSENYI,RULINDO,,KARIMUNDA ERIE,MUKESHIMANA FRANCINE,,2023
-TWIZERIMANA GENNIFER,F,7YEAES,HC GAKURAZO,MUSENYI,GAKURAZO,,,NYIRABAGENZI ANGELIQUE,,2022
-HABIHIRWE EMMY,M,,HC MUSENYI,MUSENYI,RILINDO,,NIYONSA THOMAS,MUKANEZA CLEMENTINE,,2022
-IHIMBAZWE SOUVENILLE,F,18MONTHS,HC RILIMA,LIRIMA,KIMARANZARA,,RWAHAMA INNOCENT,NIYONIZEYE COLOMBE,,2022
-NMNIYOKWIZERWA Chantal,F,25MONTHS,HC GIHINGA,SHYARA,NZIRANZIZA,,TEGENYA Gilbert,NYIRAHIZIYAREMYE,,2022
-UWIZERA Justine,F,16MONTHS,HC GIHINGA,SHYARA,NZIRANZIZA,,SEKANABO Daniel,MUSENGIMANA Bright,,2022
-NIYIGENDA GERARDINE,F,22MONTHS,NYARUGENGE,NYARUGENGE,MURAMBI,,HAKIZIMANA CHARLES,MUSABYIMANA JAQUELINE,,2022
-UWIHANGANYE JEAN BOSCO,M,16MONTHS,EUGENIE,NYABAGENDWA,NYABAGENDWA,,NTAWIHEBA J BOSCO,MUKANDAYISENGA DONATHA,,2023
-UWINEZA JUSTINE,F,16MONTHS,HC GIHIINGA,SHYARA,NZIRANZIZA,,SEKANABO DANIEL,,,2022
-IHIMBAZWE SOUVENILLE,F,,HC RILIMA,RILIMA,KIMARANZARA,,NIYONIZEYE COLOMBE,,,2022
-HABUMUGISHA J'CLOUDE,M,,HC RILMA,,,,,MUTUYIMANA Clesene,,2022
-BYIRINGIRO JONATHA,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,MUKATUYIZERA SOLANGE,,2022
-IHIMBAZWE SOUVENIR,F,,HC RILIMA,RILIMA,KIMARANZARA,,,NIYONIZEYE CLOMBE,,2022
-NIYOMUGABO PACIFIQUE,M,,RILIMA,RILIMA,NYABAGENDWA,,,NYIRANZABIHIMANA CHANTAL,,2022
-IZABAYO ITUZE BLENDA,F,,RILIMA,RILIMA,NTARAMA,,,IYAMUBONYE ANASTASIE,,2022
-BYIRINGIRO Jonathan,M,2.5 Years,HC RILIMA,RILIMA,NYABAGENDWA,,MISIGARO Theophile,KUKATUYIZERE,,2023
-URINZWENIMANA Ange,M,2.2Years,HC RILIMA,RILIMA,NYABAGENDWA,,NSENGIYUMVA Berton,NZAYITURIKI Drocella,,2023
-IRANEZEZA Briva,F,2.6 Years,HC RILIMA,RILIMA,NTARAMA,,KAMANAYO Froduard,MUKAMIGISHA Francois,,2023
-RUTAYISIRE IRIZA Keilla,F,2 Years,HC RILIMA,RILIMA,KABEZA,,RUTAYISIRE Emmanuel,MUKESHIMANA Mado,,2023
-UWIKUNDA Alice,F,1 Years,HC RILIMA,RILIMA,KABEZA,,HABIMANA Zacayo,KAMPIRE Elina,,2023
-UWINGENEYE Kellia,F,2 Years,HC RILIMA,RILIMA,KABEZA,,NZABANITA John,NYIRABAGENZI Jaqueline,,2023
-KAMIKAZI Noella,F,3.4 Years,HC RILIMA,RILIMA,KIMARANZARA,,NDIKUBWIMANA Florien,NIKUZE Valentine,,2023
-MUTONIWASE Divine,F,1.4 Years,HC RILIMA,RILIMA,KIMARANZARA,,SIKUBWABO Silas,MUKATUYISHIME,,2023
-UWINEZA ISIMBI Francois,F,1.6 Years,HC RILIMA,RILIMA,NYABAGENDWA,,DUKUZUMUREMYI J Bosco,MURAGIJIMANA Agnes,,2023
-TURIKUMWENAYO Emmanuel,M,1.2 Years,HC RILIMA,RILIMA,NYABAGENDWA,,RUGIRIMANA Alphonce,MUKAMAZIMPAKA Alice,,2023
-NIYONZIMA Emile,M,3 Years,HC RILIMA,RILIMA,KIMARANZARA,,NIYONZIMA Philippe,MANIRIHO Jeanine,,2023
-NKINZINGABO MANZI Elineste,M,1.2 Years,HC RILIMA,RILIMA,KABEZA,,HABUMUGISHA Fabien,MUKAKIMENYI,,2023
-IGANZE Ornella,F,2.6 Years,HC RILIMA,RILIMA,NYABAGENDWA,,NIZEYIMANA,UWASE Fiette,,2023
-CYOMORO Aime Andro,M,1.4 Years,HC RILIMA,RILIMA,NYABAGENDWA,,SEMANA Tadeo,NIYONSABA Aliane,,2023
-MANIRAFASHA David,M,9 Months,HC RILIMA,RILIMA,NYABAGENDWA,,SIBORUREMA Celestin,YAMFASHIJE Donatha,,2023
-IGIHOZO Adia Jolly,F,1.3 Years,HC RILIMA,RILIMA,KABEZA,,SIBOMANA J Pierre,NYIRAHORANIMANA Dative,,2023
-IRAKOZE Kevine,F,1 Year,HC RILIMA,RILIMA,NYABAGENDWA,,BAPFAKURERA Vianney,UWIMANA Jeanine,,2023
-MUSHIMIYIMANA Malliam,F,10 Months,HC RILIMA,RILIMA,NTARAMA,,MUGABARIGIRA Alphonce,MUKAMUGANGA Cloudine,,2023
-UWIHANGANYE J Bosco,M,2.1 Years,HC RILIMA,RILIMA,NYAMIZI,,NTAWIHEBA J Bosco,MUKANDAYISENGA Donatha,,2023
-IGITANGAZA Hirwa Kened,M,1 Year,HC RILIMA,RILIMA,KABEZA,,NSHIMIYIMANA Emmanuel,IRADUKUNDA Diane,,2023
-NDUNGUTSE Eppa,M,5.3 years,,SHYARA,,,NTAWUHIGANAYO Ezekiya,NYIRACUMI Meresiyana,,2023
-RUKUNDO Ereneste,M,15MONTHS,HC GIHINGA,SHYARA,RUTARE,,NZABANMWITA Maricela,YANKURIJE Dancilla,,2023
-BIZIMANA Ivan,M,22MONTHS,,SHYARA,,,BIZIMANA Gerve,NIYOMUFASHA Mariyam,,2023
-NIGANZE Pacifique,M,20MONTHS,HC GIHINGA,SHYARA,RUTARE,,NDIKUMANA Emmanuel,MUKANGENDO Frida,,2023
-UWINEZA Justine,M,14MONTHS,HC GIHINGA,SHYARA,NZIRANZIZA,,NSEKANABO Daniel,MUSENGIMANA Bright,,2023
-IRANEZEZA Brive,M,"1Years,6Months",,RILIMA,NYABAGENDWA,,KAMANAYO Frodual,MUKAMUGISHA Francoise,,2022
-IGITANGAZA Hirwa Kenedi,M,11MONTHS,HC EUGENIE,RILIMA,KABEZA,,NSANZIMANA Emmanuel,IRADUKUNDA Diane,,2023
-UWINEZA Flon,F,"1Y,6MONTHS",HC EUGENIE,RILIMA,KABEZA,,HACINEZA Jean Bosco,,,2023
-NIYONZIMA Emille,M,2YEARS,HC EUGENIE,RILIMA,KIMARANZARA,,,MANIRIHO Jeanine,,2023
-UWAMAHORO Sabrine,F,1YEARS,HC GAKURAZO,MUSENYI,MUSENYI,,,NYIRAHABANA,,2023
-BYIRINGIRO Jonatha,M,17MONTHS,,,,,MISIGARO Theophile,MUKATUYIZERE Solange,,2022
-KAMIKAZI Noella,F,3YEARS,HC RILIMA,RILIMA,GASABO,,NDIKUBWIMANA Flororie,NIKUZE Valentine,,2022
-INEZA JEANNETTE,F,9MONTHS,HC RILIMA,RILIMA,KABEZA,,BIZIMANA Flix,NYIRAHABIMANA Angelique,,2022
-URINZWENIMANA Frugance,M,2YEARS,HC RILIMA,RILIMA,NYABAGENDWA,,NSENGIYUMVA Berton,NAYITURIKI Dorosera,,2023
-BYIRINGIRA Jonatha,M,14YEARS,HC RILIMA,RILIMA,NYABAGENDWA,,MISIGARO Theophile,MUKATUYIZERE Solange,,2022
-MUTONIWASE Kellia,F,"1,8MONTHS",HC MAYANGE,NYARUGENGE,GIHINGA,,MUTABAZI Emmanuel,NAHINYERETSE,,2022
-IRANEZEZA Brive,F,,,,,BUHORO,,MUKAMIGISHA Francois,,2022
-INEZA TETA ROSSETE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,MUKAMPAZIMAKA EMACULEE,,2021
-UWIHANGANYE J BOSCO,M,,RILIMA,RILIMA,NYAMIZ,,MUKANDAYISENGA,,,2021
-UWIMPUHWE KESSIE,F,1.7 YEARS,HC RILIMA,RILIMA,KABEZA,,NSANZIMANA PROTONE,NYIRANZEYIMANA JEANNETTE,,2021
-UWASE KEVINE,F,8MONTH,,,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2021
-UWINEZA SOLANGE,F,8MONTH,,,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2021
-UWIDUHAYE ISHIMWE DIANE,F,8MONTH,,,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2021
-IRASUBIZA UWASE JAYDEN,F,2.5YEARS,HC RILIMA,RILIMA,KABEZA,,NZAYISENGA ESTHER,TUYISENGE DAVIDE,,2021
-IRANZI VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NIYONTEZE CLARISSE,,2021
-IGITANGAZA HIRWA KENEDY,M,1YEAR,HC RILIMA,RILIMA,KABEZA,,NSHIMIYIMANA EMMANUEL,IRADUKUNDA DIANE,,2023
-NKINZINGABO MANZI ELINES,M,1.4 YEARS,HC RILIMA,RILIMA,KABEZA,,MUKIMENYI FRODONATA,HABUMUGISHA FABIEN,,2023
-CYOMORO AIME ANDRE,M,1.6 YEARS,HC RILIMA,RILIMA,NYABAGENDWA,,SEMANA THADEE,NIYONSABA ALIANA,,2023
-IGANZE OLNETA,F,2.3 YEARS,HC RILIMA,RILIMA,NYABAGENDWA,,NIZEYIMANA,UWASE FIETE,,2023
-IRAKOZE KEVINE,F,1.2YEARS,HC RILIMA,RILIMA,NYABAGENDWA,,BAPFAKURERA VIANNNEY,UWIMANA JEANINNE,,2023
-UWINEZA ISIMBI FRANCOISE,F,1.8.YEARS,HC RILIMA,RILIMA,NYABAGENDWA,,DUKUZUMUREMYI J BOSCO,MURAGIJIMANA AGNES,,2023
-MUTONIWASE DIVINE,F,1.6 YEARS,HC RILIMA,RILIMA,KIMARANZARA,,SIKUBWABO SILAS,MUKATUYISHIMIRE,,2023
-IGIHOZO ADIA JELLY,F,1.5YEARS,HC RILIMA,RILIMA,KABEZA,,SIBOMANA J.PIERRE,NYIRAHORANIMANA,,2023
-UWIHANGANYE J BOSCO,M,2.3 YEARS,HC RILIMA,RILIMA,NYAMIZI,,NTAWIHEBA J.BOSCO,MUKANDAYISENGA,,2023
-MANIRAFASHA DAVIDE,M,11MONTH,HC RILIMA,RILIMA,NYABAGENDWA,,SIBORUREMA CELESTINE,YAMFASHIJE DONATHA,,2023
-TURIKUMWENAYO EMMANUEL,M,1.4.YEARS,HC RILIMA,RILIMA,NYABAGENDWA,,TUGIRIMANA ALPHONSE,MUKAMAZIMAKA ALICE,,2023
-NIYONZIMA EMILE,M,3.2 YEARS,HC RILIMA,RILIMA,KIMARANZARA,,NIYONZIMA FILIPE,MANIRIHO JEANINNE,,2023
-CYIZA CLEMENT,M,10 MONTH,HC MUSENYI,MUSENYI,NYAGIHUNIKA,,,NYIRAMANA JUDITH,,2021
-GATERA ELIVIER,M,7YEARS,HC MUSENYI,MUSENYI,NYAGASAGASA,,,KAMPIRE SERAPHINE,,2023
-GANZA BRIAN,M,1.4 YEARS,HC MUSENYI,MUSENYI,CYERU,,HAVUGIMANA FABIEN,MUKANYANDWI IMMACULE,,2023
-UWAMAHORO SABRINE,F,1YEARS,HC MUSENYI,MUSENYI,MUHANGA,,,NYIRAHABANABASENGA JEANNETTE,,2023
-UWINEZA ANGE KELIA,F,1.9YEARS,,,,,IRADUKUNDA,MUKANDUNGUTSE MEDIATRICE,,2023
-IRANZI GANZA BRUNO,M,10MONTH,,,,,BIZIMANA INNOCENT,DUSABIMANA EMMANUELINE,,2023
-UWIKUNDA ALICE,F,1YEARS,HC RILIMA,KABEZA,,,HABIMANA ZACAYO,KAMPIRE ELINA,,2022
-KAMIKAZI NOELA,F,3YEARS,HC RILIMA,RILIMA,KIMARANZARA,GASABO,KUBWIMANA FLORIE,NIKUZE VALENTINE,,2022
-UWINGENEYE KELIA,F,16MONTH,HC RILIMA,RILIMA,KABEZA,,NZABANITA JOHN,NYIRABAGENZI JACQUELINE,,2022
-MUGWANEZA SERAPHINE,F,,HC GAKURAZO,MUSENYI,,,BARAYAVUGA,UWIMANA MUREKATETE,,2022
-IHORITURINDA THEOGENE,M,8MONTH,HC MUSENYI,MUSENYI,GAKURAZO,,HABINEZA THEOGENE,MUKAGASIGWA JEANNE,,2022
-MANZI REGIS,M,2YEARS,HC RILIMA,RILIMA,NYABAGENDWA,,MUKASAFARI LOUISE,NDABAMENYE REGIS,,2022
-AGANZE ANNAYA NADIDJA,F,4MONTH,,,,,BIZUMUREMYI DIEDONON,UWIRAGIYE MARIE CHANTAL,,2022
-NTINZI ASIF,M,4MONTH,,,,,BIZIMUNGU DIEDONE,UWIRAGIYE MARIE CHANTAL,,2022
-GANZA AMDA CHAILLA,F,4MONTH,,,,,BIZIMUNGU DIEDONE,UWIRAGIYE MARIE CHANTAL,,2022
-MWUNGUZI ARIF,M,4MONTH,,,,,BIZIMUNGU DIEDONE,UWIRAGIYE MARIE CHANTAL,,2022
-IRASUBIZA KEZA,F,2.1YEARS,,,,,TUYISENGE DAVIDE,NZAYISENGA ESTHER,,2023
-UWIHANGANYE J.BOSCO,M,1.5YEARS,HC RILIMA,RILIMA,NYABAGENDWA,,NTAWIHEBA J.BOSCO,MUKANDAYISENGA DONATHA,,2022
-URINZWENIMANA FRUGENCE,M,9MONTH,HC RILIMA,RILIMA,NYABAGENDWA,,NSENGIYUMVA BERTOIN,NZAYITURIKI DORCELA,,2022
-UWINEZA FIONA,F,10MONTH,HC RILIMA,RILIMA,KABEZA,,HACINEZA J BOSCO,NYIRANSHIMIYIMANA VALERIE,,2022
-RUKUNDO ERNESTE,M,18MONTHS,HC GIHINGA,SHYARA,RUTARE,,NZABAMUSUTA MARISERA,YANKURIJE DANSILLE,,2022
-IMANIRAKOZE KEVINE,F,7.8 YEARS,,SHYARA,,,BIZEYAMASO VIATEUR,MUKANTWARI FRANCINE,,2022
-NIYOKWIZERWA CHANTAL,F,20MONTHS,,SHYARA,,,TEGANYA GILBERT,NYIRABIZIYAREMYE RABAT,,2022
-IRASUBIZA CLEMANTINE,F,17MONTHS,HC GIHINGA,SHYARA,KABAGUGU,,TWAGIRIMANA EMMANUEL,MUSABYIMANA CKOUDINE,,2022
-RUTAYISIRE IRIZA KELIA,F,1.3 YEARS,HC RILIMA,RILIMA,KABEZA,,RUTAYISIRE EMMANUEL,MUKESHIMANA MADO,,2022
-UWIMPUHWE KESIA,F,1.7YEARS,HC RILIMA,RILIMA,KABEZA,,NSANZIMANA PROTEN,NYIRANZEYIMANA JEANNETE,,2022
-UWINEZA JUSTIN,F,13MONTHS,HC GIHINGA,SHYARA,NZIRANZIZA,,NSEKANABO DANIEL,MUSENGIMANA BRUGITTE,,2022
-RUKUNDO ERNESTE,M,16MONTHS,HC GIHINGA,SHYARA,GITARE,,NZABAMUSITA MARSERA,,,2022
-NIYOKWIZERWA CHANTAL,F,33MONTHS,,SHYARA,,,TEGANYA GILBRT,NYIRABIZIYAREMYE RAHAB,,2022
-ITUZE QUEEN PARFAITTE,F,7MONTHS,,LIRIMA,,,NZABONIMAN THEOGENNE,MUKASHYAKA PATRICIE,,2022
-UWIMPUHWE KESSY,F,2YEARS,EUGENIE,RILIMA,KABEZA,,NSENGIYUMVA PLOTAS,NYIRANZEYIMANA JEANNETTE,,2022
-UWIHANGANYE J BOSCO,M,1YEARS,EUGENIE,RILIMA,NYABAGENDWA,,NTAWIHEBA J BOSCO,MUKANDAYISENGA DONATHA,,2022
-ISHIMWE DIANNE,F,13MONTHS,,RILIMA,,,NTIRIVAMUNDA FABIEN,MUKANGEZI JAQUELINE,,2022
-UWINEZA SOLANGE,F,13MONTHS,,RILIMA,,,NTIRIVAMUNDA FABIEN,MUKANGEZI JAQUELINE,,2022
-KAMIKAZI NOELLA,F,2YEARS,HC RILIMA,RILIMA,,,,,,2023
-UWIDUHAYE KETIA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,MUKARUBERWA ATHANASIE,,2023
-KAMIKAZI NOELLA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,NIKUZE VALANTINE,,2023
-NSINZI ASIRI PHARES,M,06MONTHS,,,,,BIZIMPUNGU EDDY,,,2023
-UWINEZA ISIMBI FIANCOISE,F,18MOTHS,,LIRIMA,NYABAGENDWA,,DUKUZUMUREMYI J BOSCO,MURAGIJIMANA AGNES,,2023
-IRASUBIZA UWASE JOYDEN,F,2YEARS,,,,,TUYISENGE DAVID,NZAYISENGA ESTER,,2023
-UWIKUNDA ALICE,F,1YEARS/5MONTHS,EUGENIE,LIRIMA,KABEZA,,HABIMANA ZACARIA,KAMPIRE ELINE,,2023
-INEZA JEANETTE,F,6MONTHS,,,,,BIZIMANA,NYIRAHABIMANA ABGELIQUE,,2023
-JOSUE JOSUE,M,9MONTHS,NYARUGENGE,NYARUGENGE,GIHINGA,,BIZIMANA,MURAGIJIMANA,,2022
-UWIHANGANYE J BOSCO,M,,,,,KIMARANZARA,,MUKANDAYISENGA,,2022
+BIMENYIMANA CLOUDE,M,,HC SHYARA,SHYARA,,,,,,2021
+IHABWIKUZO CLEMANTINE,F,,HC SHYARA,SHYARA,RUTARE,RUTARE,TEGANYA GILBERT,,,2021
+Niyokwizerwa CHANTAL,F,,HC SHYARA,SHYARA,RUTARE,RUTARE,TEGANYA GILBERT,,,2021
+MUGISHA JAQUES HERTIER,M,,HC SHYARA,SHYARA,RUTARE,RUTARE,NTAMBARA EMMANUEL,,,2021
+NDUNGUTSE EPPA,M,,HC SHYARA,SHYARA,,,,,,2021
+uwase bionce,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA  SYLVESTER,MUHAYIMANA PASCASIE,,2021
+UWAYO LEONTINE,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAKABUYE,NSIGAYE,NYIRAHATEGEKIMANA PASCASIE,,2021
+IRABARUTA JOICE,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,CYAHAFI,NIZEYIMANA,BASANGIRA ESTHER,,2021
+ITABAZA JESCA,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,CYAHAFI,NIZEYIMANA,BASANGIRA ESTHER,,2021
+IYAMUREMYE ERIC,M,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYARUSAMBU,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
+UWASE BIONCE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTRE,MUHAYIMANA PASCASIE,,2021
+UWAYO LEONTINE,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAKABUYE,NSIGAYE,NYIRAHATEGEKIMANA PASCASIE,,2021
+BIMENYIMANA CLOUDE,M,,HC SHYARA,SHYARA,,,,,,2021
+IHABWIKUZO CLEMANTINE,F,,HC SHYARA,SHYARA,,,,,,2021
+MUGISHA JAQUES HERTIER,M,,HC SHYARA,SHYARA,,,,,,2021
+NDUNGUTSE EPPA,M,,HC SHYARA,SHYARA,,,,,,2021
+NIYOMUGABO PACIFIQUE,M,,RILIMA,RILIMA,NYABAGENDWA,,,NYIRANZABIHIMANA CHANTAL,,2021
 HABUMUGISHA J cloude,M,,,RILIMA,NTARAMA,,,MUTUYIMANA CLESENCE,,2021
+BIMENYIMANA CLOUDE,M,,HC SHYARA,SHYARA,,,,,,2021
+NDUNGUTSE EPPA,M,,HC SHYARA,SHYARA,,,,,,2021
+IHABWIKUZO CLEMANTINE,F,,HC SHYARA,SHYARA,,,,,,2021
+Niyokwizerwa CHANTAL,F,,HC SHYARA,SHYARA,,,,,,2021
+Niyokwizerwa CLOMBE,F,,HC SHYARA,SHYARA,,,,,,2021
+MUGISHA JAQUES HERTIER,M,,HC SHYARA,SHYARA,,,,,,2021
+IYAMUREMYE ERIC,M,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAGASOZI,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
+UWASE Bionce,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA  SYLVESTER,MUHAYIMANA PASCASIE,,2021
+IYAMUREMYE ERIC,M,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYARUSAMBU,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
+UWASE BIONCE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTRE,MUHAYIMANA PASCASIE,,2021
+DUFITUMUKIZA EMELYNE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,UWIZEYIMANA DAMSCEN,NTIBAGWIRE VESTINE,,2021
+BYIRINGIRO JONATHA,M,,HC RILIMA,RILIMA,NYABAGENDWA,,MISIGARO THEOPHILE,MUKATUYIZERA SOLANGE,,2021
+INEZA TETA ROSSETE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,MUKAMPAZIMAKA EMACULEE,,2021
+IRANZI VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NIYONTEZE CLARISSE,,2021
+UWIDUHAYE KETIA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,MUKARUBERWA ATHANASIE,,2021
+KAMIKAZI NOELLA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,NIKUZE VALANTINE,,2021
+IYAMUREMYE ERIC,M,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYARUSAMBU,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
+UWASE BIONCE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTRE,MUHAYIMANA PASCASIE,,2021
+DUFITUMUKIZA EMELYNE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,UWIZEYIMANA DAMSCEN,NTIBAGWIRE VESTINE,,2021
+UMUHOZA JEANNETE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2021
+Izibyose ALINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2021
+KWIZERA ERIC,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2021
+IRASUBIZA REBECCA,F,,HC GAKURAZO,MUSENYI,RULINDO,,NTIBIHEZWA DAMASCENE,NYIRABARIYANGA BENIGNE,,2023
+IRASUBIZA Chantal,F,,HC GAKURAZO,MUSENYI,RULINDO,,HABYARIMANA Venuste,KAYITESI Josiane,,2023
+HAKIZIMANA Jules,M,,GS GAKURAZO,MUSENYI,MUSENYI,,HAKIZIMANA Celesitine,MUKANYANDWI,,2023
+TWIZERIMANA Jennifer,F,,GS GAKURAZO,MUSENYI,MUSENYI,,NKUNDABAGENZI,NYIRABAGENZI Angelique,,2023
+TWIZERIMANA Jennifer,F,,HC GAKURAZO,MUSENYI,MUSENYI,,NKUNDABAGENZI,NYIRABAGENZI Angelique,,2023
+UWASE KEVINE,F,,HC RILIMA,RILIMA,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2023
+IRASUBIZA REBECCA,F,,GS GAKURAZO,MUSENYI,MUSENYI,,NTIBIHEZWA Damascen,NYIRABARIYANGA Benigne,,2023
+HAKIZIMANA JULES,M,,HC GAKURAZO,MUSENYI,MUSENYI,,HAKIZIMANA Tharcisse,MUKANYANDWI Clemantine,,2023
+NZABONIMANA Emmanuel,M,,GS GAKURAZO,MUSENYI,MUSENYI,,NKUNDABAGENZI Leonard,,,2023
+UWINEZA SOLANGE,M,,HC RILIMA,RILIMA,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2023
+CYIZA FILS Clement,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,,HAKIZIMANA Athanasie,NYIRAMANA Judithe,,2023
+UWIDUHAYE DIANE,F,,HC RILIMA,,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUEL,,2023
+BIKORIMANA DANIEL,M,,HC GAKURAZO,MUSENYI,MUSENYI,,SIBOMANA Jacques,DUSHIMIRIMANA Francine,,2023
+NZABONIMPA Emmanuel,M,,HC GAKURAZO,MUSENYI,MUSENYI,,NKUNDABAGENZI Leonard,UWINGENEYE Bernadethe,,2023
+UWIMPUNDU KEVIN,F,,HC RILIMA,RILIMA,,,NTEZIRYAYO Jean,UWAMAHORO Marie,,2023
+IRASUBIZA KEZA,F,,HC RILIMA,RILIMA,KABEZA,,TUYISENGE DAVIDE,NZAYISENGA ESTHER,,2023
+CYIFUZO Honole,M,,HC GAKURAZO,MUSENYI,RULINDO,,UWASABIMANA Etienne,NYIRANKUNDUMURYANGO Kansilda,,2023
+UWINEZA Fiona,F,,HC RILIMA,RILIMA,KABEZA,,HACINEZA J Bosco,NYIRANSHIMIYIMANA,,2023
+UWINEZA ANGE KELIA,F,,HC RILIMA,RILIMA,,,IRADUKUNDA,MUKANDUNGUTSE MEDIA,,2023
+ISINGIZWE Denyse,F,,HC GAKURAZO,MUSENYI,MUSENYI,,GAKARAYA Faustin,NYIRAMINANI Sandrine,,2023
+IHIMBAZWE Suvenille,F,,HC RILIMA,RILIMA,KIMARANZARA,,RWAHAMA Innocent,NIYONIZEYE Colombe,,2023
+MANIRAHARI JUSTIN,M,,HC GAKURAZO,MUSENYI,MUSENYI,,NTIRUGIRIMBABAZI Vicent,NZAMWITAKUZE Josephine,,2023
+IRANZI GANZA BRUNO,M,,HC RILIMA,RILIMA,KIMARANZARA,,BIZIMANA INNOCENT,DUSABIMANA EMMANUELINE,,2023
+MANZI REGIS,M,,HC RILIMA,RILIMA,NYABAGENDWA,,NDABAMENYE REGIS,MUKASAFARI LOUISE,,2023
+ABAYISENGA GENEFER,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,MUKANDAYISENGA,,2023
+IRASUBIZA UWASE JAYDEN,F,,HC RILIMA,RILIMA,KABEZA,,TUYISENGE DAVIDE,NZAYISENGA ESTHER,,2023
+IRANZI VANNESA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,NIYONEZE CLARISSE,,2023
+ABAYISENGA GENIFER,F,,HC RILIMA,RILIMA,,,,MUKANDAYISENGA,,2023
+AGANZE ANAYA NADGIDA,F,,,,,,BIZUMUREMYI DIEDONON,UWIRAGIYE MARIE CHANTAL,,2023
+UWASE BIONCE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTRE,MUHAYIMANA PASCASIE,,2023
+ABAYISENGA GENIFER,F,,HC RILIMA,RILIMA,,,,MUKANDAYISENGA,,2023
+GANZA AMAZA CHAILLA,F,,,,,,BIZIMUNGU DIEDONE,UWIRAGIYE MARIE CHANTAL,,2023
+MWUNGUZI ALIFORIS,M,,,,,,,,,2023
+TWIZERIMANA Boneheur,M,,HC GIHINGA,SHYARA,REBERO,,SIBOMAN Jean cloude,MUKESHIMANA Agnes,,2023
+MUKAMANA Athanasie,F,,HC GIHINGA,SHYARA,SHYARA,,NARAMABUYE Philippo,NYIRABAGENZI Concolee,,2023
+IMANIKUNDABAYO Rosine,F,,HC MAYANGE,NYARUGENGE,MWAMBI,,KWIZERIMANA Jotham,MUTUNGIREHE EPIPHANIE,,2023
+INEZAYIMANA Adeline Adeline,F,,HC MAYANGE,NYARUGENGE,MURAMBI,,NGEZAHAYO Isaie,UWIMPUHWE Adelphine,,2023
+MUHAWENIMANA Diane,F,,HC MAYANGE,NYARUGENGE,NGENDA,,BYIMANA Celestine,MUKAMA Clementine,,2023
+NIYOGUSHIMWA Rebbecca,F,,HC MAYANGE,NYARUGENGE,GIHINGA,,HARERIMANA Daniel,NYIRANSABIMANA Chalrotte,,2023
+HAKIZIMANA Lacky,M,,HC MAYANGE,NYARUGENGE,NGENDA,,HAKIZIMANA Damascent,NYIRANZABAMWITA Cadette,,2023
+RUTAYISIRE IRIZA Keilla,F,,HC RILIMA,RILIMA,KABEZA,,RUTAYISIRE Emmanuel,MUKESHIMANA Madeline,,2023
+MUTUYIMANA Josiane,F,,HC MAYANGE,NYARUGENGE,GIHINGA,,MUTUYEYEZU Josephy,MUKAKARANGWA Christine,,2023
+MPANO Jackson,M,,HC MAYANGE,NYARUGENGE,GIHINGA,,NDAYISENGA Athanase,UWIMANA Fortune,,2023
+NIYIGENA Germe,M,,HC MAYANGE,NYARUGENGE,MURAMBI,,HAKIZIMANA Chales,MUSABYIMANA Jaqueline,,2023
+UWASE Kevine,F,,HC RILIMA,RILIMA,,,NTIRIVAMUNDA FABIE,MUKANYANGEZI JACQUELINE,,2023
+UWINEZA SOLANGE,F,,HC RILIMA,RILIMA,NTARAMA,,NTIRIVAMUNDA FABIE,MUKANYANGEZI JACQUELINE,,2023
+TWIZERIMANA JENNIFER,F,,HC GAKURAZO,MUSENYI,MUSENYI,,,NYIRABAGENZI ANGELIQUE,,2023
+IGANZE BERWA NEILLA,F,,HC GAKURAZO,MUSENYI,RULINDO,,KARIMUNDA ERIE,MUKESHIMANA FRANCINE,,2023
+TWIZERIMANA GENNIFER,F,,HC GAKURAZO,MUSENYI,GAKURAZO,,,NYIRABAGENZI ANGELIQUE,,2022
+HABIHIRWE EMMY,M,,HC MUSENYI,MUSENYI,RILINDO,,NIYONSA THOMAS,MUKANEZA CLEMENTINE,,2022
+IHIMBAZWE SOUVENILLE,F,,HC RILIMA,LIRIMA,KIMARANZARA,,RWAHAMA INNOCENT,NIYONIZEYE COLOMBE,,2022
+NMNIYOKWIZERWA Chantal,F,,HC GIHINGA,SHYARA,NZIRANZIZA,,TEGENYA Gilbert,NYIRAHIZIYAREMYE,,2022
+UWIZERA Justine,F,,HC GIHINGA,SHYARA,NZIRANZIZA,,SEKANABO Daniel,MUSENGIMANA Bright,,2022
+NIYIGENDA GERARDINE,F,,NYARUGENGE,NYARUGENGE,MURAMBI,,HAKIZIMANA CHARLES,MUSABYIMANA JAQUELINE,,2022
+UWIHANGANYE JEAN BOSCO,M,,EUGENIE,NYABAGENDWA,NYABAGENDWA,,NTAWIHEBA J BOSCO,MUKANDAYISENGA DONATHA,,2023
+UWINEZA JUSTINE,F,,HC GIHIINGA,SHYARA,NZIRANZIZA,,SEKANABO DANIEL,,,2022
+IHIMBAZWE SOUVENILLE,F,,HC RILIMA,RILIMA,KIMARANZARA,,NIYONIZEYE COLOMBE,,,2022
+DUFITUMUKIZA EMELYNE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,UWIZEYIMANA DAMSCENE,NTIBAGWIRE VESTINE,,2022
+Izibyose ALINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2022
+IHIMBAZWE SOUVENIR,F,,HC RILIMA,RILIMA,KIMARANZARA,,,NIYONIZEYE CLOMBE,,2022
+IYAMUREMYE ERIC,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAGASOZI,MANISHIMWE ELIA,NIRINGIYIMANA  CLOUDINE,,2022
+IZABAYO ITUZE BLENDA,F,,RILIMA,RILIMA,NTARAMA,,,IYAMUBONYE ANASTASIE,,2022
+BYIRINGIRO Jonathan,M,,HC RILIMA,RILIMA,NYABAGENDWA,,MISIGARO Theophile,KUKATUYIZERE,,2023
+URINZWENIMANA Ange,M,,HC RILIMA,RILIMA,NYABAGENDWA,,NSENGIYUMVA Berton,NZAYITURIKI Drocella,,2023
+IRANEZEZA Briva,F,,HC RILIMA,RILIMA,NTARAMA,,KAMANAYO Froduard,MUKAMIGISHA Francois,,2023
+RUTAYISIRE IRIZA Keilla,F,,HC RILIMA,RILIMA,KABEZA,,RUTAYISIRE Emmanuel,MUKESHIMANA Mado,,2023
+UWIKUNDA Alice,F,,HC RILIMA,RILIMA,KABEZA,,HABIMANA Zacayo,KAMPIRE Elina,,2023
+UWINGENEYE Kellia,F,,HC RILIMA,RILIMA,KABEZA,,NZABANITA John,NYIRABAGENZI Jaqueline,,2023
+KAMIKAZI Noella,F,,HC RILIMA,RILIMA,KIMARANZARA,,NDIKUBWIMANA Florien,NIKUZE Valentine,,2023
+MUTONIWASE Divine,F,,HC RILIMA,RILIMA,KIMARANZARA,,SIKUBWABO Silas,MUKATUYISHIME,,2023
+UWINEZA ISIMBI Francois,F,,HC RILIMA,RILIMA,NYABAGENDWA,,DUKUZUMUREMYI J Bosco,MURAGIJIMANA Agnes,,2023
+TURIKUMWENAYO Emmanuel,M,,HC RILIMA,RILIMA,NYABAGENDWA,,RUGIRIMANA Alphonce,MUKAMAZIMPAKA Alice,,2023
+NIYONZIMA Emile,M,,HC RILIMA,RILIMA,KIMARANZARA,,NIYONZIMA Philippe,MANIRIHO Jeanine,,2023
+NKINZINGABO MANZI Elineste,M,,HC RILIMA,RILIMA,KABEZA,,HABUMUGISHA  Fabien,MUKAKIMENYI,,2023
+IGANZE Ornella,F,,HC RILIMA,RILIMA,NYABAGENDWA,,NIZEYIMANA,UWASE Fiette,,2023
+CYOMORO Aime Andro,M,,HC RILIMA,RILIMA,NYABAGENDWA,,SEMANA Tadeo,NIYONSABA Aliane,,2023
+MANIRAFASHA David,M,,HC RILIMA,RILIMA,NYABAGENDWA,,SIBORUREMA Celestin,YAMFASHIJE Donatha,,2023
+IGIHOZO Adia  Jolly,F,,HC RILIMA,RILIMA,KABEZA,,SIBOMANA J Pierre,NYIRAHORANIMANA Dative,,2023
+IRAKOZE Kevine,F,,HC RILIMA,RILIMA,NYABAGENDWA,,BAPFAKURERA Vianney,UWIMANA Jeanine,,2023
+MUSHIMIYIMANA Malliam,F,,HC RILIMA,RILIMA,NTARAMA,,MUGABARIGIRA Alphonce,MUKAMUGANGA Cloudine,,2023
+UWIHANGANYE J Bosco,M,,HC RILIMA,RILIMA,NYAMIZI,,NTAWIHEBA J Bosco,MUKANDAYISENGA Donatha,,2023
+IGITANGAZA Hirwa Kened,M,,HC RILIMA,RILIMA,KABEZA,,NSHIMIYIMANA Emmanuel,IRADUKUNDA Diane,,2023
+NDUNGUTSE Eppa,M,,,SHYARA,,,NTAWUHIGANAYO Ezekiya,NYIRACUMI Meresiyana,,2023
+RUKUNDO Erneste,M,,HC GIHINGA,SHYARA,RUTARE,,NZABANMWITA Maricela,YANKURIJE Dancilla,,2023
+BIZIMANA Ivan,M,,,SHYARA,,,BIZIMANA Gerve,NIYOMUFASHA Mariyam,,2023
+NIGANZE Pacifique,M,,HC GIHINGA,SHYARA,RUTARE,GASEKE,NDIKUMANA Emmanuel,MUKANGENDO Frida,,2023
+UWINEZA Justine,M,,HC GIHINGA,SHYARA,NZIRANZIZA,,NSEKANABO Daniel,MUSENGIMANA Bright,,2023
+IRANEZEZA Brive,M,,,RILIMA,NYABAGENDWA,,KAMANAYO Frodual,MUKAMUGISHA Francoise,,2023
+IGITANGAZA Hirwa Kenedi,M,,HC EUGENIE,RILIMA,KABEZA,,NSANZIMANA Emmanuel,IRADUKUNDA Diane,,2023
+UWINEZA Flon,F,,HC EUGENIE,RILIMA,KABEZA,,HACINEZA Jean Bosco,,,2023
+NIYONZIMA Emille,M,,HC EUGENIE,RILIMA,KIMARANZARA,,,MANIRIHO Jeanine,,2023
+UWAMAHORO Sabrine,F,,HC GAKURAZO,MUSENYI,MUSENYI,,,NYIRAHABANA,,2023
+BYIRINGIRO Jonatha,M,,HC RILIMA,RILIMA,NYABAGENDWA,,MISIGARO Theophile,MUKATUYIZERE Solange,,2022
+KAMIKAZI Noella,F,,HC RILIMA,RILIMA,GASABO,,NDIKUBWIMANA Flororie,NIKUZE Valentine,,2022
+INEZA JEANNETTE,F,,HC RILIMA,RILIMA,KABEZA,,BIZIMANA Flix,NYIRAHABIMANA Angelique,,2022
+URINZWENIMANA Frugance,M,,HC RILIMA,RILIMA,NYABAGENDWA,,NSENGIYUMVA Berton,NAYITURIKI Dorosera,,2023
+BYIRINGIRA Jonatha,M,,HC RILIMA,RILIMA,NYABAGENDWA,,MISIGARO Theophile,MUKATUYIZERE Solange,,2020
+MUTONIWASE Kellia,F,,HC MAYANGE,NYARUGENGE,GIHINGA,,MUTABAZI Emmanuel,NAHINYERETSE,,2022
+IRANEZEZA Brive,F,,HC RILIMA,RILIMA,NYABAGENDWA,,KAMANAYO FLODUALI,MUKAMIGISHA Francois,,2022
+DUFITUMUKIZA EMELYNE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,UWIZEYIMANA DAMSCENE,NTIBAGWIRE VESTINE,,2021
+UWIHANGANYE J BOSCO,M,,RILIMA,RILIMA,NYAMIZ,,MUKANDAYISENGA,,,2021
+UWIMPUHWE KESSIE,F,,HC RILIMA,RILIMA,KABEZA,,NSANZIMANA PROTONE,NYIRANZEYIMANA JEANNETTE,,2021
+UWASE KEVINE,F,,,,,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2021
+UWINEZA SOLANGE,F,,HC RILIMA,RILIMA,NTARAMA,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2021
+UWIDUHAYE ISHIMWE DIANE,F,,HC RILIMA,RILIMA,NTARAMA,,NTIRIVAMUNDA FABIEN,MUKANYANGEZI JACQUELINE,,2021
+IRASUBIZA UWASE JAYDEN,F,,HC RILIMA,RILIMA,KABEZA,,NZAYISENGA  ESTHER,TUYISENGE DAVIDE,,2021
+Izibyose ALINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2021
+IGITANGAZA HIRWA KENEDY,M,,HC RILIMA,RILIMA,KABEZA,,NSHIMIYIMANA EMMANUEL,IRADUKUNDA  DIANE,,2023
+NKINZINGABO MANZI ELINES,M,,HC RILIMA,RILIMA,KABEZA,,MUKIMENYI  FRODONATA,HABUMUGISHA FABIEN,,2023
+CYOMORO AIME ANDRE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,SEMANA THADEE,NIYONSABA ALIANA,,2023
+IGANZE OLNETA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,NIZEYIMANA,UWASE FIETE,,2023
+IRAKOZE KEVINE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,BAPFAKURERA VIANNNEY,UWIMANA JEANINNE,,2023
+UWINEZA ISIMBI FRANCOISE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,DUKUZUMUREMYI J BOSCO,MURAGIJIMANA AGNES,,2023
+MUTONIWASE DIVINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,SIKUBWABO SILAS,MUKATUYISHIMIRE,,2023
+IGIHOZO ADIA JELLY,F,,HC RILIMA,RILIMA,KABEZA,,SIBOMANA J.PIERRE,NYIRAHORANIMANA,,2023
+UWIHANGANYE J BOSCO,M,,HC RILIMA,RILIMA,NYAMIZI,,NTAWIHEBA J.BOSCO,MUKANDAYISENGA,,2023
+MANIRAFASHA DAVIDE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,SIBORUREMA  CELESTINE,YAMFASHIJE DONATHA,,2023
+TURIKUMWENAYO EMMANUEL,M,,HC RILIMA,RILIMA,NYABAGENDWA,,TUGIRIMANA ALPHONSE,MUKAMAZIMAKA ALICE,,2023
+NIYONZIMA EMILE,M,,HC RILIMA,RILIMA,KIMARANZARA,,NIYONZIMA FILIPE,MANIRIHO JEANINNE,,2023
+UWASE BIONCE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NTUNGAMO,HABIMANA SYLVESTE,MUHAYIMANA PASCASIE,,2021
+GATERA ELIVIER,M,,HC MUSENYI,MUSENYI,NYAGASAGASA,,,KAMPIRE SERAPHINE,,2023
+GANZA BRIAN,M,,HC MUSENYI,MUSENYI,CYERU,,HAVUGIMANA FABIEN,MUKANYANDWI IMMACULE,,2023
+UWAMAHORO SABRINE,F,,HC MUSENYI,MUSENYI,MUHANGA,,,NYIRAHABANABASENGA JEANNETTE,,2023
+UWINEZA ANGE KELIA,F,,HC RILIMA,RILIMA,KABEZA,,IRADUKUNDA,MUKANDUNGUTSE  MEDIATRICE,,2023
+IRANZI GANZA BRUNO,M,,HC RILIMA,RILIMA,KABEZA,,BIZIMANA INNOCENT,DUSABIMANA EMMANUELINE,,2023
+UWIKUNDA ALICE,F,,HC RILIMA,KABEZA,,,HABIMANA ZACAYO,KAMPIRE ELINA,,2022
+KAMIKAZI NOELA,F,,HC RILIMA,RILIMA,KIMARANZARA,GASABO,KUBWIMANA FLORIE,NIKUZE VALENTINE,,2022
+UWINGENEYE KELIA,F,,HC RILIMA,RILIMA,KABEZA,,NZABANITA JOHN,NYIRABAGENZI JACQUELINE,,2022
+MUGWANEZA SERAPHINE,F,,HC GAKURAZO,MUSENYI,,,BARAYAVUGA,UWIMANA MUREKATETE,,2022
+IHORITURINDA THEOGENE,M,,HC MUSENYI,MUSENYI,GAKURAZO,,HABINEZA THEOGENE,MUKAGASIGWA JEANNE,,2022
+MANZI REGIS,M,,HC RILIMA,RILIMA,NYABAGENDWA,,MUKASAFARI LOUISE,NDABAMENYE REGIS,,2022
+AGANZE ANNAYA NADIDJA,F,,,,,,BIZUMUREMYI DIEDONON,UWIRAGIYE MARIE CHANTAL,,2022
+NTINZI ASIF,M,,,,,,BIZIMUNGU DIEDONE,UWIRAGIYE MARIE CHANTAL,,2022
+GANZA AMDA CHAILLA,F,,,,,,BIZIMUNGU DIEDONE,UWIRAGIYE MARIE CHANTAL,,2022
+MWUNGUZI ARIF,M,,,,,,BIZIMUNGU DIEDONE,UWIRAGIYE MARIE CHANTAL,,2022
+IRASUBIZA KEZA,F,,HC RILIMA,RILIMA,KABEZA,,TUYISENGE DAVIDE,NZAYISENGA ESTHER,,2023
+UWIHANGANYE J.BOSCO,M,,HC RILIMA,RILIMA,NYABAGENDWA,,NTAWIHEBA J.BOSCO,MUKANDAYISENGA DONATHA,,2022
+URINZWENIMANA FRUGENCE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,NSENGIYUMVA BERTOIN,NZAYITURIKI DORCELA,,2022
+UWINEZA FIONA,F,,HC RILIMA,RILIMA,KABEZA,,HACINEZA J BOSCO,NYIRANSHIMIYIMANA VALERIE,,2022
+RUKUNDO ERNESTE,M,,HC GIHINGA,SHYARA,RUTARE,RUTARE,NZABAMUSUTA MARISERA,YANKURIJE DANSILLE,,2022
+IMANIRAKOZE KEVINE,F,,HC SHYARA,SHYARA,RUTARE,KAMWERU,BIZEYAMASO VIATEUR,MUKANTWARI FRANCINE,,2022
+NIYOKWIZERWA CHANTAL,F,,,SHYARA,,,TEGANYA GILBERT,NYIRABIZIYAREMYE RABAT,,2022
+IRASUBIZA CLEMANTINE,F,,HC GIHINGA,SHYARA,KABAGUGU,,TWAGIRIMANA EMMANUEL,MUSABYIMANA CKOUDINE,,2022
+RUTAYISIRE IRIZA KELIA,F,,HC RILIMA,RILIMA,KABEZA,,RUTAYISIRE EMMANUEL,MUKESHIMANA MADO,,2022
+UWIMPUHWE KESIA,F,,HC RILIMA,RILIMA,KABEZA,,NSANZIMANA PROTEN,NYIRANZEYIMANA JEANNETE,,2022
+UWINEZA JUSTIN,F,,HC GIHINGA,SHYARA,NZIRANZIZA,,NSEKANABO DANIEL,MUSENGIMANA BRUGITTE,,2022
+RUKUNDO ERNESTE,M,,HC GIHINGA,SHYARA,GITARE,,NZABAMUSITA MARSERA,,,2022
+NIYOKWIZERWA CHANTAL,F,,,SHYARA,,,TEGANYA GILBRT,NYIRABIZIYAREMYE RAHAB,,2022
+ITUZE QUEEN PARFAITTE,F,,,LIRIMA,,,NZABONIMAN THEOGENNE,MUKASHYAKA PATRICIE,,2022
+UWIMPUHWE KESSY,F,,EUGENIE,RILIMA,KABEZA,,NSENGIYUMVA PLOTAS,NYIRANZEYIMANA JEANNETTE,,2022
+UWIHANGANYE J BOSCO,M,,EUGENIE,RILIMA,NYABAGENDWA,,NTAWIHEBA J BOSCO,MUKANDAYISENGA DONATHA,,2022
+ISHIMWE DIANNE,F,,,RILIMA,,,NTIRIVAMUNDA FABIEN,MUKANGEZI JAQUELINE,,2023
+UWINEZA SOLANGE,F,,,RILIMA,,,NTIRIVAMUNDA FABIEN,MUKANGEZI JAQUELINE,,2023
+KAMIKAZI NOELLA,F,,HC RILIMA,RILIMA,,,,,,2023
+IYAMUREMYE ERIC,M,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAGASOZI,MANISHIMWE ELIA,NIRINGIYIMANA CLOUDINE,,2021
+NIYONKURU FISTON,M,,HC NYARUGENGE,NYARUGENGE,MURAMBI,NYAGAKOMBE,HABIMANA HEREMA GERARD,NYIRANKUNDWANABERA NAOME,,2021
+NSINZI ASIRI PHARES,M,,,,,,BIZIMPUNGU EDDY,,,2021
+UWINEZA ISIMBI FIANCOISE,F,,,RILIMA,NYABAGENDWA,,DUKUZUMUREMYI J BOSCO,MURAGIJIMANA AGNES,,2023
+IRASUBIZA UWASE JOYDEN,F,,HC RILIMA,RILIMA,KABEZA,,TUYISENGE DAVID,NZAYISENGA ESTER,,2023
+UWIKUNDA ALICE,F,,HC RILIMA,RILIMA,KABEZA,,HABIMANA ZACARIA,KAMPIRE ELINE,,2023
+INEZA JEANETTE,F,,HC RILIMA,RILIMA,KABEZA,,BIZIMANA FLEX,NYIRAHABIMANA ANGELIQUE,,2023
+JOSUE JOSUE,M,,NYARUGENGE,NYARUGENGE,GIHINGA,,BIZIMANA,MURAGIJIMANA,,2022
+UWIHANGANYE J BOSCO,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,MUKANDAYISENGA,,2022
+UWIRINGIYIMANA FLEX,M,,HC NYARUGENGE,NYARUGENGE,MURAMBI,,NGENDABANGA FIFI,MUKAMANA EPIPHANIE,,2021
+NIYOGIHOZO  ALLIANCE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWAYO  CHREMA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+SUGIRA  J.DAMOUR,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NZAYISHIMA  VERENA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+HAKIZIMANA  DONATIEN,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+KWIZERA  PASCAL,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NIYOYANKUNZE  SUMAYA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+OMAR AL  BASHIR,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+TWIZERIMANA  AIME,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWAMAHORO  DELPHINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRADUKUNDA  THEONESTE,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRAKOZE  EDISSA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUKANTWARI  HONOLINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UGIRAMAHORO  ALUFA,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUGISHA  BRAYAN,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+ISHIMWE EMMANUEL,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NSABAYESU  ISMAEL,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWAMAHORO  CHRISTINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+BIVAMUGUSENGA  BEATHA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NISHIMWE  ALINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+YAMURAGIYE  PATRIC,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NIYITUGAYIRA  DEROCK,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UMUHIRE  KEVIN,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IMPANOYIMANA  CEDRIC,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUHAWENIMANA  PACIFIQUE,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NTAKIRUTIMANA  ERIC,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+URINZWENAYO  SYLIVIE,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRADUKUNDA  AIMABLE,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRADUKUNDA  FABIEN,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRADUKUNDA  CEDRIC,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NYINAWUMUNTU  BATAMURIZA,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NSHIMIYIMANA  ELISE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWERA  RILIANE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWAMAHORO  NADIA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+AKUMUGISHA  RACHEL,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUGISHA  ELISA,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRAKOZE  VALANTE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+AYISHAKIYE  ELISEE,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWIDUHAYE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UMUHOZA  DIVINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWINEZA ISIMBI RILIANE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+AKIMPAYE  PHILOMENE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+BUNANI  JANVIER,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NZAMURAMBAHO  DAMSCENE,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NSHIMIYIMANA  DEO,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MANISHIMWE  AGIDENT,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IGIHOZO  QUEEN,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUKANTWARI  HONORINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+BUKURU  VALENS,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NTEZIRYAYO  JEAN,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRANZI JOEL,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+KUBERIMANA   CEDRIC,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWAYEZU  ANGE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUHAWENIMA DOLIE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+TUMUKUNE  ELISE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRABIZI  BECOUSE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+KWITONDA  EMMANUEL,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+CYUBAHIRO  ISHIMWE BRUNO,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRASUBIZA  DEBORAH,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWIMANA  CYNTHIA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+ISHIMWE  J.CLOUDE,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NIYITEGEKA  SANDRINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+DUSENGIMANA  SOLANGE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+BIZUMUREMYI  LUCKY,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IGIHOZO  UWASE BLANDINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUTUYIMANA  KELIA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IZIBYOSE  VALENTIN,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWASE  SANDRINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NIYONSENGA  RODRIGUE,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NIWEMFURA  HENRIETTE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+DUSHIMIMANA  DAVID,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUHAWENIMANA  FLORENCE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NIYONKURU  MARTIN,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+ISHIMWE  KEVINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IMANIKIZA  ERIC,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+BYIRINGIRO  JERARI,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRAKOZE  PACIFIC,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NZAMUKUNDITEKA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IDUHEMUGISHA  KERES,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+ZUMUNDE  ANITA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWASE  SANDRINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRAKOZE  IVAN,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+HABUMUGISHA  JAMES,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NIYOGUSHIMWA  JAN,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWITONZE  DIANE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUTIMUCYEYE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MANISHIMWE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NSANZIMANA  EMMANUEL,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRAKOZE  GANZA,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NKUNDIMANA  ANASP,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NDAGIJIMANA  ERIC,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NISINGIZWE  AMINA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NSHIMIYIMANA  SOSTENE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+ISHIMWE  REBECCA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+BYUKUSENGE  NADIA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWAJENEZA  FIDELE,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWINEZA  GRACE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+DUSHIMIYIMANA  ROSINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IZABAYO  ARIETTE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+TUMUKUNDE  SANDRINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+ISHIMWE  POLINE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+MUSHIMIYIMANA ALLIETTE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRADUKUNDA  J.PAUL,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+BYIRINGIRO  FELEDARCK,M,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+IRASUBIZA  EMELANCE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+UWIZEYIMANA  BETTE,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+NIRAGIRE CYNTHIA,F,,HC NYARUGENGE,NYARUGENGE,,,,,,2020
+ABAYO  ANELA  JOYCE,F,,HC RILIMA,RILIMA,,,,,,2020
+BYUKUSENGE  MARIE AIME,F,,HC RILIMA,RILIMA,,,,,,2020
+MUHIRWA HAPPY  BLESSING,F,,HC RILIMA,RILIMA,,,,,,2020
+GAHIZI SHAMI  ORNELLA,F,,HC RILIMA,RILIMA,,,,,,2020
+GISUBIZO NSHIZIRINGU  PACIFIC,M,,HC RILIMA,RILIMA,,,,,,2020
+GISUBIZO AIME  SHAFI,M,,HC RILIMA,RILIMA,,,,,,2020
+IMANANURUKUNDO  MESHAK,M,,HC RILIMA,RILIMA,,,,,,2020
+IGIRANEZA  PACIFIQUE,M,,HC RILIMA,RILIMA,,,,,,2020
+IRAKIZA  CEDRIC,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI GANZA ELYSE,M,,HC RILIMA,RILIMA,,,,,,2020
+IGIRIBANGA  CHARTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRADUKUNDA  JEHOVANIE,F,,HC RILIMA,RILIMA,,,,,,2020
+MUGISHA  BLAISE,M,,HC RILIMA,RILIMA,,,,,,2020
+MUGISHA  EMMANUEL,M,,HC RILIMA,RILIMA,,,,,,2020
+NDAHIMANA  PACIFIQUE,M,,HC RILIMA,RILIMA,,,,,,2020
+NIYIBIZI  CLEMANTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYOBYIRINGIRO  YACKIN,M,,HC RILIMA,RILIMA,,,,,,2020
+NIYOKWIZERWA  BEONCE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYOMUKIZA  ADELINE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYOGISUBIZO  FLORENCE,F,,HC RILIMA,RILIMA,,,,,,2020
+NAGISANIMANA  J.BOSCO,M,,HC RILIMA,RILIMA,,,,,,2020
+UWUKUNDA  PRINCE,M,,HC RILIMA,RILIMA,,,,,,2020
+UWIDUHAYE  PACIFIC,M,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  ALINE,F,,HC RILIMA,RILIMA,,,,,,2020
+WIBABARA  AISHA,F,,HC RILIMA,RILIMA,,,,,,2020
+DUSHIMIMANA  ALEX,M,,HC RILIMA,RILIMA,,,,,,2020
+GIKAKA  KING MANZI,M,,HC RILIMA,RILIMA,,,,,,2020
+GISUBIZO PATRIC,M,,HC RILIMA,RILIMA,,,,,,2020
+HIRWA  KANAMUGIRE  BELLO,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI  GAD,M,,HC RILIMA,RILIMA,,,,,,2020
+IGIRANEZA  ISIMBI INNOCENTE,M,,HC RILIMA,RILIMA,,,,,,2020
+IRAKOZE  LIONEL MESSIE,M,,HC RILIMA,RILIMA,,,,,,2020
+IGIHOZO  SAMANTHA,F,,HC RILIMA,RILIMA,,,,,,2020
+SHEMA  LADJA BLAISE,M,,HC RILIMA,RILIMA,,,,,,2020
+HABIYAREMYE  FOCUS,M,,HC RILIMA,RILIMA,,,,,,2020
+KAMIKAZI ILIZA  DANIELLA,F,,HC RILIMA,RILIMA,,,,,,2020
+MPANO IHIRWE  BRAVAN,M,,HC RILIMA,RILIMA,,,,,,2020
+MUGARAGUWIMANA  YOB,M,,HC RILIMA,RILIMA,,,,,,2020
+NARADA UGANZE  KETIA,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONKURU  EMILE,M,,HC RILIMA,RILIMA,,,,,,2020
+NGABONZIZA MUCYO  FRED,M,,HC RILIMA,RILIMA,,,,,,2020
+RWIBUTSO  KELIA,F,,HC RILIMA,RILIMA,,,,,,2020
+SHYAKA  ERIC,M,,HC RILIMA,RILIMA,,,,,,2020
+SHIMWA GIKUNDIRO  JOSEPHINE,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  M.GRACE,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHIRE  AIME KETIA,F,,HC RILIMA,RILIMA,,,,,,2020
+UTUJE KEZA  CLEMANTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWAJENEZA  DIVINE,F,,HC RILIMA,RILIMA,,,,,,2020
+MURAVA  GIFT,F,,HC RILIMA,RILIMA,,,,,,2020
+NYIRANDEKWE  SAMIA,F,,HC RILIMA,RILIMA,,,,,,2020
+NDIZEYE  AIME DESIRE,M,,HC RILIMA,RILIMA,,,,,,2020
+UWIRAGIYE  FANNY,F,,HC RILIMA,RILIMA,,,,,,2020
+MUGISHA BERTIN,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI  NTWARI  JOSUE,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA  BONHEUTE,F,,HC RILIMA,RILIMA,,,,,,2020
+MBABAZIZIMANA  LANDRIDE,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA  COLOMBE PELCILE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYIBIKORA  NICOLAS,M,,HC RILIMA,RILIMA,,,,,,2020
+NDAYAMBAJE  FAUSTIN,M,,HC RILIMA,RILIMA,,,,,,2020
+NDAGIJIMANA  CHRISTIAN,M,,HC RILIMA,RILIMA,,,,,,2020
+IRAKOZE  JEHOVAYIRE,F,,HC RILIMA,RILIMA,,,,,,2020
+MUKOBWAJANA  MAGNIFIQUE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRAGUHA  JOSUE,M,,HC RILIMA,RILIMA,,,,,,2020
+GATESI  RUTH,M,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  RODRIGE,M,,HC RILIMA,RILIMA,,,,,,2020
+MUGABO  INEZA,M,,HC RILIMA,RILIMA,,,,,,2020
+TUMUKUNDE  UWASE QUEEN,F,,HC RILIMA,RILIMA,,,,,,2020
+TUZA  MOISE,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA  JALIA,F,,HC RILIMA,RILIMA,,,,,,2020
+MUKIZA  BENJAMIN,M,,HC RILIMA,RILIMA,,,,,,2020
+MUGISHA  ERIC,M,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  CLARISSE,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHIRE  JAMES,M,,HC RILIMA,RILIMA,,,,,,2020
+IRAKOZE  JEHOVAYIRE B,M,,HC RILIMA,RILIMA,,,,,,2020
+UWABERA  FRANCINE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI  BRYAN,M,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  ALINE,F,,HC RILIMA,RILIMA,,,,,,2020
+IMPANO TUYISENGE  VINCENT,M,,HC RILIMA,RILIMA,,,,,,2020
+IKUZWE KUNDWA  BONNETE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWURUKUNDO  YANICK,M,,HC RILIMA,RILIMA,,,,,,2020
+UWAMAHORO  KEVINE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYIGABA  WILLIAM,M,,HC RILIMA,RILIMA,,,,,,2020
+GANZA  INNOCENTE,F,,HC RILIMA,RILIMA,,,,,,2020
+TURATSINZE  YACKIN,M,,HC RILIMA,RILIMA,,,,,,2020
+UWASE  BELLA BELISE,F,,HC RILIMA,RILIMA,,,,,,2020
+ISEZERANO  ACKISA,F,,HC RILIMA,RILIMA,,,,,,2020
+UFITINEMA  CLAIRE,F,,HC RILIMA,RILIMA,,,,,,2020
+HIRWA GAVE  ALEX,M,,HC RILIMA,RILIMA,,,,,,2020
+MUZIRANENGE  MEDIATRICE,F,,HC RILIMA,RILIMA,,,,,,2020
+ISUBIRIZIGIHE  ISRAEL,M,,HC RILIMA,RILIMA,,,,,,2020
+GISUBIZO  CHANCE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYOGISUBIZO  CHANCELINE,F,,HC RILIMA,RILIMA,,,,,,2020
+IGIRANEZA  DIANE,F,,HC RILIMA,RILIMA,,,,,,2020
+HIRWA  BRAIN,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA HIRWA  JUSTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+TUMUKUNDE  ANGE,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  HYACINTA,F,,HC RILIMA,RILIMA,,,,,,2020
+IGIHOZO  ISIMBI DIANE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWUMUGISHA  BELINE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONGABIRE  DUSHIME KELLY,M,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  SHANELLA,F,,HC RILIMA,RILIMA,,,,,,2020
+IMANIZABAYO  NIYOMFURA,M,,HC RILIMA,RILIMA,,,,,,2020
+DUFITUMUKIZA  VALENS,M,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  LANDRIDE,F,,HC RILIMA,RILIMA,,,,,,2020
+GAHOZO  ANGE  VANESSA,F,,HC RILIMA,RILIMA,,,,,,2020
+MUKAHIRWA  ALICE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI RUGABA  LEONCE,F,,HC RILIMA,RILIMA,,,,,,2020
+CYUBAHIRO  BRYAN,M,,HC RILIMA,RILIMA,,,,,,2020
+NEZERWA  MICOMYIZA,M,,HC RILIMA,RILIMA,,,,,,2020
+NEZERWA ABAYO  GRACE,F,,HC RILIMA,RILIMA,,,,,,2020
+INTWARI DEO GASTON,M,,HC RILIMA,RILIMA,,,,,,2020
+DUSENGE  ANGE NICOLE,F,,HC RILIMA,RILIMA,,,,,,2020
+SABAYESU  SIMEON,M,,HC RILIMA,RILIMA,,,,,,2020
+KWIZERA HIRWA  ERIC,M,,HC RILIMA,RILIMA,,,,,,2020
+MASENGESHO  J.PIERRE,M,,HC RILIMA,RILIMA,,,,,,2020
+KEZA  JACKY,M,,HC RILIMA,RILIMA,,,,,,2020
+IHIRWE  MUCYO ARNOLD,M,,HC RILIMA,RILIMA,,,,,,2020
+NAYITURIKI  PATRIC,M,,HC RILIMA,RILIMA,,,,,,2020
+NIYIBIKORA  LAURENCE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWIHIRWE,M,,HC RILIMA,RILIMA,,,,,,2020
+GATOYA  JOSUE,M,,HC RILIMA,RILIMA,,,,,,2020
+GAKURU  LEON,M,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  OBENI DORCAS,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  ANGE,F,,HC RILIMA,RILIMA,,,,,,2020
+TUYIZERE,M,,HC RILIMA,RILIMA,,,,,,2020
+MUTESI  CLENIE,F,,HC RILIMA,RILIMA,,,,,,2020
+NDIKUMANA,F,,HC RILIMA,RILIMA,,,,,,2020
+UWASE  JEANNE,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  LILIANE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONKURU  DEBORAH,F,,HC RILIMA,RILIMA,,,,,,2020
+NKINZINGABO  JAPHET,M,,HC RILIMA,RILIMA,,,,,,2020
+NSENGUWERA,M,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  JOSELYNE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRANEZEZA  LIBERITE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONKURU  EMILE,M,,HC RILIMA,RILIMA,,,,,,2020
+UWUMUGISHA,F,,HC RILIMA,RILIMA,,,,,,2020
+UWAYEZU  JEAN CLOUDE,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA SHIMWA  BENITHA,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHOBORABYOSE,M,,HC RILIMA,RILIMA,,,,,,2020
+MANZI  JEAN BAPTISTE,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI  JEAN BOSCO,M,,HC RILIMA,RILIMA,,,,,,2020
+MUHIRE  ALFRED,M,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  DENYSE,F,,HC RILIMA,RILIMA,,,,,,2020
+HABUMUREMYI,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI  VANESSA,F,,HC RILIMA,RILIMA,,,,,,2020
+UWIDUHAYE  RILIANE,F,,HC RILIMA,RILIMA,,,,,,2020
+HATEGEKIMANA  FABRICE,M,,HC RILIMA,RILIMA,,,,,,2020
+IGIRUBUNTU  NICOLE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWIDUHAYE  SANDRINE,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHUZA  JUSTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+MUNEZERO,F,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  KELIA,F,,HC RILIMA,RILIMA,,,,,,2020
+CYUZUZO  FRANK,M,,HC RILIMA,RILIMA,,,,,,2020
+MASEZERANO  AIMABLE,M,,HC RILIMA,RILIMA,,,,,,2020
+KWIZERA  FABRICE,M,,HC RILIMA,RILIMA,,,,,,2020
+ITUZE YASPI  MEGAN,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  GENTILLE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRADUKUNDA  FISTO,M,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  FIONA,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  FABIOLA,F,,HC RILIMA,RILIMA,,,,,,2020
+GATETE  PACIFIQUE,M,,HC RILIMA,RILIMA,,,,,,2020
+INGABIRE  NADIA,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONSHUTI  XAVIER,M,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE UMWIZERWA  DANIELLA,F,,HC RILIMA,RILIMA,,,,,,2020
+IRAKOZE  DEBORAH,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONSENGA  THEOGENE,M,,HC RILIMA,RILIMA,,,,,,2020
+NTWARI  UGANZE CREDO,M,,HC RILIMA,RILIMA,,,,,,2020
+TWIZEYIMANA  GAD,M,,HC RILIMA,RILIMA,,,,,,2020
+UWASE  SHANIA,F,,HC RILIMA,RILIMA,,,,,,2020
+MPORANYISENGA  FABIEN,M,,HC RILIMA,RILIMA,,,,,,2020
+NSHIMIYIMANA  ERIC,M,,HC RILIMA,RILIMA,,,,,,2020
+NINAHAZWE  FRANCOISE,F,,HC RILIMA,RILIMA,,,,,,2020
+INEZAYIMANA  PACIFIQUE,M,,HC RILIMA,RILIMA,,,,,,2020
+UZAMUKUNDA  CLEMANCE,F,,HC RILIMA,RILIMA,,,,,,2020
+RUGWIRO ALAIN  GAEL,M,,HC RILIMA,RILIMA,,,,,,2020
+MANZI  THIERRY,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWABERA  FRANCINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IRANZI  BRAYAN,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWINEZA  ALINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IMPANO TUYISENGE  VINCENT,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IKUZWE KUNDWA  BONNETE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWURUKUNDO  YANICK,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWAMAHORO  KEVINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NIYIGABA  WILLIAM,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+GANZA  INNOCENT,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+TURATSINZE  YACKIN,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWASE  BELLA BELISE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+ISEZERANO  ACKISA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UMUHOZA  FABIOLA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UFITINEMA  CLAIRE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+HIRWA  GAVE ALEX,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+MUZIRANTENGE  MEDIATRICE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+ISUBIRIZIGIHE  ISLAYELI,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+GISUBIZO  CHANCE,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NIYOGISUBIZO  CHANCELINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IGIRANEZA  DIANE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+HIRWA  BRAYAN,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+ISHIMWE  GENTILLE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+INEZA HIRWA  JUSTINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+TUMUKUNDE  ANGE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+ISHIMWE  HYACENTA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IGIHOZO ISIMBI  DIANE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWUMUGISHA  BELINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NIYONGABIRE DUSHIME  KELLY,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWIMANA  CHANELLA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IMANIZABAYO  NIYOMFURA,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+DUFITUMUKIZA  VALENS,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UMUHOZA  LANDRIDE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+GAHOZO  ANGE VANESSA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+MUHIRWA  ALICE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IRANZI RUGABA  LEONCE,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UMUHOZA  FIONA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+CYUBAHIRO  BRAYAN,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NEZERWA  MICOMYIZA,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NEZERWA ABAYO  GRACE,F,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+INTWARI DEO GASTON,M,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+DUSENGE  ANGE NICOLE,F,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+SABAYESU  SIMEON,M,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+KWIZERA HIRWA  ERIC,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+MASENGESHO  J.PIERE,M,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+KEZA  JACKY,F,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+IHIRWE MUCYO  ARNOLD,M,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+NAYITURIKI  PATRIC,M,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+NIYIBIKORA  LAURENCE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+UWIHIRWE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+GATOYA  JOSUE,M,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+GAKURA  LEON,M,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+IRADUKUNDA  FISTON,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+ISHIMWE  OBEN DORCAS,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+ISHIMWE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+ISHIMWE  ANGE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+TUYIZERE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+MUTESI  CLENIA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+NDIKUMANA,M,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+UWASE  JEANNE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+UMUHOZA  LILIANA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+NIYONKURU  DEBORAH,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+NKINZINGABO,M,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+NSENGUWERA,M,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+ISHIMWE  JOSELYNE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+IRANEZEZA  LIBERITE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+NIYONKURU  EMILE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+UWUMUGISHA,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+UWAYEZU  JEAN CLOUDE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+INEZA SHIMWA  BENITHA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+ISHOBORABYOSE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+MANZI JEAN  BAPTISTE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+IRANZI JEAN  BOSCO,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+MUHIRE  ALFRED,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+ISHIMWE  DENYSE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+HABUMUREMYI,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+IRANZI  VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+UWIDUHAYE  RILIANE,F,,HC RILIMA,RILIMA,KARERA,,,,,2020
+HATEGEKIMANA  FABRICE,M,,HC RILIMA,RILIMA,KARERA,,,,,2020
+IGIRUBUNTU  NICOLE,F,,HC RILIMA,RILIMA,KARERA,,,,,2020
+UWIDUHAYE  SANDRINE,F,,HC RILIMA,RILIMA,KARERA,,,,,2020
+UMUHUZA  JUSTINE,F,,HC RILIMA,RILIMA,KARERA,,,,,2020
+MUNEZERO,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+UWINEZA  KELLIA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+CYUZUZO  FRANK,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+MASEZERANO  AIMABLE,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+KWIZERA  FABRICE,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+ITUZE YASPI  MEGAN,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+MANZI  THIERRY,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+MUGISHA  FRANK,M,,HC GIHINGA,SHYARA,,,,,,2020
+NGABITSINZE  J.DE DIEN,M,,HC GIHINGA,SHYARA,,,,,,2020
+UMURERWA  JOSELYNE,F,,HC GIHINGA,SHYARA,,,,,,2020
+MANISHIMWE  LEVIS,M,,HC GIHINGA,SHYARA,,,,,,2020
+IRADUKUNDA  JOYEUSE,F,,HC GIHINGA,SHYARA,,,,,,2020
+MASENGESHO  ESTHER,F,,HC GIHINGA,SHYARA,,,,,,2020
+NIYONIZEYE  CHANCELINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+DUKURIKIRE  SAMUEL,M,,HC GIHINGA,SHYARA,,,,,,2020
+NSHIMYUMUKIZA  ELYSE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYOYABIKOZE  HONORINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+DUSHIMIMANA  DONATHA,F,,HC GIHINGA,SHYARA,,,,,,2020
+MUGISHA  GIFT,F,,HC GIHINGA,SHYARA,,,,,,2020
+HABUMUGISHA  JOSEPH,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYONSABA  YVETTE,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRAKOZE  FLORENCE,F,,HC GIHINGA,SHYARA,,,,,,2020
+NIYIRAGIYE  JOSIANE,F,,HC GIHINGA,SHYARA,,,,,,2020
+MUNEZERO  LUCKY,M,,HC GIHINGA,SHYARA,,,,,,2020
+AKIMANIMPAYE  CONFIANCE,F,,HC GIHINGA,SHYARA,,,,,,2020
+NDUNGUTSE  EPPA,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYONSENGA  CLARISSE,F,,HC GIHINGA,SHYARA,,,,,,2020
+UWITUZE  GRACE,F,,HC GIHINGA,SHYARA,,,,,,2020
+NSHIMIYEYESU  NADIA,F,,HC GIHINGA,SHYARA,,,,,,2020
+IFITIMBARAGA  REGIS,M,,HC GIHINGA,SHYARA,,,,,,2020
+TUYAMBAZE  GERGIE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYONKURU  EMMANUEL,M,,HC GIHINGA,SHYARA,,,,,,2020
+IRAKARAMA MUCYOWERA  CLEVER,M,,HC GIHINGA,SHYARA,,,,,,2020
+IMANIZIBYOSE  CLEMANTINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRANZI  ELISSA,M,,HC GIHINGA,SHYARA,,,,,,2020
+MUSHIMIYIMANA  GRACE,F,,HC GIHINGA,SHYARA,,,,,,2020
+MUNYENTWARI  ELIABU,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYOMUGABO  EMILE,M,,HC GIHINGA,SHYARA,,,,,,2020
+SIBOMANA  ATHANASE,M,,HC GIHINGA,SHYARA,,,,,,2020
+IGIRANEZA  CECILE,F,,HC GIHINGA,SHYARA,,,,,,2020
+BYOSENIYESU  IJURU RYABERA,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRASUBIZA  GIDEON,M,,HC GIHINGA,SHYARA,,,,,,2020
+IRADUKUNDA  FABRICE,M,,HC GIHINGA,SHYARA,,,,,,2020
+IGIRANEZA  DORCAS,F,,HC GIHINGA,SHYARA,,,,,,2020
+KOMEZUSENGE  EMMANUEL,M,,HC GIHINGA,SHYARA,,,,,,2020
+USENGA  SERGE,M,,HC GIHINGA,SHYARA,,,,,,2020
+MUSHIMIYIMANA  ALICE,F,,HC GIHINGA,SHYARA,,,,,,2020
+ISINGIZWE MITSINDO  ALBINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+BYIRINGIRO  ELISSA,M,,HC GIHINGA,SHYARA,,,,,,2020
+HABINTWARI  J.M.V,M,,HC GIHINGA,SHYARA,,,,,,2020
+IRADUKUNDA  ABIA,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRADUKUNDA  ALINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRADUKUNDA  BRIGITTE,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRAFASHA  VIVIANA,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRAKOZE  EVARISTE,M,,HC GIHINGA,SHYARA,,,,,,2020
+ISHIMWE  FABRICE,M,,HC GIHINGA,SHYARA,,,,,,2020
+ISHIMWE  NELICA,F,,HC GIHINGA,SHYARA,,,,,,2020
+ISHOIMWE  SALATIE,M,,HC GIHINGA,SHYARA,,,,,,2020
+ITANGISHAKA  XAVIER,M,,HC GIHINGA,SHYARA,,,,,,2020
+IZABAYO  BONHEUR,M,,HC GIHINGA,SHYARA,,,,,,2020
+KWIZERA  BERTIN,M,,HC GIHINGA,SHYARA,,,,,,2020
+KWIZERA  DAMIEN,M,,HC GIHINGA,SHYARA,,,,,,2020
+MANIRAFASHA  DAMSCENE,M,,HC GIHINGA,SHYARA,,,,,,2020
+MANIZIBYOSE  ZAWADI,F,,HC GIHINGA,SHYARA,,,,,,2020
+IMANZI NELISSA  ELLA,F,,HC GIHINGA,SHYARA,,,,,,2020
+MUGISHA  ELIA,M,,HC GIHINGA,SHYARA,,,,,,2020
+MUHAWENIMANA  JACQUELINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+MUKARUKUNDO  CHARLENE,F,,HC GIHINGA,SHYARA,,,,,,2020
+MUNEZERI BYISHIMO  KEVINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+MUSHIMIYIMANA  DIVINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+NDAYISHIMIYE  INNOCENT,M,,HC GIHINGA,SHYARA,,,,,,2020
+NDUWAYO  YVETTE,F,,HC GIHINGA,SHYARA,,,,,,2020
+NGWIZENAYO  CLOUDE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NISHIMWE  EMMANUEL,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYOMURENGEZI  FASILE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYONAGIRA  CLOUDINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+NIYONAGIRA  SANDRINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+SHEMA AIME  JEAN CLOUDE,M,,HC GIHINGA,SHYARA,,,,,,2020
+TUMUKUNDE  LEA,F,,HC GIHINGA,SHYARA,,,,,,2020
+TUYISENGE  ALINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+TUYISHIMIRE  FABIEN,M,,HC GIHINGA,SHYARA,,,,,,2020
+TWAHIRWA  DIDIE,M,,HC GIHINGA,SHYARA,,,,,,2020
+UWASE  FIETTE,F,,HC GIHINGA,SHYARA,,,,,,2020
+UWASE  VALANTINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+UWAYEZU  THEONESTE,M,,HC GIHINGA,SHYARA,,,,,,2020
+UWIMANA  CLEMANTINE,F,,HC GIHINGA,SHYARA,,,,,,2020
+MURAGIJIMANA  ODETTE,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRADUKUNDA  CLENIA,F,,HC GIHINGA,SHYARA,,,,,,2020
+UMWIZA  CHRISTELLA,F,,HC GIHINGA,SHYARA,,,,,,2020
+AKIMANA  LATIFA,F,,HC GIHINGA,SHYARA,,,,,,2020
+MASENGESHO  ESTHER,F,,HC GIHINGA,SHYARA,,,,,,2020
+UMURERWA  JOSELYNE,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRADUKUNDA  JOYEUSE,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRAKOZE  REPONSE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NZAMBAZAMARIYA  GISELLA,F,,HC GIHINGA,SHYARA,,,,,,2020
+TUYAMBAZE  GEREDI,M,,HC GIHINGA,SHYARA,,,,,,2020
+USENGA  SERGE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NSHIMYUMUKIZA  ELYSE,M,,HC GIHINGA,SHYARA,,,,,,2020
+MANISHIMWE  LEVIS,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYODUSHIMA  BENITHA,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRAMUZI  IGIHOZO YVETTE,F,,HC GIHINGA,SHYARA,,,,,,2020
+SEZERANA  LIVE,F,,HC GIHINGA,SHYARA,,,,,,2020
+GISUBIZO  DIONCRE,M,,HC GIHINGA,SHYARA,,,,,,2020
+MASENGESHO  ESTHER,F,,HC GIHINGA,SHYARA,,,,,,2020
+UMURERWA  JOSELYNE,F,,HC GIHINGA,SHYARA,,,,,,2020
+NZAMBAZAMARIYA  GISELLA,F,,HC GIHINGA,SHYARA,,,,,,2020
+USENGA  SERGE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NSHIMYUMUKIZA  ELYSE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYODUSHIMA  BENITHA,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRAMUZI  IGIHOZO YVETTE,F,,HC GIHINGA,SHYARA,,,,,,2020
+SEZERANA  LIVE,F,,HC GIHINGA,SHYARA,,,,,,2020
+GISUBIZO  DIONCRE,M,,HC GIHINGA,SHYARA,,,,,,2020
+MUGISHA  CHRISTIAN,M,,HC GIHINGA,SHYARA,,,,,,2020
+CYUZUZO  FRANK,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+KWIZERA  FABRICE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+ISHIMWE  BENISE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+NISHIMWE  CLEMANCE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+IRANZI  VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+TETA  JULIETTE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IGIRANEZA  EMERTHE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+INEZA HIRWA  JUSTINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWAJENEZA  BELISE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+NISHIMWE  CLEMANCE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+KWIZERA  FABRICE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+TETA  JULIETTE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+IRANZI  VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+ISHIMWE  BENISE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+IGIRANEZA  EMERITHA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+BAYUBAHE  ELLA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+NISHIMWE  CLEMANCE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+IGIRANEZA  EMERTHA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+TETA  JULLIETTE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IRANZI  VANESSA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+IZABAYO  NAYITURIKI,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+CYUBAHIRO  BRAYAN,M,,HC RILIMA,RILIMA,KIMARANZARA,BUHORO,,,,2020
+IRUMVA  ELIVICE,M,,HC RILIMA,RILIMA,NYABAGENDWA,NYABAGENDWA,,,,2020
+MUNEZERO  ELIE,M,,HC RILIMA,RILIMA,KABEZA,KABEZA,,,,2020
+ISHIMWE GENTILLE  NOELLA,F,,HC RILIMA,RILIMA,KABEZA,KAGARAMA,,,,2020
+GAKURU  LEON,M,,HC RILIMA,RILIMA,KABEZA,GAKO,,,,2020
+MURENGEZI  DIDIER,M,,HC RILIMA,RILIMA,NYABAGENDWA,NYABAGENDWA,,,,2020
+RUKUNDO  LUCKY BLESE,M,,HC RILIMA,RILIMA,KIMARANZARA,BYIMANA,,,,2020
+KEZA  STELLA QUEEN,F,,HC RILIMA,RILIMA,KIMARANZARA,BUHORO,,,,2020
+IGIRANEZA  DIANE,F,,HC RILIMA,RILIMA,KIMARANZARA,GASABO,,,,2020
+ITUZE YASPI  MEGAN,F,,HC RILIMA,RILIMA,NTARAMA,NYAMURE,,,,2020
+KWIZERE  FABRICE,M,,HC RILIMA,RILIMA,NYABAGENDWA,KARAMA,,,,2020
+MASEZERANO  AIMABLE,M,,HC RILIMA,RILIMA,KABEZA,KABEZA,,,,2020
+BIMENYIMANA  SHALOM,M,,HC RILIMA,RILIMA,KABEZA,KARAMBI,,,,2020
+HIRWA  LAMBERT,M,,HC RILIMA,RILIMA,NTARAMA,KAGUGU,,,,2020
+UWINEZA  KELIE,F,,HC RILIMA,RILIMA,NYABAGENDWA,GICACA,,,,2020
+TUYISHIMIRE  JEANNE,F,,HC RILIMA,RILIMA,NYABAGENDWA,KAMABUYE,,,,2020
+IRATUZI  JEANNE,F,,HC RILIMA,RILIMA,NYABAGENDWA,NYABAGENDWA,,,,2020
+MANZI  J.BAPTISTE,M,,HC RILIMA,RILIMA,NYABAGENDWA,NYAMIZI,,,,2020
+MICOMYIZA NEZERWA G,M,,HC RILIMA,RILIMA,KIMARANZARA,AMIZERO,,,,2020
+IRADUKUNDA  FISTON,M,,HC RILIMA,RILIMA,KIMARANZARA,BUHORO,,,,2020
+IRASUBIZA  RACHEL,F,,HC RILIMA,RILIMA,NYABAGENDWA,NYAMIZI,,,,2020
+MASENGESHO  ESTHER,F,,HC GIHINGA,SHYARA,,,,,,2020
+NGABITSINZE  J.DE DIEN,M,,HC GIHINGA,SHYARA,,,,,,2020
+UMURERWA  JOSELYNE,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRADUKUNDA  JOYEUSE,F,,HC GIHINGA,SHYARA,,,,,,2020
+IRAKOZE  REPONSE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NYIRAHAKIZIMANA  DALIE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NZAMBAZAMARIYA  GISELLA,F,,HC GIHINGA,SHYARA,,,,,,2020
+TUYAMBAZE  GEREDI,M,,HC GIHINGA,SHYARA,,,,,,2020
+USENGA  SERGE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NSHYIMYUMUKIZA  ELYSE,M,,HC GIHINGA,SHYARA,,,,,,2020
+MANISHIMWE  LEVIS,M,,HC GIHINGA,SHYARA,,,,,,2020
+IRAMUZI IGIHOZO  YVETTE,F,,HC GIHINGA,SHYARA,,,,,,2020
+DUSHIMIMANA  DONATHA,F,,HC GIHINGA,SHYARA,,,,,,2020
+NIYODUSHIMA  BENITHA,F,,HC GIHINGA,SHYARA,,,,,,2020
+SEZERANA  LIVE,M,,HC GIHINGA,SHYARA,,,,,,2020
+GISUBIZO  DOIONCRE,M,,HC GIHINGA,SHYARA,,,,,,2020
+NIYOGUSHIMWA  PASCIENCE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+GISUBIZO  ANGE SAMUELLA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+TETA  JULLIETTE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NISHIMWE  CLEMANCE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+MUGWANEZA  PASCALINE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+IGIRIMPUHWE KEZA  BLANDINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+ASHIMWE SHAMI  ABIANE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IRAKOZE  AIME SACHA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+NDIKUMANA  CYUZUZO,F,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+IRASUBIZA  UMWALI GISELE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+GATSINZI  GISA GIOME,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+MUYIZERE IRIHO  NAOMI,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NDAYISHIMIYE  PRINCE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+INEZA  FIONAH,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+KAGORORA  FRED,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+KAGORORA  FRANK,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+MUGISHA KWIZERA  PATRICE,M,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+KAMIKAZI  NOELLA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NIYOMUGISHA  PACIFUQUE,M,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+MUTESI  SANDRINE,F,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+IGIRANEZA  SYLIVIA,F,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+UWINEZA  DIVINE,F,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+FITUMUKIZA  EMELINE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+NIYOBUHUNGIRO  JIBURIRE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+HATSINDINTWARI  MOISE,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NDAMUKUNDA  PAUL,M,,HC RILIMA,RILIMA,KARERA,,,,,2020
+TUYISENGE  BUGINGO IBRAHIM,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UMUKUNZI  PIERRINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UMUTONIWASE  CLOUDINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWINEZA  ALINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+IMPANO TUYISENGE  VINCENT,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWURUKUNDO  YANICK,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWAMAHORO  KEVINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+GANZA  INNOCENTE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+TURATSINZE  YACKIN,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWASE BELLA  BELISE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+MUZIRANTENGE  MEDIATRICE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+GISUBIZO  CHANCE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NIYOGISUBIZO  CHANCELINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+INEZA HIRWA  JUSTINE,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+ISHIMWE  HYCENTA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWIMANA  CHANNELLA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UMUHOZA  LANDRIDE,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+GAHOZO  ANGE VANESSA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+NAYITURIKI PATRIC,M,,HC RILIMA,RILIMA,NTARAMA,,,,,2020
+UMUHOZA  FIONAH,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+IRANZI  VANESSA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+ITUZE YASPI  MEGAN,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+CYUZUZO  FRANK,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWINEZA  KELIA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+ISHIMWE  DENISE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+DUFITUMUKIZA  VALENSE,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UWIDUHAYE  LILIANE,F,,HC RILIMA,RILIMA,KARERA,,,,,2020
+IGIRUBUNTU  NICOLE,F,,HC RILIMA,RILIMA,KARERA,,,,,2020
+UWASE  CHANIA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+UMWIZERWA  DANIELLA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2020
+ABAYO ANGELA JOYCE,F,,HC RILIMA,RILIMA,,,,,,2020
+AGASARO BLESSING  CHRISTELLA,F,,HC RILIMA,RILIMA,,,,,,2020
+BYUKUSENGE  MARIE AIME,F,,HC RILIMA,RILIMA,,,,,,2020
+MUHIRWA  HAPPY BLESSING,F,,HC RILIMA,RILIMA,,,,,,2020
+GAHIZI SHAMI  ORNELLA,F,,HC RILIMA,RILIMA,,,,,,2020
+GATETE  PACIFIC,M,,HC RILIMA,RILIMA,,,,,,2020
+GISUBIZO NSHIZIRUNGU  PACIFIC,M,,HC RILIMA,RILIMA,,,,,,2020
+GISUBIZO AIME SHAFI,M,,HC RILIMA,RILIMA,,,,,,2020
+IMANANURUKUNDO  MESHAKI,M,,HC RILIMA,RILIMA,,,,,,2020
+IGIRANEZA  PACIFIC,M,,HC RILIMA,RILIMA,,,,,,2020
+IRAKIZA  CEDRIC,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI  ELYSE,M,,HC RILIMA,RILIMA,,,,,,2020
+INGABIRE  NADIA,F,,HC RILIMA,RILIMA,,,,,,2020
+IGIRIBANGA  CHARTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRADUKUNDA  JEHOVANIE,F,,HC RILIMA,RILIMA,,,,,,2020
+MUGISHA  BLAISE,M,,HC RILIMA,RILIMA,,,,,,2020
+MUGISHA  EMMANUEL,M,,HC RILIMA,RILIMA,,,,,,2020
+NDAHIMANA  PACIFIC,M,,HC RILIMA,RILIMA,,,,,,2020
+NIYIBIZI  CLEMANTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONSHUTI  XAVIER,M,,HC RILIMA,RILIMA,,,,,,2020
+NIYOBYIRINGIRO  YACKIN,M,,HC RILIMA,RILIMA,,,,,,2020
+NIYOKWIZERWA  BEONCE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYOMUKIZA  ADELINE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYOGISUBIZO  FLORENCE,F,,HC RILIMA,RILIMA,,,,,,2020
+NTAGISANIMANA  J.BOSCO,M,,HC RILIMA,RILIMA,,,,,,2020
+UWURUKUNDO  PRENCE,M,,HC RILIMA,RILIMA,,,,,,2020
+UWIDUHAYE  PACIFIQUE,M,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  ALINE,F,,HC RILIMA,RILIMA,,,,,,2020
+UZAMUKUNDA  CLEMANCE,F,,HC RILIMA,RILIMA,,,,,,2020
+WIBABARA  AISHA,F,,HC RILIMA,RILIMA,,,,,,2020
+NYIRANDEKWE  SAMIA,F,,HC RILIMA,RILIMA,,,,,,2020
+MPORANYISENGA  FABIEN,M,,HC RILIMA,RILIMA,,,,,,2020
+NSHIMIYIMANA  ERIC,M,,HC RILIMA,RILIMA,,,,,,2020
+NDIZEYE  AIME DESIRE,M,,HC RILIMA,RILIMA,,,,,,2020
+UWIRAGIYE  FANNY,F,,HC RILIMA,RILIMA,,,,,,2020
+RUGWIRO  ALAIN GAEL,M,,HC RILIMA,RILIMA,,,,,,2020
+MUGISHA  BERTIN,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI NTWARI  JOSUE,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA  BONEHEUTE,F,,HC RILIMA,RILIMA,,,,,,2020
+NINAHAZWE  FRANCOISE,F,,HC RILIMA,RILIMA,,,,,,2020
+MBABAZIZIMANA  LANDRIDE,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA  COLOMBE  PEASCILE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYIBIKORA  NICOLAS,M,,HC RILIMA,RILIMA,,,,,,2020
+NDAYAMBAJE  FAUSTIN,M,,HC RILIMA,RILIMA,,,,,,2020
+NDAGIJIMANA  CHRISTIAN,M,,HC RILIMA,RILIMA,,,,,,2020
+IRAKOZE  JEHOVAYIRE,F,,HC RILIMA,RILIMA,,,,,,2020
+MUKOBWAJANA  MAGNIFIQUE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRAGUHA  JOSUE,M,,HC RILIMA,RILIMA,,,,,,2020
+GATESI  RUTH,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  RODRIGUE,M,,HC RILIMA,RILIMA,,,,,,2020
+MUGABO  INEZA,F,,HC RILIMA,RILIMA,,,,,,2020
+TUMUKUNDE UWASE  QUEEN,F,,HC RILIMA,RILIMA,,,,,,2020
+TUZA  MOISE,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA  JALIA,F,,HC RILIMA,RILIMA,,,,,,2020
+MUKIZA  BENJAMIN,M,,HC RILIMA,RILIMA,,,,,,2020
+MUGISHA  ERIC,M,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  CLARISSE,F,,HC RILIMA,RILIMA,,,,,,2020
+INEZAYIMANA  PACIFIQUE,M,,HC RILIMA,RILIMA,,,,,,2020
+UMUHIRE  JAMES,M,,HC RILIMA,RILIMA,,,,,,2020
+IRAKOZE  JEHOVAYIRE B,M,,HC RILIMA,RILIMA,,,,,,2020
+DUSHIMIMANA  ALEX,M,,HC RILIMA,RILIMA,,,,,,2020
+GIKAKA  KING MANZI,M,,HC RILIMA,RILIMA,,,,,,2020
+GISUBIZO  PATRIC,M,,HC RILIMA,RILIMA,,,,,,2020
+HIRWA KANAMUGIRE  BELLO,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI GADI,M,,HC RILIMA,RILIMA,,,,,,2020
+IGIRANEZA  ISIMBI  INNOCENTE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRAKOZE  LIONEL MESSI,M,,HC RILIMA,RILIMA,,,,,,2020
+IGIHOZO  SAMANTHA,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE UMWIZERWA  DANIELLA,F,,HC RILIMA,RILIMA,,,,,,2020
+SHEMA  RADJA BLAISE,M,,HC RILIMA,RILIMA,,,,,,2020
+IRAKOZE  DEBORAH,F,,HC RILIMA,RILIMA,,,,,,2020
+HABIYAREMYE  FOCUS,M,,HC RILIMA,RILIMA,,,,,,2020
+KAMIKAZI  ILIZA DANIELLA,F,,HC RILIMA,RILIMA,,,,,,2020
+MPANO IHIRWE  BRAVAN,M,,HC RILIMA,RILIMA,,,,,,2020
+MUGARAGUWIMANA  YOBU,M,,HC RILIMA,RILIMA,,,,,,2020
+NARADA UGANZE  KETIA,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONKURU  EMILE,M,,HC RILIMA,RILIMA,,,,,,2020
+NIYONSENGA  THEOGENE,M,,HC RILIMA,RILIMA,,,,,,2020
+NGABONZIZA MUCYO FRED,M,,HC RILIMA,RILIMA,,,,,,2020
+NTWALI UGANZE  CREDO,M,,HC RILIMA,RILIMA,,,,,,2020
+RWIBUTSO  KELIA,F,,HC RILIMA,RILIMA,,,,,,2020
+SHYAKA  ERIC,M,,HC RILIMA,RILIMA,,,,,,2020
+SHIMWA GIKUNDIRO  JOSEPHINE,F,,HC RILIMA,RILIMA,,,,,,2020
+TWIZEYIMANA  GAD,M,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  M.GRACE,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHIRE  AIME KETIA,F,,HC RILIMA,RILIMA,,,,,,2020
+UWASE  SHANIA,F,,HC RILIMA,RILIMA,,,,,,2020
+UTUJE KEZA  CLEMANTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWAJENEZA  DIVINE,F,,HC RILIMA,RILIMA,,,,,,2020
+MURAVA  GIFT,F,,HC RILIMA,RILIMA,,,,,,2020
+UWABERA FRANCINE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI  BRAYAN,M,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  ALINE,F,,HC RILIMA,RILIMA,,,,,,2020
+IMPANO TUYISENGE  VENCENT,M,,HC RILIMA,RILIMA,,,,,,2020
+IKUZWE KUNDWA  BONNETE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWURUKUNDO  YANICK,M,,HC RILIMA,RILIMA,,,,,,2020
+UWAMAHORO  KEVINE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYIGABA  WILLIAM,M,,HC RILIMA,RILIMA,,,,,,2020
+GANZA  INNONCENT,F,,HC RILIMA,RILIMA,,,,,,2020
+TURATSINZE  YACKIN,M,,HC RILIMA,RILIMA,,,,,,2020
+UWASE BELLA  BELLISE,F,,HC RILIMA,RILIMA,,,,,,2020
+ISEZERANO  ACKISA,F,,HC RILIMA,RILIMA,,,,,,2020
+UFITINEMA  CLAIRE,F,,HC RILIMA,RILIMA,,,,,,2020
+HIRWA GAVE  ALEX,M,,HC RILIMA,RILIMA,,,,,,2020
+MUZIRANTENGE  MEDIATRICE,F,,HC RILIMA,RILIMA,,,,,,2020
+ISUBIRIZIGIHE  ISLAYELI,M,,HC RILIMA,RILIMA,,,,,,2020
+GISUBIZO  CHANCE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYOGISUBIZO  CHANCELINE,F,,HC RILIMA,RILIMA,,,,,,2020
+IGIRANEZA  DIANE,F,,HC RILIMA,RILIMA,,,,,,2020
+HIRWA  BRAIN,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA HIRWA  JUSTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+TUMUKUNDE  ANGE,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  HYCINTA,F,,HC RILIMA,RILIMA,,,,,,2020
+IGIHOZO ISIMBI  DIANE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWUMUGISHA  BELINE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONGABIRE DUSHIME  KELLY,M,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  CHANELLA,F,,HC RILIMA,RILIMA,,,,,,2020
+IMANIZABAYO  NIYOMFURA,M,,HC RILIMA,RILIMA,,,,,,2020
+DUFITUMUKIZA  VALENSE,M,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  LANDRIDE,M,,HC RILIMA,RILIMA,,,,,,2020
+GAHOZO  ANGE VANESSA,F,,HC RILIMA,RILIMA,,,,,,2020
+MUKAHIRWA  ALICE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI RUGABA  LEONCE,F,,HC RILIMA,RILIMA,,,,,,2020
+MANZI  THIERRY,M,,HC RILIMA,RILIMA,,,,,,2020
+CYUBAHIRO  BRAYAN,M,,HC RILIMA,RILIMA,,,,,,2020
+NEZERWA  MICOMYIZA,M,,HC RILIMA,RILIMA,,,,,,2020
+NEZERWA ABAYO  GRACE,F,,HC RILIMA,RILIMA,,,,,,2020
+INTWARI  DEO GASTON,M,,HC RILIMA,RILIMA,,,,,,2020
+DUSENGE  ANGE NICOLE,F,,HC RILIMA,RILIMA,,,,,,2020
+SABAYEZU  SIMEON,M,,HC RILIMA,RILIMA,,,,,,2020
+KWIZERA HIRWA  ERIC,M,,HC RILIMA,RILIMA,,,,,,2020
+MASENGESHO  J.PIERE,M,,HC RILIMA,RILIMA,,,,,,2020
+KEZA  JACKY,M,,HC RILIMA,RILIMA,,,,,,2020
+IHIRWE MUCYO  ANOLD,M,,HC RILIMA,RILIMA,,,,,,2020
+NAYITURIKI  PATRIC,M,,HC RILIMA,RILIMA,,,,,,2020
+NIYIBIKORA  LAURENCE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWIHIRWE,F,,HC RILIMA,RILIMA,,,,,,2020
+GATOYA  JOSUE,M,,HC RILIMA,RILIMA,,,,,,2020
+GAKURU  LEON,M,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  OBENI DORCAS,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  YVES,M,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  ANGE,F,,HC RILIMA,RILIMA,,,,,,2020
+TUYIZERE,M,,HC RILIMA,RILIMA,,,,,,2020
+MUTESI  CLENIE,F,,HC RILIMA,RILIMA,,,,,,2020
+NDIKUMANA  MORODEKAYI,M,,HC RILIMA,RILIMA,,,,,,2020
+UWASE  JEANNE,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  RILIANE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONKURU  DEBORAH,F,,HC RILIMA,RILIMA,,,,,,2020
+NKINZINGABO,M,,HC RILIMA,RILIMA,,,,,,2020
+NSENGUWERA,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  JOSELYNE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRANEZEZA  LIBERITE,F,,HC RILIMA,RILIMA,,,,,,2020
+NIYONKURU  EMILE,M,,HC RILIMA,RILIMA,,,,,,2020
+UWUMUGISHA,M,,HC RILIMA,RILIMA,,,,,,2020
+UWAYEZU  J.DE DIEN,M,,HC RILIMA,RILIMA,,,,,,2020
+INEZA SHIMWA  BENITHA,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHOBORABYOSE  ERIC,M,,HC RILIMA,RILIMA,,,,,,2020
+MANZI JEAN  BABTISTE,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI  JEAN BOSCO,M,,HC RILIMA,RILIMA,,,,,,2020
+MUHIRE  ALFRED,M,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  BENISE,F,,HC RILIMA,RILIMA,,,,,,2020
+HABUMUREMYI,M,,HC RILIMA,RILIMA,,,,,,2020
+IRANZI  VANESSA,F,,HC RILIMA,RILIMA,,,,,,2020
+UWIDUHAYE  RILIANE,F,,HC RILIMA,RILIMA,,,,,,2020
+HATEGEKIMANA  FABRICE,M,,HC RILIMA,RILIMA,,,,,,2020
+IGIRUBUNTU  NICOLE,F,,HC RILIMA,RILIMA,,,,,,2020
+UWIDUHAYE  SANDRINE,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHUZA  JUSTINE,F,,HC RILIMA,RILIMA,,,,,,2020
+MUNEZERO  ELIE,M,,HC RILIMA,RILIMA,,,,,,2020
+UWINEZA  KELIA,F,,HC RILIMA,RILIMA,,,,,,2020
+CYUZUZO  FRANK,M,,HC RILIMA,RILIMA,,,,,,2020
+MASEZERANO  AIMABLE,M,,HC RILIMA,RILIMA,,,,,,2020
+KWIZERA  FABRICE,M,,HC RILIMA,RILIMA,,,,,,2020
+TUZA YASPI  MEGAN,F,,HC RILIMA,RILIMA,,,,,,2020
+ISHIMWE  GENTILLE,F,,HC RILIMA,RILIMA,,,,,,2020
+IRADUKUNDA  FISTO,M,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  FIONA,F,,HC RILIMA,RILIMA,,,,,,2020
+UMUHOZA  FABIOLA,M,,HC RILIMA,RILIMA,,,,,,2020
+MUSHIMIYIMANA  AMINA,F,,HC GAKURAZO,MUSENYI,GICACA,NGARAMA,,,,2024
+NKUNZINGABO  ERNESTE,F,,HC RILIMA,RILIMA,KABEZA,BIRARO,,,,2024
+GASARO  KEZA SONIA,F,,HC RILIMA,RILIMA,KABEZA,KARAMBI,,,,2024
+MASENGESHO GANZA  GENTILLE,F,,HC RILIMA,RILIMA,KABEZA,MUBUGA,,,,2024
+INEMA NSHUTI SHEMA  SEVIA,F,,HC RILIMA,RILIMA,KIMARANZARA,KIMARANZARA,,,,2024
+NIYOGISUBIZO  KEVIN,F,,HC GAKURAZO,MUSENYI,MUSENYI,KIDUDU,,,,2024
+NAYIBARE UWASE ORNELA,F,,HC GAKURAZO,MUSENYI,MUSENYI,KIRINGA,,,,2024
+UMUHIUZA  AKAYO,F,,HC GAKURAZO,MUSENYI,MUSENYI,MUHANGA,,,,2024
+MUHWEZIMANA  PACIFIQUE,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,RUGARAMA,,,,2024
+NTIRUSHWAMABOKO  VALENSE,M,,HC GAKURAZO,MUSENYI,MUSENYI,NUNGA,,,,2024
+IHIMBAZWE IREBE  SAMANTHA,F,,HC RILIMA,RILIMA,NYABAGENDWA,MURAMBI,,,,2024
+INEZA  GIFT,F,,HC RILIMA,RILIMA,KABEZA,GASARWE,,,,2024
+AMASHIMWE  JOVIA,F,,HC RILIMA,RILIMA,NYABAGENDWA,MUKOMA,,,,2024
+UWAJENEZA  JOY,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,RWANKERI,,,,2024
+NEZERWA  NAOME,F,,HC GAKURAZO,MUSENYI,RULINDO,RULINDO,,,,2024
+UWAMAHORO  JOSIANE,F,,HC GAKURAZO,MUSENYI,RULINDO,KABUYE,,,,2024
+UWIMANIKUNDA  HONORINE,F,,HC GAKURAZO,MUSENYI,RULINDO,KAGUGU,,,,2024
+IGIHOZO  WINNY,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,RUSHUBI,,,,2024
+NIYOGISUBIZO  REGIS,M,,HC GAKURAZO,MUSENYI,RULINDO,KAGUNGA,,,,2024
+MUNEZERO  RAISSA,F,,HC GAKURAZO,MUSENYI,MUSENYI,NYAGASAGARA,,,,2024
+IRIKUMWENATWE  EDISON,M,,HC GAKURAZO,MUSENYI,RULINDO,RULINDO,,,,2024
+BERWANAYO  PATRIC,M,,HC GAKURAZO,MUSENYI,GICACA,GIHARI,,,,2024
+ISHIMWE  CLARISSE,F,,HC GAKURAZO,MUSENYI,RULINDO,KINYOVE,,,,2024
+IGIRANEZA  KEVIN,F,,HC GAKURAZO,MUSENYI,GICACA,CYANIKA,,,,2024
+IRASUBIZA  HAPPY,F,,HC GAKURAZO,MUSENYI,MUSENYI,NYAGASAGARA,,,,2024
+KWIZERA  JONAS,M,,HC GAKURAZO,MUSENYI,MUSENYI,CYERU,,,,2024
+MUKIZA  JONAS,M,,HC GAKURAZO,MUSENYI,MUSENYI,,,,,2024
+NDASHIMYE SHEMA  OMEGA,M,,HC GAKURAZO,MUSENYI,GICACA,CYARUBAZI,,,,2024
+ISIMBI KEZA  ZALAINNA,F,,HC GAKURAZO,MUSENYI,MUSENYI,CYERU,,,,2024
+AHIRWE SINE  BLENDA,F,,HC GAKURAZO,MUSENYI,GICACA,REMERA,,,,2024
+INEZA  KEZIYA,F,,HC GAKURAZO,MUSENYI,GICACA,REMERA,,,,2024
+NIYOMUGISHA  SHODIA,F,,HC GAKURAZO,MUSENYI,MUSENYI,RUGANDO,,,,2024
+UMUTONIWASE  RIHHANA,F,,HC GAKURAZO,MUSENYI,MUSENYI,MUHANGA,,,,2024
+ISHIMWE  KELIA,F,,HC GAKURAZO,MUSENYI,MUSENYI,RUGANDO,,,,2024
+ITURIZE  BONHEUR,M,,HC GAKURAZO,MUSENYI,GICACA,BIDUDU,,,,2024
+IGIRANEZA IYIZIRE  KEVIN,M,,HC GAKURAZO,MUSENYI,GICACA,CYANIKA,,,,2024
+MUNEZERO  NADINE,F,,HC GAKURAZO,MUSENYI,RULINDO,RULINDO,,,,2024
+HIRWA  ARSENE,M,,HC GAKURAZO,MUSENYI,GICACA,CYARUBAZI,,,,2024
+UMULISA ISHIMWE  PAOLLA,F,,HC GAKURAZO,MUSENYI,GICACA,KAGASA,,,,2024
+IMANIRATUJE  DIVINE,F,,HC GAKURAZO,MUSENYI,MUSENYI,NYAGASAGARA,,,,2024
+ISHIMWE  BELYSE,F,,HC GAKURAZO,MUSENYI,MUSENYI,,,,,2024
+NIYOKWIZERWA  RETITIA,F,,HC GAKURAZO,MUSENYI,RULINDO,KAGUNGA,,,,2024
+ABAYO  MERCIANA,F,,HC GAKURAZO,MUSENYI,GICACA,KAGUNGA,,,,2024
+MUHAWENIMANA  ALINE,F,,HC GAKURAZO,MUSENYI,RULINDO,KAGUNGA,,,,2024
+UWASE  KAMIKAZI,F,,HC GAKURAZO,MUSENYI,RULINDO,RULINDO,,,,2024
+ISHIMWE  BELYSE,F,,HC GAKURAZO,MUSENYI,MUSENYI,RUGANDO,,,,2024
+IMANIRUMVA  JEANNE,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,MBONWA,,,,2024
+TUYISHIMIRE  FABIEN,M,,HC GAKURAZO,MUSENYI,KIDUDU,,,,,2024
+GANZA  FABRICE,M,,HC GAKURAZO,MUSENYI,GICACA,CYARUBAZI,,,,2024
+UZAYISENGA  GRACE,F,,HC GAKURAZO,MUSENYI,MUSENYI,NYAGASAGARA,,,,2024
+TUYISHIMIRE  DANIEL,M,,HC GAKURAZO,MUSENYI,MUSENYI,JURU,,,,2024
+UWASE  LINDA DEBORAH,F,,HC GAKURAZO,MUSENYI,MUSENYI,KIRINGA,,,,2024
+NIYOGISUBIZO  SAMUEL,M,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,RUGARAMA,,,,2024
+IRADUKUNDA  ROSINE,F,,HC GAKURAZO,MUSENYI,MUSENYI,BISHINGE,,,,2024
+NIYIGENA  PASCALINE,F,,HC GAKURAZO,MUSENYI,GICACA,CYARUBAZI,,,,2024
+AKIMANA  JEANNE,F,,HC GAKURAZO,MUSENYI,MUSENYI,NYAGASAGARA,,,,2024
+ISHIMWE  EMMANUEL,M,,HC GAKURAZO,MUSENYI,MUSENYI,GAKURAZO,,,,2024
+UWIHIRWE  CHRISTELLA,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,MBONWA,,,,2024
+NIYIMUTANZE  REBECCA,F,,HC GAKURAZO,MUSENYI,MUSENYI,RUGANDO,,,,2024
+UMUTONI  THIERY STELLA,F,,HC RILIMA,RILIMA,NYABAGENDWA,MUKOMA,,,,2024
+IRAKOZE  KEVINE,F,,HC RILIMA,RILIMA,NYABAGENDWA,CYOMA,,,,2024
+UMUKUNDWA  JOLIE,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,RUSHUBI,,,,2024
+TUYIZERE  ALLIANCE,F,,HC GAKURAZO,MUSENYI,MUSENYI,CYERU,,,,2024
+NINZIZA  FEZA CHANCELLINE,F,,HC GAKURAZO,MUSENYI,MUSENYI,NYAGASAGARA,,,,2024
+IBYIMANIKORA  FRANCOISE,F,,HC GAKURAZO,MUSENYI,RULINDO,KABEZA,,,,2024
+IGIRANEZA  FRANK,M,,HC GAKURAZO,MUSENYI,GICACA,REMERA,,,,2024
+NIZEYIMANA  DORCAS,F,,HC GAKURAZO,MUSENYI,RULINDO,RULINDO,,,,2024
+ISHIMWE KEZA  BEULLA,F,,HC GAKURAZO,MUSENYI,GICACA,REMERA,,,,2024
+IRIZA  GIFT DANIEL,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,KIRUHURA,,,,2024
+IGANZE  CEDRIC,M,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,KIJURU,,,,2024
+GIKUNDIRO  GRATIEN,M,,HC GAKURAZO,MUSENYI,RULINDO,RULINDO,,,,2024
+UWASE KAMIKAZI,M,,HC GAKURAZO,MUSENYI,RULINDO,RULINDO,,,,2024
+IGIRANEZA  IYIZIRE KEVINE,F,,HC GAKURAZO,MUSENYI,GICACA,CYANIKA,,,,2024
+HAKIZIMANA  VALANTIN,M,,HC GAKURAZO,MUSENYI,RULINDO,NYAMUJAYA,,,,2024
+NTIRUSHWAMABOKO  VALENSE,M,,HC GAKURAZO,MUSENYI,MUSENYI,NTUNGA,,,,2024
+IRIKUMWENATWE  EDISON,M,,HC GAKURAZO,MUSENYI,RULINDO,RULINDO,,,,2024
+IMANIRATUJE  DIVINE,F,,HC GAKURAZO,MUSENYI,NYAGASAGARA,,,,,2024
+UWINEZA IYIZIRE  KELLIA,F,,HC GAKURAZO,MUSENYI,GICACA,CYANIKA,,,,2024
+MUTIMUTUJE  ELIMINATHA,F,,HC GAKURAZO,MUSENYI,MUSENYI,KAGUNGA,,,,2023
+NZIZA FEZA  CHANCELINE,F,,HC GAKURAZO,MUSENYI,MUSENYI,MUSENYI,,,,2024
+NIYOGISUBIZO  REGIS,M,,HC GAKURAZO,MUSENYI,RULINDO,,,,,2024
+ISINGIZWE  DENYSE,F,,HC GAKURAZO,MUSENYI,MUSENYI,MUSENYI,,,,2024
+BERWANAYO  PATRIC,M,,HC GAKURAZO,MUSENYI,GICACA,GIHARI,,,,2024
+INEZA  CHANA,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,MUSENYI,,,,2024
+IGANZE  JEHOVANIS,F,,HC GAKURAZO,MUSENYI,RULINDO,,,,,2024
+IRAGUHA  PIERRE,M,,HC GAKURAZO,MUSENYI,GICACA,,,,,2024
+IRAKIZA  MUGISHA,M,,HC GAKURAZO,MUSENYI,MUSENYI,,,,,2024
+UWIHANGANYE  J.BOSCO,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2023
+UMUTONIWASE  THIERY STELLA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2023
+UMUHOZA  CYNTHIA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2024
+AMASHIMWE  JOVIA,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2020
+GASAROKEZA UWIMANIDUHAYE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2020
+IRAKOZE  DIVINE,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2024
+MANIRAFASHA  DAVIDE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2023
+INEZA  GIFT,F,,HC RILIMA,RILIMA,KABEZA,,,,,2023
+MUHIMPUNDU  AGANZE ALEXIA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2023
+MUTIMAWINEZA  JULIENNE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2024
+SHAMI  PRINCE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2024
+MUCYO  FRANK,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2024
+NKINZINGABO MANZI  ERNESTE,M,,HC RILIMA,RILIMA,KABEZA,,,,,2024
+MUNEZERO SHAMI KING,M,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2024
+IGITANGAZA  HIRWA  KENEDY,M,,HC RILIMA,RILIMA,KABEZA,,,,,2024
+KWIZERA  MASEZERANO,M,,HC RILIMA,RILIMA,NTARAMA,,,,,2024
+MUHAWENIMANA  ROSINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,,,,,2024
+IRAKOZE  PACIFIQUE,M,,HC NYARUGENGE,NYARUGENGE,MURAMBI,,,,,2024
+KMIKAZI  CHANELLA,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,,,,,2024
+MUHAWENIMANA  DIANE,F,,HC NYARUGENGE,NYARUGENGE,MUYANGE,,,,,2024
+IRADUKUNDA  DAVIDE,M,,HC NYARUGENGE,NYARUGENGE,GIHINGA,,,,,2024
+IRAVUGA CETIEN ROSINE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,,,,,2024
+DUSHIME  J.DE DIEN,M,,HC NYARUGENGE,NYARUGENGE,KABUYE,,,,,2024
+NIYIBIKORA  BENEFIS,M,,HC NYARUGENGE,NYARUGENGE,RUGANDO,,,,,2024
+NIYOKWIZERWA  ANGEL,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,,,,,2024
+TUZA  FRED,M,,HC NYARUGENGE,NYARUGENGE,GIHINGA,,,,,2024
+UWASE  PASCALINE,F,,HC NYARUGENGE,NYARUGENGE,NGENDA,,,,,2024
+SINDIKUBWABO  EMMANUEL,M,,HC NYARUGENGE,NYARUGENGE,RUGANDO,,,,,2024
+MASENGESHO  GENTILLE,F,,HC NYARUGENGE,RILIMA,NYABAGENDWA,,,,,2024
+KUNDWA  ELLA FROLENCE,F,,HC RILIMA,RILIMA,KABEZA,KARAMBO,,,,2024
+MUTIMAWINEZA  GERMAINE,F,,HC RILIMA,RILIMA,BWIZA,KABEZA,,,,2024
+ISHIMWE  KELIA,F,,HC GAKURAZO,MUSENYI,RUGANDO,,,,,2024
+TUYIZERE  JOSELYNE,F,,HC GAKURAZO,MUSENYI,RULINDO,,,,,2024
+IRADUKUNDA  J.BAPTISTE,M,,HC GAKURAZO,MUSENYI,GICACA,,,,,2024
+MANIRATUJE  DIVINE,F,,HC GAKURAZO,MUSENYI,NYAGASAGARA,,,,,2024
+INEZA  TETA ELLA,F,,HC GAKURAZO,MUSENYI,CYERU,,,,,2024
+NTIRUSHWAMABOKO  VALENSE,M,,HC GAKURAZO,MUSENYI,MUSENYI,,,,,2024
+ISHIMWE  LOURENT,M,,HC GAKURAZO,MUSENYI,BIZENGA,,,,,2024
+UWASE  KAMIKAZI,F,,HC GAKURAZO,MUSENYI,RULINDO,,,,,2024
+TUYISHIMIRE  FABIEN,M,,HC GAKURAZO,MUSENYI,GICACA,,,,,2024
+UWAJENEZA  JOY CHRISTELLA,F,,HC GAKURAZO,MUSENYI,NYAGIHUNIKA,,,,,2024
+ITUZENIMANA  PARFAIT,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2024
+HAKIZIMANA  VALANTIN,M,,HC GAKURAZO,MUSENYI,NYAMULI,,,,,2024
+IRIKUMWENATWE  EDISON,M,,HC GAKURAZO,MUSENYI,RULINDO,,,,,2024
+NTWARI  IRAKOZE,F,,HC NYARUGENGE,NYARUGENGE,NGENDA,,,,,2024
+NIYOGISUBIZO  BRUNO,M,,HC NYARUGENGE,NYARUGENGE,GIHINGA,,,,,2024
+IRAKOZE  PACIFIQUE,M,,HC NYARUGENGE,NYARUGENGE,MURAMBI,,,,,2024
+UWASE  PASCALINE,F,,HC NYARUGENGE,NYARUGENGE,NGENDA,,,,,2024
+IRADUKUNDA  DAVIDE,M,,HC NYARUGENGE,NYARUGENGE,GIHINGA,,,,,2024
+TUZA FRED,M,,HC NYARUGENGE,NYARUGENGE,GIHINGA,,,,,2024
+IGITANGAZA  HIRWA  KENEDY,M,,HC RILIMA,RILIMA,KABEZA,,,,,2024
+ISANO KING MUCYO  PARFAIT,M,,HC RILIMA,RILIMA,KIMARANZARA,KIMARANZARA,,,,2024
+INEZA ITUZE  NINA PARFAITTE,F,,HC RILIMA,RILIMA,KIMARANZARA,KIMARANZARA,,,,2024
+ABIJURU  CALMER,M,,HC RILIMA,RILIMA,NYABAGENDWA,CYOMA,,,,2024
+MUCYO  FRANK,M,,HC RILIMA,RILIMA,NYABAGENDWA,MUKOMA,,,,2024
+SHAMI  PRINCE,M,,HC RILIMA,RILIMA,NYABAGENDWA,MUKOMA,,,,2024
+UMUHOZA  CYNTHIA,F,,HC RILIMA,RILIMA,NYABAGENDWA,CYOMA,,,,2024
+MANIRAFASHA  DAVIDE,M,,HC RILIMA,RILIMA,NYABAGENDWA,KAMABUYE,,,,2024
+UWIHANGANYE  JEAN BOSCO,M,,HC RILIMA,RILIMA,NYABAGENDWA,NYAMIZI,,,,2024
+NKINZINGABO MANZI  ERNESTE,M,,HC RILIMA,RILIMA,KABEZA,BIRARO,,,,2024
+CYOMORO  AIME ANDREW,M,,HC RILIMA,RILIMA,KABEZA,BIRARO,,,,2024
+MUHIMPUNDU,F,,HC RILIMA,RILIMA,KABEZA,BIRARO,,,,2024
+TWIZERIMANA  JOYCE BELIEVE,F,,HC NYARUGENGE,NYARUGENGE,MURAMBI,CYERU,,,,2024
+DUSENGIMANA  RILIANE,F,,HC MUSENYI,MUSENYI,RUGANDO,NSORO,,,,2024
+DUSHIMIMANA  YVONNE,F,,NYARUGENGE,NYARUGENGE,GIHINGA,NYARUBANDE,,,,2024
+ISHIMWE  KEVIN,M,,NYARUGENGE,NYARUGENGE,NGENDA,MUYANGE,,,,2024
+IZIBYOSE    PRINCE,M,,NYARUGENGE,NYARUGENGE,KABUYE,NYAKABINGO,,,,2024
+DUFITIMANA  PRINCE,M,,HC NYARUGENGE,NYARUGENGE,MURAMBI,CYERU,,,,2024
+NSHIMYUMUREMYI  JEAN CHRISS,M,,HC MUSENYI,MUSENYI,RUGANDO,BUSHENYI,,,,2024
+NIYOGUSHIMWA  PRINCE,M,,NYARUGENGE,NYARUGENGE,GIHINGA,NYARUBANDE,,,,2024
+HAHIRWABASENGA MPANO  ELYSE,M,,HC MUSENYI,MUSENYI,RUGANDO,BUSHONYI,,,,2024
+HAKUZIMANA  SAMUEL,M,,NYARUGENGE,NYARUGENGE,GIHINGA,NYARUBANDE,,,,2024
+ISHIMWE  NELLY VANESSA,F,,NYARUGENGE,NYARUGENGE,KABUYE,GATOKI,,,,2024
+NIZEYIMANA  PATIENCE,M,,HC MUSENYI,MUSENYI,RUGANDO,REBERO,,,,2024
+MUHAWENIMANA  NOELA,F,,HC MUSENYI,MUSENYI,GIHINGA,NYARUBANDE,,,,2024
+NIYOGISUBIZO  BRUNO,M,,HC MUSENYI,MUSENYI,GIHINGA,NYARUBANDE,,,,2024
+NIYONKURU  AIME HYCINTHA,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAKABUYE,,,,2024
+IBYIMANIKORA  PHENIAS,M,,HC MUSENYI,MUSENYI,RUGANDO,GAKO,,,,2024
+UWINEZA  LOURENCE,F,,HC NYARUGENGE,NYARUGENGE,GIHINGA,NYAGASOZI,,,,2024
+IRATURINZE  KENEDY,M,,HC MUSENYI,MUSENYI,RUGANDO,REBERO,,,,2024
+UWIMANIKUNDA  SARAH,F,,HC MUSENYI,MUSENYI,GIHINGA,NYARUBANDE,,,,2024
+NIYOKWIZERWA  FABIEN,M,,HC MUSENYI,MUSENYI,GIHINGA,NYABUHORO,,,,2024
+CYEREKEZO  BONHEUR,M,,HC MUSENYI,MUSENYI,RUGANDO,REBERO,,,,2024
+SINDIKUBWABO  EMMANUEL,M,,HC MUSENYI,MUSENYI,RUGANDO,KAMAHIRWE,,,,2024
+YESUNIBYOSE  JEAN BOSCO,M,,NYARUGENGE,NYARUGENGE,NGENDA,KAMABARE,,,,2024
+NIYOKWIZERWA  ANGE,F,,HC MUSENYI,MUSENYI,GIHINGA,NYABUHORO,,,,2024
+UWASE  PASCALINE,F,,HC NYARUGENGE,NYARUGENGE,NGENDA,MUYANGE,,,,2024
+TUMUKUNDE  RILIANE,F,,HC NYARUGENGE,NYARUGENGE,NGENDA,MUYANGE,,,,2024
+UWINEZA  SOPHIE,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAKABINGO,,,,2024
+KAMIKAZI  CHANELLA,F,,HC MUSENYI,MUSENYI,GIHINGA,NYAGASOZI,,,,2024
+MPANO  JACKSON,M,,HC MUSENYI,MUSENYI,GIHINGA,NYARUBANDE,,,,2024
+MUGISHA  GIFT PEACE,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAKABUYE,,,,2024
+ISHIMWE NGOGA  YVAN,M,,HC NYARUGENGE,NYARUGENGE,KABUYE,CYAHAFI,,,,2024
+BYEREKEYEYESU ANYSIE,F,,HC NYARUGENGE,NYARUGENGE,NGENDA,KAMABARE,,,,2024
+ISEZERANO  KEVINE,F,,HC MUSENYI,MUSENYI,RUGANDO,GAKO,,,,2024
+IRAVUGA  KETHIA,F,,HC MUSENYI,MUSENYI,GIHINGA,NYABUHORO,,,,2024
+MUREKATETE  HOSIANE,F,,HC MUSENYI,MUSENYI,GIHINGA,NYABUHORO,,,,2024
+TUYIZERE  SANDRINE KEVINE,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,CYAHAFI,,,,2024
+NIYIBIKORA  BENEFILS,F,,HC MUSENYI,MUSENYI,RUGANDO,GAKO,,,,2024
+MASENGESHO  GENTILLE,F,,HC MUSENYI,MUSENYI,GIHINGA,MUBUGA,,,,2024
+UMUKUNDWA  JOLIE,F,,HC NYARUGENGE,NYARUGENGE,KABUYE,MUBUGA,,,,2024
+DUSHIME  JEAN DE DIEN,M,,HC NYARUGENGE,NYARUGENGE,KABUYE,NYAKABUYE,,,,2024
+UWIDUHAYE ISHIMWE  DIANE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWINEZA  SOLANGE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWASE  DIVINE,F,,HC RILIMA,RILIMA,,,,,,2022
+NYIRABAHIRE  CELINE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWINEZA CLENIA,F,,HC RILIMA,RILIMA,,,,,,2022
+ABAMAHORO  GIFT,F,,HC RILIMA,RILIMA,,,,,,2022
+ISHIMWE  VELIA,F,,HC RILIMA,RILIMA,,,,,,2022
+UMUHUZA  BLENDA,F,,HC RILIMA,RILIMA,,,,,,2022
+MUGWANEZA  SERAPHINE,F,,HC RILIMA,RILIMA,,,,,,2022
+UMUTONIWASE  KAZUBA,F,,HC RILIMA,RILIMA,,,,,,2022
+KAMIKAZI  NOELA,F,,HC RILIMA,RILIMA,KIMARANZARA,,,,,2022
+IRANZI GANZA  BRUNO,M,,HC RILIMA,RILIMA,,,,,,2022
+NIYOKWIZERWA  CHANTAL,F,,HC GIHINGA,SHYARA,,,,,,2022
+RUKUNDO  ERNESTE,M,,HC GIHINGA,SHYARA,RUTARE,,,,,2022
+UWINEZA  JUSTINE,F,,HC GIHINGA,SHYARA,NZIRANZIZA,,,,,2022
+IMANIZABAYO KEVINE,F,,HC GIHINGA,SHYARA,,,,,,2022
+KAMIKAZI  NOELA,F,,HC RILIMA,RILIMA,GASABO,,,,,2022
+UWINEZA  SOLANGE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWIDUHAYE ISHIMWE  DIANE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWASE  KEVINE,F,,HC RILIMA,RILIMA,,,,,,2022
+KAMIKAZI  NOELA,F,,HC RILIMA,RILIMA,KIMARANZARA,GASABO,,,,2022
+MANIRAKOZE  KELVIN,F,,HC SHYARA,SHYARA,,,,,,2022
+ISHIMWE  BRIANE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWINEZA  ANGE KELIA,F,,HC RILIMA,RILIMA,,,,,,2022
+IRANZI GANZA  BRUNO,M,,HC RILIMA,RILIMA,,,,,,2022
+UWINEZA  SOLANGE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWASE  KEVINE,F,,HC RILIMA,RILIMA,,,,,,2022
+RUKUNDO  ERNESTE,M,,HC GIHINGA,SHYARA,RUTARE,,,,,2022
+UWINEZA  JUSTINE,F,,HC GIHINGA,SHYARA,NZIRANZIZA,,,,,2022
+RUTAYISIRE  IRIZA KEILA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2022
+NYIRABAHIRE  CELINE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWIKUNDA  ALICE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2022
+UWINEZA  FIONA,F,,HC RILIMA,RILIMA,KARAMBO,,,,,2022
+IRANEZEZA  BRIVER,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2022
+UWIDUHAYE ISHIMWE  DIANE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWIMPUHWE CASSY,F,,HC RILIMA,RILIMA,KABEZA,,,,,2022
+UWINGENEYE  KELIA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2022
+URINZWENIMANA  FRUGENCE,M,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2022
+UWIKUNDA  ALICE,F,,HC RILIMA,RILIMA,KABEZA,,,,,2022
+UWINGENEYE  KELIA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2022
+IRANEZEZA  BRIVER,F,,HC RILIMA,RILIMA,NYABAGENDWA,,,,,2022
+UWIMPUHWE  KESIA,F,,HC RILIMA,RILIMA,KABEZA,,,,,2022
+UWASE  KEVINE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWINEZA  SOLANGE,F,,HC RILIMA,RILIMA,,,,,,2022
+UWINEZA  ANGE KEILLA,F,,HC RILIMA,RILIMA,,,,,,2022
+IRANZI GANZA  BRUNO,M,,HC RILIMA,RILIMA,,,,,,2022
+URINZWENIMANA  FRUGENCE,M,,HC RILIMA,RILIMA,,,,,,2022
+UWINEZA  FIONA,F,,HC RILIMA,RILIMA,,,,,,2022
+UWIHANGANYE  J.BOSCO,M,,,,,,,,,2022
+NIYONSHUTI JOSUE,M,,,,,,,,,2022
+UWIMPUHWE  AKALIZA,F,,,,,,,,,2022
+NIYONTAGIRA  CHRISTELLA,F,,,,,,,,,2022
+MUKEBUNYURWE  SARIA,F,,,,,,,,,2022
+UMUTONI  AKAZUBA,F,,,,,,,,,2022
+UMUHUZA  BLENDA,F,,,,,,,,,2022
+UWINEZA  CLENIA,F,,,,,,,,,2022
+ISINGIZWE  DENYSE,F,,,,,,,,,2022
+ABAMAHORO  GIFT,F,,,,,,,,,2022
+ISHIMWE  KELIA,F,,,,,,,,,2022
+IRADUKUNDA  BENITHA,F,,,,,,,,,2022
+KEZA  SHALOON,F,,,,,,,,,2022
+AKARIZA  CHANIA,F,,,,,,,,,2022
+UMUTONIWASE  KELIA,F,,,,,,,,,2022
+UWASSE  ERNESTINE,F,,,,,,,,,2022
+TURIKUMWENAYO  EMMANUEL,F,,,,,,,,,2022
+ISHIMWE  YANICK,M,,,,,,,,,2022
+MPANO  LOVI,F,,,,,,,,,2022
+IRASUBIZA  EMMANUEL,M,,,,,,,,,2022
+NIYONSABA  DIANE,F,,,,,,,,,2022
+IMANIRAKOZE  KEVINE,F,,,,,,,,,2022
+MPANO  LAVIE,M,,,,,,,,,2022
+NIYOKWIZERWA  CHANTAL,F,,,,,,,,,2022
+UWINEZA  JUSTINE,F,,,,,,,,,2022
+RUKUNDO  ERNESTE,M,,,,,,,,,2022
+NSENGIYAREMYE  J.CLOUDE,M,,,,,,,,,2022
+UWINGENEYE  KELIA,F,,,,,,,,,2022
+"UWIHANGANYE  J,BOSCO ",M,,,,,,,,,2022
+RUTAYISIRE  IRIZA KEILA,F,,,,,,,,,2022
+UWIKUNDA  ALICE,F,,,,,,,,,2022
+UWIDUHAYE ISHIMWE  DIANE,F,,,,,,,,,2022
+UWINEZA  SOLANGE,F,,,,,,,,,2022
+IRASUBIZA  KEZA,F,,,,,,,,,2022
+IRASUBIZA  UWASE,F,,,,,,,,,2022
+MANZI  REGIS,M,,,,,,,,,2022
+IRANZI GANZA  BRUNO,M,,,,,,,,,2022
+BYIRINGIRO  JONATHA,M,,,,,,,,,2022
+UWINEZA  ANGE KELIA,F,,,,,,,,,2022
+UWASE  KEVINE,F,,,,,,,,,2022
+UWASE  ERNESTINE,F,,,,,,,,,2022
+NIYONSABA  DIANE,F,,,,,,,,,2022
+SUGIRA  ERNESTE,M,,,,,,,,,2022
+NIYIGENA  GERDINE,F,,,,,,,,,2022
+MPANO  LAVIN,M,,,,,,,,,2022
+IRASUBIZA  EMMANUEL,M,,,,,,,,,2022
+ISHIMWE  JONICH,M,,,,,,,,,2022
+IHORITURINDA  THEOGENE,M,,,,,,,,,2022
+IRASUBIZA  KEZA,F,,,,,,,,,2022
+MANZI  REGIS,M,,,,,,,,,2022
+BYIRINGIRO  JONATHA,M,,,,,,,,,2022
+UWIDUHAYE ISHIMWE  DIANE,F,,,,,,,,,2022
+UWASE  KEVINE,F,,,,,,,,,2022
+UWINEZA  SOLANGE,F,,,,,,,,,2022
+IRANZI GANZA  BRUNO,M,,,,,,,,,2022
+IRASUBIZA  UWASE,F,,,,,,,,,2022
+INEZA  JEANNETTE,F,,,,,,,,,2022
+NIYONSABA  DIANE,F,,,,,,,,,2022
+MUTUYIMANA  JOSIANE,F,,,,,,,,,2022
+MPANO  JACKSON,M,,,,,,,,,2022
+MPANO  RAVY,M,,,,,,,,,2022
+ISHIMWE  YANICK,M,,,,,,,,,2022
+IRASUBIZA  EMMANUEL,M,,,,,,,,,2022
+NIYIGENA  GERDINE,F,,,,,,,,,2022
+UWINGENEYE  KELIA,F,,,,,,,,,2022
+IRANEZEZA  BRIVER,F,,,,,,,,,2022
+RUTAYISIRE  IRIZA KEILA,F,,,,,,,,,2022
+KAMIKAZI  NOELA,F,,,,,,,,,2022
+UWIHANGANYE  J BOSCO,M,,,,,,,,,2022
+AKARIZA  CHANIA,F,,,,,,,,,2022
+AKARIZA  CHALLON,F,,,,,,,,,2022
+IRADUKUNDA  BENITHA,F,,,,,,,,,2022
+UMUHUZA  BLENDA,F,,,,,,,,,2022
+ISHIMWE  KELIA,F,,,,,,,,,2022
+ISHIMWE  CLENIA,F,,,,,,,,,2022
+AKAZUBA UMUTONIWASE,F,,,,,,,,,2022
+ABAMAHORO  GIFT,F,,,,,,,,,2022
+MUREBWAYIRE  SAMIE,F,,,,,,,,,2022
+HABIHIRWE  EMMY,M,,,,,,,,,2022
+HARINDINTWARI  THEOGENE,M,,,,,,,,,2022
+MUNYANEZA  SERAPHINE,F,,,,,,,,,2022
+IRANEZEZA  BRIVER,F,,,,,,,,,2022
+UWINEZA  ANGE KEILLA,F,,,,,,,,,2022
+UWIDUHAYE ISHIMWE  DIANE,F,,,,,,,,,2022
+UWINEZA  SOLANGE,F,,,,,,,,,2022
+UWASE  KEVINE,F,,,,,,,,,2022
+IRASUBIZA  UWASE,F,,,,,,,,,2022
+IRASUBIZA  KEZA,F,,,,,,,,,2022
+BYIRINGIRO  JONATHA,M,,,,,,,,,2022
+IRANZI GANZA  BRUNO,M,,,,,,,,,2022
+KAMIKAZI  NOELA,F,,,,,,,,,2022
+RUTAYISIRE  IRIZA KEILLA,F,,,,,,,,,2022
+UWIHANGANYE  J.BOSCO,M,,,,,,,,,2022
+INEZA  JEANETTE,F,,,,,,,,,2022
+IRANEZEZA  BRIVER,F,,,,,,,,,2022
+UWINGENEYE  KELIA,F,,,,,,,,,2022
+UMUTONIWASE  AKARABO,F,,,,,,,,,2022
+AKARIZA  CHANIA,F,,,,,,,,,2022
+KEZA  SHALOON,F,,,,,,,,,2022
+IRADUKUNDA  BENITHA,F,,,,,,,,,2022
+IHORITURINDA  THEOGENE,M,,,,,,,,,2022
+ISHIMWE  KELIA,F,,,,,,,,,2022
+ABAMAHORO  GIFT,F,,,,,,,,,2022
+ISINGIZWE  DENYSE,F,,,,,,,,,2022
+HABIHIRWE  EMMY,M,,,,,,,,,2022
+UWINEZA  CLENIA,F,,,,,,,,,2022
+UMUHOZA  BLENDA,F,,,,,,,,,2022
+MUGWANEZA  SERAPHINE,F,,,,,,,,,2022
+IHIMBAZWE  SUVENILE,F,,,,,,,,,2022
+BYIRINGIRO  JONATHA,M,,,,,,,,,2022
+IRANEZEZA  BRIVER,F,,,,,,,,,2022
+ISHIMWE  YANIQUE,M,,,,,,,,,2022
+MPANO  RAVIN,M,,,,,,,,,2022
+IRASUBIZA  EMMANUEL,M,,,,,,,,,2022
+NIYONKURU  FISTON,M,,,,,,,,,2022
+UMUTONIWASE  KELIA,F,,,,,,,,,2022
+TURIKUMWENAYO  EMMANUEL,M,,,,,,,,,2022
+UWIRINGIYIMANA  FELEX,M,,,,,,,,,2022
+BIZIMANA  IVAN,M,,,,,,,,,2022
+NDUNGUTSE  EPA,M,,,,,,,,,2022
+NIYOKWIZERWA  CHANTAL,M,,,,,,,,,2022
+IRASUBIZA  CLEMANTINE,F,,,,,,,,,2022
+RUKUNDO  ERNESTE,M,,,,,,,,,2022
+UWINEZA  JUSTINE,F,,,,,,,,,2022
+NIGANZE  PACIFIQUE,M,,,,,,,,,2022
+MPANO  JACKSON,M,,,,,,,,,2022
+ISHIMWE  YANIQUE,M,,,,,,,,,2022
+MPANO  RAVY,M,,,,,,,,,2022
+IRASUBIZA  EMMANUEL,M,,,,,,,,,2022
+NIYONSABA  DIANE,F,,,,,,,,,2022
+NIYIGENA  GERDINE,F,,,,,,,,,2022
+MUTUYIMANA  JOSIANE,F,,,,,,,,,2022
+UWIHANGANYE  J. BOSCO,M,,,,,,,,,2022
+HABIHIRWE  EMMY,M,,,,,,,,,2022
+ISINGIZWE  DENYSE,F,,,,,,,,,2022
+URINZWENIMANA  FLUGENCE,M,,,,,,,,,2022
+INEZA  JEANETTE,F,,,,,,,,,2022
+IRASUBIZA  JEANETTE,F,,,,,,,,,2022
+IRASUBIZA  KEZA,F,,,,,,,,,2022
+UWINEZA  ANGE KELLIA,F,,,,,,,,,2022
+IRANZI GANZA  BRUNO,M,,,,,,,,,2022
+IRASUBIZA  UWASE JAYDEN,F,,,,,,,,,2022
+NIYONKURU  FISTON,M,,,,,,,,,2022
+ISHIMWE  YANIQUE,M,,,,,,,,,2022
+MPANO  RAVIN,M,,,,,,,,,2022
+TURIKUMWENAYO  EMMANUEL,M,,,,,,,,,2022
+UMUTONIWASE  CERIA,F,,,,,,,,,2022
+IRASUBIZA HIRWA  EMMANUEL,M,,,,,,,,,2022
+UWIRINGIYIMANA  FELEX,M,,,,,,,,,2022
+BYIRINGIRO  JONATHA,M,,,,,,,,,2022
+IHIMBAZWE  SUVENILE,F,,,,,,,,,2022
+UWIHANGANYE  J.BOSCO,M,,,,,,,,,2022
+IRANEZEZA  BRIVE,F,,,,,,,,,2022
+BIZIMANA  IVAN,M,,,,,,,,,2022
+NIGANZE  PACIFIQUE,M,,,,,,,,,2022
+UWINEZA  JUSTINE,F,,,,,,,,,2022
+RUKUNDO  ERNESTINE,M,,,,,,,,,2022
+IRASUBIZA  CLEMANTINE,F,,,,,,,,,2022
+NIYOKWIZERWA  CHANTAL,F,,,,,,,,,2022
+KWIZERA  BOSCO,M,,,,,,,,,2022
+IRASUBIZA  REBECCA,F,,,,,,,,,2022
+UMUTONIWASE  KAZUBA,F,,,,,,,,,2022
+HABIHIRWE  EMMANUEL,M,,,,,,,,,2022
+UWINEZA  CLENIA,F,,,,,,,,,2022
+ISINGIZWE  DENYSE,F,,,,,,,,,2022
+ISHIMWE  KELIA,F,,,,,,,,,2022
+BIZIMANA  IVAN,M,,,,,,,,,2022
+RUKUNDO  ERNESTE,M,,,,,,,,,2022
+NIYOKWIZERWA  CHANTAL,F,,,,,,,,,2022
+NIGANZE  PACIFIQUE,M,,,,,,,,,2022
+IRASUBIZA  CLEMANTINE,F,,,,,,,,,2022
+IRASUBIZA HIRWA  EMMANUEL,M,,,,,,,,,2022
+TURIKUMWENAYO  EMMANUEL,M,,,,,,,,,2022
+UMUTONIWASE  CERIA,F,,,,,,,,,2022
+ISHIMWE  YANIQUE,M,,,,,,,,,2022
+NIYONKURU  FISTON,M,,,,,,,,,2022
+UWIRINGIYIMANA  FELEXI,M,,,,,,,,,2022
+NIYOKWIZERWA  CHANTAL,F,,,,,,,,,2022
+NIGANZE  PACIFIQUE,M,,,,,,,,,2022
+IRASUBIZA  CLEMANTINE,F,,,,,,,,,2022
+BIZIMANA  IVAN,M,,,,,,,,,2022
+TURIKUMWENAYO  EMMANUEL,M,,,,,,,,,2022
+UMUTONIWASE  CERIA,F,,,,,,,,,2022
+IRASUBIZA HIRWA  EMMANUEL,M,,,,,,,,,2022
+ISHIMWE  YANIQUE,M,,,,,,,,,2022
+RUKUNDO  ERNESTE,M,,,,,,,,,2022
+UWIRINGIYIMANA  FEREXI,M,,,,,,,,,2022
+NIYONKURU  FISTON,M,,,,,,,,,2022
+IRASUBIZA UWASE  JAYDEN,F,,,,,,,,,2022
+IRASUBIZA  KEZA,F,,,,,,,,,2022
+IRANEZEZA  BRIVE,F,,,,,,,,,2022
+UWINEZA  ANGE KELIA,F,,,,,,,,,2022
+UWIHANGANYE  J.BOSCO,M,,,,,,,,,2022
+IHIMBAZWE  SUVENILE,F,,,,,,,,,2022
+BYIRINGIRO  JONATHA,M,,,,,,,,,2022
+IRANZI GANZA  BRUNO,M,,,,,,,,,2022
+INEZA  JEANETTE,F,,,,,,,,,2022
