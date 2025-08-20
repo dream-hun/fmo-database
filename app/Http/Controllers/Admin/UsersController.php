@@ -10,6 +10,7 @@ use App\Http\Requests\Admin\UpdateUserRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
 
 final class UsersController extends Controller
@@ -34,7 +35,12 @@ final class UsersController extends Controller
 
     public function store(StoreUserRequest $request)
     {
-        $user = User::create($request->validated());
+        $validatedData = $request->validated();
+        unset($validatedData['roles']);
+
+        $validatedData['uuid'] = Str::uuid();
+
+        $user = User::create($validatedData);
         $user->roles()->sync($request->input('roles', []));
 
         return redirect()->route('admin.users.index');
@@ -53,7 +59,10 @@ final class UsersController extends Controller
 
     public function update(UpdateUserRequest $request, User $user)
     {
-        $user->update($request->validated());
+        $validatedData = $request->validated();
+        unset($validatedData['roles']);
+
+        $user->update($validatedData);
         $user->roles()->sync($request->input('roles', []));
 
         return redirect()->route('admin.users.index');

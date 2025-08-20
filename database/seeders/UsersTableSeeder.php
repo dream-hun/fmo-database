@@ -36,6 +36,12 @@ final class UsersTableSeeder extends Seeder
                 'email' => 'dieudonne@fmorwanda.org',
                 'password' => bcrypt('Fmo@2025#'),
             ],
+            [
+                'uuid' => Str::uuid(),
+                'name' => 'Justin NZABANTERURA',
+                'email' => 'microcredit@fmorwanda.org',
+                'password' => bcrypt('Fmo@2025#'),
+            ],
 
         ];
         User::insert($users);

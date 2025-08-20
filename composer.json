@@ -13,7 +13,7 @@
         "akaunting/laravel-apexcharts": "^3.2",
         "cknow/laravel-money": "^8.4",
         "laravel/breeze": "^2.3.6",
-        "laravel/framework": "^12.16.0",
+        "laravel/framework": "^12.17.0",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6.3",
         "nuovo/spreadsheet-reader": "^0.5.11",
@@ -30,7 +30,7 @@
         "nunomaduro/phpinsights": "^2.13.1",
         "pestphp/pest": "^3.8.2",
         "pestphp/pest-plugin-laravel": "^3.2",
-        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan": "^2.1.17",
         "rector/rector": "^2.0.17"
     },
     "autoload": {

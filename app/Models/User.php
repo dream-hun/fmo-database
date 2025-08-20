@@ -29,6 +29,7 @@ final class User extends Authenticatable
     ];
 
     protected $fillable = [
+
         'name',
         'email',
         'email_verified_at',
@@ -39,10 +40,6 @@ final class User extends Authenticatable
         'deleted_at',
     ];
 
-    public function getTable(): string
-    {
-        return 'users';
-    }
 
     public function getIsAdminAttribute(): bool
     {
